@@ -1,0 +1,268 @@
+.psWrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow: scroll;
+    opacity: 0;
+    background: var(--back);
+    pointer-events: none;
+    padding: 15px 10px 0 55px;
+}
+
+.projectBox {
+    box-sizing: border-box;
+    background: var(--card);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    height: 400px;
+    width: 340px;
+    padding: 15px 5px 70px 15px;
+    border-radius: 10px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    position: relative;
+    box-shadow: 0px 10px 30px -10px rgba(0, 0, 0, 0.4);
+    transition: .2s;
+    overflow: hidden;
+    border: 3px solid hsla(0, 0%, 0%, 10%);
+}
+
+.projectBox::before {
+    width: 100%;
+    height: 100%;
+    content: ' ';
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    border-radius: 6px;
+    opacity: 1;
+    z-index: 0;
+    transition: .3s;
+}
+
+.projectBox:hover::before {
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+}
+
+.projectBox:hover .pbContentWrapper {
+    transform: translateY(0);
+}
+
+.pb1::before {
+    background-size: cover;
+    background-position: center;
+    background-image: linear-gradient(#E9891DCC, #E82977CC, #00ABD0CC), url("../imgs/previews/1.png");
+    height: 100%;
+}
+
+.pb2::before {
+    background-size: cover;
+    background-position: center;
+    background-image: linear-gradient(#031770CC, #65A5E5CC), url("../imgs/previews/2.jpeg");
+    height: 100%;
+}
+
+.pb3::before {
+    background-size: cover;
+    background-position: bottom;
+    background-image: linear-gradient(#7ba9c9CC, #0d395fCC), url("../imgs/previews/3.jpeg");
+    width: 100%;
+}
+
+.pb4::before {
+    background-size: cover;
+    background-position: center;
+    background-image: linear-gradient(#B1BBA4CC, #434554CC), url("../imgs/previews/4.jpeg");
+    width: 100%;
+}
+
+.pb5::before {
+    background-size: cover;
+    background-position: bottom;
+    background-image: linear-gradient(#A2EED0CC, #6D8376CC), url("../imgs/previews/5.jpeg");
+    width: 100%;
+}
+
+.pb6::before {
+    background-size: cover;
+    background-position: bottom;
+    background-image: linear-gradient(#FDB845CC, #FC4B44CC, #4D4680CC), url("../imgs/previews/6.jpeg");
+    width: 100%;
+}
+
+.pb7::before {
+    background-size: cover;
+    background-position: center;
+    background-image: linear-gradient(#3C4E64CC, #91C3FECC), url("../imgs/previews/7.png");
+    width: 100%;
+}
+
+.pb8::before {
+    background-size: cover;
+    background-position: center;
+    background-image: linear-gradient(#341656CC, #172D42CC), url("../imgs/previews/8.jpeg");
+    width: 100%;
+}
+
+.pb9::before {
+    background-size: cover;
+    background-position: center;
+    background-image: linear-gradient(#59898DCC, #DE5159CC), url("../imgs/previews/9.jpeg");
+    width: 100%;
+}
+
+.pb10::before {
+    background-size: cover;
+    background-position: bottom;
+    background-image: linear-gradient(#135A8CCC, #5BA290CC), url("../imgs/previews/10.jpeg");
+    width: 100%;
+}
+
+.pb11::before {
+    background-size: cover;
+    background-position: center;
+    background-image: linear-gradient(#51FCBDCC, #7838D4CC), url("../imgs/previews/11.jpeg");
+    width: 100%;
+}
+
+.pb12::before {
+    background-size: cover;
+    background-position: center;
+    background-image: linear-gradient(#FA904FCC, #471781CC), url("../imgs/previews/12.jpeg");
+    width: 100%;
+}
+
+.pb13::before {
+    background-size: cover;
+    background-position: center;
+    background-image: linear-gradient(#E9285CCC, #9C16A6CC), url("../imgs/previews/13.jpeg");
+    width: 100%;
+}
+
+.pb14::before {
+    background-size: cover;
+    background-position: center;
+    background-image: linear-gradient(#DD4290CC, #C6242CCA), url("../imgs/previews/14.png");
+    width: 100%;
+}
+
+.pb15::before {
+    background-size: cover;
+    background-position: center;
+    background-image: linear-gradient(#51FCBDCC, #7838D4CC), url("../imgs/previews/15.png");
+    height: 100%;
+}
+
+.pb16::before {
+    background-size: cover;
+    background-position: left;
+    background-image: linear-gradient(#51FCBDCC, #7838D4CC), url("../imgs/previews/16.png");
+    height: 100%;
+}
+
+.pb17::before {
+    background-size: cover;
+    background-position: center;
+    background-image: linear-gradient(#7ba9c9CC, #0d395fCC), url("../imgs/previews/17.png");
+    height: 100%;
+}
+
+.pbContentWrapper {
+    position: absolute;
+    padding: 12px 20px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: min-content;
+    flex: 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.20);
+    background: #000000BB;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 1;
+    color: white;
+    transform: translateY(calc(100% - 60px));
+    transition: .3s;
+}
+
+.pbHeader {
+    font: bold 17px var(--ff);
+    margin: 0 15px 0 0;
+}
+
+.pbDesc {
+    margin: 10px 0;
+    font: 400 15px var(--ff);
+    z-index: 1;
+    padding: 0 8px 0 0;
+    color: white;
+}
+
+.pbDate {
+    font: 13px var(--ff);
+    opacity: .5;
+}
+
+.pbHeader :is(.fa,
+.fas) {
+    margin: 0 7px 0 0;
+    font-size: 14px;
+    z-index: 1;
+}
+
+.pbActions {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0 0 0;
+    transition-duration: 100ms;
+    z-index: 1;
+}
+
+.pbAct {
+    width: max-content;
+    height: 100%;
+    padding: 0 12px;
+    border-radius: 100px;
+    background: var(--anim-obj);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1px;
+    transition-duration: .2s;
+    text-decoration: none;
+    font: 13px var(--ff);
+    color: var(--font);
+}
+
+.pbAct:hover {
+    background: var(--anim-back);
+}
+
+@media screen and (max-width: 600px) {
+    .psWrapper {
+        width: 95%;
+    }
+    .psContent {
+        margin: 10px;
+        justify-content: center;
+    }
+    .projectBox {
+        width: 100%;
+        flex: 0 1 100%;
+    }
+}

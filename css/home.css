@@ -1,0 +1,127 @@
+.greetingLinks {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: none;
+}
+
+.glWrapper {
+    position: relative;
+    height: fit-content;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    padding: 50px 0;
+    background: var(--back);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    /* border-radius: 20px; */
+    box-shadow: 0px 15px 30px -10px rgba(0, 0, 0, 0.1);
+    transition: background 400ms;
+    color: var(--accent-text);
+    overflow: hidden;
+    border: none;
+}
+
+span.newRipple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: newRipple 1000ms linear;
+    background-color: hsla(0, 0%, 100%, 0.5);
+    filter: blur(40px);
+}
+
+.glWelcome {
+    font: bold 60px var(--ff);
+    opacity: .7;
+    line-height: 40px;
+}
+
+#fssLogo {
+    height: 8rem;
+    width: auto;
+    margin: 25px 0 15px 0;
+    filter: var(--logoColor);
+}
+
+.glDescription {
+    font: 500 20px var(--ff);
+    opacity: .7;
+}
+
+.contact {
+    width: fit-content;
+    height: fit-content;
+    margin-top: 30px;
+    padding: 15px 30px;
+    border-radius: 10px;
+    background: var(--nb-back);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: inherit;
+}
+
+.cMainLinks {
+    display: flex;
+    margin-top: 10px;
+}
+
+.cHeader {
+    font: 700 35px var(--ff);
+    opacity: .7;
+}
+
+.cSubHead {
+    font: 500 17px var(--ff);
+    margin-top: 5px;
+    opacity: .7;
+}
+
+.cml {
+    width: fit-content;
+    height: 30px;
+    padding: 10px 15px;
+    border-radius: 100px;
+    background: var(--accent);
+    color: var(--auto-bw);
+    margin: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font: 400 13px var(--ff);
+    transition-duration: .2s;
+}
+
+.cml:hover {
+    background: var(--accent-text);
+}
+
+@keyframes newRipple {
+    to {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .glWrapper {
+        padding: 40px 10px;
+        margin: 0 10px;
+    }
+
+    .glDescription {
+        padding: 0 5px;
+        font-size: 16px;
+    }
+
+    #fssLogo {
+        width: 95%;
+        height: auto;
+    }
+}

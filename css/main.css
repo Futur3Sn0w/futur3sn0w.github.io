@@ -1,0 +1,363 @@
+* {
+    box-sizing: border-box;
+    --outer-radi: 20px;
+    --inner-radi: 10px;
+    --content-height: 100vh;
+    --nav-height: 10vh;
+    --z-nav: 10;
+    --z-cont: 8;
+    --ff: -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background: var(--back);
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+     :root {
+        --auto-bw: hsl(0, 0%, 0%);
+        --font: hsl(0, 0%, 100%);
+        --back: hsla(0, 0%, 0%, 0.25);
+        --nav-back: hsla(0, 0%, 0%, 0.8);
+        --transp: hsla(0, 0%, 0%, 0.5);
+        --card: hsla(0, 0%, 0%, 0.667);
+        --anim-back: hsl(213, 19%, 11%);
+        --herotitle-back: hsl(213, 19%, 13%);
+        --nb-back: hsl(213, 19%, 11%);
+        --anim-obj: hsla(211, 26%, 31%, 20%);
+        --accent: #91C3FE;
+        --accent-text: #c2defe;
+        --border-clr: hsla(0, 0%, 80%, 0.7);
+        --border-clr-2: hsla(0, 0%, 0%, 0.25);
+        --hero: url("../imgs/adark.png");
+        --logo: brightness(100);
+        --rest: hsla(256, 55%, 25%, 0.5);
+        --hov: hsl(211, 26%, 31%);
+        --active: hsla(256, 55%, 1%, 0.5);
+        --mbm: color-dodge;
+        --nbFilter: saturate(90%);
+        --logoColor: invert(79%) sepia(24%) saturate(372%) hue-rotate(180deg) brightness(304%) contrast(99%);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+     :root {
+        --auto-bw: hsl(100, 100%, 100%);
+        --font: hsl(0, 0%, 0%);
+        --back: hsl(0, 0%, 100%, 0.25);
+        --nav-back: hsl(0, 0%, 100%, 0.8);
+        --transp: hsla(0, 0%, 100%, 0.4);
+        --card: hsla(0, 0%, 100%, 0.667);
+        --anim-back: #EAF1F7;
+        --herotitle-back: hsl(208, 45%, 88%);
+        --nb-back: hsl(208, 45%, 94%);
+        --anim-obj: hsla(211, 59%, 80%, 30%);
+        --accent: #255ED3;
+        --accent-text: #16397e;
+        --border-clr: hsla(0, 0%, 63%, 0.9);
+        --border-clr-2: rgba(0, 0, 0, 0.25);
+        --hero: url("../imgs/alight.png");
+        --logo: brightness(0);
+        --rest: hsla(256, 16%, 40%, 0.5);
+        --hov: hsl(211, 59%, 80%);
+        --active: hsla(256, 16%, 55%, 0.5);
+        --mbm: color-burn;
+        --nbFilter: brightness(95%);
+        --logoColor: invert(17%) sepia(22%) saturate(5590%) hue-rotate(207deg) brightness(65%) contrast(96%);
+    }
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+    height: 9px;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--font);
+    border-radius: 100px;
+    padding: 0 0 10px 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.homePages {
+    display: flex;
+    flex-direction: column;
+}
+
+.homePageDiv {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: var(--z-cont);
+    transition-duration: .2s;
+    box-shadow: 0px 15px 30px -10px rgba(0, 0, 0, 0.1);
+    color: var(--font);
+    height: var(--content-height);
+}
+
+#logo {
+    background: var(--auto-bw);
+    padding: 0;
+    margin: 10px 0;
+    border-radius: 50%;
+    box-shadow: 0px 4px 10px -5px rgba(0, 0, 0, 0.40);
+    transition-duration: .2s;
+    width: 40px;
+    height: 40px;
+}
+
+.socialBar {
+    width: 250px;
+    height: 80px;
+    position: absolute;
+    padding: 0 65px 0 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    transition: opacity .2s;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    color: var(--accent);
+}
+
+.socialBar .fa {
+    font-size: 1.2em;
+    text-decoration: none;
+    transition: color .2s;
+    color: inherit;
+}
+
+.socialBar a {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: inherit;
+}
+
+#sb1:hover {
+    color: #ff40a3;
+}
+
+#sb2:hover {
+    color: #8c40ff;
+}
+
+#sb3:hover {
+    color: #40a9ff;
+}
+
+#sb4:hover {
+    color: #00D38F;
+}
+
+#sb5:hover {
+    color: #eb4d4d;
+}
+
+#sb6:hover {
+    color: #8c40ff;
+}
+
+#sb7:hover {
+    color: #FF7000;
+}
+
+#sb8:hover {
+    color: #9147FF;
+}
+
+.navBar {
+    height: 100vh;
+    width: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: var(--z-nav);
+    align-items: flex-start;
+    gap: 1px;
+    transition: .3s;
+    overflow: hidden;
+    color: var(--accent);
+}
+
+.navBar:hover {
+    width: 250px;
+    background: var(--nb-back);
+    box-shadow: 0px 15px 30px -10px rgba(0, 0, 0, 0.3);
+}
+
+.navBar:hover .nbSep {
+    background: var(--anim-obj);
+}
+
+.navBar:hover .nbpcUserName {
+    opacity: 1;
+}
+
+.navBar:hover #logo {
+    height: 150px;
+    width: 150px;
+    padding: 0;
+}
+
+.navBtnWrapper {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 240px;
+    transition: .3s;
+    gap: 5px;
+    z-index: inherit;
+}
+
+.navButton {
+    width: 100%;
+    height: 50px;
+    position: relative;
+    font: 25px FLNTREG;
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 12px;
+    margin-bottom: 5px;
+    border-radius: 0 50px 50px 0;
+    border: none;
+    background: transparent;
+    transition: background 200ms;
+    overflow: hidden;
+    color: var(--accent);
+    cursor: pointer;
+}
+
+
+/* .navButton:hover {
+    background: var(--hov);
+} */
+
+.navButton::before {
+    position: absolute;
+    content: "";
+    background: var(--hov);
+    width: calc(100% + 12px);
+    height: 100%;
+    left: 0;
+    border-radius: 0 50px 50px 0;
+    transform: translateX(-100%);
+    transition: .4s ease;
+    z-index: -1;
+}
+
+.navButton:hover::before {
+    transform: translateX(0);
+}
+
+span.ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 800ms linear;
+    background-color: rgba(255, 255, 255, .5);
+    filter: blur(20px);
+}
+
+.navButton>label {
+    font: 600 18px var(--ff);
+    cursor: pointer;
+    padding-left: 15px;
+}
+
+.nbHome {
+    font: 25px FLNTFILL;
+}
+
+.nbSep {
+    width: 12vw;
+    height: 1px;
+    background: transparent;
+    align-self: center;
+}
+
+.nbProfileCard {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: fit-content;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.logoWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.nbpcUserName {
+    font: bold 30px var(--ff);
+    width: 250px;
+    text-align: center;
+    opacity: 0;
+    transition-delay: .2s;
+    transition-duration: .2s;
+}
+
+.socialIndic {
+    font: 25px FLNTREG;
+    margin: 85px 0;
+    transition: .2s;
+    width: 100%;
+    text-align: center;
+    pointer-events: none;
+}
+
+@font-face {
+    font-family: FLNTFILL;
+    src: url(../fonts/fluent_filled.ttf);
+}
+
+@font-face {
+    font-family: FLNTREG;
+    src: url(../fonts/fluent_reg.ttf);
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .hbWrapper {
+        width: 100%;
+        height: 85%;
+        position: absolute;
+        top: 0;
+        border-radius: 0;
+    }
+    .socialBar {
+        opacity: 1;
+    }
+}

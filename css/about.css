@@ -1,0 +1,159 @@
+.aboutBox {
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--back);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    pointer-events: none;
+}
+
+.aboutCard {
+    width: 450px;
+    height: 28vh;
+    margin: 15px 15px;
+    background: var(--hero) center/cover no-repeat white;
+    border-radius: var(--inner-radi);
+    box-shadow: 0px 10px 30px -10px rgba(0, 0, 0, 0.3);
+}
+
+.aboutProfilePic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: relative;
+    left: 50%;
+    top: 90%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 10px 30px -10px rgba(0, 0, 0, 0.4);
+    background: url("../imgs/profPic.jpg") center/cover no-repeat white;
+    border: solid 3px white;
+}
+
+.aboutContent {
+    margin: 40px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.atName {
+    font: bold 25px var(--ff);
+}
+
+.atUserName {
+    font: 500 18px var(--ff);
+    opacity: .7;
+    margin: 0 0 10px 0;
+}
+
+.aboutPosts {
+    width: fit-content;
+    height: 50vh;
+    display: flex;
+    align-items: flex-start;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-radius: var(--inner-radi);
+    margin: 0 0 10px 0;
+}
+
+.aboutPosts::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.abtPosts {
+    width: 400px;
+    height: 70px;
+    background: var(--anim-obj);
+    padding: 20px;
+    border-radius: var(--inner-radi);
+    margin: 0 5px 10px 0;
+    display: flex;
+    flex-direction: column;
+    transition: height .2s;
+    transition-delay: .1s;
+    position: relative;
+    overflow: hidden;
+}
+
+.apAboutMe:hover {
+    height: 260px;
+}
+
+.apMoreInfo:hover {
+    height: 330px;
+}
+
+.apClosingOut:hover {
+    height: 170px;
+}
+
+.abtPosts:hover .expandIcon {
+    transform: rotate(180deg);
+}
+
+.abtPosts:hover .apamBody {
+    opacity: 1;
+}
+
+.expandIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    padding: 0;
+    margin-top: 10px;
+    right: 30px;
+    transition-duration: .4s;
+    width: 15px;
+    height: 15px;
+    font-size: 25px;
+    font-family: FLNTFILL;
+}
+
+.apamTitle {
+    text-align: left;
+    font: bold 24px var(--ff);
+    margin: 0 0 5px 0;
+}
+
+.apamBody {
+    text-align: left;
+    font: 500 15px var(--ff);
+    opacity: 0;
+    pointer-events: none;
+    transition-delay: .2s;
+    transition-duration: .2s;
+}
+
+@media screen and (max-width: 600px) {
+    .aboutBox {
+        width: 95%;
+    }
+
+    .aboutCard {
+        width: 95%;
+        height: 220px;
+        margin: 10px 20px 20px 20px;
+    }
+
+    .aboutPosts {
+        width: 95%;
+    }
+
+    .abtPosts {
+        margin: 0 0 5px 0;
+    }
+
+    ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+    }
+}
