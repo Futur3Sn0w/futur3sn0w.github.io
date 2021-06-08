@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/background.css">
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/pbspecs.css">
     <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
@@ -34,7 +35,6 @@
             <li></li>
             <li></li>
         </ul>
-        <div class="heroTitle" id="heroTitle">home</div>
 
     </div>
     <div class="home">
@@ -94,13 +94,40 @@
                 </div>
             </div>
 
+            <div class="psViewer" id="psViewer"></div>
+            <div class="psViewerBack" id="psViewerBack" onclick="pbBackClick()"></div>
+
+            <script>
+                function pbClick() {
+                    document.getElementById("psViewer").style.top = "50%";
+                    document.getElementById("psViewer").style.opacity = "1";
+                    document.getElementById("psViewerBack").style.backgroundColor = "rgba(0, 0, 0, 0.40)";
+                    document.getElementById("psViewerBack").style.zIndex = "999";
+                }
+                
+                function pbBackClick() {
+                    document.getElementById("psViewer").style.top = "150%";
+                    document.getElementById("psViewer").style.opacity = "0";
+                    document.getElementById("psViewerBack").style.backgroundColor = "transparent";
+                    document.getElementById("psViewerBack").style.zIndex = "0";
+                }
+
+                function pb1Open() {
+                    pbClick();
+                    document.getElementById("psViewer").appendChild(document.getElementById("pbHeader1"));
+                    document.getElementById("psViewer").appendChild(document.getElementById("pbDate1"));
+                    document.getElementById("psViewer").appendChild(document.getElementById("pbDesc1"));
+                    document.getElementById("psViewer").appendChild(document.getElementById("pbActions1"));
+                }
+            </script>
+
             <div class="homePageDiv psWrapper" id="psWrapper">
-                <div class="projectBox pb17">
+                <div class="projectBox pb17" onclick="pb1Open()">
                     <div class="pbContentWrapper">
-                        <p class="pbHeader"><i class="fa fa-android"></i>Android Setup - Android 12 LS</p>
-                        <p class="pbDate">Date: 05/05/21</p>
-                        <p class="pbDesc">Android Setup: Android 12 Lockscreen! Made a couple KWGT widgets that mimic the Android 12 lockscreen!</p>
-                        <div class="pbActions">
+                        <p class="pbHeader" id="pbHeader1"><i class="fa fa-android"></i>Android Setup - Android 12 LS</p>
+                        <p class="pbDate" id="pbDate1">Date: 05/05/21</p>
+                        <p class="pbDesc" id="pbDesc1">Android Setup: Android 12 Lockscreen! Made a couple KWGT widgets that mimic the Android 12 lockscreen!</p>
+                        <div class="pbActions" id="pbActions1">
                             <a class="pbAct pbA1" href="https://twitter.com/Futur3Sn0w/status/1389910417204555785">Twitter Post</a>
                             <a class="pbAct pbA2" href="https://www.reddit.com/r/androidthemes/comments/n5h21a/theme_android_12_lockscreen">Reddit Link</a>
                         </div>

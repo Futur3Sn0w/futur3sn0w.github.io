@@ -6,7 +6,6 @@ function aboutBtn() {
     document.getElementById("nbAbout").innerHTML = " <label>About Me</label>";
     document.getElementById("nbHome").innerHTML = " <label>Home</label>";
     document.getElementById("nbProjects").innerHTML = " <label>My Projects</label>";
-    document.getElementById("heroTitle").innerHTML = "about";
     document.getElementById("nbAbout").style.font = "25px FLNTFILL";
     document.getElementById("nbHome").style.font = "25px FLNTREG";
     document.getElementById("nbProjects").style.font = "25px FLNTREG";
@@ -23,7 +22,6 @@ function homeBtn() {
     document.getElementById("nbAbout").innerHTML = " <label>About Me</label>";
     document.getElementById("nbHome").innerHTML = " <label>Home</label>";
     document.getElementById("nbProjects").innerHTML = " <label>My Projects</label>";
-    document.getElementById("heroTitle").innerHTML = "home";
     document.getElementById("nbAbout").style.font = "25px FLNTREG";
     document.getElementById("nbHome").style.font = "25px FLNTFILL";
     document.getElementById("nbProjects").style.font = "25px FLNTREG";
@@ -41,8 +39,6 @@ function projectsBtn() {
     document.getElementById("nbAbout").innerHTML = " <label>About Me</label>";
     document.getElementById("nbHome").innerHTML = " <label>Home</label>";
     document.getElementById("nbProjects").innerHTML = " <label>My Projects</label>";
-    /**/
-    document.getElementById("heroTitle").innerHTML = "projects";
     /**/
     document.getElementById("nbAbout").style.font = "25px FLNTREG";
     document.getElementById("nbHome").style.font = "25px FLNTREG";

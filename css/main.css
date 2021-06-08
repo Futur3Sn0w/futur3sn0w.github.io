@@ -24,7 +24,7 @@ a {
         --font: hsl(0, 0%, 100%);
         --back: hsla(0, 0%, 0%, 0.25);
         --nav-back: hsla(0, 0%, 0%, 0.8);
-        --transp: hsla(0, 0%, 0%, 0.5);
+        --transp: hsla(0, 50%, 36%, 0.5);
         --card: hsla(0, 0%, 0%, 0.667);
         --anim-back: hsl(213, 19%, 11%);
         --herotitle-back: hsl(213, 19%, 13%);

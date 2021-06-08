@@ -1,3 +1,58 @@
+.psViewer{
+    position: absolute;
+    top: 150%;
+    left: 50%;
+    margin: -250px -400px;
+    z-index: 1000;
+    width: 800px;
+    height: 500px;
+    background-color: var(--auto-bw);
+    opacity: 0;
+    border-radius: 20px;
+    transition: top .2s, box-shadow .2s, opacity .2s;
+    padding: 25px 25px 15px 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.psViewerBack{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+    transition: background-color .2s;
+    backdrop-filter: blur(10px);
+}
+
+.psViewer .pbHeader{
+    font-size: 40px;
+}
+
+.psViewer .pbHeader i{
+    font-size: 30px;
+    margin-right: 20px;
+}
+
+.psViewer .pbDate{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.psViewer .pbDesc{
+    font-size: 16px;
+    display: flex;
+}
+
+.psViewer .pbActions{
+    gap: 5px;
+    margin-top: auto;
+}
+
+/* Project strip & box styling (Main page) */
+
 .psWrapper {
     width: 100%;
     height: 100%;
@@ -18,7 +73,7 @@
     background: var(--card);
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
-    height: 400px;
+    height: 300px;
     width: 340px;
     padding: 15px 5px 70px 15px;
     border-radius: 10px;
@@ -29,7 +84,6 @@
     align-items: flex-start;
     position: relative;
     box-shadow: 0px 10px 30px -10px rgba(0, 0, 0, 0.4);
-    transition: .2s;
     overflow: hidden;
     border: 3px solid hsla(0, 0%, 0%, 10%);
 }
@@ -50,131 +104,12 @@
 }
 
 .projectBox:hover::before {
-    filter: blur(10px);
-    -webkit-filter: blur(10px);
+    /* filter: blur(10px);
+    -webkit-filter: blur(10px); */
 }
 
-.projectBox:hover .pbContentWrapper {
-    transform: translateY(0);
-}
-
-.pb1::before {
-    background-size: cover;
-    background-position: center;
-    background-image: linear-gradient(#E9891DCC, #E82977CC, #00ABD0CC), url("../imgs/previews/1.png");
-    height: 100%;
-}
-
-.pb2::before {
-    background-size: cover;
-    background-position: center;
-    background-image: linear-gradient(#031770CC, #65A5E5CC), url("../imgs/previews/2.jpeg");
-    height: 100%;
-}
-
-.pb3::before {
-    background-size: cover;
-    background-position: bottom;
-    background-image: linear-gradient(#7ba9c9CC, #0d395fCC), url("../imgs/previews/3.jpeg");
-    width: 100%;
-}
-
-.pb4::before {
-    background-size: cover;
-    background-position: center;
-    background-image: linear-gradient(#B1BBA4CC, #434554CC), url("../imgs/previews/4.jpeg");
-    width: 100%;
-}
-
-.pb5::before {
-    background-size: cover;
-    background-position: bottom;
-    background-image: linear-gradient(#A2EED0CC, #6D8376CC), url("../imgs/previews/5.jpeg");
-    width: 100%;
-}
-
-.pb6::before {
-    background-size: cover;
-    background-position: bottom;
-    background-image: linear-gradient(#FDB845CC, #FC4B44CC, #4D4680CC), url("../imgs/previews/6.jpeg");
-    width: 100%;
-}
-
-.pb7::before {
-    background-size: cover;
-    background-position: center;
-    background-image: linear-gradient(#3C4E64CC, #91C3FECC), url("../imgs/previews/7.png");
-    width: 100%;
-}
-
-.pb8::before {
-    background-size: cover;
-    background-position: center;
-    background-image: linear-gradient(#341656CC, #172D42CC), url("../imgs/previews/8.jpeg");
-    width: 100%;
-}
-
-.pb9::before {
-    background-size: cover;
-    background-position: center;
-    background-image: linear-gradient(#59898DCC, #DE5159CC), url("../imgs/previews/9.jpeg");
-    width: 100%;
-}
-
-.pb10::before {
-    background-size: cover;
-    background-position: bottom;
-    background-image: linear-gradient(#135A8CCC, #5BA290CC), url("../imgs/previews/10.jpeg");
-    width: 100%;
-}
-
-.pb11::before {
-    background-size: cover;
-    background-position: center;
-    background-image: linear-gradient(#51FCBDCC, #7838D4CC), url("../imgs/previews/11.jpeg");
-    width: 100%;
-}
-
-.pb12::before {
-    background-size: cover;
-    background-position: center;
-    background-image: linear-gradient(#FA904FCC, #471781CC), url("../imgs/previews/12.jpeg");
-    width: 100%;
-}
-
-.pb13::before {
-    background-size: cover;
-    background-position: center;
-    background-image: linear-gradient(#E9285CCC, #9C16A6CC), url("../imgs/previews/13.jpeg");
-    width: 100%;
-}
-
-.pb14::before {
-    background-size: cover;
-    background-position: center;
-    background-image: linear-gradient(#DD4290CC, #C6242CCA), url("../imgs/previews/14.png");
-    width: 100%;
-}
-
-.pb15::before {
-    background-size: cover;
-    background-position: center;
-    background-image: linear-gradient(#51FCBDCC, #7838D4CC), url("../imgs/previews/15.png");
-    height: 100%;
-}
-
-.pb16::before {
-    background-size: cover;
-    background-position: left;
-    background-image: linear-gradient(#51FCBDCC, #7838D4CC), url("../imgs/previews/16.png");
-    height: 100%;
-}
-
-.pb17::before {
-    background-size: cover;
-    background-position: center;
-    background-image: linear-gradient(#7ba9c9CC, #0d395fCC), url("../imgs/previews/17.png");
-    height: 100%;
+.projectBox:hover .pbContentWrapper{
+    background: #000000BB;
 }
 
 .pbContentWrapper {
@@ -188,13 +123,13 @@
     display: flex;
     flex-direction: column;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.20);
-    background: #000000BB;
+    background: #00000040;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     z-index: 1;
     color: white;
     transform: translateY(calc(100% - 60px));
-    transition: .3s;
+    transition: transform .3s;
 }
 
 .pbHeader {
@@ -208,6 +143,7 @@
     z-index: 1;
     padding: 0 8px 0 0;
     color: white;
+    display: none;
 }
 
 .pbDate {
