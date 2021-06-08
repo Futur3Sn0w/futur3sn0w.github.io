@@ -50,3 +50,14 @@ function projectsBtn() {
     /**/
 }
 
+fetch('projectSums/1.txt')
+    .then(response => response.text())
+    .then(eulaData => {
+    document.getElementById("pbDesc1").innerHTML = eulaData;
+});
+
+fetch('projectSums/2.txt')
+    .then(response => response.text())
+    .then(eulaData => {
+    document.getElementById("pbDesc2").innerHTML = eulaData;
+});

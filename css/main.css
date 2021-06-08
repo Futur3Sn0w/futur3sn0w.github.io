@@ -30,6 +30,8 @@ a {
         --herotitle-back: hsl(213, 19%, 13%);
         --nb-back: hsl(213, 19%, 11%);
         --anim-obj: hsla(211, 26%, 31%, 20%);
+        --actBtn-rest: rgb(255, 255, 255);
+        --actBtn-hov: rgb(216, 216, 216);
         --accent: #91C3FE;
         --accent-text: #c2defe;
         --border-clr: hsla(0, 0%, 80%, 0.7);
@@ -57,6 +59,8 @@ a {
         --herotitle-back: hsl(208, 45%, 88%);
         --nb-back: hsl(208, 45%, 94%);
         --anim-obj: hsla(211, 59%, 80%, 30%);
+        --actBtn-rest: rgb(255, 255, 255);
+        --actBtn-hov: rgb(216, 216, 216);
         --accent: #255ED3;
         --accent-text: #16397e;
         --border-clr: hsla(0, 0%, 63%, 0.9);

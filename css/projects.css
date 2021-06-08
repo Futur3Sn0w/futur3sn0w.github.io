@@ -2,15 +2,15 @@
     position: absolute;
     top: 150%;
     left: 50%;
-    margin: -250px -400px;
+    margin: -220px -400px;
     z-index: 1000;
     width: 800px;
-    height: 500px;
+    height: 440px;
     background-color: var(--auto-bw);
     opacity: 0;
     border-radius: 20px;
     transition: top .2s, box-shadow .2s, opacity .2s;
-    padding: 25px 25px 15px 25px;
+    padding: 35px 35px 15px 35px;
     display: flex;
     flex-direction: column;
 }
@@ -42,13 +42,24 @@
 }
 
 .psViewer .pbDesc{
-    font-size: 16px;
+    font-size: 15px;
     display: flex;
+    color: black;
+    width: 100%;
+    height: 270px;
+    overflow: scroll;
 }
 
 .psViewer .pbActions{
+    box-sizing: content-box;
     gap: 5px;
-    margin-top: auto;
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Project strip & box styling (Main page) */
@@ -129,7 +140,7 @@
     z-index: 1;
     color: white;
     transform: translateY(calc(100% - 60px));
-    transition: transform .3s;
+    transition: transform .3s, background .2s;
 }
 
 .pbHeader {
@@ -161,32 +172,29 @@
 .pbActions {
     width: 100%;
     height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px 0 0 0;
+    display: none;
     transition-duration: 100ms;
     z-index: 1;
 }
 
 .pbAct {
-    width: max-content;
+    width: 130px;
     height: 100%;
     padding: 0 12px;
     border-radius: 100px;
-    background: var(--anim-obj);
+    background: var(--actBtn-rest);
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 1px;
     transition-duration: .2s;
     text-decoration: none;
     font: 13px var(--ff);
     color: var(--font);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
 }
 
 .pbAct:hover {
-    background: var(--anim-back);
+    background: var(--actBtn-hov);
 }
 
 @media screen and (max-width: 600px) {
