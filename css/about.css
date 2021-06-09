@@ -1,15 +1,19 @@
+.nbAbout::after {
+    background-color: var(--accent-text);
+}
+
+.nbAbout:hover{
+    color: var(--auto-bw);
+}
+
 .aboutBox {
     width: 100%;
     text-align: center;
-    opacity: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: var(--back);
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
-    pointer-events: none;
+    padding-top: 80px;
 }
 
 .aboutCard {

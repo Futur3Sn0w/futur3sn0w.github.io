@@ -1,3 +1,13 @@
+.nbProjects::after {
+    background-color: var(--accent-text);
+}
+
+.nbProjects:hover{
+    color: var(--auto-bw);
+}
+
+/* Project view lightbox */
+
 .psViewer{
     position: absolute;
     top: 150%;
@@ -13,6 +23,7 @@
     padding: 35px 35px 15px 35px;
     display: flex;
     flex-direction: column;
+    color: var(--font);
 }
 
 .psViewerBack{
@@ -24,7 +35,6 @@
     height: 100vh;
     background-color: transparent;
     transition: background-color .2s;
-    backdrop-filter: blur(10px);
 }
 
 .psViewer .pbHeader{
@@ -44,7 +54,6 @@
 .psViewer .pbDesc{
     font-size: 15px;
     display: flex;
-    color: black;
     width: 100%;
     height: 270px;
     overflow: scroll;
@@ -62,6 +71,11 @@
     align-items: center;
 }
 
+.psViewer .pbActions .pbAct{
+    background-color: var(--accent);
+    color: var(--auto-bw);
+}
+
 /* Project strip & box styling (Main page) */
 
 .psWrapper {
@@ -73,17 +87,13 @@
     justify-content: center;
     align-items: center;
     overflow: scroll;
-    opacity: 0;
     background: var(--back);
-    pointer-events: none;
-    padding: 15px 10px 0 55px;
+    padding: 65px 10px 0 10px;
 }
 
 .projectBox {
     box-sizing: border-box;
     background: var(--card);
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
     height: 300px;
     width: 340px;
     padding: 15px 5px 70px 15px;
@@ -112,11 +122,6 @@
     opacity: 1;
     z-index: 0;
     transition: .3s;
-}
-
-.projectBox:hover::before {
-    /* filter: blur(10px);
-    -webkit-filter: blur(10px); */
 }
 
 .projectBox:hover .pbContentWrapper{
