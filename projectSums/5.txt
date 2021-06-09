@@ -1,0 +1,9 @@
+Thanks for checking out MonetSetups! MonetSetups are created using the (pre-Material You) Codename Monet feature from Android 12, which takes your wallpaper, and extracts an accent color that applies systemwide. This includes apps, icons, widgets, and more.<br>
+Every element of these setups are custom made to fit the color(s) of the wallpaper. This makes the setup feel alive and personal, rather than just being a static black or white color.<br><br>
+The 2nd addition to the MonetSetups family is a new spearmint green color, which is (of course) based on this beautiful, wavy gradient wallpaper. <br>
+You may notice that the images of the setup don’t include the media player widget by default anymore. This is simply due to a change in the Kustom Widget I made, which now hides the media player when music isn’t playing. <br>
+Overall, things haven’t changed much since the last setup, just minor additions and tweaks, which I’ll discuss here.<br>
+The first change is the new separator between the icons and the search widget. The pill is now a bit taller, and a bit skinner, fitting in better with the setup.<br>
+Similarly, the search widget itself gets a few additions, now with small separators between the icons on the right, and after the Google logo on the left. There’s also a new Google Lens button on the right.<br>
+The other main new addition to the setup is the notification panel, which uses the Power Shade app as a replacement to the OneUI notification panel on my Galaxy S10+. The idea is that you get a more stock panel, but with a themed look that matches the wallpaper, similar to the icons and widgets.<br><br>
+You can check out the dark mode of this setup, as well as comment on it via the Twitter link below!

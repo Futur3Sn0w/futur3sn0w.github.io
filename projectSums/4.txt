@@ -1,0 +1,6 @@
+This week, I recreated a setup by the talented developer ‘Alo’ titled DUO. <br><br>
+The two colors shown do the bulk of the work for this setup, but I added a bit of flair by extending the colors to more parts of the system.<br>
+Without getting into too much detail, you’ll notice that the home & lock screens both have the same general layout, with a dualtone background, and a matching, swapped-color widget.<br>
+The icons are from the Bubblegum icon pack, of which you can learn more about at the reddit link below!<br>
+You’ll see that I also matched the control center, keyboard, volume bar, notifications, and more with the colors from the theme. This creates a more uniform experience across the OS, and makes theming for light & dark mode a breeze, since the two colors compliment each other really well, even in their respective light/dark modes.<br><br>
+If you wanna learn more about exactly which tweaks I used, repos, widgets, themes, and more, be sure to check out the reddit link below, which has all the information you (should) need to recreate this setup on your jailbroken device!<br>

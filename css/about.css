@@ -2,10 +2,6 @@
     background-color: var(--accent-text);
 }
 
-.nbAbout:hover{
-    color: var(--auto-bw);
-}
-
 .aboutBox {
     width: 100%;
     text-align: center;
@@ -92,7 +88,7 @@
 }
 
 .apMoreInfo:hover {
-    height: 330px;
+    height: fit-content;
 }
 
 .apClosingOut:hover {
@@ -160,4 +156,10 @@
         width: 0px;
         background: transparent;
     }
+}
+
+@media screen and (max-width: 1250px) {
+    .expandIcon{
+        display: none;
+    }  
 }

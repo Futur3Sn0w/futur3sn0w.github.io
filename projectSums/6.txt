@@ -1,0 +1,7 @@
+I very rarely do showcases or reviews on Jailbroken tweaks, as it’s not hugely beneficial for anyone involved. However, when it comes to this new BigSurCenter tweak, I wanted to write out my thoughts and admiration of the tweak that I helped inspire!<br>
+As you may already know, I am a graphic designer first. I’ve been creating concepts for years, and have been designing in general for even longer.<br>
+A few months after the release of macOS 11 Big Sur, I created an iOS concept which would replace the old Control Center UI with that of Big Sur’s. It wasn’t a 1:1 recreation, as I wanted it to fit a bit better on touchscreen devices.<br>
+The idea was that, since the CC on Big Sur looked so good on desktop, I figured that only a few modifications would be needed to make it fit on iOS. And low and behold, after just a few hours, I managed to create what I believed to be the iOS control center of our dreams.<br>
+After a few weeks (and a ton of interactions on Twitter, reddit, and other websites who reviewed the concept), I decided to update it with even more touch optimizations, and a new slider UI. <br>
+Not long after posting the updated version of the concept, I got a message from my friend Nicho1asDev on Twitter. He wanted to bring the concept to reality via a Jailbreak tweak, which would eventually become BigSurCenter.<br>
+Nicholas did an absolutely incredible job with the tweak. It looks near identical to my concept, it’s smooth, clean, and works insanely well. It’s a must have for anyone who wants to overhaul their iPhone or iPad’s jailbroken UI.

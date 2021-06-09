@@ -2,25 +2,24 @@
     background-color: var(--accent-text);
 }
 
-.nbProjects:hover{
-    color: var(--auto-bw);
+.navBar{
+    backdrop-filter: blur(8px);
 }
 
 /* Project view lightbox */
 
 .psViewer{
     position: absolute;
-    top: 150%;
+    bottom: 0;
     left: 50%;
-    margin: -220px -400px;
+    margin: 0 -350px;
     z-index: 1000;
-    width: 800px;
-    height: 440px;
+    width: 700px;
     background-color: var(--auto-bw);
     opacity: 0;
-    border-radius: 20px;
-    transition: top .2s, box-shadow .2s, opacity .2s;
-    padding: 35px 35px 15px 35px;
+    border-radius: 20px 20px 0 0;
+    transition: top .4s, box-shadow .3s, opacity .3s;
+    padding: 35px 35px 45px 35px;
     display: flex;
     flex-direction: column;
     color: var(--font);
@@ -54,19 +53,22 @@
 .psViewer .pbDesc{
     font-size: 15px;
     display: flex;
+    flex-direction: row;
     width: 100%;
-    height: 270px;
+    height: 100%;
     overflow: scroll;
+    color: var(--font);
 }
 
 .psViewer .pbActions{
     box-sizing: content-box;
     gap: 5px;
     position: absolute;
-    bottom: -15px;
+    bottom: 5px;
     left: 0;
     width: 100%;
     display: flex;
+    height: fit-content;
     justify-content: center;
     align-items: center;
 }
@@ -74,13 +76,14 @@
 .psViewer .pbActions .pbAct{
     background-color: var(--accent);
     color: var(--auto-bw);
+    height: 45px;
 }
 
 /* Project strip & box styling (Main page) */
 
 .psWrapper {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
@@ -88,7 +91,7 @@
     align-items: center;
     overflow: scroll;
     background: var(--back);
-    padding: 65px 10px 0 10px;
+    padding: 65px 10px 25px 10px;
 }
 
 .projectBox {
@@ -140,8 +143,6 @@
     flex-direction: column;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.20);
     background: #00000040;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
     z-index: 1;
     color: white;
     transform: translateY(calc(100% - 60px));
@@ -202,9 +203,14 @@
     background: var(--actBtn-hov);
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 747px) {
+    .psViewer{
+        width: 100%;
+        left: 0;
+        margin: 0 0;
+    }
     .psWrapper {
-        width: 95%;
+        width: 100%;
     }
     .psContent {
         margin: 10px;

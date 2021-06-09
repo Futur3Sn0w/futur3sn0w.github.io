@@ -51,12 +51,36 @@ function projectsBtn() {
 
 fetch('projectSums/1.txt')
     .then(response => response.text())
-    .then(eulaData => {
-    document.getElementById("pbDesc1").innerHTML = eulaData;
+    .then(ps1Data => {
+    document.getElementById("pbDesc1").innerHTML = ps1Data;
 });
 
 fetch('projectSums/2.txt')
     .then(response => response.text())
-    .then(eulaData => {
-    document.getElementById("pbDesc2").innerHTML = eulaData;
+    .then(ps2Data => {
+    document.getElementById("pbDesc2").innerHTML = ps2Data;
+});
+
+fetch('projectSums/3.txt')
+    .then(response => response.text())
+    .then(ps3Data => {
+    document.getElementById("pbDesc3").innerHTML = ps3Data;
+});
+
+fetch('projectSums/4.txt')
+    .then(response => response.text())
+    .then(ps4Data => {
+    document.getElementById("pbDesc4").innerHTML = ps4Data;
+});
+
+fetch('projectSums/5.txt')
+    .then(response => response.text())
+    .then(ps5Data => {
+    document.getElementById("pbDesc5").innerHTML = ps5Data;
+});
+
+fetch('projectSums/6.txt')
+    .then(response => response.text())
+    .then(ps6Data => {
+    document.getElementById("pbDesc6").innerHTML = ps6Data;
 });

@@ -2,10 +2,6 @@
     background-color: var(--accent-text);
 }
 
-.nbHome:hover{
-    color: var(--auto-bw);
-}
-
 .greetingLinks {
     width: 100%;
     display: flex;
