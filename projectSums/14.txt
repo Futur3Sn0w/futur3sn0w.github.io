@@ -1,0 +1,5 @@
+If you saw Samsung's most recent event, you may've noticed some new wallpapers that were used on their Galaxy Book series.<br>
+These wallpapers (unfortunately) only come in dark variants. However, today, I created some light mode versions of them using a new technique I've been practicing in Photoshop.<br>
+The idea is similar to iOS 12's 'Smart Invert' feature, where, you invert the image, take the color of the inverted image, and reverse the inversion. Then, you recolor the original image to a matching version of the inverted image, and when you invert it again, it will be the same color, but in a matching dark/light variant (depending on the original image).<br>
+This technique is far from perfect, and wont work for all scenarios and images. However, since these images only have one or two main colors, and the background is so dark, it works really well, and looks like stock!<br>
+You can check out the results below, as well as download the wallpaper! It comes in still dark & light images, as well as a dynamic HEIC image for macOS!

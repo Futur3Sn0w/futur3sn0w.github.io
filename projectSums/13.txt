@@ -1,0 +1,6 @@
+This week, I created my very first XenHTML widget for jailbroken iOS devices.<br>
+The widget is called SimpleText. It's a simple, yet customizable widget that allows you to create a custom label to place anywhere on your home or lock screen.<br>
+You can customize a handful of properties from the settings page for the widget, including the widget's text, color, weight, and size. Additionally, if you check the 'auto dark mode' toggle, the text will switch to black and white, and use the respective color in light or dark modes on your device.<br>
+From there, you can, of course, place the label anywhere on your home or lock screen, and create a custom label!<br>
+If you want to go back and edit or remove the label later, you can do so really easily by revisiting the XenHTML prefs from the Settings app.<br><br>
+That's about it! You can download the widget for free from the Twickd repo, and view more information at the links below!

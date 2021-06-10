@@ -84,3 +84,75 @@ fetch('projectSums/6.txt')
     .then(ps6Data => {
     document.getElementById("pbDesc6").innerHTML = ps6Data;
 });
+
+fetch('projectSums/7.txt')
+    .then(response => response.text())
+    .then(ps7Data => {
+    document.getElementById("pbDesc7").innerHTML = ps7Data;
+});
+
+fetch('projectSums/8.txt')
+    .then(response => response.text())
+    .then(ps8Data => {
+    document.getElementById("pbDesc8").innerHTML = ps8Data;
+});
+
+fetch('projectSums/9.txt')
+    .then(response => response.text())
+    .then(ps9Data => {
+    document.getElementById("pbDesc9").innerHTML = ps9Data;
+});
+
+fetch('projectSums/10.txt')
+    .then(response => response.text())
+    .then(ps10Data => {
+    document.getElementById("pbDesc10").innerHTML = ps10Data;
+});
+
+fetch('projectSums/11.txt')
+    .then(response => response.text())
+    .then(ps11Data => {
+    document.getElementById("pbDesc11").innerHTML = ps11Data;
+});
+
+fetch('projectSums/12.txt')
+    .then(response => response.text())
+    .then(ps12Data => {
+    document.getElementById("pbDesc12").innerHTML = ps12Data;
+});
+
+fetch('projectSums/13.txt')
+    .then(response => response.text())
+    .then(ps13Data => {
+    document.getElementById("pbDesc13").innerHTML = ps13Data;
+});
+
+fetch('projectSums/14.txt')
+    .then(response => response.text())
+    .then(ps14Data => {
+    document.getElementById("pbDesc14").innerHTML = ps14Data;
+});
+
+fetch('projectSums/15.txt')
+    .then(response => response.text())
+    .then(ps15Data => {
+    document.getElementById("pbDesc15").innerHTML = ps15Data;
+});
+
+fetch('projectSums/16.txt')
+    .then(response => response.text())
+    .then(ps16Data => {
+    document.getElementById("pbDesc16").innerHTML = ps16Data;
+});
+
+fetch('projectSums/17.txt')
+    .then(response => response.text())
+    .then(ps17Data => {
+    document.getElementById("pbDesc17").innerHTML = ps17Data;
+});
+
+fetch('projectSums/18.txt')
+    .then(response => response.text())
+    .then(ps18Data => {
+    document.getElementById("pbDesc18").innerHTML = ps18Data;
+});

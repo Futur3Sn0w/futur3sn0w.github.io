@@ -9,16 +9,19 @@
 /* Project view lightbox */
 
 .psViewer{
-    position: absolute;
+    height: fit-content;
+    position: fixed;
     bottom: 0;
     left: 50%;
-    margin: 0 -350px;
     z-index: 1000;
     width: 700px;
+    max-height: 700px;
+    margin-top: auto;
+    margin-left: -350px;
     background-color: var(--auto-bw);
     opacity: 0;
     border-radius: 20px 20px 0 0;
-    transition: top .4s, box-shadow .3s, opacity .3s;
+    transition: bottom .4s, box-shadow .3s, opacity .6s;
     padding: 35px 35px 45px 35px;
     display: flex;
     flex-direction: column;
@@ -55,7 +58,9 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 100%;
+    height: fit-content;
+    max-height: 370px;
+    margin-bottom: 30px;
     overflow: scroll;
     color: var(--font);
 }
@@ -74,9 +79,27 @@
 }
 
 .psViewer .pbActions .pbAct{
-    background-color: var(--accent);
+    background-color: transparent;
     color: var(--auto-bw);
-    height: 45px;
+    height: 40px;
+    border: 3px solid var(--accent);
+
+    width: 130px;
+    padding: 0 12px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: border .2s, background .1s, box-shadow .1s;
+    text-decoration: none;
+    font: 13px var(--ff);
+    color: var(--font);
+}
+
+.psViewer .pbActions .pbAct:hover{
+    background-color: var(--accent);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
+    color: var(--auto-bw);
 }
 
 /* Project strip & box styling (Main page) */
@@ -176,31 +199,7 @@
 }
 
 .pbActions {
-    width: 100%;
-    height: 30px;
     display: none;
-    transition-duration: 100ms;
-    z-index: 1;
-}
-
-.pbAct {
-    width: 130px;
-    height: 100%;
-    padding: 0 12px;
-    border-radius: 100px;
-    background: var(--actBtn-rest);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition-duration: .2s;
-    text-decoration: none;
-    font: 13px var(--ff);
-    color: var(--font);
-    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
-}
-
-.pbAct:hover {
-    background: var(--actBtn-hov);
 }
 
 @media screen and (max-width: 747px) {

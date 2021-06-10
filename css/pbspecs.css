@@ -116,3 +116,10 @@
     background-image: linear-gradient(#7ba9c9CC, #0d395fCC), url("../imgs/previews/17.png");
     height: 100%;
 }
+
+.pb18::before {
+    background-size: cover;
+    background-position: center;
+    background-image: linear-gradient(#7ba9c9CC, #0d395fCC), url("../imgs/previews/18.png");
+    height: 100%;
+}
