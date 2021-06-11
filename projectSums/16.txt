@@ -1,0 +1,7 @@
+If you're a long-time Firefox user, you may know that, historically, it has been quite customizable in nature. From the UI, to internal pages, and everything in between, you can do all sorts of things, like installing themes, extensions, and even using CSS to customize the entire interface.<br>
+Today, I've created my very first in a line of userChrome.css themes for Firefox that turns the UI of Firefox into that of Google Chrome's. This is PaperProton!<br>
+The full installation guide is available below at the GitHub link, as well as even more information at both GitHub, and the Reddit announcement.<br><br>
+Quick note: You may've heard of the MaterialFox theme for Firefox, which aims to do the same thing that PaperProton does.<br>
+The biggest reason for PaperProton is to provide a, sort of, stop-gap for those who want the Chrome UI, but who also have the new Proton UI refresh for Firefox.<br>
+Since MaterialFox is NOT (yet) compatible with Proton, PaperProton can give you a very close version of the UI, without having to wait for MaterialFox.<br><br>
+If you have any questions, issues, or otherwise, feel free to leave them at the links below. I'll make the changes and fixes as I am able!

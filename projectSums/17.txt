@@ -1,0 +1,6 @@
+Say hello to my latest Android setup: Android 12 LS!<br><br>
+The idea of this one was to recreate a functional version of the upcoming lock screen refresh for Android 12, which implements a bold new clock, redesigned media player, and more.<br>
+Of course, it implements the new Android 12 Monet coloring system which applies to the full setup, from the icons, to the media player, to the clock.<br>
+This version isn't downloadable, as the widget itself is hard-coded to work on my device, but if you're familiar with KLWP, or KWGT, you should be able to recreate it pretty easily.<br>
+It's a fun and bubbly setup, while also being informational.<br>
+If you have any questions, as always, let me know on Twitter or Reddit at the links below! You can also view the pure screenshots of the setup in higher detail, which may help if you're creating the setup yourself.
