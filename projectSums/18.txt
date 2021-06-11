@@ -1,0 +1,6 @@
+It's been a while since I've made a concept, but with the new Android 12 update(s), and the Material You UI refresh for Android, I thought it was about time to make something with the new design!<br>
+This is my Android 12 volume slider concept! The first two are the ones that are (or were) being used in Android 12 already, and the last one (on the far right) is my concept.<br>
+Technically, this could be a replacement for all systemwide sliders, but the main idea here is to showcase what I imagine the slider could look like with a new look.<br>
+Aesthetically, there isn't much to say. It uses the colors extracted from your wallpaper to theme it, and has a sleek and modern feel to it. Functionally, there are a couple of noteworthy proposed changes.<br>
+Instead of a separate button for switching ringer modes, you would actually just tap the bar itself to switch between them. It would cycle between the normal Ring, Vibrate, and Mute ringer modes. Then, if you're playing music, it would automatically switch to media volume, and adjust accordingly.<br><br>
+You can check out the full image at the Twitter link below! Be sure to let me know your thoughts over there!

@@ -26,6 +26,7 @@ button {
 @media (prefers-color-scheme: dark) {
      :root {
         --auto-bw: hsl(0, 0%, 0%);
+        --projCard: rgb(54, 54, 54);
         --font: hsl(0, 0%, 100%);
         --back: hsla(0, 0%, 0%, 0.25);
         --nav-back: hsla(0, 0%, 0%, 0.8);
@@ -55,6 +56,7 @@ button {
 @media (prefers-color-scheme: light) {
      :root {
         --auto-bw: hsl(100, 100%, 100%);
+        --projCard: rgb(255, 255, 255);
         --font: hsl(0, 0%, 0%);
         --back: hsl(0, 0%, 100%, 0.25);
         --nav-back: hsl(0, 0%, 100%, 0.8);
@@ -197,9 +199,14 @@ button {
     overflow: hidden;
     color: var(--accent);
     background-color: var(--nav-back);
+    backdrop-filter: blur(8px);
 }
 
 .navBtnWrapper {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -311,14 +318,55 @@ span.ripple {
     }
 }
 
+@media screen and (max-width: 700px) {
+    .navBar{
+        top: unset;
+        bottom: 0;
+    }
+    
+    .navButton{
+        width: 60px;
+        font-size: 0;
+    }
+
+    .navButton:hover::after{
+        position: absolute;
+        bottom: 2px;
+        content: "";
+        width: 60px;
+        height: 5px;
+        border-radius: 50px;
+        z-index: -5;
+        transition: .2s;
+        background-color: transparent;
+    }
+
+    .navButton:hover{
+        color: var(--accent-text);
+    }
+
+    .navButton::before{
+        font: 23px FLNTFILL;
+    }
+
+    .nbHome::before{
+        content: "";
+    }
+
+    .nbProjects::before{
+        content: "";
+    }
+
+    .nbAbout::before{
+        content: "";
+    }
+}
+
 @media screen and (max-width: 869px) {
     .socialBar{
         display: none;
     }
     .nbpcUserName{
         display: none;
-    }
-    .navBtnWrapper{
-        margin: 0 auto;
     }
 }
