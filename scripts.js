@@ -14,6 +14,195 @@ function projectsBtn() {
     window.location.href = 'projects.html';
 }
 
+function pbFilter() {
+    var pbx1 = document.getElementById("projectBox1");
+    var pbx2 = document.getElementById("projectBox2");
+    var pbx3 = document.getElementById("projectBox3");
+    var pbx4 = document.getElementById("projectBox4");
+    var pbx5 = document.getElementById("projectBox5");
+    var pbx6 = document.getElementById("projectBox6");
+    var pbx7 = document.getElementById("projectBox7");
+    var pbx8 = document.getElementById("projectBox8");
+    var pbx9 = document.getElementById("projectBox9");
+    var pbx10 = document.getElementById("projectBox10");
+    var pbx11 = document.getElementById("projectBox11");
+    var pbx12 = document.getElementById("projectBox12");
+    var pbx13 = document.getElementById("projectBox13");
+    var pbx14 = document.getElementById("projectBox14");
+    var pbx15 = document.getElementById("projectBox15");
+    var pbx16 = document.getElementById("projectBox16");
+    var pbx17 = document.getElementById("projectBox17");
+    var pbx18 = document.getElementById("projectBox18");
+    var clearBtn = document.getElementById("pfClear");
+
+       if (document.getElementById("projFilterBox").value == "1") {
+        clearBtn.style.display = "flex";
+        pbx1.classList.add("hidden");
+        pbx2.classList.add("hidden");
+        pbx3.classList.remove("hidden");
+        pbx4.classList.add("hidden");
+        pbx5.classList.remove("hidden");
+        pbx6.classList.add("hidden");
+        pbx7.classList.add("hidden");
+        pbx8.classList.add("hidden");
+        pbx9.classList.remove("hidden");
+        pbx10.classList.remove("hidden");
+        pbx11.classList.add("hidden");
+        pbx12.classList.add("hidden");
+        pbx13.classList.add("hidden");
+        pbx14.classList.add("hidden");
+        pbx15.classList.add("hidden");
+        pbx16.classList.add("hidden");
+        pbx17.classList.remove("hidden");
+        pbx18.classList.remove("hidden");
+       } else if (document.getElementById("projFilterBox").value == "2"){
+        clearBtn.style.display = "flex";
+        pbx1.classList.add("hidden");
+        pbx2.classList.add("hidden");
+        pbx3.classList.add("hidden");
+        pbx4.classList.remove("hidden");
+        pbx5.classList.add("hidden");
+        pbx6.classList.remove("hidden");
+        pbx7.classList.add("hidden");
+        pbx8.classList.remove("hidden");
+        pbx9.classList.add("hidden");
+        pbx10.classList.add("hidden");
+        pbx11.classList.add("hidden");
+        pbx12.classList.add("hidden");
+        pbx13.classList.add("hidden");
+        pbx14.classList.add("hidden");
+        pbx15.classList.add("hidden");
+        pbx16.classList.add("hidden");
+        pbx17.classList.add("hidden");
+        pbx18.classList.add("hidden");
+       } else if (document.getElementById("projFilterBox").value == "3"){
+        clearBtn.style.display = "flex";
+        pbx1.classList.add("hidden");
+        pbx2.classList.add("hidden");
+        pbx3.classList.add("hidden");
+        pbx4.classList.add("hidden");
+        pbx5.classList.add("hidden");
+        pbx6.classList.add("hidden");
+        pbx7.classList.add("hidden");
+        pbx8.classList.add("hidden");
+        pbx9.classList.add("hidden");
+        pbx10.classList.add("hidden");
+        pbx11.classList.add("hidden");
+        pbx12.classList.add("hidden");
+        pbx13.classList.add("hidden");
+        pbx14.classList.add("hidden");
+        pbx15.classList.add("hidden");
+        pbx16.classList.add("hidden");
+        pbx17.classList.add("hidden");
+        pbx18.classList.remove("hidden");
+       } else if (document.getElementById("projFilterBox").value == "4"){
+        clearBtn.style.display = "flex";
+        pbx1.classList.add("hidden");
+        pbx2.classList.add("hidden");
+        pbx3.classList.add("hidden");
+        pbx4.classList.add("hidden");
+        pbx5.classList.add("hidden");
+        pbx6.classList.add("hidden");
+        pbx7.classList.add("hidden");
+        pbx8.classList.add("hidden");
+        pbx9.classList.add("hidden");
+        pbx10.classList.add("hidden");
+        pbx11.classList.remove("hidden");
+        pbx12.classList.add("hidden");
+        pbx13.classList.add("hidden");
+        pbx14.classList.add("hidden");
+        pbx15.classList.remove("hidden");
+        pbx16.classList.remove("hidden");
+        pbx17.classList.add("hidden");
+        pbx18.classList.add("hidden");
+       } else if (document.getElementById("projFilterBox").value == "5"){
+        clearBtn.style.display = "flex";
+        pbx1.classList.add("hidden");
+        pbx2.classList.remove("hidden");
+        pbx3.classList.add("hidden");
+        pbx4.classList.add("hidden");
+        pbx5.classList.add("hidden");
+        pbx6.classList.add("hidden");
+        pbx7.classList.add("hidden");
+        pbx8.classList.add("hidden");
+        pbx9.classList.add("hidden");
+        pbx10.classList.add("hidden");
+        pbx11.classList.add("hidden");
+        pbx12.classList.remove("hidden");
+        pbx13.classList.add("hidden");
+        pbx14.classList.add("hidden");
+        pbx15.classList.add("hidden");
+        pbx16.classList.add("hidden");
+        pbx17.classList.add("hidden");
+        pbx18.classList.add("hidden");
+       } else if (document.getElementById("projFilterBox").value == "6"){
+        clearBtn.style.display = "flex";
+        pbx1.classList.remove("hidden");
+        pbx2.classList.add("hidden");
+        pbx3.classList.add("hidden");
+        pbx4.classList.add("hidden");
+        pbx5.classList.add("hidden");
+        pbx6.classList.add("hidden");
+        pbx7.classList.remove("hidden");
+        pbx8.classList.add("hidden");
+        pbx9.classList.add("hidden");
+        pbx10.classList.add("hidden");
+        pbx11.classList.add("hidden");
+        pbx12.classList.add("hidden");
+        pbx13.classList.add("hidden");
+        pbx14.classList.add("hidden");
+        pbx15.classList.add("hidden");
+        pbx16.classList.add("hidden");
+        pbx17.classList.add("hidden");
+        pbx18.classList.add("hidden");
+       } else if (document.getElementById("projFilterBox").value == "7"){
+        clearBtn.style.display = "flex";
+        pbx1.classList.add("hidden");
+        pbx2.classList.add("hidden");
+        pbx3.classList.add("hidden");
+        pbx4.classList.add("hidden");
+        pbx5.classList.add("hidden");
+        pbx6.classList.add("hidden");
+        pbx7.classList.add("hidden");
+        pbx8.classList.add("hidden");
+        pbx9.classList.add("hidden");
+        pbx10.classList.add("hidden");
+        pbx11.classList.add("hidden");
+        pbx12.classList.add("hidden");
+        pbx13.classList.add("hidden");
+        pbx14.classList.remove("hidden");
+        pbx15.classList.add("hidden");
+        pbx16.classList.add("hidden");
+        pbx17.classList.add("hidden");
+        pbx18.classList.add("hidden");
+       } else {
+        clearBtn.style.display = "none";
+        pbx1.classList.remove("hidden");
+        pbx2.classList.remove("hidden");
+        pbx3.classList.remove("hidden");
+        pbx4.classList.remove("hidden");
+        pbx5.classList.remove("hidden");
+        pbx6.classList.remove("hidden");
+        pbx7.classList.remove("hidden");
+        pbx8.classList.remove("hidden");
+        pbx9.classList.remove("hidden");
+        pbx10.classList.remove("hidden");
+        pbx11.classList.remove("hidden");
+        pbx12.classList.remove("hidden");
+        pbx13.classList.remove("hidden");
+        pbx14.classList.remove("hidden");
+        pbx15.classList.remove("hidden");
+        pbx16.classList.remove("hidden");
+        pbx17.classList.remove("hidden");
+        pbx18.classList.remove("hidden");
+       }
+}
+
+function resetFilter() {
+    document.getElementById("projFilterBox").selectedIndex = 0;
+    pbFilter();
+}
+
 fetch('projectSums/1.txt')
     .then(response => response.text())
     .then(ps1Data => {

@@ -210,18 +210,18 @@
 
 /* Filter Bar */
 
-.projectFilter{
+.filterBar{
     position: absolute;
     z-index: 200;
     top: 50px;
     left: 0;
     width: 100vw;
-    height: 60px;
+    height: fit-content;
     background-color: var(--auto-bw);
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding: 0 60px;
+    padding: 5px 20px;
 }
 
 .pfSearchbar{
@@ -231,6 +231,39 @@
     font: 400 16px var(--ff);
     padding: 5px 10px;
     width: 330px;
+}
+
+#projFilterBox{
+    border: 1px solid rgb(179, 179, 179);
+    outline: none;
+    font: 400 16px var(--ff);
+    padding: 4px 10px;
+    border-radius: 50px;
+}
+
+.pfClear{
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    margin-left: 5px;
+    border: 1px solid rgb(146, 146, 146);
+    transition: background-color .1s, color .1s;
+    font: 15px FLNTREG;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--font);
+    cursor: pointer;
+    display: none;
+}
+
+.pfClear::after{
+    content: "";
+}
+
+.pfClear:hover{
+    background-color: var(--accent);
+    color: var(--auto-bw);
 }
 
 @media screen and (max-width: 747px) {

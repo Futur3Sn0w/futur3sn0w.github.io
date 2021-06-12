@@ -28,36 +28,26 @@
             <div class="psViewer" id="psViewer"></div>
             <div class="psViewerBack" id="psViewerBack" onclick="pbBackClick()"></div>
 
-            <div class="projectFilter">
-                <textarea onkeyup="searchBox()" id="pfSearchBox" placeholder="Search..." rows="1" class="pfSearchbar"></textarea>
+            <div class="filterBar">
+                <!-- <textarea onkeyup="searchBox()" id="pfSearchBox" placeholder="Search..." rows="1" class="pfSearchbar"></textarea> -->
+                <select id="projFilterBox" onchange="pbFilter()">
+                    <option value="0" disabled selected hidden>Select a filter...</option>
+                    <option value="1">Android</option>
+                    <option value="2">Apple</option>
+                    <option value="3">Concepts</option>
+                    <option value="4">Firefox</option>
+                    <option value="5">Microsoft</option>
+                    <option value="6">Misc</option>
+                    <option value="7">Wallpapers</option>
+                </select>
+                <div class="pfClear" id="pfClear" onclick="resetFilter()"></div>
             </div>
-
-            <script>
-                function searchBox() {
-                  // Declare variables
-                  var input, filter, ul, li, a, i;
-                  input = document.getElementById("pfSearchBox");
-                  filter = input.value.toUpperCase();
-                  ul = document.getElementsByClassName("pbContentWrapper");
-                  li = ul.getElementsByTagName("p");
-                
-                  // Loop through all list items, and hide those who don't match the search query
-                  for (i = 0; i < li.length; i++) {
-                    a = li[i].getElementsByTagName("p")[0];
-                    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                      li[i].style.display = "";
-                    } else {
-                      li[i].style.display = "none";
-                    }
-                  }
-                }
-                </script>
 
             <div class="homePageDiv psWrapper" id="psWrapper">
 
-                <div class="projectBox pb18" id="projectBox" onclick="pb18Open()">
+                <div class="projectBox pb18" id="projectBox18" data-android="1" onclick="pb18Open()">
                     <div class="pbContentWrapper" id="pbcw18">
-                        <p class="pbHeader" id="pbHeader18"><i class="fa fa-android"></i><p>Android 12 Volume Concept</p></p>
+                        <p class="pbHeader" id="pbHeader18"><i class="fa fa-android"></i>Android 12 Volume Concept</p>
                         <p class="pbDate" id="pbDate18">Date: 06/04/21</p>
                         <p class="pbDesc" id="pbDesc18"></p>
                         <div class="pbActions" id="pbActions18">
@@ -66,9 +56,9 @@
                     </div>
                 </div>
 
-                <div class="projectBox pb17" id="projectBox" onclick="pb17Open()">
+                <div class="projectBox pb17" id="projectBox17" data-android="1" onclick="pb17Open()">
                     <div class="pbContentWrapper" id="pbcw17">
-                        <p class="pbHeader" id="pbHeader17"><i class="fa fa-android"></i><p>Android Setup - Android 12 LS</p></p>
+                        <p class="pbHeader" id="pbHeader17"><i class="fa fa-android"></i>Android Setup - Android 12 LS</p>
                         <p class="pbDate" id="pbDate17">Date: 05/05/21</p>
                         <p class="pbDesc" id="pbDesc17"></p>
                         <div class="pbActions" id="pbActions17">
@@ -78,9 +68,9 @@
                     </div>
                 </div>
  
-                <div class="projectBox pb16" id="projectBox" onClick="pb16Open()">
+                <div class="projectBox pb16" id="projectBox16" data-android="0" onClick="pb16Open()">
                     <div class="pbContentWrapper" id="pbcw16">
-                        <p class="pbHeader" id="pbHeader16"><i class="fa fa-firefox"></i><p>Firefox - PaperProton</p></p>
+                        <p class="pbHeader" id="pbHeader16"><i class="fa fa-firefox"></i>Firefox - PaperProton</p>
                         <p class="pbDate" id="pbDate16">Date: 05/04/21</p>
                         <p class="pbDesc" id="pbDesc16"></p>
                         <div class="pbActions" id="pbActions16">
@@ -91,7 +81,7 @@
                     </div>
                 </div>
 
-                <div class="projectBox pb15" id="projectBox" onClick="pb15Open()">
+                <div class="projectBox pb15" id="projectBox15" data-android="0" onClick="pb15Open()">
                     <div class="pbContentWrapper" id="pbcw15">
                         <p class="pbHeader" id="pbHeader15"><i class="fa fa-firefox"></i>Firefox - GCNTP4FF</p>
                         <p class="pbDate" id="pbDate15">Date: 05/01/21</p>
@@ -104,7 +94,7 @@
                     </div>
                 </div>
 
-                <div class="projectBox pb14" id="projectBox" onClick="pb14Open()">
+                <div class="projectBox pb14" id="projectBox14" data-android="0" onClick="pb14Open()">
                     <div class="pbContentWrapper" id="pbcw14">
                         <p class="pbHeader" id="pbHeader14"><i class="fa fa-desktop"></i>Galaxy Book Smart Wallpapers</p>
                         <p class="pbDate" id="pbDate14">Date: 04/29/21</p>
@@ -116,7 +106,7 @@
                     </div>
                 </div>
 
-                <div class="projectBox pb13" id="projectBox" onClick="pb13Open()">
+                <div class="projectBox pb13" id="projectBox13" data-android="0" onClick="pb13Open()">
                     <div class="pbContentWrapper" id="pbcw13">
                         <p class="pbHeader" id="pbHeader13"><i class="fas fa-cog fa-spin"></i>Jailbreak Widget: SimpleText</p>
                         <p class="pbDate" id="pbDate13">Date: 04/28/21</p>
@@ -129,7 +119,7 @@
                     </div>
                 </div>
 
-                <div class="projectBox pb12" id="projectBox" onClick="pb12Open()">
+                <div class="projectBox pb12" id="projectBox12" data-android="0" onClick="pb12Open()">
                     <div class="pbContentWrapper" id="pbcw12">
                         <p class="pbHeader" id="pbHeader12"><i class="fa fa-compact-disc"></i>GrooveMusicClone</p>
                         <p class="pbDate" id="pbDate12">Date: 04/21/21</p>
@@ -141,7 +131,7 @@
                     </div>
                 </div>
 
-                <div class="projectBox pb11" id="projectBox" onClick="pb11Open()">
+                <div class="projectBox pb11" id="projectBox11" data-android="0" onClick="pb11Open()">
                     <div class="pbContentWrapper" id="pbcw11">
                         <p class="pbHeader" id="pbHeader11"><i class="fa fa-firefox"></i>Firefox ProtonPlus: 2.0 Release</p>
                         <p class="pbDate" id="pbDate11">Date: 04/19/21</p>
@@ -154,7 +144,7 @@
                     </div>
                 </div>
 
-                <div class="projectBox pb10" id="projectBox" onClick="pb10Open()">
+                <div class="projectBox pb10" id="projectBox10" data-android="1" onClick="pb10Open()">
                     <div class="pbContentWrapper" id="pbcw10">
                         <p class="pbHeader" id="pbHeader10"><i class="fa fa-android"></i>Android Setup: SpinningColors</p>
                         <p class="pbDate" id="pbDate10">Date: 04/14/21</p>
@@ -169,7 +159,7 @@
                     </div>
                 </div>
 
-                <div class="projectBox pb9" id="projectBox" onClick="pb9Open()">
+                <div class="projectBox pb9" id="projectBox9" data-android="1" onClick="pb9Open()">
                     <div class="pbContentWrapper" id="pbcw9">
                         <p class="pbHeader" id="pbHeader9"><i class="fa fa-android"></i>Android Setup: KustomKolors</p>
                         <p class="pbDate" id="pbDate9">Date: 04/10/21</p>
@@ -181,7 +171,7 @@
                     </div>
                 </div>
 
-                <div class="projectBox pb8" id="projectBox" onClick="pb8Open()">
+                <div class="projectBox pb8" id="projectBox8" data-android="0" onClick="pb8Open()">
                     <div class="pbContentWrapper" id="pbcw8">
                         <p class="pbHeader" id="pbHeader8"><i class="fa fa-medium"></i>Siri Gets New Voices: Article</p>
                         <p class="pbDate" id="pbDate8">Date: 04/05/21</p>
@@ -194,7 +184,7 @@
                     </div>
                 </div>
 
-                <div class="projectBox pb7" id="projectBox" onClick="pb7Open()">
+                <div class="projectBox pb7" id="projectBox7" data-android="0" onClick="pb7Open()">
                     <div class="pbContentWrapper" id="pbcw7">
                         <p class="pbHeader" id="pbHeader7"><i class="fa fa-bullseye"></i>Redesigned SnazzyLabs Logo</p>
                         <p class="pbDate" id="pbDate7">Date: 03/29/21</p>
@@ -208,7 +198,7 @@
                     </div>
                 </div>
 
-                <div class="projectBox pb6" id="projectBox" onClick="pb6Open()">
+                <div class="projectBox pb6" id="projectBox6" data-android="0" onClick="pb6Open()">
                     <div class="pbContentWrapper" id="pbcw6">
                         <p class="pbHeader" id="pbHeader6"><i class="fas fa-cog fa-spin"></i>Jailbreak Tweak: BigSurCenter</p>
                         <p class="pbDate" id="pbDate6">Date: 03/27/21</p>
@@ -222,7 +212,7 @@
                     </div>
                 </div>
 
-                <div class="projectBox pb5" id="projectBox" onClick="pb5Open()">
+                <div class="projectBox pb5" id="projectBox5" data-android="1" onClick="pb5Open()">
                     <div class="pbContentWrapper" id="pbcw5">
                         <p class="pbHeader" id="pbHeader5"><i class="fa fa-android"></i>MonetSetups 2: Minty Green</p>
                         <p class="pbDate" id="pbDate5">Date: 03/24/21</p>
@@ -234,7 +224,7 @@
                     </div>
                 </div>
 
-                <div class="projectBox pb4" id="projectBox" onClick="pb4Open()">
+                <div class="projectBox pb4" id="projectBox4" data-android="0" onClick="pb4Open()">
                     <div class="pbContentWrapper" id="pbcw4">
                         <p class="pbHeader" id="pbHeader4"><i class="fas fa-mobile"></i>iOSetups v1: DUO²</p>
                         <p class="pbDate" id="pbDate4">Date: 03/09/21</p>
@@ -248,7 +238,7 @@
                     </div>
                 </div>
 
-                <div class="projectBox pb3" id="projectBox" onClick="pb3Open()">
+                <div class="projectBox pb3" id="projectBox3" data-android="1" onClick="pb3Open()">
                     <div class="pbContentWrapper" id="pbcw3">
                         <p class="pbHeader" id="pbHeader3"><i class="fa fa-android"></i>MonetSetups 1: Pale Blue</p>
                         <p class="pbDate" id="pbDate3">Date: 03/04/21</p>
@@ -260,7 +250,7 @@
                     </div>
                 </div>
 
-                <div class="projectBox pb2" id="projectBox" onClick="pb2Open()">
+                <div class="projectBox pb2" id="projectBox2" data-android="0" onClick="pb2Open()">
                     <div class="pbContentWrapper" id="pbcw2">
                         <p class="pbHeader" id="pbHeader2"><i class="fa fa-windows"></i>Windows 10X in HTML</p>
                         <p class="pbDate" id="pbDate2">Date: 11/20/20</p>
@@ -272,7 +262,7 @@
                     </div>
                 </div>
 
-                <div class="projectBox pb1" id="projectBox" onClick="pb1Open()">
+                <div class="projectBox pb1" id="projectBox1" data-android="0" onClick="pb1Open()">
                     <div class="pbContentWrapper" id="pbcw1">
                         <p class="pbHeader" id="pbHeader1"><i class="fas fa-folder-open"></i>Live Portfolio</p>
                         <p class="pbDate" id="pbDate1">Date: 04/25/20</p>

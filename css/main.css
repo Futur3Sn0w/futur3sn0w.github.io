@@ -103,6 +103,10 @@ button {
     background: #555;
 }
 
+.hidden{
+    display: none !important;
+}
+
 .homePages {
     display: flex;
     flex-direction: column;
