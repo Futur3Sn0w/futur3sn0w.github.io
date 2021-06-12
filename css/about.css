@@ -1,3 +1,7 @@
+.nbAbout {
+    font-weight: bolder;
+}
+
 .nbAbout::after {
     background-color: var(--accent-text);
 }

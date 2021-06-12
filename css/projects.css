@@ -1,3 +1,7 @@
+.nbProjects {
+    font-weight: bolder;
+}
+
 .nbProjects::after {
     background-color: var(--accent-text);
 }
@@ -102,7 +106,7 @@
 
 .psWrapper {
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 100px);
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
@@ -110,7 +114,9 @@
     align-items: center;
     overflow: scroll;
     background: var(--back);
-    padding: 65px 10px 25px 10px;
+    padding: 20px 10px 25px 10px;
+    top: unset;
+    bottom: 0;
 }
 
 .projectBox {
@@ -196,6 +202,35 @@
 
 .pbActions {
     display: none;
+}
+
+.pbSpacer{
+    display: none;
+}
+
+/* Filter Bar */
+
+.projectFilter{
+    position: absolute;
+    z-index: 200;
+    top: 50px;
+    left: 0;
+    width: 100vw;
+    height: 60px;
+    background-color: var(--auto-bw);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 60px;
+}
+
+.pfSearchbar{
+    border: 1px solid rgb(179, 179, 179);
+    border-radius: 4px;
+    outline: none;
+    font: 400 16px var(--ff);
+    padding: 5px 10px;
+    width: 330px;
 }
 
 @media screen and (max-width: 747px) {

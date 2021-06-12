@@ -113,7 +113,6 @@ button {
     top: 0;
     right: 0;
     z-index: var(--z-cont);
-    transition-duration: .2s;
     box-shadow: 0px 15px 30px -10px rgba(0, 0, 0, 0.1);
     color: var(--font);
     height: var(--content-height);
@@ -198,8 +197,7 @@ button {
     z-index: var(--z-nav);
     overflow: hidden;
     color: var(--accent);
-    background-color: var(--nav-back);
-    backdrop-filter: blur(8px);
+    background-color: var(--auto-bw);
 }
 
 .navBtnWrapper {
@@ -289,6 +287,10 @@ span.ripple {
     font: bold 25px var(--ff);
     height: fit-content;
     margin-right: auto;
+}
+
+.nbpcUserName::after{
+    content: attr(data-pageName);
 }
 
 @font-face {

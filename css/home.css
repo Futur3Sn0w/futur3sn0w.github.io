@@ -1,3 +1,7 @@
+.nbHome {
+    font-weight: bolder;
+}
+
 .nbHome::after {
     background-color: var(--accent-text);
 }

@@ -2,13 +2,13 @@
 <html lang="en">
 
 <head>
-    <title>Futur3Sn0w Studio | Home</title>
+    <title>Futur3Sn0w Studio | Live Feed</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/liveFeed.css">
     <link rel="stylesheet" href="css/background.css">
-    <link rel="stylesheet" href="css/home.css">
     <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
@@ -38,30 +38,18 @@
 
         <div class="homePages">
 
-            <div class="homePageDiv greetingLinks" id="greetingLinks">
-                <button class="glWrapper" id="glWrapper">
-                    <p class="glWelcome">Welcome!</p>
-                    <img id="fssLogo" src="imgs/fss.svg">
-                    <p class="glDescription">This is the place to view all of my past, present, and future
-                        projects!<br>Head to the sidebar to view other pages, and to visit my socials!<br>Thanks for
-                        stopping by!</nr>
-                    </p>
-                    <div class="contact">
-                        <div class="cHeader">Get In Touch!</div>
-                        <div class="cSubHead">These links will provide the quickest line of contact to me.</div>
-                        <div class="cMainLinks">
-                            <a href="https://twitter.com/messages/1022185379976425473-1022185379976425473?text=" class="cml">Twitter DM</a>
-                            <a href="mailto:futur3sn0w@gmail.com" class="cml">Email</a>
-                        </div>
-                    </div>
-                </button>
+            <div class="homePageDiv liveFeedMain" id="liveFeedMain">
+                <a class="twitter-timeline" data-width="400" data-height="700" data-theme="dark" href="https://twitter.com/Futur3Sn0w?ref_src=twsrc%5Etfw"></a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
+
+        </div>
 
             <div class="nav navBar">
                 <div class="logoWrapper">
-                    <img id="logo" src="imgs/logo.png">
+                    <img id="logo" src="imgs/logo.png" )>
                 </div>
-                <div class="nbpcUserName" data-pageName=" • Home">Futur3Sn0w</div>
+                <div class="nbpcUserName" data-pageName=" • Live Feed">Futur3Sn0w</div>
                 <div class="navBtnWrapper">
                     <button class="navButton nbHome button" id="nbHome" onclick="homeBtn()">Home</button>
                     <button class="navButton nbAbout button" id="nbAbout" onclick="aboutBtn()">About Me</button>
