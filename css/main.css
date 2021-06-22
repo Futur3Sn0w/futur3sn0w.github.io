@@ -48,7 +48,7 @@ button {
         --hov: hsl(211, 26%, 31%);
         --active: hsla(256, 55%, 1%, 0.5);
         --mbm: color-dodge;
-        --nbFilter: saturate(90%);
+        --nbFilter: brightness(0%);
         --logoColor: invert(79%) sepia(24%) saturate(372%) hue-rotate(180deg) brightness(304%) contrast(99%);
     }
 }
@@ -78,7 +78,7 @@ button {
         --hov: hsl(211, 59%, 80%);
         --active: hsla(256, 16%, 55%, 0.5);
         --mbm: color-burn;
-        --nbFilter: brightness(95%);
+        --nbFilter: brightness(100%);
         --logoColor: invert(17%) sepia(22%) saturate(5590%) hue-rotate(207deg) brightness(65%) contrast(96%);
     }
 }
@@ -122,13 +122,36 @@ button {
     height: var(--content-height);
 }
 
+.logoWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 100%;
+    background-color: var(--accent);
+}
+
 #logo {
-    background: var(--auto-bw);
-    border-radius: 50%;
+    box-sizing: border-box;
     box-shadow: 0px 4px 10px -5px rgba(0, 0, 0, 0.40);
     transition-duration: .2s;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
+    filter: var(--nbFilter);
+}
+
+.nbpcName {
+    display: flex;
+    align-items: center;
+    padding: 6.5px 5px;
+    font: bold 25px var(--ff);
+    height: fit-content;
+    margin-right: auto;
+    margin-left: 5px;
+}
+
+.nbpcName::after{
+    content: attr(data-pageName);
 }
 
 .socialBar {
@@ -157,38 +180,6 @@ button {
     align-items: center;
     justify-content: center;
     color: inherit;
-}
-
-#sb1:hover {
-    color: #ff40a3;
-}
-
-#sb2:hover {
-    color: #8c40ff;
-}
-
-#sb3:hover {
-    color: #40a9ff;
-}
-
-#sb4:hover {
-    color: #00D38F;
-}
-
-#sb5:hover {
-    color: #eb4d4d;
-}
-
-#sb6:hover {
-    color: #8c40ff;
-}
-
-#sb7:hover {
-    color: #FF7000;
-}
-
-#sb8:hover {
-    color: #9147FF;
 }
 
 .navBar {
@@ -276,27 +267,6 @@ span.ripple {
     justify-content: flex-start;
 }
 
-.logoWrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 100%;
-}
-
-.nbpcUserName {
-    display: flex;
-    align-items: center;
-    padding: 6.5px 5px;
-    font: bold 25px var(--ff);
-    height: fit-content;
-    margin-right: auto;
-}
-
-.nbpcUserName::after{
-    content: attr(data-pageName);
-}
-
 @font-face {
     font-family: FLNTFILL;
     src: url(../fonts/fluent_filled.ttf);
@@ -375,4 +345,36 @@ span.ripple {
     .nbpcUserName{
         display: none;
     }
+}
+
+#sb1:hover {
+    color: #ff40a3;
+}
+
+#sb2:hover {
+    color: #8c40ff;
+}
+
+#sb3:hover {
+    color: #40a9ff;
+}
+
+#sb4:hover {
+    color: #00D38F;
+}
+
+#sb5:hover {
+    color: #eb4d4d;
+}
+
+#sb6:hover {
+    color: #8c40ff;
+}
+
+#sb7:hover {
+    color: #FF7000;
+}
+
+#sb8:hover {
+    color: #9147FF;
 }
