@@ -34,18 +34,8 @@
     border: none;
 }
 
-span.newRipple {
-    position: absolute;
-    border-radius: 50%;
-    transform: scale(0);
-    animation: newRipple 1000ms linear;
-    background-color: hsla(0, 0%, 100%, 0.5);
-    filter: blur(40px);
-}
-
 .glWelcome {
     font: bold 60px var(--ff);
-    opacity: .7;
     line-height: 40px;
 }
 
@@ -58,7 +48,6 @@ span.newRipple {
 
 .glDescription {
     font: 500 20px var(--ff);
-    opacity: .7;
 }
 
 .contact {
@@ -82,13 +71,11 @@ span.newRipple {
 
 .cHeader {
     font: 700 35px var(--ff);
-    opacity: .7;
 }
 
 .cSubHead {
     font: 500 17px var(--ff);
     margin-top: 5px;
-    opacity: .7;
 }
 
 .cml {

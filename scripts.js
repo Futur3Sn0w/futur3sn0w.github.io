@@ -14,6 +14,10 @@ function projectsBtn() {
     window.location.href = 'projects.html';
 }
 
+function changelogBtn() {
+    window.location.href = 'changes.html';
+}
+
 function pbFilter() {
     var pbx1 = document.getElementById("projectBox1");
     var pbx2 = document.getElementById("projectBox2");

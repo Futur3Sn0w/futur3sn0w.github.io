@@ -26,60 +26,58 @@ button {
 @media (prefers-color-scheme: dark) {
      :root {
         --auto-bw: hsl(0, 0%, 0%);
-        --projCard: rgb(54, 54, 54);
+        --projCard: rgb(51, 36, 26);
         --font: hsl(0, 0%, 100%);
         --back: hsla(0, 0%, 0%, 0.25);
         --nav-back: hsla(0, 0%, 0%, 0.8);
-        --transp: hsla(0, 50%, 36%, 0.5);
+        --transp: hsla(27, 50%, 36%, 0.5);
         --card: hsla(0, 0%, 0%, 0.667);
-        --anim-back: hsl(213, 19%, 11%);
-        --herotitle-back: hsl(213, 19%, 13%);
-        --nb-back: hsl(213, 19%, 11%);
-        --anim-obj: hsla(211, 26%, 31%, 20%);
+        --anim-back: hsl(27, 61%, 13%);
+        --nb-back: hsl(24, 71%, 11%);
+        --anim-obj: rgba(100, 75, 58, 0.2);
         --actBtn-rest: rgb(255, 255, 255);
         --actBtn-hov: rgb(216, 216, 216);
-        --accent: #91C3FE;
-        --accent-text: #c2defe;
+        --accent: #ff7d32;
+        --accent-text: #d4a380;
         --border-clr: hsla(0, 0%, 80%, 0.7);
         --border-clr-2: hsla(0, 0%, 0%, 0.25);
         --hero: url("../imgs/adark.png");
         --logo: brightness(100);
-        --rest: hsla(256, 55%, 25%, 0.5);
-        --hov: hsl(211, 26%, 31%);
-        --active: hsla(256, 55%, 1%, 0.5);
+        --rest: hsla(29, 55%, 25%, 0.5);
+        --hov: hsl(21, 27%, 31%);
+        --active: hsla(21, 96%, 9%, 0.5);
         --mbm: color-dodge;
         --nbFilter: brightness(0%);
-        --logoColor: invert(79%) sepia(24%) saturate(372%) hue-rotate(180deg) brightness(304%) contrast(99%);
+        --logoColor: brightness(0%) invert(79%) sepia(26%) saturate(4239%) hue-rotate(320deg) brightness(103%) contrast(92%);
     }
 }
 
 @media (prefers-color-scheme: light) {
      :root {
         --auto-bw: hsl(100, 100%, 100%);
-        --projCard: rgb(255, 255, 255);
+        --projCard: rgb(255, 222, 203);
         --font: hsl(0, 0%, 0%);
         --back: hsl(0, 0%, 100%, 0.25);
         --nav-back: hsl(0, 0%, 100%, 0.8);
         --transp: hsla(0, 0%, 100%, 0.4);
         --card: hsla(0, 0%, 100%, 0.667);
-        --anim-back: #EAF1F7;
-        --herotitle-back: hsl(208, 45%, 88%);
-        --nb-back: hsl(208, 45%, 94%);
-        --anim-obj: hsla(211, 59%, 80%, 30%);
+        --anim-back: #f7eeea;
+        --nb-back: hsl(17, 47%, 94%);
+        --anim-obj: rgba(234, 206, 174, 0.3);
         --actBtn-rest: rgb(255, 255, 255);
         --actBtn-hov: rgb(216, 216, 216);
-        --accent: #255ED3;
-        --accent-text: #16397e;
+        --accent: #d38725;
+        --accent-text: #b96f2a;
         --border-clr: hsla(0, 0%, 63%, 0.9);
         --border-clr-2: rgba(0, 0, 0, 0.25);
         --hero: url("../imgs/alight.png");
         --logo: brightness(0);
-        --rest: hsla(256, 16%, 40%, 0.5);
-        --hov: hsl(211, 59%, 80%);
-        --active: hsla(256, 16%, 55%, 0.5);
+        --rest: hsla(32, 16%, 40%, 1);
+        --hov: hsl(32, 59%, 80%);
+        --active: hsla(34, 16%, 55%, 0.5);
         --mbm: color-burn;
         --nbFilter: brightness(100%);
-        --logoColor: invert(17%) sepia(22%) saturate(5590%) hue-rotate(207deg) brightness(65%) contrast(96%);
+        --logoColor: brightness(0%) invert(69%) sepia(16%) saturate(4473%) hue-rotate(347deg) brightness(89%) contrast(85%);
     }
 }
 
@@ -126,7 +124,7 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50px;
+    min-width: 50px;
     height: 100%;
     background-color: var(--accent);
 }
@@ -145,25 +143,73 @@ button {
     align-items: center;
     padding: 6.5px 5px;
     font: bold 25px var(--ff);
-    height: fit-content;
-    margin-right: auto;
+    height: 100%;
+    width: max-content;
     margin-left: 5px;
 }
 
 .nbpcName::after{
     content: attr(data-pageName);
+    width: max-content;
+}
+
+.socialBtnBar{
+    position: absolute;
+    z-index: 100;
+    bottom: 1%;
+    right: 1%;
+    width: 60px;
+    height: 60px;
+    background-color: var(--rest);
+    border-radius: 50px;
+    box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.30);
+    transition: .3s;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.socialBtnBar p{
+    position: absolute;
+    font: 400 25px FLNTFILL;
+    z-index: 1;
+    color: var(--auto-bw);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.socialBtnBar:hover{
+    border-radius: 60px;
+    width: 270px;
+    height: 60px;
+    box-shadow: 0px 7px 7px -1px rgba(0, 0, 0, 0.4);
+}
+
+.socialBtnBar:hover p{
+    display: none;
+}
+
+.socialBtnBar:hover .socialBar{
+    opacity: 1;
 }
 
 .socialBar {
-    width: max-content;
+    width: 100%;
     height: 100%;
-    margin-left: auto;
     padding: 0 15px;
     display: flex;
     align-items: center;
     justify-self: flex-end;
     transition: opacity .2s;
-    color: var(--accent);
+    color: var(--auto-bw);
+    opacity: 0;
+    background-color: inherit;
+    z-index: 0;
 }
 
 .socialBar .fa {
@@ -205,7 +251,7 @@ button {
     justify-content: center;
     height: 100%;
     width: fit-content;
-    gap: 5px;
+    gap: 3px;
     z-index: inherit;
 }
 
@@ -219,9 +265,9 @@ button {
     justify-content: center;
     color: var(--accent);
     cursor: pointer;
-    overflow: hidden;
     font: 600 18px var(--ff);
     cursor: pointer;
+    position: relative;
     transition: color .1s;
 }
 
@@ -249,15 +295,6 @@ button {
     background-color: var(--accent-text);
 }
 
-span.ripple {
-    position: absolute;
-    border-radius: 50%;
-    transform: scale(0);
-    animation: ripple 800ms linear;
-    background-color: rgba(255, 255, 255, .5);
-    filter: blur(20px);
-}
-
 .nbProfileCard {
     display: flex;
     flex-direction: column;
@@ -265,6 +302,39 @@ span.ripple {
     height: fit-content;
     align-items: center;
     justify-content: flex-start;
+}
+
+
+#sb1:hover {
+    color: #ff40a3;
+}
+
+#sb2:hover {
+    color: #8c40ff;
+}
+
+#sb3:hover {
+    color: #40a9ff;
+}
+
+#sb4:hover {
+    color: #00D38F;
+}
+
+#sb5:hover {
+    color: #eb4d4d;
+}
+
+#sb6:hover {
+    color: #8c40ff;
+}
+
+#sb7:hover {
+    color: #FF7000;
+}
+
+#sb8:hover {
+    color: #9147FF;
 }
 
 @font-face {
@@ -291,6 +361,19 @@ span.ripple {
         position: absolute;
         top: 0;
         border-radius: 0;
+    }
+}
+
+@media screen and (min-width: 701px) {
+    .navButton:not(:last-child)::before{
+        content: "";
+        width: 3px;
+        height: 50%;
+        border-radius: 50px;
+        background-color: var(--accent);
+        position: absolute;
+        right: -3px;
+        opacity: .5;
     }
 }
 
@@ -329,52 +412,31 @@ span.ripple {
         content: "";
     }
 
+    .nbChangelog::before{
+        content: "";
+    }
+
     .nbProjects::before{
         content: "";
+    }
+
+    .nbLiveFeed::before{
+        content: "";
     }
 
     .nbAbout::before{
         content: "";
     }
-}
 
-@media screen and (max-width: 869px) {
-    .socialBar{
-        display: none;
-    }
-    .nbpcUserName{
-        display: none;
+    .socialBtnBar{
+        width: 50px;
+        height: 50px;
+        bottom: 60px;
     }
 }
 
-#sb1:hover {
-    color: #ff40a3;
-}
-
-#sb2:hover {
-    color: #8c40ff;
-}
-
-#sb3:hover {
-    color: #40a9ff;
-}
-
-#sb4:hover {
-    color: #00D38F;
-}
-
-#sb5:hover {
-    color: #eb4d4d;
-}
-
-#sb6:hover {
-    color: #8c40ff;
-}
-
-#sb7:hover {
-    color: #FF7000;
-}
-
-#sb8:hover {
-    color: #9147FF;
+@media screen and (max-width: 1140px) {
+    .nbpcName{
+        display: none;
+    }
 }
