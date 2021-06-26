@@ -3,19 +3,21 @@
     --outer-radi: 20px;
     --inner-radi: 10px;
     --content-height: 100vh;
-    --nav-height: 10vh;
+    --top-height: 55px;
+    --side-width: 75px;
     --z-nav: 10;
     --z-cont: 8;
     --ff: -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 body {
-    background: var(--back);
+    background: var(--nav-back);
     overflow: hidden;
 }
 
 a {
     text-decoration: none;
+    color: unset;
 }
 
 button {
@@ -26,58 +28,52 @@ button {
 @media (prefers-color-scheme: dark) {
      :root {
         --auto-bw: hsl(0, 0%, 0%);
-        --projCard: rgb(51, 36, 26);
         --font: hsl(0, 0%, 100%);
-        --back: hsla(0, 0%, 0%, 0.25);
-        --nav-back: hsla(0, 0%, 0%, 0.8);
-        --transp: hsla(27, 50%, 36%, 0.5);
-        --card: hsla(0, 0%, 0%, 0.667);
-        --anim-back: hsl(27, 61%, 13%);
-        --nb-back: hsl(24, 71%, 11%);
-        --anim-obj: rgba(100, 75, 58, 0.2);
-        --actBtn-rest: rgb(255, 255, 255);
-        --actBtn-hov: rgb(216, 216, 216);
+
+        --nav-back: hsl(0, 0%, 6%);
+        --back: hsl(30, 33%, 2%);
+        --backBorder: hsl(20, 0%, 10%);
+
+        --item1: hsla(24, 27%, 31%, 0.2);
+        --item2: hsl(0, 0%, 40%);
+        --item3: hsl(0, 0%, 0%);
+        --item3-hov: hsl(0, 0%, 10%);
+        --aboutCard: hsl(60, 33%, 1%);
+
         --accent: #ff7d32;
         --accent-text: #d4a380;
-        --border-clr: hsla(0, 0%, 80%, 0.7);
-        --border-clr-2: hsla(0, 0%, 0%, 0.25);
-        --hero: url("../imgs/adark.png");
-        --logo: brightness(100);
-        --rest: hsla(29, 55%, 25%, 0.5);
-        --hov: hsl(21, 27%, 31%);
-        --active: hsla(21, 96%, 9%, 0.5);
-        --mbm: color-dodge;
-        --nbFilter: brightness(0%);
+
+        --abtCoverImage: url("../imgs/adark.png");
         --logoColor: brightness(0%) invert(79%) sepia(26%) saturate(4239%) hue-rotate(320deg) brightness(103%) contrast(92%);
+
+        --navBtn-Active: rgb(90, 90, 90);
+        --navBtn-Hover: rgba(90, 90, 90, 0.5);
     }
 }
 
 @media (prefers-color-scheme: light) {
      :root {
         --auto-bw: hsl(100, 100%, 100%);
-        --projCard: rgb(255, 222, 203);
         --font: hsl(0, 0%, 0%);
-        --back: hsl(0, 0%, 100%, 0.25);
-        --nav-back: hsl(0, 0%, 100%, 0.8);
-        --transp: hsla(0, 0%, 100%, 0.4);
-        --card: hsla(0, 0%, 100%, 0.667);
-        --anim-back: #f7eeea;
-        --nb-back: hsl(17, 47%, 94%);
-        --anim-obj: rgba(234, 206, 174, 0.3);
-        --actBtn-rest: rgb(255, 255, 255);
-        --actBtn-hov: rgb(216, 216, 216);
-        --accent: #d38725;
-        --accent-text: #b96f2a;
-        --border-clr: hsla(0, 0%, 63%, 0.9);
-        --border-clr-2: rgba(0, 0, 0, 0.25);
-        --hero: url("../imgs/alight.png");
-        --logo: brightness(0);
-        --rest: hsla(32, 16%, 40%, 1);
-        --hov: hsl(32, 59%, 80%);
-        --active: hsla(34, 16%, 55%, 0.5);
-        --mbm: color-burn;
-        --nbFilter: brightness(100%);
+
+        --nav-back: hsl(0, 0%, 95%);
+        --back: hsl(220, 27%, 98%);
+        --backBorder: hsl(200, 12%, 90%);
+
+        --item1: hsl(32, 59%, 80%);
+        --item2: hsl(32, 16%, 40%);
+        --item3: hsl(0, 0%, 100%);
+        --item3-hov: hsl(0, 0%, 97%);
+        --aboutCard: hsl(240, 33%, 99%);
+
+        --accent: hsl(34, 70%, 49%);
+        --accent-text: hsl(29, 63%, 45%);
+
+        --abtCoverImage: url("../imgs/alight.png");
         --logoColor: brightness(0%) invert(69%) sepia(16%) saturate(4473%) hue-rotate(347deg) brightness(89%) contrast(85%);
+
+        --navBtn-Active: hsl(0, 0%, 100%);
+        --navBtn-Hover: hsla(0, 0%, 100%, 0.5);
     }
 }
 
@@ -105,62 +101,234 @@ button {
     display: none !important;
 }
 
-.homePages {
-    display: flex;
-    flex-direction: column;
-}
+/* Mobile splash */
 
-.homePageDiv {
+.mobileDisclaimer{
     position: absolute;
     top: 0;
+    left: 0;
+
+    z-index: 1000;
+    width: 100vw;
+    height: 100vh;
+    gap: 20px;
+
+    background-color: #0076d6;
+    color: white;
+
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 8vw;
+}
+
+.mdHead{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 46vh;
+    margin-left: 10%;
+    gap: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.mdh1{
+    font: 400 130px var(--ff);
+}
+
+.mdh2{
+    font: 400 30px var(--ff);
+}
+
+.mdh3{
+    font: 400 17px var(--ff);
+    max-width: 45ch;
+}
+
+.mdQR{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 46vh;
+
+    margin-left: 10%;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.mdQR img{
+    width: 150px;
+}
+
+.qrInfo{
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+
+    height: 150px;
+    width: 70%;
+
+    color: white;
+    font: 400 15px var(--ff);
+}
+
+.qri1{
+    margin-bottom: auto;
+}
+
+.qri2{
+    margin-bottom: 20px;
+}
+
+/* Meta */
+
+.topLevelPage{
+    background-color: var(--back);
+    position: absolute;
+    bottom: 0;
     right: 0;
-    z-index: var(--z-cont);
-    box-shadow: 0px 15px 30px -10px rgba(0, 0, 0, 0.1);
-    color: var(--font);
-    height: var(--content-height);
+    z-index: 11;
+    width: calc(100vw - var(--side-width));
+    height: calc(100vh - var(--top-height));
+    border-left: 2px solid var(--backBorder);
+    border-top: 2px solid var(--backBorder);
+    overflow: hidden;
+    border-top-left-radius: 10px;
+}
+
+.topLevelPage::after{
+    content: attr(data-pageName);
+    position: fixed;
+    top: 12%;
+    left: calc(5% + var(--side-width));
+    color: white;
+    font: 600 22px var(--ff);
+}
+
+/* Header bar */
+
+.topNav{
+    box-sizing: border-box;
+    width: 100vw;
+    height: var(--top-height);
+    background-color: var(--nav-back);
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    padding: 6px 23px;
 }
 
 .logoWrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 50px;
-    height: 100%;
-    background-color: var(--accent);
+    width: fit-content;
+    height: fit-content;
 }
 
 #logo {
     box-sizing: border-box;
-    box-shadow: 0px 4px 10px -5px rgba(0, 0, 0, 0.40);
     transition-duration: .2s;
-    width: 30px;
-    height: 30px;
-    filter: var(--nbFilter);
+    width: 25px;
+    height: 25px;
 }
 
 .nbpcName {
     display: flex;
-    align-items: center;
-    padding: 6.5px 5px;
-    font: bold 25px var(--ff);
-    height: 100%;
+    font: 600 16px var(--ff);
+    height: min-content;
     width: max-content;
-    margin-left: 5px;
+    margin-left: 20px;
+    color: var(--font);
 }
 
-.nbpcName::after{
-    content: attr(data-pageName);
-    width: max-content;
+/* Sidebar */
+
+.navBar {
+    height: calc(100vh - var(--top-height));
+    width: var(--side-width);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    overflow: hidden;
+    color: var(--accent);
+    background-color: var(--nav-back);
+    padding-bottom: 15px;
+}
+
+.navBtnWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    height: 100%;
+}
+
+.navButton {
+    height: 55px;
+    width: 60px;
+    font: 400 25px FLNTREG;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    cursor: pointer;
+    cursor: pointer;
+    position: relative;
+    transition: background-color .1s;
+    border-radius: 5px;
+}
+
+.navButton::before{
+    content: "";
+    height: 30px;
+    width: 8px;
+    border-radius: 50px;
+    background-color: transparent;
+    position: absolute;
+    left: 0;
+}
+
+.navButton::after{
+    content: attr(data-navBtnName);
+    position: absolute;
+    font: 400 10px var(--ff);
+    bottom: 0;
+}
+
+.navButton:hover{
+    background-color: var(--navBtn-Hover);
+}
+
+.nbAbout{
+    margin-top: auto;
 }
 
 .socialBtnBar{
     position: absolute;
     z-index: 100;
-    bottom: 1%;
-    right: 1%;
+    bottom: 10px;
+    right: 10px;
     width: 60px;
     height: 60px;
-    background-color: var(--rest);
+    background-color: var(--nav-back);
     border-radius: 50px;
     box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.30);
     transition: .3s;
@@ -169,13 +337,13 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--font);
 }
 
 .socialBtnBar p{
     position: absolute;
     font: 400 25px FLNTFILL;
     z-index: 1;
-    color: var(--auto-bw);
     width: 100%;
     height: 100%;
     display: flex;
@@ -206,7 +374,6 @@ button {
     align-items: center;
     justify-self: flex-end;
     transition: opacity .2s;
-    color: var(--auto-bw);
     opacity: 0;
     background-color: inherit;
     z-index: 0;
@@ -228,82 +395,7 @@ button {
     color: inherit;
 }
 
-.navBar {
-    height: 50px;
-    width: 100vw;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    z-index: var(--z-nav);
-    overflow: hidden;
-    color: var(--accent);
-    background-color: var(--auto-bw);
-}
-
-.navBtnWrapper {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: fit-content;
-    gap: 3px;
-    z-index: inherit;
-}
-
-.navButton {
-    width: max-content;
-    height: 100%;
-    width: 130px;
-    font: 25px FLNTREG;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--accent);
-    cursor: pointer;
-    font: 600 18px var(--ff);
-    cursor: pointer;
-    position: relative;
-    transition: color .1s;
-}
-
-.navButton:hover{
-    color: var(--auto-bw);
-}
-
-.navButton::after{
-    position: absolute;
-    bottom: 2px;
-    content: "";
-    width: 60px;
-    height: 5px;
-    border-radius: 50px;
-    z-index: -5;
-    transition: .2s;
-    background-color: transparent;
-}
-
-.navButton:hover::after{
-    width: 130px;
-    height: 50px;
-    bottom: 0;
-    border-radius: 0;
-    background-color: var(--accent-text);
-}
-
-.nbProfileCard {
-    display: flex;
-    flex-direction: column;
-    width: 250px;
-    height: fit-content;
-    align-items: center;
-    justify-content: flex-start;
-}
-
+/* Logo bar colors */
 
 #sb1:hover {
     color: #ff40a3;
@@ -337,6 +429,8 @@ button {
     color: #9147FF;
 }
 
+/* Fonts */
+
 @font-face {
     font-family: FLNTFILL;
     src: url(../fonts/fluent_filled.ttf);
@@ -347,96 +441,79 @@ button {
     src: url(../fonts/fluent_reg.ttf);
 }
 
-@keyframes ripple {
-    to {
-        transform: scale(4);
-        opacity: 0;
-    }
-}
+/* Media queries */
 
-@media screen and (max-width: 600px) {
-    .hbWrapper {
-        width: 100%;
-        height: 85%;
-        position: absolute;
-        top: 0;
-        border-radius: 0;
-    }
-}
-
-@media screen and (min-width: 701px) {
-    .navButton:not(:last-child)::before{
-        content: "";
-        width: 3px;
-        height: 50%;
-        border-radius: 50px;
-        background-color: var(--accent);
-        position: absolute;
-        right: -3px;
-        opacity: .5;
+@media screen and (max-width: 1300px) {
+    .mobileDisclaimer{
+        display: flex;
     }
 }
 
 @media screen and (max-width: 700px) {
+    .topLevelPage{
+        background-color: var(--back);
+        position: absolute;
+        bottom: unset;
+        top: 0;
+        right: 0;
+        z-index: 11;
+        width: 100vw;
+        height: calc(100vh - var(--top-height));
+        border: none;
+        overflow: hidden;
+        border-top-left-radius: 0;
+    }
+
+    .topNav{
+        display: none;
+    }
+
     .navBar{
         top: unset;
         bottom: 0;
+        left: 0;
+        padding: 0;
+
+        z-index: 12;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.2);
+
+        width: 100vw;
+        height: 60px;
+    }
+
+    .navBtnWrapper{
+        flex-direction: row;
     }
     
     .navButton{
         width: 60px;
-        font-size: 0;
-    }
-
-    .navButton:hover::after{
-        position: absolute;
-        bottom: 2px;
-        content: "";
-        width: 60px;
-        height: 5px;
-        border-radius: 50px;
-        z-index: -5;
-        transition: .2s;
-        background-color: transparent;
-    }
-
-    .navButton:hover{
-        color: var(--accent-text);
     }
 
     .navButton::before{
-        font: 23px FLNTFILL;
+        content: "";
+        height: 8px;
+        width: 30px;
+        border-radius: 50px;
+        background-color: transparent;
+        position: absolute;
+        bottom: 0;
+        left: unset;
     }
 
-    .nbHome::before{
-        content: "";
+    .nbAbout{
+        margin-top: 0;
     }
 
-    .nbChangelog::before{
-        content: "";
-    }
-
-    .nbProjects::before{
-        content: "";
-    }
-
-    .nbLiveFeed::before{
-        content: "";
-    }
-
-    .nbAbout::before{
-        content: "";
+    .navButton::after{
+        display: none;
     }
 
     .socialBtnBar{
         width: 50px;
         height: 50px;
-        bottom: 60px;
-    }
-}
-
-@media screen and (max-width: 1140px) {
-    .nbpcName{
-        display: none;
+        bottom: 75px;
     }
 }

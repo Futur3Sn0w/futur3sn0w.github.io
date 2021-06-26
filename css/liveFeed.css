@@ -1,16 +1,18 @@
 .nbLiveFeed{
-    font-weight: bolder;
+    font-family: FLNTFILL;
+    background-color: var(--navBtn-Active);
 }
 
-.nbLiveFeed::after {
-    background-color: var(--accent-text);
+.nbLiveFeed::before {
+    background-color: var(--accent);
+}
+
+.nbLiveFeed::after{
+    content: "";
 }
 
 .liveFeedMain{
-    width: 100vw;
-    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: none;
 }

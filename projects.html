@@ -10,10 +10,19 @@
     <link rel="stylesheet" href="css/background.css">
     <link rel="stylesheet" href="css/projects.css">
     <link rel="stylesheet" href="css/pbspecs.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png?v2=2">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png?v2=2">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png?v2=2">
+    <link rel="manifest" href="/favicons/site.webmanifest?v2=2">
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg?v2=2" color="#9240bc">
+    <link rel="shortcut icon" href="/favicons/favicon.ico?v2=2">
+    <meta name="apple-mobile-web-app-title" content="Studio30">
+    <meta name="application-name" content="Studio30">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml?v2=2">
+    <meta name="theme-color" content="#ffe0ae">
+
     <script src="https://kit.fontawesome.com/a1fc6f0f3a.js" crossorigin="anonymous"></script>
     <script src="scripts.js"></script>
 </head>
@@ -21,9 +30,38 @@
 <body>
 
     <div class="back"></div>
-    <div class="home">
 
-        <div class="homePages">
+    <div class="socialBtnBar">
+        <p></p>
+        <div class="socialBar">
+            <a href="https://www.deviantart.com/Futur3Sn0w"><i class="fa fa-deviantart" id="sb4"></i></a>
+            <a href="https://www.dribbble.com/Futur3Sn0w"><i class="fa fa-dribbble" id="sb1"></i></a>
+            <a href="https://www.github.com/Futur3Sn0w"><i class="fa fa-github" id="sb2"></i></a>
+            <a href="https://www.youtube.com/playlist?list=PLFi87xXUo1vzczrs1iJNOhvguuQg3-CsI"><i class="fa fa-podcast" id="sb6"></i></a>
+            <a href="https://www.soundcloud.com/futur3sn0w"><i class="fa fa-soundcloud" id="sb7"></i></a>
+            <a href="https://www.twitch.tv/Futur3Sn0w"><i class="fa fa-twitch" id="sb8"></i></a>
+            <a href="https://www.twitter.com/Futur3Sn0w"><i class="fa fa-twitter" id="sb3"></i></a>
+            <a href="https://www.youtube.com/channel/UC98jW-uSef3Ql-y1mD6y2tQ"><i class="fa fa-youtube"
+                id="sb5"></i></a>
+        </div>
+    </div>
+
+    <div class="topNav">
+        <div class="logoWrapper">
+            <img id="logo" src="imgs/logo.png">
+        </div>
+        <div class="nbpcName">Futur3Sn0w</div>
+    </div>
+
+    <div class="nav navBar">
+        <div class="navBtnWrapper">
+            <button class="navButton nbHome button" data-navBtnName="Home" id="nbHome" onclick="homeBtn()"></button>
+            <button class="navButton nbChangelog button" data-navBtnName="Changes" id="nbChangelog" onclick="changelogBtn()"></button>
+            <!-- <button class="navButton nbLiveFeed button" data-navBtnName="Twitter Feed" id="nbLiveFeed" onclick="liveFeedBtn()"></button> -->
+            <button class="navButton nbProjects button" data-navBtnName="My Work" id="nbProjects" onclick="projectsBtn()"></button>
+            <button class="navButton nbAbout button" data-navBtnName="About Me" id="nbAbout" onclick="aboutBtn()"></button>
+        </div>
+    </div>
 
             <div class="psViewer" id="psViewer"></div>
             <div class="psViewerBack" id="psViewerBack" onclick="pbBackClick()"></div>
@@ -43,7 +81,12 @@
                 <div class="pfClear" id="pfClear" onclick="resetFilter()"></div>
             </div>
 
-            <div class="homePageDiv psWrapper" id="psWrapper">
+            <div class="topLevelPage psWrapper"  data-pageName="My Work" id="psWrapper">
+
+                <div class="projectsHead">
+                    <div class="phTitle">My Work & Projects</div>
+                    <div class="phDesc">This is all of the work that I do, including concepts, functional projects, websites, and more. Take a look at everything here, and feel free to ask questions on Twitter!</div>
+                </div>
 
                 <div class="projectBox pb18" id="projectBox18" data-android="1" onclick="pb18Open()">
                     <div class="pbContentWrapper" id="pbcw18">
@@ -108,7 +151,7 @@
 
                 <div class="projectBox pb13" id="projectBox13" data-android="0" onClick="pb13Open()">
                     <div class="pbContentWrapper" id="pbcw13">
-                        <p class="pbHeader" id="pbHeader13"><i class="fas fa-cog fa-spin"></i>Jailbreak Widget: SimpleText</p>
+                        <p class="pbHeader" id="pbHeader13"><i class="fas fa-cog"></i>Jailbreak Widget: SimpleText</p>
                         <p class="pbDate" id="pbDate13">Date: 04/28/21</p>
                         <p class="pbDesc" id="pbDesc13"></p>
                         <div class="pbActions" id="pbActions13">
@@ -200,7 +243,7 @@
 
                 <div class="projectBox pb6" id="projectBox6" data-android="0" onClick="pb6Open()">
                     <div class="pbContentWrapper" id="pbcw6">
-                        <p class="pbHeader" id="pbHeader6"><i class="fas fa-cog fa-spin"></i>Jailbreak Tweak: BigSurCenter</p>
+                        <p class="pbHeader" id="pbHeader6"><i class="fas fa-cog"></i>Jailbreak Tweak: BigSurCenter</p>
                         <p class="pbDate" id="pbDate6">Date: 03/27/21</p>
                         <p class="pbDesc" id="pbDesc6"></p>
                         <div class="pbActions" id="pbActions6">
@@ -275,47 +318,6 @@
                 <div class="pbSpacer"></div>
 
             </div>
-
-            <div class="socialBtnBar">
-                <p></p>
-                <div class="socialBar">
-                    <a href="https://www.deviantart.com/Futur3Sn0w"><i class="fa fa-deviantart" id="sb4"></i></a>
-                    <a href="https://www.dribbble.com/Futur3Sn0w"><i class="fa fa-dribbble" id="sb1"></i></a>
-                    <a href="https://www.github.com/Futur3Sn0w"><i class="fa fa-github" id="sb2"></i></a>
-                    <a href="https://www.youtube.com/playlist?list=PLFi87xXUo1vzczrs1iJNOhvguuQg3-CsI"><i class="fa fa-podcast" id="sb6"></i></a>
-                    <a href="https://www.soundcloud.com/futur3sn0w"><i class="fa fa-soundcloud" id="sb7"></i></a>
-                    <a href="https://www.twitch.tv/Futur3Sn0w"><i class="fa fa-twitch" id="sb8"></i></a>
-                    <a href="https://www.twitter.com/Futur3Sn0w"><i class="fa fa-twitter" id="sb3"></i></a>
-                    <a href="https://www.youtube.com/channel/UC98jW-uSef3Ql-y1mD6y2tQ"><i class="fa fa-youtube"
-                        id="sb5"></i></a>
-                </div>
-            </div>
-
-            <div class="nav navBar">
-                <div class="logoWrapper">
-                    <img id="logo" src="imgs/logo.png">
-                </div>
-                <div class="nbpcName" data-pageName=" • My Work">Futur3Sn0w</div>
-                <div class="navBtnWrapper">
-                    <button class="navButton nbHome button" id="nbHome" onclick="homeBtn()">Home</button>
-                    <button class="navButton nbAbout button" id="nbAbout" onclick="aboutBtn()">About Me</button>
-                    <button class="navButton nbChangelog button" id="nbChangelog" onclick="changelogBtn()">Site Updates</button>
-                    <button class="navButton nbLiveFeed button" id="nbLiveFeed" onclick="liveFeedBtn()">Live Feed</button>
-                    <button class="navButton nbProjects button" id="nbProjects" onclick="projectsBtn()">My Work</button>
-                </div>
-                <div class="socialBar">
-                    <a href="https://www.deviantart.com/Futur3Sn0w"><i class="fa fa-deviantart" id="sb4"></i></a>
-                    <a href="https://www.dribbble.com/Futur3Sn0w"><i class="fa fa-dribbble" id="sb1"></i></a>
-                    <a href="https://www.github.com/Futur3Sn0w"><i class="fa fa-github" id="sb2"></i></a>
-                    <a href="https://www.youtube.com/playlist?list=PLFi87xXUo1vzczrs1iJNOhvguuQg3-CsI"><i class="fa fa-podcast" id="sb6"></i></a>
-                    <a href="https://www.soundcloud.com/futur3sn0w"><i class="fa fa-soundcloud" id="sb7"></i></a>
-                    <a href="https://www.twitch.tv/Futur3Sn0w"><i class="fa fa-twitch" id="sb8"></i></a>
-                    <a href="https://www.twitter.com/Futur3Sn0w"><i class="fa fa-twitter" id="sb3"></i></a>
-                    <a href="https://www.youtube.com/channel/UC98jW-uSef3Ql-y1mD6y2tQ"><i class="fa fa-youtube"
-                        id="sb5"></i></a>
-                </div>
-            </div>
-        </div>
 
         <script>
             function pbClick() {

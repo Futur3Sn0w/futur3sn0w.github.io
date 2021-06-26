@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Studio30 | Site Updates</title>
+    <title>Studio30 | Site Info</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,26 +28,32 @@
 
 <body>
 
-    <div class="back">
-        <ul class="circles">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
+    <div class="back"></div>
 
-    </div>
-    <div class="home">
+            <div class="topLevelPage siteUps" data-pageName="Site Info">
+                <div class="suHeader">
+                    <div class="suhHead">Studio30 Updates & Information</div>
+                    <div class="suhSub">For older updates, check out the GitHub page <a href="https://github.com/Futur3Sn0w/futur3sn0w.github.io">here.</a></div>
+                </div>
 
-        <div class="homePages">
+                <div class="suBoxes">
+                <div class="suBox su2" data-suInfo="Version: 62621-0026 (Latest)">
+                    <ul>
+                        <li>New site design+layout based on new Microsoft Store</li>
+                        <br>
+                        <li>Redesigned section boxes with no shadows and consistent size+design across pages</li>
+                        <br>
+                        <li>Added headers to every page</li>
+                        <li>Added rich titles & descriptions to pages</li>
+                        <br>
+                        <li>Updated site colors to be more muted, less dramatic</li>
+                        <li>Updated light and dark modes to match Microsoft's colors</li>
+                        <li>Updated size model for fonts, sections, and items to be consistent across pages & screen sizes</li>
+                        <br>
+                        <li>Removed 'Twitter Feed' page (for now)</li>
+                    </ul>
+                </div>
 
-            <div class="siteUps">
                 <div class="suBox su1" data-suInfo="Version: 62321-1425">
                     <ul>
                         <li>New sitewide orange color-scheme to match new Studio30 branding</li>
@@ -59,10 +65,7 @@
                         <li>Fixed the mobile navbar (again...)</li>
                     </ul>
                 </div>
-
-                <div class="suBox su0">
-                    For older updates, check out the GitHub page <a href="https://github.com/Futur3Sn0w/futur3sn0w.github.io">here!</a>
-                </div>
+            </div>
             </div>
 
             <div class="socialBtnBar">
@@ -80,31 +83,22 @@
                 </div>
             </div>
 
-            <div class="nav navBar">
+            <div class="topNav">
                 <div class="logoWrapper">
                     <img id="logo" src="imgs/logo.png">
                 </div>
-                <div class="nbpcName" data-pageName=" • Site Updates">Futur3Sn0w</div>
+                <div class="nbpcName" data-pageName=" • Site Changelog">Futur3Sn0w</div>
+            </div>
+
+            <div class="nav navBar">
                 <div class="navBtnWrapper">
-                    <button class="navButton nbHome button" id="nbHome" onclick="homeBtn()">Home</button>
-                    <button class="navButton nbAbout button" id="nbAbout" onclick="aboutBtn()">About Me</button>
-                    <button class="navButton nbChangelog button" id="nbChangelog" onclick="changelogBtn()">Site Updates</button>
-                    <button class="navButton nbLiveFeed button" id="nbLiveFeed" onclick="liveFeedBtn()">Live Feed</button>
-                    <button class="navButton nbProjects button" id="nbProjects" onclick="projectsBtn()">My Work</button>
-                </div>
-                <div class="socialBar">
-                    <a href="https://www.deviantart.com/Futur3Sn0w"><i class="fa fa-deviantart" id="sb4"></i></a>
-                    <a href="https://www.dribbble.com/Futur3Sn0w"><i class="fa fa-dribbble" id="sb1"></i></a>
-                    <a href="https://www.github.com/Futur3Sn0w"><i class="fa fa-github" id="sb2"></i></a>
-                    <a href="https://www.youtube.com/playlist?list=PLFi87xXUo1vzczrs1iJNOhvguuQg3-CsI"><i class="fa fa-podcast" id="sb6"></i></a>
-                    <a href="https://www.soundcloud.com/futur3sn0w"><i class="fa fa-soundcloud" id="sb7"></i></a>
-                    <a href="https://www.twitch.tv/Futur3Sn0w"><i class="fa fa-twitch" id="sb8"></i></a>
-                    <a href="https://www.twitter.com/Futur3Sn0w"><i class="fa fa-twitter" id="sb3"></i></a>
-                    <a href="https://www.youtube.com/channel/UC98jW-uSef3Ql-y1mD6y2tQ"><i class="fa fa-youtube"
-                        id="sb5"></i></a>
+                    <button class="navButton nbHome button" data-navBtnName="Home" id="nbHome" onclick="homeBtn()"></button>
+                    <button class="navButton nbChangelog button" data-navBtnName="Changes" id="nbChangelog" onclick="changelogBtn()"></button>
+                    <!-- <button class="navButton nbLiveFeed button" data-navBtnName="Twitter Feed" id="nbLiveFeed" onclick="liveFeedBtn()"></button> -->
+                    <button class="navButton nbProjects button" data-navBtnName="My Work" id="nbProjects" onclick="projectsBtn()"></button>
+                    <button class="navButton nbAbout button" data-navBtnName="About Me" id="nbAbout" onclick="aboutBtn()"></button>
                 </div>
             </div>
-        </div>
 
 </body>
 

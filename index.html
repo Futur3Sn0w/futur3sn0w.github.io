@@ -28,42 +28,62 @@
 
 <body>
 
-    <div class="back">
-        <ul class="circles">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-
+    <div class="mobileDisclaimer">
+        <div class="mdHead">
+            <div class="mdh1">:(</div>
+            <div class="mdh2">Hey there! Thanks for visiting!</div>
+            <div class="mdh3">Unfortunately, this site is not yet mobile compatible. Try visiting on desktop to view it's contents!</div>
+        </div>
+        <div class="mdQR">
+            <img src="imgs/fsTwitter.png" alt="Future Snow Twitter QR Code">
+            <div class="qrInfo">
+                <div class="qri1">For more information, visit www.twitter.com/Futur3Sn0w</div>
+                <div class="qri2">If you contact support, give them this code:</div>
+                <div class="qri3">NOT_MOBILE_COMPATIBLE_YET</div>
+            </div>
+        </div>
     </div>
-    <div class="home">
 
-        <div class="homePages">
-
-            <div class="homePageDiv greetingLinks" id="greetingLinks">
-                <button class="glWrapper" id="glWrapper">
-                    <p class="glWelcome">Welcome!</p>
-                    <img id="fssLogo" src="imgs/fss.svg">
-                    <p class="glDescription">This is the place to view all of my past, present, and future
-                        projects!<br>Head to the sidebar to view other pages, and to visit my socials!<br>Thanks for
-                        stopping by!</nr>
-                    </p>
-                    <div class="contact">
-                        <div class="cHeader">Get In Touch!</div>
-                        <div class="cSubHead">These links will provide the quickest line of contact to me.</div>
-                        <div class="cMainLinks">
-                            <a href="https://twitter.com/messages/1022185379976425473-1022185379976425473?text=" class="cml">Twitter DM</a>
-                            <a href="mailto:futur3sn0w@gmail.com" class="cml">Email</a>
-                        </div>
+            <div class="topLevelPage greetingLinks" data-pageName="Home" id="greetingLinks">
+                <div class="glWrapper" id="glWrapper">
+                    <div class="glText">
+                        <p class="glWelcome">Welcome!</p>
+                        <p class="glDescription">This is the place to view all of my past, present, and future
+                            projects!<br>Head to the sidebar to view other pages.<br>Also, check the floating "@" button to visit my socials!<br>Thanks for
+                            stopping by!
+                        </p>
                     </div>
-                </button>
+                    <img id="fssLogo" src="imgs/s30-logo.png">
+                </div>
+                <div class="homeSection hsContact">
+                    <div class="cHeader">Get In Touch!</div>
+                    <div class="cHeader ch2">Use the social button on the bottom left to visit my other socials.</div>
+                    <div class="cMainLinks">
+                        <a href="https://twitter.com/messages/1022185379976425473-1022185379976425473?text=" class="contactBox cb1">
+                            <i class="fa fa-twitter" style="background-color: #1ca0f2;"></i>
+                            <div class="cbText">
+                            <div class="cbHead">Twitter Direct Message</div>
+                            <div class="cbSub"> &#60; 24 Hours</div>
+                            </div>
+                        </a>
+                        <a href="mailto:futur3sn0w@gmail.com" class="contactBox cb2">
+                            <i class="fa fa-envelope-open" style="background-color: #105b9e;"></i>
+                            <div class="cbText">
+                            <div class="cbHead">Email (Mailto Link)</div>
+                            <div class="cbSub">1 - 3 Business Days</div>
+                            </div>
+                        </a>
+                        <a href="https://t.me/futur3sn0w" class="contactBox cb3">
+                            <i class="fab fa-telegram-plane" style="background-color: #27a7e7;"></i>
+                            <div class="cbText">
+                            <div class="cbHead">Telegram Message</div>
+                            <div class="cbSub">1 - 2 Days</div>
+                            </div>
+                        </a>
+                    </div>
+
+                    
+                </div>
             </div>
 
             <div class="socialBtnBar">
@@ -81,20 +101,22 @@
                 </div>
             </div>
 
-            <div class="nav navBar">
+            <div class="topNav">
                 <div class="logoWrapper">
                     <img id="logo" src="imgs/logo.png">
                 </div>
-                <div class="nbpcName" data-pageName=" • Home">Futur3Sn0w</div>
+                <div class="nbpcName" data-pageName="Home">Futur3Sn0w</div>
+            </div>
+
+            <div class="nav navBar">
                 <div class="navBtnWrapper">
-                    <button class="navButton nbHome button" id="nbHome" onclick="homeBtn()">Home</button>
-                    <button class="navButton nbAbout button" id="nbAbout" onclick="aboutBtn()">About Me</button>
-                    <button class="navButton nbChangelog button" id="nbChangelog" onclick="changelogBtn()">Site Updates</button>
-                    <button class="navButton nbLiveFeed button" id="nbLiveFeed" onclick="liveFeedBtn()">Live Feed</button>
-                    <button class="navButton nbProjects button" id="nbProjects" onclick="projectsBtn()">My Work</button>
+                    <button class="navButton nbHome button" data-navBtnName="Home" id="nbHome" onclick="homeBtn()"></button>
+                    <button class="navButton nbChangelog button" data-navBtnName="Changes" id="nbChangelog" onclick="changelogBtn()"></button>
+                    <!-- <button class="navButton nbLiveFeed button" data-navBtnName="Twitter Feed" id="nbLiveFeed" onclick="liveFeedBtn()"></button> -->
+                    <button class="navButton nbProjects button" data-navBtnName="My Work" id="nbProjects" onclick="projectsBtn()"></button>
+                    <button class="navButton nbAbout button" data-navBtnName="About Me" id="nbAbout" onclick="aboutBtn()"></button>
                 </div>
             </div>
-        </div>
 
 </body>
 

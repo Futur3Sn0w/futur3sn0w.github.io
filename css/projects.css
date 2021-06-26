@@ -1,9 +1,14 @@
 .nbProjects {
-    font-weight: bolder;
+    font-family: FLNTFILL;
+    background-color: var(--navBtn-Active);
 }
 
-.nbProjects::after {
-    background-color: var(--accent-text);
+.nbProjects::before {
+    background-color: var(--accent);
+}
+
+.nbProjects::after{
+    content: "";
 }
 
 /* Project view lightbox */
@@ -18,7 +23,7 @@
     max-height: 700px;
     margin-top: auto;
     margin-left: -350px;
-    background-color: var(--projCard);
+    background-color: var(--nav-back);
     opacity: 0;
     border-radius: 20px 20px 0 0;
     transition: bottom .4s, box-shadow .3s, opacity .6s;
@@ -104,27 +109,71 @@
 
 /* Project strip & box styling (Main page) */
 
-.psWrapper {
-    width: 100vw;
-    height: calc(100vh - 100px);
+.projectsHead{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 5%;
+
     display: flex;
-    gap: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    width: 100%;
+    height: 50%;
+
+    color: var(--font);
+
+    background: var(--abtCoverImage) center/cover no-repeat white;
+    -webkit-mask-image: linear-gradient(to top, transparent 0%, black 15%);
+    mask-image: linear-gradient(to top, transparent 0%, black 15%);
+}
+
+.phTitle{
+    font: 700 60px var(--ff);
+}
+
+.phDesc{
+    font: 500 20px var(--ff);
+    opacity: .7;
+    width: 40%;
+    margin-top: 20px;
+}
+
+/* Page header */
+
+.psWrapper {
+    display: flex;
+    gap: 10px;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     overflow: scroll;
-    background: var(--back);
-    padding: 20px 10px 25px 10px;
-    top: unset;
-    bottom: 0;
+    padding: 30px 0;
+}
+
+.psWrapper::before{
+    content: "";
+    width: 100%;
+    height: 50%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.psWrapper::after{
+    position: absolute;
+    left: 5%;
+    top: 5%;
 }
 
 .projectBox {
     box-sizing: border-box;
-    background: var(--card);
+    background: var(--auto-bw);
     height: 300px;
-    width: 340px;
-    padding: 15px 5px 70px 15px;
+    width: 250px;
+    padding: 15px 5px;
     border-radius: 10px;
     margin: 5px;
     display: flex;
@@ -132,51 +181,31 @@
     justify-content: flex-end;
     align-items: flex-start;
     position: relative;
-    box-shadow: 0px 10px 30px -10px rgba(0, 0, 0, 0.4);
+    z-index: -2;
     overflow: hidden;
-    border: 3px solid hsla(0, 0%, 0%, 10%);
-}
-
-.projectBox::before {
-    width: 100%;
-    height: 100%;
-    content: ' ';
-    position: absolute;
-    margin: 0;
-    padding: 0;
-    top: 0;
-    left: 0;
-    border-radius: 6px;
-    opacity: 1;
-    z-index: 0;
-    transition: .3s;
-}
-
-.projectBox:hover .pbContentWrapper{
-    background: #000000BB;
+    border: 2px solid var(--backBorder);
+    cursor: pointer;
 }
 
 .pbContentWrapper {
     position: absolute;
-    padding: 12px 20px;
+    padding: 12px 10px;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: min-content;
+    height: 80px;
     flex: 0;
     display: flex;
     flex-direction: column;
-    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.20);
-    background: #00000040;
+    justify-content: flex-end;
     z-index: 1;
-    color: white;
-    transform: translateY(calc(100% - 60px));
+    color: var(--font);
     transition: transform .3s, background .2s;
 }
 
 .pbHeader {
-    font: bold 17px var(--ff);
-    margin: 0 15px 0 0;
+    font: 600 17px var(--ff);
+    margin: 0 5px 0 0;
 }
 
 .pbDesc {
@@ -193,11 +222,21 @@
     opacity: .5;
 }
 
-.pbHeader :is(.fa,
-.fas) {
-    margin: 0 7px 0 0;
-    font-size: 14px;
+.pbHeader i{
+    position: absolute;
+    left: 50%;
+    top: -150px;
+    transform: translateX(-50%);
+    font-size: 40px;
     z-index: 1;
+    background: black;
+    border-radius: 5px;
+    color: white;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .pbActions {
@@ -213,14 +252,13 @@
 .filterBar{
     position: absolute;
     z-index: 200;
-    top: 50px;
+    top: 0;
     left: 0;
     width: 100vw;
-    height: fit-content;
-    background-color: var(--auto-bw);
+    height: var(--top-height);
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     padding: 5px 20px;
 }
 
@@ -237,8 +275,9 @@
     border: 1px solid rgb(179, 179, 179);
     outline: none;
     font: 400 16px var(--ff);
-    padding: 4px 10px;
-    border-radius: 50px;
+    padding: 4px 4px;
+    border-radius: 4px;
+    width: 200px;
 }
 
 .pfClear{
