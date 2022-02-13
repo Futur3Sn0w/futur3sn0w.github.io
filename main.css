@@ -149,6 +149,8 @@
     z-index: 3;
 }
 
+/* Hero (Logo) Section */
+
 .heroLogo{
     display: flex;
     align-items: center;
@@ -195,4 +197,42 @@
     color: var(--fontColorA);
 
     display: none;
+}
+
+/* Social Buttons */
+
+.socialBtns{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    margin-top: auto;
+    margin-bottom: 20px;
+
+    position: relative;
+}
+
+.socialBtns::after{
+    content: "";
+
+    width: 110%;
+    height: 2px;
+
+    background: linear-gradient(90deg, transparent, var(--fontColorB), transparent);
+    opacity: .4;
+
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.socialBtns i{
+    font-size: 25px;
+    filter: var(--colorFilter2);
+}
+
+.socialBtns i:hover{
+    filter: none;
 }

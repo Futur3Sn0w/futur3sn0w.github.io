@@ -10,15 +10,57 @@
 </head>
 <body>
     <div class="heroImage">
-        <div class="heroTitle">Hey.</div>
-        <div class="heroSubTitle">You're early. ;)</div>
-    </div>
-    <div class="heroBody">
-        <div class="post" onclick="window.open('https://www.twitter.com/Futur3Sn0w');">
+        <div class="slide" id="slide1">
+            <div class="heroTitle">Hey.</div>
+            <div class="heroSubTitle">You're early. ;)</div>    
+        </div>
+        <div class="post slide" id="slide2" onclick="window.open('https://www.twitter.com/Futur3Sn0w');">
             <div class="twitterLogo"></div>
             <div class="postTitle">Futur3Sn0w</div>
             <div class="postText">Hey there, thanks for visiting! My site is currently under construction, and therefore, this section is a placeholder. In the meantime, feel free to visit my Twitter by clicking anywhere on this (fake) tweet!</div>
         </div>
+
+        <div class="slideIndc">
+            <div class="slideDot dotActive" id="dot1"></div>
+            <div class="slideDot" id="dot2"></div>
+        </div>
     </div>
+    <div class="heroBody">
+        
+    </div>
+
+    <script>
+        var toggle = false;
+        var contentA = document.getElementById('slide1');
+        var contentB = document.getElementById('slide2');
+
+        var dotA = document.getElementById('dot1');
+        var dotB = document.getElementById('dot2');
+
+        contentB.style.opacity = "0";
+
+        setInterval(function() {
+            if (toggle == false) {
+                contentA.style.opacity = "0";
+                contentB.style.opacity = "1";
+
+                contentB.style.zIndex = "5";
+                contentA.style.zIndex = "10";
+
+                dotA.classList.remove("dotActive");
+                dotB.classList.add("dotActive");
+            } else if (toggle == true){
+                contentA.style.opacity = "1";
+                contentB.style.opacity = "0";
+
+                contentB.style.zIndex = "10";
+                contentA.style.zIndex = "5";
+
+                dotA.classList.add("dotActive");
+                dotB.classList.remove("dotActive");
+            }
+            toggle = !toggle;
+        }, 10000);
+    </script>
 </body>
 </html>

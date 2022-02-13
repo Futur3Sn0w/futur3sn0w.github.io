@@ -16,6 +16,14 @@ a{
     color: inherit;
 }
 
+:root{
+    --socTwitter: rgb(73, 142, 221);
+    --socGithub: purple;
+    --socMedium: rgb(0, 217, 255);
+    --socDevArt: limegreen;
+    --socReddit: red;
+}
+
 @media (prefers-color-scheme: light) {
     :root{
         --backgroundColor: antiquewhite;
@@ -25,6 +33,7 @@ a{
 
         --logoFilter: invert(0);
         --colorFilter: brightness(0) saturate(0) invert(95%) sepia(73%) saturate(336%) hue-rotate(304deg) brightness(102%) contrast(96%);
+        --colorFilter2: brightness(0) saturate(0);
 
         --buttonHover: #0000000b;
         --shineColor: #FFFFFF55;
@@ -42,6 +51,7 @@ a{
 
         --logoFilter: invert(100%);
         --colorFilter: brightness(0) saturate(0) invert(36%) sepia(10%) saturate(1313%) hue-rotate(1deg) brightness(92%) contrast(88%);
+        --colorFilter2: brightness(100) contrast(0) brightness(100);
 
         --buttonHover: #FFFFFF15;
         --shineColor: #FFFFFF33;
