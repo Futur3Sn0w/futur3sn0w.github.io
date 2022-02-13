@@ -1,174 +1,120 @@
-.nbHome {
-    font-family: FLNTFILL;
-    background-color: var(--navBtn-Active);
-}
+.heroImage{
+    width: 100vw;
+    height: 40vh;
 
-.nbHome::before{
-    background-color: var(--accent);
-}
-
-.nbHome::after{
-    content: "";
-}
-
-.greetingLinks {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    color: var(--font);
-}
-
-.glWrapper {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    min-height: 50%;
+
+    background: linear-gradient(45deg, rgb(235, 77, 103), teal, rgb(184, 32, 163));
+    color: white;
+
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 5%;
-    color: white;
-    overflow: hidden;
-    border: none;
-
-    background: var(--abtCoverImage) center/cover no-repeat white;
-    -webkit-mask-image: linear-gradient(to top, transparent 0%, black 15%);
-    mask-image: linear-gradient(to top, transparent 0%, black 15%);
-}
-
-.glText{
-    display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 30px;
+    justify-content: center;
+    gap: 10px;
 }
 
-.glWelcome {
-    font: bold 60px var(--ff);
-    line-height: 40px;
+.heroTitle{
+    margin-top: -3%;
+
+    font-size: 9em;
+    font-weight: 700;
+    font-family: 'Quicksand', sans-serif;
 }
 
-#fssLogo {
-    height: 200px;
-    width: auto;
-    margin: 45px 0 35px 0;
-
-    padding: 20px;
-    background-color: var(--navBtn-Hover);
-    backdrop-filter: blur(8px);
-    border-radius: 5px;
+.heroSubTitle{
+    font-size: 2em;
+    font-weight: 300;
+    font-family: 'Inconsolata', serif;
 }
 
-.glDescription {
-    font: 500 20px var(--ff);
-    text-align: left;
-}
+.heroBody{
+    width: 100vw;
+    height: 60vh;
 
-.homeSection{
-    width: 100%;
-    height: 100%;
-    color: var(--font);
-}
-
-.hsContact {
     position: absolute;
-    width: 100%;
-    height: 50%;
     bottom: 0;
     left: 0;
-    padding: 15px 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    color: inherit;
 }
 
-.contactBox{
-    width: 300px;
-    height: fit-content;
-    padding: 15px;
+.post{
+    width: 420px;
+    height: 230px;
 
-    background-color: var(--item3);
-    border: 2px solid var(--backBorder);
-    border-radius: 5px;
-    transition: background-color .1s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.3);
 
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    border-radius: 20px;
+    background-color: var(--fontColorB);
+    color: var(--pageBackgroundColor);
+
+    cursor: pointer;
 }
 
-.contactBox:hover{
-    background-color: var(--item3-hov);
+.post::after{
+    content: '';
+
+    width: 60px;
+    aspect-ratio: 1/1;
+
+    background-image: url("../png-colored-v2-min.png");
+    background-size: cover;
+
+    border: 1px solid var(--pageBackgroundColor);
+    border-radius: 50%;
+
+    position: absolute;
+    top: 20px;
+    left: 20px;
 }
 
-.cbText{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    margin-left: 10px;
+.twitterLogo{
+    background-image: url("https://upload.wikimedia.org/wikipedia/sco/9/9f/Twitter_bird_logo_2012.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: var(--colorFilter);
+
+    width: 30px;
+    aspect-ratio: 1/1;
+
+    position: absolute;
+    right: 25px;
+    top: 25px;
 }
 
-.cMainLinks {
-    display: flex;
-    margin-top: 10px;
-    gap: 10px;
-    width: 100%;
+.postTitle{
+    position: absolute;
+    top: 25px;
+    left: 90px;
+
+    font-size: 25px;
+    font-weight: 600;
 }
 
-.contactBox i{
-    font-size: 35px;
-    min-width: 60px;
-    min-height: 60px;
+.postTitle::after{
+    content: "@Futur3Sn0w";
+    opacity: .7;
+
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.postText{
+    position: absolute;
+    top: 95px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-size: 18px;
+    font-weight: 500;
     
-    border-radius: 4px;
-    color: white;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.cHeader {
-    font: 700 30px var(--ff);
-}
-
-.ch2{
-    font: 500 15px var(--ff);
-    opacity: .7;
-}
-
-.cbHead {
-    font: 700 15px var(--ff);
-}
-
-.cbSub{
-    font: 500 14px var(--ff);
-    opacity: .7;
-}
-
-.cbSub::before{
-    content: "Wait: "
-}
-
-@media screen and (max-width: 600px) {
-    .glWrapper {
-        padding: 40px 10px;
-        margin: 0 10px;
-    }
-
-    .glDescription {
-        padding: 0 5px;
-        font-size: 16px;
-    }
-
-    #fssLogo {
-        width: 95%;
-        height: auto;
-    }
+    width: 90%;
 }

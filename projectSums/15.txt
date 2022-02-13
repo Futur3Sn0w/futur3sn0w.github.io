@@ -1,6 +1,0 @@
-The upcoming UI refresh for the Firefox web browser (named 'Proton') brings a host of new changes and enhancements. Some were taken well, others-- not so much.<br>
-However, one change that went pretty under-the-radar was the refreshed new-tab page, or NTP. It doesn't look completely different, but it is a nice splash of modern to what we had previously.<br>
-For the users that have the latest Nightly, Developer, or Beta build(s) of Firefox, you may already have the new UI enabled. If this is the case, I present to you a fun theme for your NTP!<br>
-This is GCNTP4FF: a 1:1 recreation of the Google Chrome NTP for Firefox Proton. The idea is that, with a simple .css file, you can transform your NTP into that of Google Chrome's.<br>
-The theme automatically adjusts and adapts to light & dark themes, sampling some of the original CSS code from Google Chrome's own NTP!<br><br>
-If you want to try the NTP for yourself, head down to the link below for installation instructions, and the download itself!

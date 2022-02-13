@@ -1,7 +1,0 @@
-Here’s a fun one!<br><br>
-Today, I began a new web-based project that set out with only one goal in mind: to recreate as much of Microsoft’s Groove Music application as I could with pure HTML, CSS, and JS.<br>
-This is a very small project for me, and as such, may not see very many updates, but it is fun to see how easily Microsoft could push their apps onto the web, which would be largely beneficial for users of Windows 10X when it comes out.<br>
-The current version doesn’t yet have much functionality, and is more for aesthetic purposes right now. The plan is to get as much of the UI completed as possible, since I still need time to figure out how I’m going to implement music playback.<br>
-It may seem silly, but if you want to, feel free to take a look at the site below, and/or view the code & information on GitHub.<br>
-Keep in mind, as I mentioned earlier, this project isn’t a main priority, and so it won’t be updated as often as you may hope.<br><br>
-However, it is always available, so I will update it from time to time, and eventually, we might even have a(n almost) fully featured Groove Music clone on the web!

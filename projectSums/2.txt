@@ -1,7 +1,0 @@
-10XINHTML is a project that I started back in late 2020 to replicate some of the Windows 10X UI in your browser.<br>
-It allows you to get a bit of a feel for how the OS would look and act, as well as try out some of the experiences, such as the first boot, dynamic wallpapers, accent colors and more.<br>
-In April of 2021, I rebooted the project, rewriting everything from scratch. At the time, the project hadn't had much substance to it, so it was easy enough to restart it.<br>
-As of June 2021, the project is filled with little things that make the experience feel as realistic as possible, including a working Launcher (Start Menu replacement), taskbar, settings app, and more.<br>
-Changes you make while visiting the site save automatically, so you don't have to make changes again when you revisit the site.<br>
-In the future, I plan to add as many apps as possible, trying my best to recreate as much of the 10x experience as I can.<br><br>
-Windows 10x lives on in the browser!

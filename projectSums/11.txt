@@ -1,3 +1,0 @@
-I’ve recently gotten back into web design through HTML, CSS, and JS. A few weeks ago, I took these skills, and created a custom userChrome.css theme for users of Firefox’s in-beta, Proton UI refresh. Today, I present the newest version of this theme!<br>
-ProtonPlus creates an even more modern and minimal UI experience for Proton users, with soft shadows, light colors, and an improved interface. The new release rebuilds ProtonPlus from the ground up, with a more refined look, and a MUCH more optimized experience.<br>
-You can download the theme from GitHub, as well as view all the information, details, and images from the links below! Enjoy!

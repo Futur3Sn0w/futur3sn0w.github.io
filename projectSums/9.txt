@@ -1,9 +1,0 @@
-As you may already know, I love creating home screen setups, especially on Android. This week, I’ve created a new setup called KustomKolors, which uses KLWP as a base for a really neat, color changing setup.<br>
-The star of the show here is the custom KLWP preset that houses 4 elements: the background image, the border, and the two boxes (top & bottom).<br>
-The background image itself consists of 2 parts as well, which is simply a light and dark image for the respective light & dark modes. There is a small bit of automation to make the images switch which is all done through KLWP, and is completely seamless. No user interaction required.<br>
-Next is the border, which I originally included to hide the double-hole punch on my Galaxy S10+, but I eventually adapted into the gradient you see now. The gradients you see on all the elements will be addressed in a minute.<br>
-And finally, there’s the two boxes, which are simply there to make the icons & top widget stand out a bit more from the wallpaper, as they kinda get lost with vibrant or otherwise busy wallpapers, which is the biggest reason I started this setup in the first place.<br>
-Each box has a single color, and an accent color that’s generated alongside it. Now, the neat part? The colors are generated based on now-playing music. It takes colors from the album artwork and applies them accordingly. How neat?!<br>
-Of course, when there’s no music playing, it will retain the last color it used. And, of course, if you have the know how, you could make it pull colors from the wallpaper image rather than the album art, but I thought this was a neat touch!<br><br>
-Be sure to check out the Twitter post below for more images of the color combos, so you can see how it looks with different colors!<br>
-As always, feel free to comment on the Twitter post if you have any questions!

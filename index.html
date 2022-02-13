@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>Studio30 | Home</title>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie-edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/background.css">
-    <link rel="stylesheet" href="css/home.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futur3Sn0w | Home</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="globals.css">
+    <script src="https://kit.fontawesome.com/a1fc6f0f3a.js" crossorigin="anonymous"></script>
 
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png?v2=2">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png?v2=2">
@@ -21,103 +20,66 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-config" content="/favicons/browserconfig.xml?v2=2">
     <meta name="theme-color" content="#ffe0ae">
-
-    <script src="https://kit.fontawesome.com/a1fc6f0f3a.js" crossorigin="anonymous"></script>
-    <script src="scripts.js"></script>
 </head>
-
-<body>
-
-    <div class="mobileDisclaimer">
-        <div class="mdHead">
-            <div class="mdh1">:(</div>
-            <div class="mdh2">Hey there! Thanks for visiting!</div>
-            <div class="mdh3">Unfortunately, this site is not yet mobile compatible. Try visiting on desktop to view it's contents!</div>
+<body style="background-color: var(--backgroundColor); overflow: hidden;">
+    <div class="sidebar">
+        <div class="heroLogo">
+            <div class="logoImg"></div>
+            <div class="wordMark">Futur3Sn0w</div>
         </div>
-        <div class="mdQR">
-            <img src="imgs/fsTwitter.png" alt="Future Snow Twitter QR Code">
-            <div class="qrInfo">
-                <div class="qri1">For more information, visit www.twitter.com/Futur3Sn0w</div>
-                <div class="qri2">If you contact support, give them this code:</div>
-                <div class="qri3">NOT_MOBILE_COMPATIBLE_YET</div>
+        <div class="navBtns">
+            <div 
+            class="button btn1 selBtn" 
+            data-navBtn="Home"
+            data-viewPortURL="../pages/home.html">
+                <i class="fas fa-home"></i>
+                <span class="shine" id="shine"></span>
+            </div>
+            <div 
+            class="button btn2" 
+            data-navBtn="About"
+            data-viewPortURL="../pages/about.html">
+                <i class="fa-solid fa-user"></i>
+                <span id="shine"></span>
+            </div>
+            <div 
+            class="button btn3" 
+            data-navBtn="Stuff"
+            data-viewPortURL="../pages/stuff.html">
+                <i class="fa-solid fa-shuffle"></i>
+                <span class="shine" id="shine"></span>
+            </div>
+            <div 
+            class="button btn4" 
+            data-navBtn="Contact"
+            data-viewPortURL="../pages/contact.html">
+                <i class="fa-solid fa-envelope"></i>
+                <span class="shine" id="shine"></span>
+            </div>
+            <div 
+            class="button btn5" 
+            data-navBtn="Misc"
+            data-viewPortURL="../pages/misc.html">
+                <i class="fas fa-brush"></i>
+                <span class="shine" id="shine"></span>
             </div>
         </div>
     </div>
+    <embed class="viewport" id="viewPort" src="pages/home.html">
+    <!-- <script src="js.js"></script> -->
 
-            <div class="topLevelPage greetingLinks" data-pageName="Home" id="greetingLinks">
-                <div class="glWrapper" id="glWrapper">
-                    <div class="glText">
-                        <p class="glWelcome">Welcome!</p>
-                        <p class="glDescription">This is the place to view all of my past, present, and future
-                            projects!<br>Head to the sidebar to view other pages.<br>Also, check the floating "@" button to visit my socials!<br>Thanks for
-                            stopping by!
-                        </p>
-                    </div>
-                    <img id="fssLogo" src="imgs/s30-logo.png">
-                </div>
-                <div class="homeSection hsContact">
-                    <div class="cHeader">Get In Touch!</div>
-                    <div class="cHeader ch2">Use the social button on the bottom left to visit my other socials.</div>
-                    <div class="cMainLinks">
-                        <a href="https://twitter.com/messages/1022185379976425473-1022185379976425473?text=" class="contactBox cb1">
-                            <i class="fa fa-twitter" style="background-color: #1ca0f2;"></i>
-                            <div class="cbText">
-                            <div class="cbHead">Twitter Direct Message</div>
-                            <div class="cbSub"> &#60; 24 Hours</div>
-                            </div>
-                        </a>
-                        <a href="mailto:futur3sn0w@gmail.com" class="contactBox cb2">
-                            <i class="fa fa-envelope-open" style="background-color: #105b9e;"></i>
-                            <div class="cbText">
-                            <div class="cbHead">Email (Mailto Link)</div>
-                            <div class="cbSub">1 - 3 Business Days</div>
-                            </div>
-                        </a>
-                        <a href="https://t.me/futur3sn0w" class="contactBox cb3">
-                            <i class="fab fa-telegram-plane" style="background-color: #27a7e7;"></i>
-                            <div class="cbText">
-                            <div class="cbHead">Telegram Message</div>
-                            <div class="cbSub">1 - 2 Days</div>
-                            </div>
-                        </a>
-                    </div>
+    <script>
+        var shine = document.querySelectorAll('.shine');
+        var buttons = Array.from(document.querySelectorAll(".button"));
 
-                    
-                </div>
-            </div>
-
-            <div class="socialBtnBar">
-                <p></p>
-                <div class="socialBar">
-                    <a href="https://www.deviantart.com/Futur3Sn0w"><i class="fa fa-deviantart" id="sb4"></i></a>
-                    <a href="https://www.dribbble.com/Futur3Sn0w"><i class="fa fa-dribbble" id="sb1"></i></a>
-                    <a href="https://www.github.com/Futur3Sn0w"><i class="fa fa-github" id="sb2"></i></a>
-                    <a href="https://www.youtube.com/playlist?list=PLFi87xXUo1vzczrs1iJNOhvguuQg3-CsI"><i class="fa fa-podcast" id="sb6"></i></a>
-                    <a href="https://www.soundcloud.com/futur3sn0w"><i class="fa fa-soundcloud" id="sb7"></i></a>
-                    <a href="https://www.twitch.tv/Futur3Sn0w"><i class="fa fa-twitch" id="sb8"></i></a>
-                    <a href="https://www.twitter.com/Futur3Sn0w"><i class="fa fa-twitter" id="sb3"></i></a>
-                    <a href="https://www.youtube.com/channel/UC98jW-uSef3Ql-y1mD6y2tQ"><i class="fa fa-youtube"
-                        id="sb5"></i></a>
-                </div>
-            </div>
-
-            <div class="topNav">
-                <div class="logoWrapper">
-                    <img id="logo" src="imgs/logo.png">
-                </div>
-                <div class="nbpcName" data-pageName="Home">Futur3Sn0w</div>
-            </div>
-
-            <div class="nav navBar">
-                <div class="navBtnWrapper">
-                    <button class="navButton nbHome button" data-navBtnName="Home" id="nbHome" onclick="homeBtn()"></button>
-                    <button class="navButton nbChangelog button" data-navBtnName="Changes" id="nbChangelog" onclick="changelogBtn()"></button>
-                    <!-- <button class="navButton nbLiveFeed button" data-navBtnName="Twitter Feed" id="nbLiveFeed" onclick="liveFeedBtn()"></button> -->
-                    <button class="navButton nbProjects button" data-navBtnName="My Work" id="nbProjects" onclick="projectsBtn()"></button>
-                    <button class="navButton nbAbout button" data-navBtnName="About Me" id="nbAbout" onclick="aboutBtn()"></button>
-                </div>
-            </div>
-
+        const button = document.querySelector('.button')
+        buttons.forEach((node) => {
+          node.addEventListener("mousemove", (e) => {
+            const { x, y } = node.getBoundingClientRect();
+            node.style.setProperty("--x", e.clientX - x);
+            node.style.setProperty("--y", e.clientY - y);
+          })
+        })
+    </script>
 </body>
-
 </html>

@@ -1,0 +1,198 @@
+.viewport{
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+
+    width: 80vw;
+    height: calc(100vh - 10px);
+}
+
+.sidebar{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+
+    padding: 0 10px;
+
+    width: calc(20vw - 10px);
+    height: 98vh;
+
+    /* background-color: inherit; */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.navBtns{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.button{
+    width: 100%;
+    height: 45px;
+    padding-left: 15px;
+
+    /* background-color: purple; */
+    background: linear-gradient(90deg, transparent, transparent);
+    border-radius: 100vw;
+    color: var(--fontColorB);
+
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
+    transition: background .2s;
+}
+
+.button::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+
+    background-color: var(--backgroundColor);
+    box-sizing: content-box;
+    border-radius: 100vw;
+
+    transform: translateX(-15px) scaleX(1);
+    transform-origin: left;
+
+    opacity: 1;
+
+    position: absolute;
+
+    transition: opacity .2s, transform .2s;
+}
+
+.button:hover{
+    color: var(--backgroundColor);
+    background: linear-gradient(90deg, rgb(223, 71, 71), transparent);
+}
+
+.button:hover::before{
+    opacity: 0;
+    transform: translateX(-15px) scaleX(0);
+}
+
+.selBtn::before{
+    display: none;
+}
+
+#shine{
+    width: 90px;
+    aspect-ratio: 1/1;
+
+    border-radius: 50%;
+    background-color: var(--shineColor);
+
+    opacity: 0;
+
+    filter: blur(20px);
+
+    position: absolute;
+    top: calc(var(--y, 0) * 1px - 50px);
+    left: calc(var(--x, 0) * 1px - 50px);
+    z-index: 2;
+
+    transform: translate(20%, 20%);
+
+    transition: opacity .2s;
+}
+
+.button:hover #shine{
+    opacity: 1;
+}
+
+.selBtn{
+    background: linear-gradient(90deg, rgb(223, 71, 71), rgb(248, 159, 56));
+    color: antiquewhite;
+    pointer-events: none;
+    cursor: pointer;
+}
+
+.selBtn #shine{
+    display: none;
+}
+
+.button::after{
+    content: attr(data-navBtn);
+    padding-left: 15px;
+
+    font-size: 18px;
+    font-weight: 900;
+    font-family: 'Inconsolata';
+
+    position: relative;
+    z-index: 3;
+}
+
+.button i{
+    font-size: 18px;
+    width: 20px;
+
+    text-align: center;
+
+    position: relative;
+    z-index: 3;
+}
+
+.heroLogo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 70px;
+
+    margin-bottom: 20px;
+
+    position: relative;
+}
+
+.heroLogo::after{
+    content: "";
+
+    width: 90%;
+    height: 2px;
+
+    background: linear-gradient(90deg, transparent, var(--fontColorB), transparent);
+    opacity: .4;
+
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logoImg{
+    width: 40px;
+    aspect-ratio: 1/1;
+
+    background-image: url("svg-black.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: var(--logoFilter);
+}
+
+.wordMark{
+    font-size: 28px;
+    font-weight: 800;
+    font-family: system-ui, sans-serif;
+    color: var(--fontColorA);
+
+    display: none;
+}
