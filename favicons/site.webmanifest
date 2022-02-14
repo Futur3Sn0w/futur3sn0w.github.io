@@ -1,6 +1,6 @@
 {
-    "name": "Studio30",
-    "short_name": "Studio30",
+    "name": "Futur3Sn0w",
+    "short_name": "Futur3Sn0w",
     "icons": [
         {
             "src": "/favicons/android-chrome-192x192.png?v2=2",
@@ -15,6 +15,5 @@
     ],
     "theme_color": "#ffe0ae",
     "background_color": "#ffe0ae",
-    "start_url": "https://www.futur3sn0w.com",
     "display": "standalone"
 }

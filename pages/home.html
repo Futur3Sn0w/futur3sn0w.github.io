@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../globals.css">
     <link rel="stylesheet" href="../globalsPages.css">
     <link rel="stylesheet" href="../css/home.css">
+    <script src="https://kit.fontawesome.com/a1fc6f0f3a.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="heroImage">
@@ -15,16 +16,27 @@
             <div class="heroSubTitle">You're early. ;)</div>    
         </div>
         <div class="post slide" id="slide2" onclick="window.open('https://www.twitter.com/Futur3Sn0w');">
-            <div class="twitterLogo"></div>
-            <div class="postTitle">Futur3Sn0w</div>
-            <div class="postText">Hey there, thanks for visiting! My site is currently under construction, and therefore, this section is a placeholder. In the meantime, feel free to visit my Twitter by clicking anywhere on this (fake) tweet!</div>
+            <div class="slide2Cont">
+                <div class="postPFP"></div>
+                <div class="twitterLogo"></div>
+                <div class="postTitle">Futur3Sn0w</div>
+                <div class="postText">Hey there, thanks for visiting! My site is currently under construction, and therefore, this section is a placeholder. In the meantime, feel free to visit my Twitter by clicking anywhere on this (fake) tweet!</div>
+            </div>    
         </div>
 
         <div class="slideIndc">
             <div class="slideDot dotActive" id="dot1"></div>
             <div class="slideDot" id="dot2"></div>
         </div>
+
+        <div class="slideNav snPrev" style="left: 0; transform: translateX(-100%); background: linear-gradient(90deg, #000000c0, transparent)" onclick="slideSwitch()">
+            <i class="fa-solid fa-circle-chevron-left"></i>
+        </div>
+        <div class="slideNav snNext" style="right: 0; transform: translateX(100%); background: linear-gradient(-90deg, #000000c0, transparent)" onclick="slideSwitch()">
+            <i class="fa-solid fa-circle-chevron-right"></i>
+        </div>
     </div>
+    
     <div class="heroBody">
         
     </div>
@@ -44,8 +56,37 @@
                 contentA.style.opacity = "0";
                 contentB.style.opacity = "1";
 
+                contentB.style.zIndex = "10";
+                contentA.style.zIndex = "5";
+
+                dotA.classList.remove("dotActive");
+                dotB.classList.add("dotActive");
+
+                document.documentElement.setAttribute('slideInv', "purple");
+            } else if (toggle == true){
+                contentA.style.opacity = "1";
+                contentB.style.opacity = "0";
+
                 contentB.style.zIndex = "5";
                 contentA.style.zIndex = "10";
+
+                dotA.classList.add("dotActive");
+                dotB.classList.remove("dotActive");
+
+                document.documentElement.setAttribute('slideInv', "white");
+            }
+            toggle = !toggle;
+        }, 5000);
+
+        function slideSwitch() {
+            toggle = !toggle;
+
+            if (toggle == false) {
+                contentA.style.opacity = "0";
+                contentB.style.opacity = "1";
+
+                contentB.style.zIndex = "10";
+                contentA.style.zIndex = "5";
 
                 dotA.classList.remove("dotActive");
                 dotB.classList.add("dotActive");
@@ -53,14 +94,13 @@
                 contentA.style.opacity = "1";
                 contentB.style.opacity = "0";
 
-                contentB.style.zIndex = "10";
-                contentA.style.zIndex = "5";
+                contentB.style.zIndex = "5";
+                contentA.style.zIndex = "10";
 
                 dotA.classList.add("dotActive");
                 dotB.classList.remove("dotActive");
             }
-            toggle = !toggle;
-        }, 10000);
+        }
     </script>
 </body>
 </html>

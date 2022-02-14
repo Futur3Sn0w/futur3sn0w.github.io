@@ -199,6 +199,21 @@
     display: none;
 }
 
+/* Copyright */
+
+.copyright{
+    margin-top: auto;
+    margin-bottom: 30px;
+
+    font-size: 13px;
+    font-weight: 700;
+    opacity: .3;
+
+    user-select: none;
+
+    color: var(--fontColorB);
+}
+
 /* Social Buttons */
 
 .socialBtns{
@@ -207,7 +222,6 @@
     justify-content: center;
     gap: 15px;
 
-    margin-top: auto;
     margin-bottom: 20px;
 
     position: relative;
@@ -236,3 +250,36 @@
 .socialBtns i:hover{
     filter: none;
 }
+
+/* Media Queries */
+
+@media screen and (max-width: 1080px) {
+    .sidebar {
+      width: 75px;
+    }
+
+    .button::after{
+        display: none;
+    }
+
+    .button{
+        width: 50px;
+    }
+
+    .copyright{
+        opacity: 0;
+    }
+
+    .viewport{
+        width: calc(100vw - 85px);
+    }
+
+    .socialBtns{
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .socialBtns a i {
+        font-size: 20px;
+    }
+  }
