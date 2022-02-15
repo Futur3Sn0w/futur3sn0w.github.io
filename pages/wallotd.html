@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../globals.css">
+    <link rel="stylesheet" href="../globalsPages.css">
+    <link rel="stylesheet" href="../css/wallotd.css">
+</head>
+<body>
+    <div class="heroImage">
+        <div class="heroTitle">Wallpaper Weekly</div>
+        <div class="heroSubTitle">High quality, hand picked wallpapers!</div>
+    </div>
+
+    <div class="heroBody">
+        <div class="backdropPrev"></div>
+        <div class="heroHeader">This Week's Wallpaper:</div>
+        <div class="wallPrev">
+
+            <div id="wpI" 
+            class="wallPrevImg" 
+            data-downLink="https://imgur.com/a/xMbHOgo">
+            </div>
+
+            <div class="wallInfo" style="display: flex; flex-direction: column; gap: 5px;">
+                <div class="wi wiName" id="wiName">"Category Abstraction"</div>
+                <div class="wi wiAuth" id="wiAuth">akspic</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var wpi = document.getElementById('wpI');
+
+        wpi.onclick = function () {
+            window.open(wpi.getAttribute('data-downLink'));
+        }
+    </script>
+</body>
+</html>

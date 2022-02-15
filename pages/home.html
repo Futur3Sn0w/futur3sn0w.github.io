@@ -12,27 +12,32 @@
 <body>
     <div class="heroImage">
         <div class="slide" id="slide1">
-            <div class="heroTitle">Hey.</div>
-            <div class="heroSubTitle">You're early. ;)</div>    
+            <div class="heroTitle">Hey</div>
+            <div class="heroSubTitle">Still working on it...</div>    
         </div>
-        <div class="post slide" id="slide2" onclick="window.open('https://www.twitter.com/Futur3Sn0w');">
+        <div class="post slide" id="slide2">
             <div class="slide2Cont">
                 <div class="postPFP"></div>
                 <div class="twitterLogo"></div>
                 <div class="postTitle">Futur3Sn0w</div>
-                <div class="postText">Hey there, thanks for visiting! My site is currently under construction, and therefore, this section is a placeholder. In the meantime, feel free to visit my Twitter by clicking anywhere on this (fake) tweet!</div>
+                <div class="postText">Hey there, thanks for visiting! My site is currently under construction, and therefore, this section is a placeholder. In the meantime, feel free to visit my Twitter by clicking the Twitter icon on the sidebar!</div>
             </div>    
+        </div>
+        <div class="slide" id="slide3">
+            <div class="heroTitle">Wallpaper Weekly</div>
+            <div class="heroSubTitle">Visit the new page from the sidebar!</div>
         </div>
 
         <div class="slideIndc">
-            <div class="slideDot dotActive" id="dot1"></div>
+            <div class="slideDot" id="dot1"></div>
             <div class="slideDot" id="dot2"></div>
+            <div class="slideDot" id="dot3"></div>
         </div>
 
-        <div class="slideNav snPrev" style="left: 0; transform: translateX(-100%); background: linear-gradient(90deg, #000000c0, transparent)" onclick="slideSwitch()">
+        <div class="slideNav snPrev" onclick="plusDivs(-1)" style="left: 0; transform: translateX(-100%); background: linear-gradient(90deg, #00000055, transparent)" onclick="slideSwitch()">
             <i class="fa-solid fa-circle-chevron-left"></i>
         </div>
-        <div class="slideNav snNext" style="right: 0; transform: translateX(100%); background: linear-gradient(-90deg, #000000c0, transparent)" onclick="slideSwitch()">
+        <div class="slideNav snNext" onclick="plusDivs(+1)" style="right: 0; transform: translateX(100%); background: linear-gradient(-90deg, #00000055, transparent)" onclick="slideSwitch()">
             <i class="fa-solid fa-circle-chevron-right"></i>
         </div>
     </div>
@@ -41,15 +46,18 @@
         
     </div>
 
-    <script>
+    <scriptt>
         var toggle = false;
         var contentA = document.getElementById('slide1');
         var contentB = document.getElementById('slide2');
+        var contentC = document.getElementById('slide3');
 
         var dotA = document.getElementById('dot1');
         var dotB = document.getElementById('dot2');
+        var dotC = document.getElementById('dot3');
 
         contentB.style.opacity = "0";
+        // contentC.style.opacity = "0";
 
         setInterval(function() {
             if (toggle == false) {
@@ -101,6 +109,45 @@
                 dotB.classList.remove("dotActive");
             }
         }
+    </scriptt>
+
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+          showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("slide");
+            var dots = document.getElementsByClassName("slideDot");
+            if (n > x.length) {slideIndex = 1} 
+            if (n < 1) {slideIndex = x.length} ;
+            for (i = 0; i < x.length; i++) {
+                x[i].style.opacity = "0"; 
+            }
+            for (i = 0; i < dots.length; i++) {
+                // dots[i].className = dots[i].className.replace(" slideDot", "dotActive");
+            }
+            x[slideIndex-1].style.opacity = "1"; 
+        }
+
+        carousel();
+
+        function carousel() {
+        var i;
+        var x = document.getElementsByClassName("slide");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.opacity = "0"; 
+        }
+        slideIndex++;
+        if (slideIndex > x.length) {slideIndex = 1} 
+        x[slideIndex-1].style.opacity = "1"; 
+        setTimeout(carousel, 5000); // Change image every 2 seconds
+        }
     </script>
+
 </body>
 </html>

@@ -1,16 +1,18 @@
 body{
     background-color: var(--pageBackgroundColor);
+    overflow-x: hidden;
 }
 
 .heroImage{
     width: 100vw;
-    height: 50vh;
+    height: 40vh;
 
     position: absolute;
     top: 0;
     left: 0;
-
+    
     background: linear-gradient(45deg, rgb(235, 77, 103), teal, rgb(184, 32, 163));
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
     color: white;
 
     display: flex;
@@ -34,9 +36,37 @@ body{
 
 .heroBody{
     width: 100vw;
-    height: 50vh;
+    height: 60vh;
+
+    padding: 15px;
 
     position: absolute;
     bottom: 0;
     left: 0;
+}
+
+@keyframes colorFade {
+    0%{
+        background: #018000;
+    }
+
+    20%{
+        background: #197CDA;
+    }
+
+    40%{
+        background: #7D36B9;
+    }
+
+    60%{
+        background: #BA2A57;
+    }
+
+    80%{
+        background: #FA8A36;
+    }
+
+    100%{
+        background: #58A18B;
+    }
 }

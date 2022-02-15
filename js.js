@@ -1,6 +1,6 @@
 var viewPort = document.getElementById('viewPort');
 
-let dropDowns = Array.from(document.querySelectorAll('.button'));
+let dropDowns = Array.from(document.querySelectorAll('.btnReady'));
 
 const handleClick = (e) => {
   e.preventDefault();
