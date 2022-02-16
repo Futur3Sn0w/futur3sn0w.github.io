@@ -11,6 +11,7 @@
 
     position: absolute;
     top: 0;
+    z-index: 9;
 
     overflow: hidden;
 }
@@ -18,8 +19,8 @@
 /* Slide 1 */
 
 #slide1{
-    background-color: var(--backgroundColor);
-    color: var(--fontColorB);
+    background: linear-gradient(135deg, var(--fsR), var(--fsP));
+    color: white;
 
     z-index: 10;
 
@@ -47,13 +48,28 @@
 /* Slide 2 */
 
 .post{
-    background-color: var(--fontColorB);
-    color: var(--pageBackgroundColor);
+    background-color: #1E9BF0;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide2Cont{
+    width: 60%;
+    height: fit-content;
+}
+
+.s2cTop{
+    display: flex;
+    height: fit-content;
+    gap: 10px;
+
+    margin-bottom: 10px;
 }
 
 .postPFP{
-    content: '';
-
     width: 60px;
     aspect-ratio: 1/1;
 
@@ -62,30 +78,22 @@
 
     border: 1px solid var(--pageBackgroundColor);
     border-radius: 50%;
-
-    position: absolute;
-    top: 20px;
-    left: 0px;
 }
 
 .twitterLogo{
     background-image: url("https://upload.wikimedia.org/wikipedia/sco/9/9f/Twitter_bird_logo_2012.svg");
     background-size: contain;
     background-repeat: no-repeat;
-    filter: var(--colorFilter);
+    filter: brightness(100) saturate(100);
 
     width: 30px;
     aspect-ratio: 1/1;
 
-    position: absolute;
-    right: 25px;
-    top: 25px;
+    margin-left: auto;
 }
 
 .postTitle{
-    position: absolute;
-    top: 25px;
-    left: 70px;
+    position: relative;
 
     font-size: 27px;
     font-weight: 600;
@@ -96,7 +104,7 @@
     opacity: .7;
 
     position: absolute;
-    bottom: -20px;
+    bottom: 10px;
     left: 0;
 
     font-size: 18px;
@@ -104,21 +112,10 @@
 }
 
 .postText{
-    position: absolute;
-    top: 105px;
-    left: 50%;
-    transform: translateX(-50%);
-
     font-size: 25px;
     font-weight: 500;
     
     width: 100%;
-}
-
-.slide2Cont{
-    width: 60%;
-    position: relative;
-    margin: 0 auto;
 }
 
 /* Slide 3 */
@@ -217,4 +214,63 @@
 .heroImage:hover .slideNav{
     opacity: 1;
     transform: translateX(0) !important;
+}
+
+/* Body */
+
+.bodyPost{
+    width: 90vw;
+    height: fit-content;
+    margin: 0 auto;
+
+    padding: 20px;
+
+    border-radius: 10px;
+    background-color: var(--buttonHover);
+    
+    color: var(--fontColorA);
+}
+
+.heroHead{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.heroInfo{
+    display: flex;
+    flex-direction: column;
+
+    font-size: 14px;
+    font-weight: 400;
+    opacity: .6;
+}
+
+.bodyContent{
+    border: 1px solid var(--fontColorA);
+    border-radius: 3px;
+    padding: 10px;
+
+    margin-top: 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.bodyContent p{
+    margin: 0;
+}
+
+.bodyHead{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.bodyHead:not(:first-of-type){
+    margin-top: 15px;
+}
+
+.bodyText{
+    font-size: 15px;
+    font-weight: 400;
 }

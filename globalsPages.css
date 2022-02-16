@@ -1,15 +1,17 @@
 body{
     background-color: var(--pageBackgroundColor);
     overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .heroImage{
     width: 100vw;
     height: 40vh;
 
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
+    z-index: 5;
+
+    margin-bottom: 20px;
     
     background: linear-gradient(45deg, rgb(235, 77, 103), teal, rgb(184, 32, 163));
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
@@ -36,13 +38,11 @@ body{
 
 .heroBody{
     width: 100vw;
-    height: 60vh;
+    height: max-content;
+
+    overflow: scroll;
 
     padding: 15px;
-
-    position: absolute;
-    bottom: 0;
-    left: 0;
 }
 
 @keyframes colorFade {

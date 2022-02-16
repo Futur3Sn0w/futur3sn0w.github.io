@@ -24,14 +24,18 @@ a{
     --socReddit: red;
 
     --slideHeight: 300px;
+
+    --fsR: #ff0040;
+    --fsO: #e79d3c;
+    --fsY: #ffd900;
+    --fsG: #2d922d;
+    --fsB: #4362eb;
+    --fsP: #851594;
 }
 
 @media (prefers-color-scheme: light) {
     :root{
-        --backgroundColor: antiquewhite;
-
         --fontColorA: black;
-        --fontColorB: rgb(105, 91, 65);
 
         --logoFilter: invert(0);
         --colorFilter: brightness(0) saturate(0) invert(95%) sepia(73%) saturate(336%) hue-rotate(304deg) brightness(102%) contrast(96%);
@@ -46,10 +50,7 @@ a{
 
 @media (prefers-color-scheme: dark) {
     :root{
-        --backgroundColor: rgb(105, 91, 65);
-
         --fontColorA: white;
-        --fontColorB: antiquewhite;
 
         --logoFilter: invert(100%);
         --colorFilter: brightness(0) saturate(0) invert(36%) sepia(10%) saturate(1313%) hue-rotate(1deg) brightness(92%) contrast(88%);

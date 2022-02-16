@@ -1,0 +1,21 @@
+@media (prefers-color-scheme: light) {
+    :root{
+        --backgroundColor: #d6eafa;
+
+        --fontColorB: #263540;
+
+        --accentGradient: linear-gradient(90deg, rgb(53, 56, 196), rgb(248, 56, 248));
+        --accentRegular: #4362eb;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root{
+        --backgroundColor: #263540;
+
+        --fontColorB: #d6eafa;
+        
+        --accentGradient: linear-gradient(90deg, rgb(53, 56, 196), rgb(248, 56, 248));
+        --accentRegular: #4362eb;
+    }
+}

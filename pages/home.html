@@ -12,15 +12,17 @@
 <body>
     <div class="heroImage">
         <div class="slide" id="slide1">
-            <div class="heroTitle">Hey</div>
-            <div class="heroSubTitle">Still working on it...</div>    
+            <div class="heroTitle">Hey!</div>
+            <div class="heroSubTitle">I'm Futur3Sn0w.</div>    
         </div>
         <div class="post slide" id="slide2">
             <div class="slide2Cont">
-                <div class="postPFP"></div>
-                <div class="twitterLogo"></div>
-                <div class="postTitle">Futur3Sn0w</div>
-                <div class="postText">Hey there, thanks for visiting! My site is currently under construction, and therefore, this section is a placeholder. In the meantime, feel free to visit my Twitter by clicking the Twitter icon on the sidebar!</div>
+                <div class="s2cTop">
+                    <div class="postPFP"></div>
+                    <div class="postTitle">Futur3Sn0w</div>
+                    <div class="twitterLogo"></div>
+                </div>
+                <div class="postText">We are finally getting somewhere! Check out the 'Welcome (back)!' post (or the Twitter) for more info.</div>
             </div>    
         </div>
         <div class="slide" id="slide3">
@@ -43,73 +45,26 @@
     </div>
     
     <div class="heroBody">
-        
+        <div class="bodyPost">
+            <div class="heroHead">Welcome (back)!
+                <div class="heroInfo">
+                    <div class="hi1">Post by: @Futur3Sn0w</div>
+                    <div class="hi2" style="font-size: 12px;">February 16, 2022</div>
+                </div>
+            </div>
+            <div class="bodyContent">
+                <p class="bodyHead">Don't worry, you're in the right place.</p>
+                <p class="bodyText">Some of you may be wondering what happened to my site. <br>Well, after 3 years of using and iterating the old design, I decided that it was time to start from scratch. This meant a complete rewrite of the site; from the inside-out.</p>
+                <p class="bodyHead">So... What's new?</p>
+                <p class="bodyText">Starting on February 12th, I began the process of building a brand new website. The main goals were to make it performant, clean, and modern. (Which, to be fair, is the goal of <i>all</i> of my projects.) <br>The layout that I had in mind is exactly what you see here now. This area, called the 'viewPort', hosts each page of the site. This is the home page, but you can also visit the Wallpaper Weekly page from the sidebar. <br>The sidebar hosts the links to all the pages on the site, as well as links to my socials at the bottom. Clicking on a page name from the sidebar loads it into the viewPort, and clicking a social link will bring you to that specific service. <br>These two simple elements make the site nice and snappy, as it doesn't have to load in everything at once; just the things it needs for each page.</p>
+                <p class="bodyHead">Bonus:</p>
+                <p class="bodyText">Starting this week, I will begin testing an accent color changer for the site. The beta should be live now, so if you can find the hidden button, check out the themes!</p>
+                <p class="bodyHead">Final thoughts</p>
+                <p class="bodyText">If you're interested in the backend of the site, check out the Github page (link in the sidebar). There are bits and pieces of the site that still need to be worked on, they will be fixed and improved in the coming days and weeks. (Including more interactivities!)</p>
+                <p class="bodyText">That's about all, folks! Thanks for reading; let me know what you think of the new site on Twitter! <br><b>—Adam (Futur3Sn0w)</b></p>
+            </div>
+        </div>
     </div>
-
-    <scriptt>
-        var toggle = false;
-        var contentA = document.getElementById('slide1');
-        var contentB = document.getElementById('slide2');
-        var contentC = document.getElementById('slide3');
-
-        var dotA = document.getElementById('dot1');
-        var dotB = document.getElementById('dot2');
-        var dotC = document.getElementById('dot3');
-
-        contentB.style.opacity = "0";
-        // contentC.style.opacity = "0";
-
-        setInterval(function() {
-            if (toggle == false) {
-                contentA.style.opacity = "0";
-                contentB.style.opacity = "1";
-
-                contentB.style.zIndex = "10";
-                contentA.style.zIndex = "5";
-
-                dotA.classList.remove("dotActive");
-                dotB.classList.add("dotActive");
-
-                document.documentElement.setAttribute('slideInv', "purple");
-            } else if (toggle == true){
-                contentA.style.opacity = "1";
-                contentB.style.opacity = "0";
-
-                contentB.style.zIndex = "5";
-                contentA.style.zIndex = "10";
-
-                dotA.classList.add("dotActive");
-                dotB.classList.remove("dotActive");
-
-                document.documentElement.setAttribute('slideInv', "white");
-            }
-            toggle = !toggle;
-        }, 5000);
-
-        function slideSwitch() {
-            toggle = !toggle;
-
-            if (toggle == false) {
-                contentA.style.opacity = "0";
-                contentB.style.opacity = "1";
-
-                contentB.style.zIndex = "10";
-                contentA.style.zIndex = "5";
-
-                dotA.classList.remove("dotActive");
-                dotB.classList.add("dotActive");
-            } else if (toggle == true){
-                contentA.style.opacity = "1";
-                contentB.style.opacity = "0";
-
-                contentB.style.zIndex = "5";
-                contentA.style.zIndex = "10";
-
-                dotA.classList.add("dotActive");
-                dotB.classList.remove("dotActive");
-            }
-        }
-    </scriptt>
 
     <script>
         var slideIndex = 1;
@@ -145,7 +100,7 @@
         slideIndex++;
         if (slideIndex > x.length) {slideIndex = 1} 
         x[slideIndex-1].style.opacity = "1"; 
-        setTimeout(carousel, 5000); // Change image every 2 seconds
+        setTimeout(carousel, 10000);
         }
     </script>
 

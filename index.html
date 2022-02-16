@@ -7,6 +7,7 @@
     <title>Futur3Sn0w | Home</title>
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="globals.css">
+    <link rel="stylesheet" id="colorSheet" href="css/colTheme/O.css">
     <script src="https://kit.fontawesome.com/a1fc6f0f3a.js" crossorigin="anonymous"></script>
 
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png?v2=2">
@@ -26,6 +27,22 @@
         <div class="heroLogo">
             <div class="logoImg"></div>
             <div class="wordMark">Futur3Sn0w</div>
+            <div class="settBtn">
+                <i class="fa-solid fa-cog"></i>
+                <div class="settMenu">
+
+                    <div 
+                    class="colorBtn cb2"
+                    data-colorCode="O">
+                    </div>
+
+                    <div 
+                    class="colorBtn cb5"
+                    data-colorCode="B">
+                    </div>
+
+                </div>
+            </div>
         </div>
         <div class="navBtns">
             <div 
@@ -44,16 +61,9 @@
             </div>
             <div 
             class="button btn3" 
-            data-navBtn="Stuff"
+            data-navBtn="My Work"
             data-viewPortURL="../pages/stuff.html">
-                <i class="fa-solid fa-shuffle"></i>
-                <span class="shine" id="shine"></span>
-            </div>
-            <div 
-            class="button btn4" 
-            data-navBtn="Contact"
-            data-viewPortURL="../pages/contact.html">
-                <i class="fa-solid fa-envelope"></i>
+                <i class="fa-solid fa-folder"></i>
                 <span class="shine" id="shine"></span>
             </div>
             <div class="sep" style="margin: 5px 0;"></div>
@@ -99,6 +109,20 @@
             node.style.setProperty("--y", e.clientY - y);
           })
         })
+
+        var colorBtns = Array.from(document.querySelectorAll(".colorBtn"));
+        const colorBtn = document.querySelector('.colorBtn');
+        colorBtns.forEach((node) => {
+            node.style.backgroundColor = "var(--fs" + node.getAttribute('data-colorCode') + ")";
+            node.addEventListener("click", (f) => {
+                document.getElementById('colorSheet').href = 'css/colTheme/' + node.getAttribute('data-colorCode') + ".css";
+                localStorage.setItem('accent', 'css/colTheme/' + node.getAttribute('data-colorCode') + ".css");
+            })
+        })
+
+        window.onload = function () {
+            document.getElementById('colorSheet').href = localStorage.getItem('accent');
+        }
     </script>
 </body>
 </html>

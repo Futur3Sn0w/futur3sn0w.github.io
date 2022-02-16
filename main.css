@@ -8,6 +8,8 @@
 
     width: 82vw;
     height: calc(100vh - 10px);
+
+    overflow: scroll;
 }
 
 .sidebar{
@@ -43,7 +45,6 @@
     height: 40px;
     padding-left: 15px;
 
-    /* background-color: purple; */
     background: linear-gradient(90deg, transparent, transparent);
     border-radius: 100vw;
     color: var(--fontColorB);
@@ -59,8 +60,8 @@
 }
 
 .button:hover{
-    color: var(--backgroundColor);
-    background: linear-gradient(90deg, rgb(223, 71, 71), transparent);
+    color: var(--fontColorB);
+    background: linear-gradient(90deg, var(--accentRegular), transparent);
 }
 
 .button::after{
@@ -115,8 +116,8 @@
 }
 
 .selBtn{
-    background: linear-gradient(90deg, rgb(223, 71, 71), rgb(248, 159, 56));
-    color: antiquewhite;
+    background: var(--accentGradient);
+    color: white;
     pointer-events: none;
     cursor: pointer;
 }
@@ -135,6 +136,77 @@
     opacity: .4;
 
     position: relative;
+}
+
+/* Settings Button */
+
+.settBtn{
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    font-size: 17px;
+    color: transparent;
+
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 4px;
+    transition: background-color .1s, color .1s;
+
+    cursor: pointer;
+}
+
+.settBtn:hover{
+    background-color: rgba(255, 255, 255, 0.3);
+    color: var(--fontColorA);
+}
+
+.settBtn:hover .settMenu{
+    transform: scale(1);
+}
+
+.settMenu{
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    z-index: 10;
+
+    width: fit-content;
+    height: 40px;
+    padding: 0 10px;
+
+    transform: scale(0);
+    transform-origin: top left;
+    transition: transform .2s;
+
+    border-radius: 0 50px 50px 50px;
+    background-color: white;
+
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    align-items: center;
+    gap: 3px;
+
+    cursor: default;
+}
+
+.colorBtn{
+    width: 35px;
+    aspect-ratio: 1/1;
+
+    background-color: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.colorBtn:hover{
+    opacity: .5;
 }
 
 /* Hero (Logo) Section */
