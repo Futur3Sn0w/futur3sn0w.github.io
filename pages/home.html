@@ -102,6 +102,26 @@
         x[slideIndex-1].style.opacity = "1"; 
         setTimeout(carousel, 10000);
         }
+
+        var posts = Array.from(document.querySelectorAll('.bodyPost'));
+        var post = document.querySelector('.bodyPost');
+        var openPosts = Array.from(document.querySelectorAll('.openPost'));
+
+        const handlePostClick = (g) => {
+            posts.forEach(node => {
+                node.classList.toggle('openPost');
+            });
+        }
+
+        posts.forEach(node => {
+            node.addEventListener('click', handlePostClick)
+        });
+
+        openPosts.forEach(node => {
+            node.addEventListener('click', function (obj) {
+                obj.classList.toggle('bodyPost');
+            })
+        });
     </script>
 
 </body>
