@@ -44,6 +44,7 @@ a{
         --buttonHover: #0000000b;
         --buttonHoverSolid: #F4F4F4;
         --shineColor: #FFFFFF55;
+        --navHover: #854d0344;
 
         --pageBackgroundColor: white;
     }
@@ -60,6 +61,7 @@ a{
         --buttonHover: #FFFFFF15;
         --buttonHoverSolid: #151515;
         --shineColor: #FFFFFF33;
+        --navHover: #FFFFFF15;
 
         --pageBackgroundColor: black;
     }

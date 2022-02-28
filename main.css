@@ -16,11 +16,11 @@
     position: absolute;
     left: 0;
     bottom: 0;
-    z-index: 1;
+    z-index: 0;
 
     padding: 0 10px;
 
-    width: calc(18vw - 10px);
+    width: 18vw;
     height: 98vh;
 
     /* background-color: inherit; */
@@ -45,9 +45,11 @@
     height: 40px;
     padding-left: 15px;
 
-    background: linear-gradient(90deg, transparent, transparent);
-    border-radius: 100vw;
+    border-radius: 100vw 0 0 100vw;
     color: var(--fontColorB);
+
+    transform: translateX(10px);
+    opacity: .7;
 
     display: flex;
     align-items: center;
@@ -56,12 +58,15 @@
     position: relative;
     overflow: hidden;
 
-    transition: background .2s;
+    transition: background .2s, opacity .2s, transform .2s;
 }
 
 .button:hover{
     color: var(--fontColorB);
-    background: linear-gradient(90deg, var(--accentRegular), transparent);
+    background: var(--navHover);
+
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .button::after{
@@ -94,6 +99,8 @@
     width: 90px;
     aspect-ratio: 1/1;
 
+    display: none;
+
     border-radius: 50%;
     background-color: var(--shineColor);
 
@@ -120,6 +127,8 @@
     color: white;
     pointer-events: none;
     cursor: pointer;
+    transform: translateX(0);
+    opacity: 1;
 }
 
 .selBtn #shine{
@@ -188,7 +197,7 @@
     background-color: white;
 
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto;
     grid-template-rows: auto;
     align-items: center;
     gap: 3px;

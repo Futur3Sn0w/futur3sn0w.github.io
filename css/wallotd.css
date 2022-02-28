@@ -8,13 +8,15 @@
     animation-iteration-count: infinite;
     animation-direction: alternate;
 
+    height: 20vh;
+
     background: none;
 }
 
 .heroHeader{
     font-size: 40px;
     font-weight: 600;
-    margin: 10px 0 15px 0;
+    margin: -15px 0 15px 0;
 
     position: relative;
     z-index: 2;
@@ -38,15 +40,37 @@
     background-size: cover;
     background-position: center bottom;
     background-repeat: no-repeat;
-    background-image: url("../wotwprev.png");
+    background-image: url("../wotwprev.jpg");
 
     filter: blur(10px);
     opacity: .4;
 }
 
+.wallPrevs{
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto auto;
+    place-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.wallPrevs::after{
+    content: "";
+
+    background: linear-gradient(90deg, transparent, black, transparent);
+
+    position: absolute;
+    bottom: -30px;
+
+    width: 95%;
+    height: 3px;
+}
+
 .wallPrev{
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     gap: 10px;
 
     position: relative;
@@ -66,11 +90,21 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url("../wotwprev.png");
 
     cursor: pointer;
 
     position: relative;
+}
+
+.wpMobile{
+    flex-direction: row;
+    align-items: center;
+}
+
+.wpiVert{
+    aspect-ratio: 9.5/14;
+    width: unset;
+    height: 250px;
 }
 
 .wiName{
@@ -85,4 +119,24 @@
     
     display: flex;
     flex-direction: column;
+}
+
+/* Previous Wallpapers Section */
+
+.previWalls{
+    width: 100%;
+    height: fit-content;
+
+    font-size: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 50px;
+}
+
+.previWalls::before{
+    content: "Previous Wallpapers";
+    font-size: 25px;
+    font-weight: 600;
 }

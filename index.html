@@ -27,7 +27,7 @@
         <div class="heroLogo">
             <div class="logoImg"></div>
             <div class="wordMark">Futur3Sn0w</div>
-            <div class="settBtn">
+            <div class="settBtn" style="display: none;">
                 <i class="fa-solid fa-cog"></i>
                 <div class="settMenu">
 
@@ -39,6 +39,11 @@
                     <div 
                     class="colorBtn cb5"
                     data-colorCode="B">
+                    </div>
+
+                    <div 
+                    class="colorBtn cb7"
+                    data-colorCode="G">
                     </div>
 
                 </div>
@@ -121,7 +126,7 @@
         })
 
         window.onload = function () {
-            document.getElementById('colorSheet').href = localStorage.getItem('accent');
+            // document.getElementById('colorSheet').href = localStorage.getItem('accent');
         }
     </script>
 </body>

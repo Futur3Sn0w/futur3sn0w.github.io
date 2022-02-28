@@ -11,31 +11,52 @@
 <body>
     <div class="heroImage">
         <div class="heroTitle">Wallpaper Weekly</div>
-        <div class="heroSubTitle">High quality, hand picked wallpapers!</div>
     </div>
 
     <div class="heroBody">
         <div class="backdropPrev"></div>
-        <div class="heroHeader">This Week's Wallpaper:</div>
-        <div class="wallPrev">
+        <div class="heroHeader">This Week's Wallpapers:</div>
+        <div class="wallPrevs">
+            <div class="wallPrev wpDesktop">
 
-            <div id="wpI" 
-            class="wallPrevImg" 
-            data-downLink="https://imgur.com/a/xMbHOgo">
+                <div id="wpI" 
+                class="wallPrevImg" 
+                onclick="openWall(this)"
+                data-downLink="https://imgur.com/a/gs17skL"
+                style="background-image: url('../wotwprev.jpg');">
+                </div>
+
+                <div class="wallInfo" style="display: flex; flex-direction: column; gap: 5px;">
+                    <div class="wi wiName" id="wiName">"Point Reyes, California"</div>
+                    <div class="wi wiAuth" id="wiAuth">Unknown</div>
+                </div>
             </div>
 
-            <div class="wallInfo" style="display: flex; flex-direction: column; gap: 5px;">
-                <div class="wi wiName" id="wiName">"Category Abstraction"</div>
-                <div class="wi wiAuth" id="wiAuth">akspic</div>
+            <div class="wallPrev wpMobile">
+
+                <div id="wpI" 
+                class="wallPrevImg wpiVert" 
+                onclick="openWall(this)"
+                data-downLink="https://drive.google.com/drive/folders/1GUkkMQBpcW_0jQ9pwDypPIxNoSMBlcFh" 
+                style="background-image: url('../wotwprev2.jpeg');">
+                </div>
+
+                <div class="wallInfo" style="display: flex; flex-direction: column; gap: 5px;">
+                    <div class="wi wiName" id="wiName">"Blurry David"</div>
+                    <div class="wi wiAuth" id="wiAuth">u/Famberlight (Reddit)</div>
+                </div>
             </div>
+        </div>
+        <div class="previWalls">
+            (Coming soon!)
         </div>
     </div>
 
     <script>
-        var wpi = document.getElementById('wpI');
+        var wpi = Array.from(document.querySelectorAll('wpi'));
 
-        wpi.onclick = function () {
-            window.open(wpi.getAttribute('data-downLink'));
+        function openWall(obj){
+            window.open(obj.getAttribute('data-downLink'));
         }
     </script>
 </body>
