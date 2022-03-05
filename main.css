@@ -6,7 +6,7 @@
     border-radius: 15px 15px 0 0;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
 
-    width: 82vw;
+    width: calc(82vw - 10px);
     height: calc(100vh - 10px);
 
     overflow: scroll;
@@ -45,10 +45,9 @@
     height: 40px;
     padding-left: 15px;
 
-    border-radius: 100vw 0 0 100vw;
+    border-radius: 100vw;
     color: var(--fontColorB);
 
-    transform: translateX(10px);
     opacity: .7;
 
     display: flex;
@@ -66,7 +65,6 @@
     background: var(--navHover);
 
     opacity: 1;
-    transform: translateX(0);
 }
 
 .button::after{
@@ -98,8 +96,6 @@
 #shine{
     width: 90px;
     aspect-ratio: 1/1;
-
-    display: none;
 
     border-radius: 50%;
     background-color: var(--shineColor);
