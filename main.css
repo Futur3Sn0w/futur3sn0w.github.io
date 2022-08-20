@@ -1,350 +1,91 @@
-.viewport{
-    position: absolute;
-    bottom: 0;
-    right: 10px;
+body {
+    width: 100vw;
+    height: 100vh;
 
-    border-radius: 15px 15px 0 0;
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+    margin: 0;
+    padding: 0;
 
-    width: calc(82vw - 10px);
-    height: calc(100vh - 10px);
+    background-color: #222;
 
-    overflow: scroll;
-}
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
 
-.sidebar{
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    z-index: 0;
-
-    padding: 0 10px;
-
-    width: 18vw;
-    height: 98vh;
-
-    /* background-color: inherit; */
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-.navBtns{
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    gap: 5px;
 }
 
-.button{
-    width: 100%;
-    height: 40px;
-    padding-left: 15px;
+.rc,
+.rc-ov {
+    width: 25em;
+    aspect-ratio: 1/1;
 
-    border-radius: 100vw;
-    color: var(--fontColorB);
+    border-radius: 50%;
 
-    opacity: .7;
-
-    display: flex;
-    align-items: center;
-
-    cursor: pointer;
-    position: relative;
     overflow: hidden;
 
-    transition: background .2s, opacity .2s, transform .2s;
-}
-
-.button:hover{
-    color: var(--fontColorB);
-    background: var(--navHover);
-
-    opacity: 1;
-}
-
-.button::after{
-    content: attr(data-navBtn);
-    padding-left: 15px;
-
-    font-size: 16px;
-    font-weight: 800;
-    font-family: 'Inconsolata';
-
-    position: relative;
-    z-index: 3;
-}
-
-.button i{
-    font-size: 18px;
-    width: 20px;
-
-    text-align: center;
-
-    position: relative;
-    z-index: 3;
-}
-
-.selBtn::before{
-    display: none;
-}
-
-#shine{
-    width: 90px;
-    aspect-ratio: 1/1;
-
-    border-radius: 50%;
-    background-color: var(--shineColor);
-
-    opacity: 0;
-
-    filter: blur(20px);
-
     position: absolute;
-    top: calc(var(--y, 0) * 1px - 50px);
-    left: calc(var(--x, 0) * 1px - 50px);
-    z-index: 2;
-
-    transform: translate(20%, 20%);
-
-    transition: opacity .2s;
-}
-
-.button:hover #shine{
-    opacity: 1;
-}
-
-.selBtn{
-    background: var(--accentGradient);
-    color: white;
-    pointer-events: none;
-    cursor: pointer;
-    transform: translateX(0);
-    opacity: 1;
-}
-
-.selBtn #shine{
-    display: none;
-}
-
-.sep{
-    content: "";
-
-    width: 110%;
-    height: 2px;
-
-    background: linear-gradient(90deg, transparent, var(--fontColorB), transparent);
-    opacity: .4;
-
-    position: relative;
-}
-
-/* Settings Button */
-
-.settBtn{
-    position: absolute;
-    left: 0;
-    top: 0;
-
-    font-size: 17px;
-    color: transparent;
-
-    width: 30px;
-    height: 30px;
 
     display: flex;
     align-items: center;
     justify-content: center;
-
-    border-radius: 4px;
-    transition: background-color .1s, color .1s;
-
-    cursor: pointer;
 }
 
-.settBtn:hover{
-    background-color: rgba(255, 255, 255, 0.3);
-    color: var(--fontColorA);
+.rc {
+    filter: blur(15px);
 }
 
-.settBtn:hover .settMenu{
-    transform: scale(1);
-}
-
-.settMenu{
-    position: absolute;
-    bottom: -40px;
-    left: 0;
-    z-index: 10;
-
-    width: fit-content;
-    height: 40px;
-    padding: 0 10px;
-
-    transform: scale(0);
-    transform-origin: top left;
-    transition: transform .2s;
-
-    border-radius: 0 50px 50px 50px;
-    background-color: white;
-
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto;
-    align-items: center;
-    gap: 3px;
-
-    cursor: default;
-}
-
-.colorBtn{
-    width: 35px;
+.rc::after {
+    content: "";
+    width: 100%;
     aspect-ratio: 1/1;
 
-    background-color: transparent;
-    border-radius: 50%;
-    cursor: pointer;
+    background: linear-gradient(rgb(213, 145, 17), rgb(255, 0, 106), rgb(159, 17, 195));
+    animation-name: rotateLoop;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
 
-.colorBtn:hover{
+.rc-ov {
+    background-color: #222;
+    transform: scale(.9);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rc-ov p {
+    font-size: 1.6em;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100vw;
+    height: fit-content;
+    padding: 1em 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer .cr {
+    font-size: .9em;
+    font-weight: 500;
     opacity: .5;
 }
 
-/* Hero (Logo) Section */
-
-.heroLogo{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 100%;
-    height: 70px;
-
-    margin-bottom: 20px;
-
-    position: relative;
-}
-
-.heroLogo::after{
-    content: "";
-
-    width: 90%;
-    height: 2px;
-
-    background: linear-gradient(90deg, transparent, var(--fontColorB), transparent);
-    opacity: .4;
-
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.logoImg{
-    width: 40px;
-    aspect-ratio: 1/1;
-
-    background-image: url("svg-black.svg");
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: var(--logoFilter);
-}
-
-.wordMark{
-    font-size: 28px;
-    font-weight: 800;
-    font-family: system-ui, sans-serif;
-    color: var(--fontColorA);
-
-    display: none;
-}
-
-/* Copyright */
-
-.copyright{
-    margin-top: auto;
-    margin-bottom: 30px;
-
-    font-size: 13px;
-    font-weight: 700;
-    opacity: .3;
-
-    user-select: none;
-
-    color: var(--fontColorB);
-}
-
-/* Social Buttons */
-
-.socialBtns{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-
-    margin-bottom: 20px;
-
-    position: relative;
-}
-
-.socialBtns::after{
-    content: "";
-
-    width: 110%;
-    height: 2px;
-
-    background: linear-gradient(90deg, transparent, var(--fontColorB), transparent);
-    opacity: .4;
-
-    position: absolute;
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.socialBtns i{
-    font-size: 25px;
-    filter: var(--colorFilter2);
-}
-
-.socialBtns i:hover{
-    filter: none;
-}
-
-/* Media Queries */
-
-@media screen and (max-width: 1080px) {
-    .sidebar {
-      width: 75px;
+@keyframes rotateLoop {
+    from {
+        transform: rotate(0deg);
     }
 
-    .button::after{
-        display: none;
+    to {
+        transform: rotate(360deg);
     }
-
-    .button{
-        width: 50px;
-    }
-
-    .copyright{
-        opacity: 0;
-    }
-
-    .viewport{
-        width: calc(100vw - 85px);
-    }
-
-    .socialBtns{
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .socialBtns a i {
-        font-size: 20px;
-    }
-  }
+}

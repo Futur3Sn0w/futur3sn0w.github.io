@@ -1,133 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Futur3Sn0w | Home</title>
+
     <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="globals.css">
-    <link rel="stylesheet" id="colorSheet" href="css/colTheme/B.css">
-    <script src="https://kit.fontawesome.com/a1fc6f0f3a.js" crossorigin="anonymous"></script>
-
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png?v2=2">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png?v2=2">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png?v2=2">
-    <link rel="manifest" href="/favicons/site.webmanifest?v2=2">
-    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg?v2=2" color="#9240bc">
-    <link rel="shortcut icon" href="/favicons/favicon.ico?v2=2">
-    <meta name="apple-mobile-web-app-title" content="Studio30">
-    <meta name="application-name" content="Studio30">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-config" content="/favicons/browserconfig.xml?v2=2">
-    <meta name="theme-color" content="#ffe0ae">
 </head>
-<body style="background-color: var(--backgroundColor); overflow: hidden;">
-    <div class="sidebar">
-        <div class="heroLogo">
-            <div class="logoImg"></div>
-            <div class="wordMark">Futur3Sn0w</div>
-            <div class="settBtn" style="display: none;">
-                <i class="fa-solid fa-cog"></i>
-                <div class="settMenu">
 
-                    <div 
-                    class="colorBtn cb2"
-                    data-colorCode="O">
-                    </div>
-
-                    <div 
-                    class="colorBtn cb5"
-                    data-colorCode="B">
-                    </div>
-
-                    <div 
-                    class="colorBtn cb7"
-                    data-colorCode="G">
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <div class="navBtns">
-            <div 
-            class="button btnReady btn1 selBtn" 
-            data-navBtn="Home"
-            data-viewPortURL="../pages/home.html">
-                <i class="fas fa-home"></i>
-                <span class="shine" id="shine"></span>
-            </div>
-            <div 
-            class="button btn2" 
-            data-navBtn="About"
-            data-viewPortURL="../pages/about.html">
-                <i class="fa-solid fa-user"></i>
-                <span id="shine"></span>
-            </div>
-            <div 
-            class="button btn3" 
-            data-navBtn="My Work"
-            data-viewPortURL="../pages/stuff.html">
-                <i class="fa-solid fa-folder"></i>
-                <span class="shine" id="shine"></span>
-            </div>
-            <div class="sep" style="margin: 5px 0;"></div>
-            <div 
-            class="button btnReady btn5" 
-            data-navBtn="Wallpaper Weekly"
-            data-viewPortURL="../pages/wallotd.html">
-                <i class="fas fa-brush"></i>
-                <span class="shine" id="shine"></span>
-            </div>
-        </div>
-        <div class="copyright">Copyright © Futur3Sn0w 2022</div>
-        <div class="socialBtns">
-            <a href="https://www.twitter.com/Futur3Sn0w">
-                <i style="color: var(--socTwitter);" class="fa-brands fa-twitter"></i>
-            </a>
-            <a href="https://www.reddit.com/u/TheVoneTrecker">
-                <i style="color: var(--socReddit);" class="fa-brands fa-reddit"></i>
-            </a>
-            <a href="https://www.github.com/Futur3Sn0w">
-                <i style="color: var(--socGithub);" class="fa-brands fa-github"></i>
-            </a>
-            <a href="https://www.deviantart.com/Futur3Sn0w">
-                <i style="color: var(--socDevArt);" class="fa-brands fa-deviantart"></i>
-            </a>
-            <a href="https://www.medium.com/@futur3sn0w">
-                <i style="color: var(--socMedium);" class="fa-brands fa-medium"></i>
-            </a>
-        </div>
+<body>
+    <div class="rc"></div>
+    <div class="rc-ov">
+        <p>Working on critical updates...</p>
     </div>
-    <embed class="viewport" id="viewPort" src="pages/home.html">
-    <script src="js.js"></script>
 
-    <script>
-        var shine = document.querySelectorAll('.shine');
-        var buttons = Array.from(document.querySelectorAll(".button"));
-
-        const button = document.querySelector('.button')
-        buttons.forEach((node) => {
-          node.addEventListener("mousemove", (e) => {
-            const { x, y } = node.getBoundingClientRect();
-            node.style.setProperty("--x", e.clientX - x);
-            node.style.setProperty("--y", e.clientY - y);
-          })
-        })
-
-        var colorBtns = Array.from(document.querySelectorAll(".colorBtn"));
-        const colorBtn = document.querySelector('.colorBtn');
-        colorBtns.forEach((node) => {
-            node.style.backgroundColor = "var(--fs" + node.getAttribute('data-colorCode') + ")";
-            node.addEventListener("click", (f) => {
-                document.getElementById('colorSheet').href = 'css/colTheme/' + node.getAttribute('data-colorCode') + ".css";
-                localStorage.setItem('accent', 'css/colTheme/' + node.getAttribute('data-colorCode') + ".css");
-            })
-        })
-
-        window.onload = function () {
-            // document.getElementById('colorSheet').href = localStorage.getItem('accent');
-        }
-    </script>
+    <div class="footer">
+        <div class="cr">© Copyright "Futur3Sn0w" 2017-2022</div>
+    </div>
 </body>
+
 </html>
