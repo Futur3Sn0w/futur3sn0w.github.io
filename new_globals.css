@@ -1,0 +1,19 @@
+@media (prefers-color-scheme: dark) {
+    :root {
+        --rootBack: rgb(20, 20, 20);
+        --containerBack: hsla(0, 0%, 0%, 0.3);
+
+        --dot: rgb(65, 65, 65);
+        --dot-sel: rgb(148, 148, 148);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --rootBack: #EEE;
+        --containerBack: hsla(0, 0%, 0%, 0.1);
+
+        --dot: rgb(185, 185, 185);
+        --dot-sel: rgb(49, 49, 49);
+    }
+}
