@@ -1,10 +1,21 @@
+* {
+    box-sizing: border-box;
+}
+
 @media (prefers-color-scheme: dark) {
     :root {
         --rootBack: rgb(20, 20, 20);
         --containerBack: hsla(0, 0%, 0%, 0.3);
 
-        --dot: rgb(65, 65, 65);
-        --dot-sel: rgb(148, 148, 148);
+        --hero-back: #2929299d;
+
+        --elem: rgb(65, 65, 65);
+        --elem-sel: rgb(148, 148, 148);
+        --elem-text: white;
+
+        --dots: rgba(160, 160, 160, 0.8);
+        --dots-sel: rgba(65, 65, 65, 0.8);
+        --dots-text: white;
     }
 }
 
@@ -13,7 +24,14 @@
         --rootBack: #EEE;
         --containerBack: hsla(0, 0%, 0%, 0.1);
 
-        --dot: rgb(185, 185, 185);
-        --dot-sel: rgb(49, 49, 49);
+        --hero-back: #ffffff8a;
+
+        --elem: rgb(185, 185, 185);
+        --elem-sel: rgb(49, 49, 49);
+        --elem-text: black;
+
+        --dots: rgba(185, 185, 185, 0.5);
+        --dots-sel: rgba(49, 49, 49, 0.8);
+        --dots-text: black;
     }
 }

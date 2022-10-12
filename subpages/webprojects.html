@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="webprojects.css">
+    <link rel="stylesheet" href="../splitPage.css">
+    <link rel="stylesheet" href="../new_globals.css">
+    <script src="https://kit.fontawesome.com/a1fc6f0f3a.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="split leftTop">
+        <i class="fa-solid fa-box"></i>
+        <div class="wm">Web Projects</div>
+        <p class="info">Over the years, I've created many web-based projects; most of which are open source!
+        </p>
+    </div>
+    <div class="split rightBottom">
+        <div class="projectList">
+            <div class="plProject plp1">
+                <div class="projName">Flick - Fluent Icons</div>
+                <div class="projDesc">This is a cool project that does cool project things on the web... Since it's a
+                    web-based project...</div>
+                <div class="projBtns">
+                    <a href="https://futur3sn0w.github.io/flick" class="pbtn pbLive">Live</a>
+                    <a href="https://github.com/Futur3Sn0w/flick" class="pbtn pbGithub">GitHub</a>
+                </div>
+            </div>
+            <div class="plProject plp2">
+                <div class="projName">Web Portfolio</div>
+                <div class="projDesc">My homepage on the web (this website!)</div>
+                <div class="projBtns">
+                    <a href="https://github.com/Futur3Sn0w/futur3sn0w.github.io" class="pbtn pbGithub">GitHub</a>
+                </div>
+            </div>
+            <div class="plProject plp3">
+                <div class="projName">Windows 10X in HTML</div>
+                <div class="projDesc">A recreation of Windows 10X using web technologies; hosted in your browser.</div>
+                <div class="projBtns">
+                    <a href="https://futur3sn0w.github.io/Windows10x" class="pbtn pbLive">Live</a>
+                    <a href="https://github.com/Futur3Sn0w/Windows10x" class="pbtn pbGithub">GitHub</a>
+                </div>
+            </div>
+            <div class="plProject plp4">
+                <div class="projName">Pinboard</div>
+                <div class="projDesc">Pinboard is a web interface for creating widgets (or Pins) that can be placed
+                    anywhere on screen. Pins can have online information, notes, links, images, and much more.</div>
+                <div class="projBtns">
+                    <a href="https://futur3sn0w.github.io/pinboard" class="pbtn pbLive">Live</a>
+                    <a href="https://github.com/Futur3Sn0w/pinboard" class="pbtn pbGithub">GitHub</a>
+                </div>
+            </div>
+            <div class="plProject plp5">
+                <div class="projName">PlusUI</div>
+                <div class="projDesc">UI for large, "plus" screen devices (tablets, TVs, smart-home hubs, etc)</div>
+                <div class="projBtns">
+                    <a href="https://futur3sn0w.github.io/plusUI" class="pbtn pbLive">Live</a>
+                    <a href="https://github.com/Futur3Sn0w/plusUI" class="pbtn pbGithub">GitHub</a>
+                </div>
+            </div>
+            <div class="plProject plp6">
+                <div class="projName">WaitAMinute</div>
+                <div class="projDesc">Windows 11's OOBEs extracted and reconstruced for [insert your use case here]!
+                </div>
+                <div class="projBtns">
+                    <a href="https://futur3sn0w.github.io/waitaMinute" class="pbtn pbLive">Live</a>
+                    <a href="https://github.com/Futur3Sn0w/waitaMinute" class="pbtn pbGithub">GitHub</a>
+                </div>
+            </div>
+            <div class="plProject plp7">
+                <div class="projName">webFX</div>
+                <div class="projDesc">Mini web-toys and demoes used to experiment with web technologies and designs.
+                </div>
+                <div class="projBtns">
+                    <a href="https://futur3sn0w.github.io/webFX" class="pbtn pbLive">Live</a>
+                    <a href="https://github.com/Futur3Sn0w/webFX" class="pbtn pbGithub">GitHub</a>
+                </div>
+            </div>
+            <div class="plProject plp8">
+                <div class="projName">FluentRounds</div>
+                <div class="projDesc">An icon pack based on Microsoft's Fluent Icons for Windows based around rounded
+                    squares.
+                </div>
+                <div class="projBtns">
+                    <a href="https://github.com/Futur3Sn0w/FluentRounds" class="pbtn pbGithub">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../jquery.masonryGrid.js"></script>
+    <script src="../splitScript.js"></script>
+
+    <script>
+        $('.projectList').masonryGrid({
+            columns: 3
+        });
+    </script>
+</body>
+
+</html>
