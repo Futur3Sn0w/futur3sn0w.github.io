@@ -1,18 +1,22 @@
-html {
-    height: 100%;
-}
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
 
-body {
-    margin: 0;
+    /* display: none; */
+
+    width: 100vw;
+    height: 100vh;
 }
 
 .bg {
     animation: slide 3s ease-in-out infinite alternate;
-    background-image: linear-gradient(-60deg, rgb(168, 51, 204) 50%, rgb(255, 0, 98) 50%);
+    background-image: linear-gradient(-60deg, rgba(255, 255, 255, 0.5) 50%, rgba(0, 0, 0, 0.4) 50%);
     bottom: 0;
     left: -50%;
-    opacity: .5;
-    position: fixed;
+    mix-blend-mode: multiply;
+    position: absolute;
     right: -50%;
     top: 0;
     z-index: -1;
@@ -20,11 +24,11 @@ body {
 
 .bg2 {
     animation-direction: alternate-reverse;
-    animation-duration: 4s;
+    animation-duration: 5s;
 }
 
 .bg3 {
-    animation-duration: 5s;
+    animation-duration: 6s;
 }
 
 @keyframes slide {

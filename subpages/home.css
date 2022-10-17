@@ -1,15 +1,16 @@
-body {
+.homeCont {
     color: white;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
     display: flex;
-    align-content: center;
-    justify-content: center;
     flex-direction: column;
 
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: max-content !important;
+    height: fit-content !important;
 }
 
 .pfp {
@@ -19,12 +20,16 @@ body {
     justify-content: center;
 }
 
+.imgs {
+    display: flex;
+    gap: 5px;
+}
+
 .pfp .img {
     width: 200px;
     height: 200px;
 
     background-color: black;
-    background-image: url("https://pbs.twimg.com/profile_images/1570077444765278210/Yp59rWOV_400x400.jpg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -32,6 +37,15 @@ body {
     border-radius: 50%;
 
     margin-bottom: 10px;
+}
+
+.img1 {
+    background-image: url("https://pbs.twimg.com/profile_images/1570077444765278210/Yp59rWOV_400x400.jpg");
+}
+
+.img2 {
+    background-image: url("https://lh3.googleusercontent.com/FR5-SZ0QpGhqfq8-TwvKlVttTjxZo3CCCz8JpgAgb9ypWcSbIOiYwMolRZaRfFz-EdElWGmD7ccOOJC9DVOOVbZGIA3mPPOQdFJ3Oy1BSJHX_WzSurNSHxPncoZc-9thHt_Xs1lFQAbGkuOnfGHJqaNDW77fGbaAhiUyrbK46k0jJtvh-NcoXgqwsPx6uaHM29WqTpOk3L4ibHFQgJvzRXArDk4cnLGaBTT72NdqFh1bp6W--25Z85upzdHb0lZPZtgkW6ek2B5eSGlZr2t_uiS9EUH0WLtVDPH-5Shzu7MVRcs98SOKZLn9VDZx-5q-mP70WYq93mNFdpGshsfeNw5ou5BB8qg1qEDxzh8E-ZnUZlasQZtaVHFpcPIMbv1VkWkI-CH2s7Xi9bDfoj8AVXIyH-yueO5ecVLldg_HMyOwX64Yk5oqxUoAEJlZShVu1R2rCSnEQSiuLVjCGmIzTqabFYx_0jLyO2TA39uTQD75kfVIH_Zzkb4ZYAUT_Ux1kJV6h2Po2pLjSATo7X-lzABwgsCsPWtqFZyaZxpClZezDjGLb-xh0PQWCsKnCQqlcIZiJZOt4lJ49XpW38wZpTulbFaeOujMZWVZV_EaJi7N7XhpNZCRArs1b3vyN9lQZILkH3yfxpEUesz5afuPzOsqPzBFxppurFyIDVybTXCKqLUKtzqX5HULi1FbMyCW2_Do5lTFInaBYmZUX7cHUuOgEJCdXITjbCZu2yKNW1wB8S85HfpoxX9Q7Jxz5yx-tyBn3PXn2T_VKr3NUbJkM9UXMQKED3jUNof2mUSOGHX7Xu3iJRDTKA5h7kdOxCiXcKuTiEMMNj_8SVW3f5tQYvsA9J3LfnDsbFb1UIXJa5WKarYj2b8s9BO86cKPtFR3cxwALqrsVEcpl1J_nCrh8Kx-_i52Z6jf1XmMDca5SQ=w1365-h1367-no?authuser=0");
+
 }
 
 .pfp .wm {
@@ -49,7 +63,7 @@ body {
     background-color: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(20px);
     width: fit-content;
-    max-width: 75vw;
+    max-width: 95vw;
 
     font-size: 17px;
 
@@ -57,17 +71,4 @@ body {
 
     padding: 15px;
     border-radius: 14px;
-}
-
-.cont-flash {
-    font-size: 13px;
-
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    padding: 8px 12px;
-    border-radius: 50px;
 }

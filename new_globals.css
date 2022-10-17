@@ -2,10 +2,20 @@
     box-sizing: border-box;
 }
 
+:root {
+    --page0: rgb(255, 0, 98);
+    --page1: #1cca6a;
+    --page2: #f32753;
+    --page3: #1da1f2;
+    --page4: #222;
+}
+
 @media (prefers-color-scheme: dark) {
     :root {
-        --rootBack: rgb(20, 20, 20);
+        --rootBack: #222;
         --containerBack: hsla(0, 0%, 0%, 0.3);
+
+        --transparent-container: rgba(0, 0, 0, .75);
 
         --hero-back: #2929299d;
 
@@ -13,9 +23,9 @@
         --elem-sel: rgb(148, 148, 148);
         --elem-text: white;
 
-        --dots: rgba(160, 160, 160, 0.8);
-        --dots-sel: rgba(65, 65, 65, 0.8);
-        --dots-text: white;
+        --elem-transp: rgba(160, 160, 160, 0.8);
+        --elem-transp-sel: rgba(65, 65, 65, 0.8);
+        --elem-transp-text: white;
     }
 }
 
@@ -24,14 +34,41 @@
         --rootBack: #EEE;
         --containerBack: hsla(0, 0%, 0%, 0.1);
 
+        --transparent-container: rgba(255, 255, 255, .75);
+
         --hero-back: #ffffff8a;
 
         --elem: rgb(185, 185, 185);
         --elem-sel: rgb(49, 49, 49);
         --elem-text: black;
 
-        --dots: rgba(185, 185, 185, 0.5);
-        --dots-sel: rgba(49, 49, 49, 0.8);
-        --dots-text: black;
+        --elem-transp: rgba(185, 185, 185, 0.5);
+        --elem-transp-sel: rgba(49, 49, 49, 0.8);
+        --elem-transp-text: #222;
     }
+}
+
+.pb1 {
+    border-color: var(--page0);
+    background-color: var(--page0);
+}
+
+.pb2 {
+    border-color: var(--page1);
+    background-color: var(--page1);
+}
+
+.pb3 {
+    border-color: var(--page2);
+    background-color: var(--page2);
+}
+
+.pb4 {
+    border-color: var(--page3);
+    background-color: var(--page3);
+}
+
+.pb5 {
+    border-color: var(--page4);
+    background-color: var(--page4);
 }

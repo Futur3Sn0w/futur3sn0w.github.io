@@ -11,35 +11,243 @@
     <link rel="stylesheet" href="new_globals.css">
     <link rel="stylesheet" type="text/css" href="slick/slick.css" />
 
+    <link rel="stylesheet" href="subpages/home.css">
+    <link rel="stylesheet" href="subpages/home_back.css">
+    <link rel="stylesheet" href="subpages/webprojects.css">
+    <link rel="stylesheet" href="subpages/socials.css">
+    <link rel="stylesheet" href="subpages/updates.css">
+    <link rel="stylesheet" href="splitPage.css">
+
     <script src="https://kit.fontawesome.com/a1fc6f0f3a.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 <body>
+    <div class="background">
+        <div class="bg"></div>
+        <div class="bg bg2"></div>
+        <div class="bg bg3"></div>
+    </div>
     <div class="content" id="content">
         <div id="page1" class="page1 page">
-            <embed src="subpages/home.html">
+            <div class="homeCont">
+                <div class="pfp">
+                    <div class="imgs">
+                        <div class="img img1"></div>
+                        <div class="img img2"></div>
+                    </div>
+                    <div class="wm">Gavin (Adam) Hurd</div>
+                    <div class="wm wm-sub">@Futur3Sn0w</div>
+                </div>
+                <p class="cont">Hello and welcome to my new and improved site!<br>
+                    Click or tap the navigation buttons to get started!<br>
+                    This site is still in development, and some things may still be broken.<br>
+                    Thanks for visiting!</p>
+            </div>
         </div>
         <div id="page2" class="page2 page">
-            <embed src="subpages/twitter.html">
+            <div class="pageBody splitPage">
+                <div class="split leftTop">
+                    <div class="splitInfo">
+                        <i class="fa-solid fa-globe"></i>
+                        <div class="wm">Web Projects</div>
+                        <p class="info">Over the years, I've created many web-based projects; most of which are open
+                            source!
+                        </p>
+                    </div>
+                </div>
+                <div class="split rightBottom">
+                    <div class="projectList">
+                        <div class="plProject plp1">
+                            <div class="projName">Flick - Fluent Icons</div>
+                            <div class="projDesc">A web-based UI for viewing Microsoft's Fluent Icons for Microsoft 365
+                                and Windows services.</div>
+                            <div class="projBtns">
+                                <a href="https://futur3sn0w.github.io/flick" class="pbtn pbLive">Live</a>
+                                <a href="https://github.com/Futur3Sn0w/flick" class="pbtn pbGithub">GitHub</a>
+                            </div>
+                        </div>
+                        <div class="plProject plp2">
+                            <div class="projName">Web Portfolio</div>
+                            <div class="projDesc">My homepage on the web (this website!)</div>
+                            <div class="projBtns">
+                                <a href="https://github.com/Futur3Sn0w/futur3sn0w.github.io"
+                                    class="pbtn pbGithub">GitHub</a>
+                            </div>
+                        </div>
+                        <div class="plProject plp3">
+                            <div class="projName">Windows 10X in HTML</div>
+                            <div class="projDesc">A recreation of Windows 10X using web technologies; hosted in your
+                                browser.</div>
+                            <div class="projBtns">
+                                <a href="https://futur3sn0w.github.io/Windows10x" class="pbtn pbLive">Live</a>
+                                <a href="https://github.com/Futur3Sn0w/Windows10x" class="pbtn pbGithub">GitHub</a>
+                            </div>
+                        </div>
+                        <div class="plProject plp4">
+                            <div class="projName">Pinboard</div>
+                            <div class="projDesc">Pinboard is a web interface for creating widgets (or Pins) that can be
+                                placed
+                                anywhere on screen. Pins can have online information, notes, links, images, and much
+                                more.</div>
+                            <div class="projBtns">
+                                <a href="https://futur3sn0w.github.io/pinboard" class="pbtn pbLive">Live</a>
+                                <a href="https://github.com/Futur3Sn0w/pinboard" class="pbtn pbGithub">GitHub</a>
+                            </div>
+                        </div>
+                        <div class="plProject plp5">
+                            <div class="projName">PlusUI</div>
+                            <div class="projDesc">UI for large, "plus" screen devices (tablets, TVs, smart-home hubs,
+                                etc)</div>
+                            <div class="projBtns">
+                                <a href="https://futur3sn0w.github.io/plusUI" class="pbtn pbLive">Live</a>
+                                <a href="https://github.com/Futur3Sn0w/plusUI" class="pbtn pbGithub">GitHub</a>
+                            </div>
+                        </div>
+                        <div class="plProject plp6">
+                            <div class="projName">WaitAMinute</div>
+                            <div class="projDesc">Windows 11's OOBEs extracted and reconstruced for [insert your use
+                                case here]!
+                            </div>
+                            <div class="projBtns">
+                                <a href="https://futur3sn0w.github.io/waitaMinute" class="pbtn pbLive">Live</a>
+                                <a href="https://github.com/Futur3Sn0w/waitaMinute" class="pbtn pbGithub">GitHub</a>
+                            </div>
+                        </div>
+                        <div class="plProject plp7">
+                            <div class="projName">webFX</div>
+                            <div class="projDesc">Mini web-toys and demoes used to experiment with web technologies and
+                                designs.
+                            </div>
+                            <div class="projBtns">
+                                <a href="https://futur3sn0w.github.io/webFX" class="pbtn pbLive">Live</a>
+                                <a href="https://github.com/Futur3Sn0w/webFX" class="pbtn pbGithub">GitHub</a>
+                            </div>
+                        </div>
+                        <div class="plProject plp8">
+                            <div class="projName">FluentRounds</div>
+                            <div class="projDesc">An icon pack based on Microsoft's Fluent Icons for Windows based
+                                around rounded
+                                squares.
+                            </div>
+                            <div class="projBtns">
+                                <a href="https://github.com/Futur3Sn0w/FluentRounds" class="pbtn pbGithub">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
         <div id="page3" class="page3 page">
-            <embed src="subpages/webprojects.html">
+            <div class="pageBody splitPage">
+                <div class="split leftTop">
+                    <div class="splitInfo">
+                        <i class="fa-solid fa-compact-disc"></i>
+                        <div class="wm">Music Projects</div>
+                        <p class="info">Music is one of the biggest parts of me, outside of technology. Similar to other
+                            projects, most of my music is available online!
+                        </p>
+                    </div>
+                </div>
+                <div class="split rightBottom">
+                    <div class="musicProjectList">
+                        <div class="musicProject mp-item1">
+                        </div>
+                        <div class="musicProject mp-item2"></div>
+                        <div class="musicProject mp-item3"></div>
+                        <div class="musicProject mp-item4"></div>
+                    </div>
+                </div>
+
+            </div>
         </div>
         <div id="page4" class="page4 page">
-            <embed src="subpages/socials.html">
+            <div class="pageBody splitPage">
+                <div class="split leftTop">
+                    <div class="splitInfo">
+                        <i class="fa-solid fa-users"></i>
+                        <div class="wm">Social and Web Links</div>
+                        <p class="info">You can find me all over the internet. Click the links here to find me on your
+                            preferred site!
+                        </p>
+                    </div>
+                </div>
+                <div class="split rightBottom">
+                    <div class="socials">
+                        <a href="https://www.twitter.com/Futur3Sn0w" class="socialBtn sbTwitter" data-btnName="Twitter">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a href="https://www.deviantart.com/Futur3Sn0w" class="socialBtn sbDeviant"
+                            data-btnName="DeviantArt">
+                            <i class="fa-brands fa-deviantart"></i>
+                        </a>
+                        <a href="https://www.discord.gg/t3zs5En6Fh" class="socialBtn sbDiscord" data-btnName="Discord">
+                            <i class="fa-brands fa-discord"></i>
+                        </a>
+                        <a href="https://www.dribbble.com/Futur3Sn0w" class="socialBtn sbDribbble"
+                            data-btnName="Dribbble">
+                            <i class="fa-brands fa-dribbble"></i>
+                        </a>
+                        <a href="https://www.reddit.com/u/Futur3Sn0w" class="socialBtn sbReddit" data-btnName="Reddit">
+                            <i class="fa-brands fa-reddit"></i>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UC98jW-uSef3Ql-y1mD6y2tQ" class="socialBtn sbYouTube"
+                            data-btnName="YouTube">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                        <a href="https://www.github.com/Futur3Sn0w" class="socialBtn sbGitHub" data-btnName="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://futur3sn0w.medium.com" class="socialBtn sbMedium" data-btnName="Medium">
+                            <i class="fa-brands fa-medium"></i>
+                        </a>
+                        <a href="https://www.twitch.tv/futur3sn0w" class="socialBtn sbTwitch" data-btnName="Twitch">
+                            <i class="fa-brands fa-twitch"></i>
+                        </a>
+                        <a href="https://mastodon.social/@futur3sn0w" class="socialBtn sbMastodon"
+                            data-btnName="Mastodon">
+                            <i class="fa-brands fa-mastodon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
         <div id="page5" class="page5 page">
-            <embed src="subpages/updates.html">
+            <div class="pageBody">
+                <div class="rc"></div>
+                <div class="rc-ov">
+                    <p>Working on critical updates...</p>
+                </div>
+
+                <div class="footer">
+                    <div class="cr">© Copyright "Futur3Sn0w" 2017-2022</div>
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="navBar">
-        <div class="navBtn fs fs-button">
-            <i class="fa-solid fa-expand"></i>
-        </div>
-
         <div class="navBtn pagePill">
             <i id="pageIcon" class="fa-solid fa-house"></i>
+        </div>
+        <div class="directns"></div>
+        <div class="pageBtns">
+            <div class="pb pb1 pbs" data-slickPageID="0" data-pageName="Home">
+                <i id="pageIcon" class="fa-solid fa-house"></i>
+            </div>
+            <div class="pb pb2" data-slickPageID="1" data-pageName="Web">
+                <i id="pageIcon" class="fa-solid fa-globe"></i>
+            </div>
+            <div class="pb pb3" data-slickPageID="2" data-pageName="Music">
+                <i id="pageIcon" class="fa-solid fa-compact-disc"></i>
+            </div>
+            <div class="pb pb4" data-slickPageID="3" data-pageName="Socials">
+                <i id="pageIcon" class="fa-solid fa-users"></i>
+            </div>
+            <div class="pb pb5" data-slickPageID="4" data-pageName="Updates">
+                <i id="pageIcon" class="fa-solid fa-download"></i>
+            </div>
         </div>
     </div>
 
