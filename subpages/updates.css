@@ -11,64 +11,16 @@
     overflow: hidden;
 }
 
-.rc,
-.rc-ov {
-    width: 25em;
-    height: 25em;
 
-    border-radius: 50%;
-
-    overflow: hidden;
-
-    position: absolute;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.rc-ov p {
-    display: flex;
-    height: fit-content;
-}
-
-.rc {
-    filter: blur(15px);
-}
-
-.rc::after {
-    content: "";
-    width: 100%;
-    aspect-ratio: 1/1;
-
-    background: linear-gradient(rgb(213, 145, 17), rgb(255, 0, 106), rgb(159, 17, 195));
-    animation-name: rotateLoop;
-    animation-duration: 5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-}
-
-.rc-ov {
-    background-color: #222;
-    transform: scale(.9);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.rc-ov p {
-    font-size: 1.6em;
-}
 
 .footer {
     position: absolute;
-    bottom: 70px;
+    bottom: 1em;
     left: 0;
 
     width: 100vw;
     height: fit-content;
-    padding: 1em 0;
+    padding: .5em 0;
 
     display: flex;
     align-items: center;
@@ -79,14 +31,4 @@
     font-size: .9em;
     font-weight: 500;
     opacity: .5;
-}
-
-@keyframes rotateLoop {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
 }

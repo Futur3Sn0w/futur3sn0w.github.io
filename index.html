@@ -30,19 +30,31 @@
     </div>
     <div class="content" id="content">
         <div id="page1" class="page1 page">
-            <div class="homeCont">
-                <div class="pfp">
+            <div class="tiles">
+                <div class="homeCont hcr1">
                     <div class="imgs">
-                        <div class="img img1"></div>
-                        <div class="img img2"></div>
+                        <div class="img img1 tile" data-tileName="Logo"></div>
+                        <div class="img img2 tile" data-tileName="Portrait"></div>
                     </div>
-                    <div class="wm">Gavin (Adam) Hurd</div>
-                    <div class="wm wm-sub">@Futur3Sn0w</div>
+                    <div class="contactCard tile tile-wide" data-tileName="About Me">
+                        <div class="wm">Gavin (Adam) Hurd</div>
+                        <div class="wm wm-sub">@Futur3Sn0w</div>
+                    </div>
+                    <div class="welcomeText tile tile-wide" data-tileName="Welcome!">
+                        <i class="fa-solid fa-hand-peace"></i>
+                    </div>
                 </div>
-                <p class="cont">Hello and welcome to my new and improved site!<br>
-                    Click or tap the navigation buttons to get started!<br>
-                    This site is still in development, and some things may still be broken.<br>
-                    Thanks for visiting!</p>
+                <div class="homeCont hcr2">
+                    <a href="https://www.twitter.com/futur3sn0w" class="tile tile-wide" data-tileName="Twitter">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <div class="tile tile-large" data-tileName="Updates">
+                        <div class="rc"></div>
+                        <div class="rc-ov">
+                            <i class="fa-solid fa-refresh"></i>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div id="page2" class="page2 page">
@@ -213,18 +225,6 @@
                 </div>
             </div>
         </div>
-        <div id="page5" class="page5 page">
-            <div class="pageBody">
-                <div class="rc"></div>
-                <div class="rc-ov">
-                    <p>Working on critical updates...</p>
-                </div>
-
-                <div class="footer">
-                    <div class="cr">© Copyright "Futur3Sn0w" 2017-2022</div>
-                </div>
-            </div>
-        </div>
     </div>
 
     <div class="navBar">
@@ -232,21 +232,19 @@
             <i id="pageIcon" class="fa-solid fa-house"></i>
         </div>
         <div class="directns"></div>
+
         <div class="pageBtns">
-            <div class="pb pb1 pbs" data-slickPageID="0" data-pageName="Home">
+            <div class="pb pb1 pbs" data-slickPageID="0" data-pageName="home">
                 <i id="pageIcon" class="fa-solid fa-house"></i>
             </div>
-            <div class="pb pb2" data-slickPageID="1" data-pageName="Web">
+            <div class="pb pb2" data-slickPageID="1" data-pageName="web">
                 <i id="pageIcon" class="fa-solid fa-globe"></i>
             </div>
-            <div class="pb pb3" data-slickPageID="2" data-pageName="Music">
+            <div class="pb pb3" data-slickPageID="2" data-pageName="music">
                 <i id="pageIcon" class="fa-solid fa-compact-disc"></i>
             </div>
-            <div class="pb pb4" data-slickPageID="3" data-pageName="Socials">
+            <div class="pb pb4" data-slickPageID="3" data-pageName="socials">
                 <i id="pageIcon" class="fa-solid fa-users"></i>
-            </div>
-            <div class="pb pb5" data-slickPageID="4" data-pageName="Updates">
-                <i id="pageIcon" class="fa-solid fa-download"></i>
             </div>
         </div>
     </div>

@@ -22,17 +22,23 @@ body {
 .content {
     position: absolute;
     bottom: 0;
-    left: 0;
+    right: 5px;
 
     width: 100vw;
-    max-width: 100vw;
-    height: calc(100vh - 60px);
-    max-height: 100vh;
+    height: 100vh;
 
     margin: 0;
     padding: 0;
+    padding-top: 65px;
+    padding-bottom: 5px;
 
     overflow: hidden !important;
+}
+
+.content.portrait {
+    padding-top: 0;
+    padding-bottom: 50px;
+    right: 0;
 }
 
 .content::-webkit-scrollbar {
@@ -82,12 +88,12 @@ body {
 }
 
 .navBar {
-    height: 60px;
-    width: 100vw;
+    height: 50px;
+    width: calc(100vw - 10px);
 
     position: absolute;
-    left: 0;
-    top: 0;
+    left: 5px;
+    top: 5px;
     z-index: 15;
 
     display: flex;
@@ -96,15 +102,26 @@ body {
     gap: 3px;
 
     overflow: hidden;
-    padding: 10px;
+    /* padding: 10px; */
 
-    background-color: var(--transparent-container);
-    backdrop-filter: blur(20px);
+    background-color: var(--containerBack);
+    border: 1px solid var(--containerBord);
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 50px;
+    backdrop-filter: saturate(1.2) blur(20px);
 }
 
 .navBar.portrait {
     top: unset !important;
     bottom: 0;
+    left: 0;
+
+    width: 100vw;
+    border-radius: 0;
+
+    border: 0 solid var(--containerBord);
+    border-top-width: 1px;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3);
 }
 
 .slick-dots,
@@ -115,20 +132,23 @@ body {
 
 .pageBtns {
     display: flex !important;
-    width: fit-content;
-    height: fit-content;
-    gap: 5px;
+    min-width: 400px;
+    height: 100%;
+    margin-right: auto;
+    margin-left: auto;
 
-    position: absolute;
+    /* gap: 1px; */
+
+    position: relative;
 }
 
 .pb {
-    width: 40px;
-    height: 40px;
+    min-width: 50px;
+    width: 50px;
+    height: 100%;
 
-    background-color: white;
     color: white;
-    border-radius: 500px;
+    /* border-radius: 15px 15px 0 0; */
 
     display: flex;
     align-items: center;
@@ -136,26 +156,53 @@ body {
 
     position: relative;
 
-    transition: width .2s;
+    transition: width .5s, border-radius .3s;
+}
+
+.pb:not(.pbs) {
+    background-color: transparent !important;
 }
 
 .pb::after {
     content: attr(data-pageName);
-    font-weight: 500;
+    font-weight: 700;
+    font-size: 35px;
+
+    opacity: 0;
+
     position: absolute;
-    left: 40px;
+    right: -2px;
+    bottom: -10px;
+
+    transition: .3s;
 }
 
 .pb i {
-    width: 40px;
+    width: 45px;
     height: 40px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
+    color: white;
+    transition: transform .3s;
+    font-size: 20px;
+}
+
+.pb.pbs i {
+    transform: scale(2.4);
+    color: white;
 }
 
 .pb.pbs {
-    width: 110px;
+    width: 100%;
+    border-radius: 50px;
+}
+
+.pb.pbs::after {
+    opacity: 1;
+    color: white;
 }
 
 .navBtn {

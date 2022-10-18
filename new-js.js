@@ -80,4 +80,5 @@ $('.pb').click(function (e) {
     $('.content').slick('slickGoTo', $(this).attr('data-slickpageid'));
     $('.pbs').removeClass('pbs')
     $(this).addClass('pbs');
+    $('.bap').css('background-color', $('.pbs').css('background-color'));
 })

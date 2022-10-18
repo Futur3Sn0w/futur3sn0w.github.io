@@ -1,46 +1,106 @@
-.homeCont {
-    color: white;
+.tiles {
+    width: fit-content;
+    max-width: 100%;
+    height: fit-content;
 
     display: flex;
-    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
 
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
+    overflow-x: scroll;
+
+    padding: 20px;
+}
+
+.homeCont {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
     width: max-content !important;
     height: fit-content !important;
 }
 
-.pfp {
+.tile {
+    position: relative;
+    height: 130px;
+    width: 130px;
+    padding: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: white;
+    text-decoration: none;
+    color: white !important;
+
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+}
+
+.tile-wide {
+    width: 270px;
+    /* background: linear-gradient(90deg, #008a17, #00a61b); */
+    background: linear-gradient(90deg, #2672ec, #2e8def);
+}
+
+.tile-large {
+    width: 270px;
+    height: 270px;
+
+    /* background: linear-gradient(90deg, #2672ec, #2e8def); */
+    background-color: #222;
+}
+
+.tile::after {
+    content: attr(data-tileName);
+    font-size: 12px;
+
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+}
+
+.tile:hover {
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.25);
+}
+
+.tile i {
+    font-size: 65px;
+    width: 65px;
+    height: 65px;
+}
+
+.contactCard {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    background: linear-gradient(90deg, #ac193d, #bf1e4b);
 }
 
 .imgs {
     display: flex;
-    gap: 5px;
+    gap: 10px;
 }
 
-.pfp .img {
-    width: 200px;
-    height: 200px;
-
+.img {
     background-color: black;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-
-    border-radius: 50%;
-
-    margin-bottom: 10px;
 }
 
 .img1 {
     background-image: url("https://pbs.twimg.com/profile_images/1570077444765278210/Yp59rWOV_400x400.jpg");
+    color: black !important;
 }
 
 .img2 {
@@ -48,27 +108,84 @@
 
 }
 
-.pfp .wm {
+.contactCard .wm {
     font-size: 25px;
     font-weight: bold;
+    height: fit-content;
 }
 
-.pfp .wm-sub {
+.contactCard .wm-sub {
     font-size: 20px;
     font-weight: normal;
     opacity: .7;
+    height: fit-content;
 }
 
-.cont {
-    background-color: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(20px);
-    width: fit-content;
-    max-width: 95vw;
+.welcomeText {
+    font-size: 14px;
+    line-height: 15px;
 
-    font-size: 17px;
+    background: linear-gradient(90deg, #5133ab, #643ebf)
+}
 
-    margin: 20px auto;
+.rc,
+.rc-ov {
+    width: 13em;
+    height: 13em;
 
-    padding: 15px;
-    border-radius: 14px;
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rc-ov p {
+    display: flex;
+    height: fit-content;
+}
+
+.rc {
+    filter: blur(10px);
+}
+
+.rc::after {
+    content: "";
+    width: 100%;
+    aspect-ratio: 1/1;
+
+    background: linear-gradient(rgb(213, 145, 17), rgb(255, 0, 106), rgb(159, 17, 195));
+    animation-name: rotateLoop;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.rc-ov {
+    background-color: #222;
+    transform: scale(.9);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rc-ov p {
+    text-align: center;
+    font-size: 1.2em;
+    width: 70%;
+}
+
+@keyframes rotateLoop {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
