@@ -104,11 +104,9 @@ body {
     overflow: hidden;
     /* padding: 10px; */
 
-    background-color: var(--containerBack);
-    border: 1px solid var(--containerBord);
-    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.3);
-    border-radius: 50px;
-    backdrop-filter: saturate(1.2) blur(20px);
+    border-bottom: 1px solid var(--containerBord);
+    box-shadow: 0 13px 15px -10px rgba(0, 0, 0, 0.3);
+
 }
 
 .navBar.portrait {
@@ -119,9 +117,9 @@ body {
     width: 100vw;
     border-radius: 0;
 
-    border: 0 solid var(--containerBord);
-    border-top-width: 1px;
-    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3);
+    border-top: 1px solid var(--containerBord);
+    border-bottom: none;
+    box-shadow: 0 -9px 10px -10px rgba(0, 0, 0, 0.3);
 }
 
 .slick-dots,
@@ -132,7 +130,7 @@ body {
 
 .pageBtns {
     display: flex !important;
-    min-width: 400px;
+    width: fit-content;
     height: 100%;
     margin-right: auto;
     margin-left: auto;
@@ -142,17 +140,36 @@ body {
     position: relative;
 }
 
+.pageBtns .sep {
+    width: 1px;
+    height: 90%;
+    margin: 0 5px;
+    background: linear-gradient(transparent, rgba(255, 255, 255, .5), transparent);
+
+    position: relative;
+    z-index: 0;
+
+    opacity: 0;
+    transition: .2s;
+}
+
+.navBar:hover .pageBtns .sep {
+    opacity: 1;
+}
+
 .pb {
-    min-width: 50px;
-    width: 50px;
+    width: fit-content;
+    padding: 0 10px;
     height: 100%;
 
     color: white;
     /* border-radius: 15px 15px 0 0; */
+    cursor: pointer;
 
     display: flex;
     align-items: center;
-    overflow: hidden;
+    justify-content: center;
+    background-color: transparent !important;
 
     position: relative;
 
@@ -169,12 +186,9 @@ body {
     font-size: 35px;
 
     opacity: 0;
+    width: 0;
 
-    position: absolute;
-    right: -2px;
-    bottom: -10px;
-
-    transition: .3s;
+    transition: .2s;
 }
 
 .pb i {
@@ -186,27 +200,50 @@ body {
     justify-content: center;
 
     color: white;
-    transition: transform .3s;
+    opacity: .75;
+    transition: .2s;
     font-size: 20px;
 }
 
-.pb.pbs i {
-    transform: scale(2.4);
-    color: white;
+.pb:not(.pbs):hover i {
+    opacity: 1;
 }
 
-.pb.pbs {
-    width: 100%;
-    border-radius: 50px;
+.pb.pbs i {
+    opacity: 0;
+    width: 0 !important;
 }
 
 .pb.pbs::after {
     opacity: 1;
+    width: 120px;
+    text-align: center;
     color: white;
 }
 
+.pb::before {
+    content: "";
+
+    width: 100%;
+    height: 50%;
+
+    position: absolute;
+    bottom: 0;
+
+    transform: scale(.7);
+    filter: blur(5px);
+    opacity: 0;
+    background-color: white;
+    transition: .2s;
+}
+
+.pb:not(.pbs):hover::before {
+    opacity: 1;
+    filter: blur(18px);
+}
+
 .navBtn {
-    width: 40px;
+    width: 70px;
     height: 40px;
 
     display: flex;
@@ -214,7 +251,6 @@ body {
     justify-content: center;
     gap: 0;
 
-    border-radius: 50%;
     overflow: hidden;
 
     background-color: var(--elem-transp);
