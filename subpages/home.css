@@ -6,7 +6,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 10px;
+    /* gap: 10px; */
 
     position: absolute;
     top: 50%;
@@ -18,13 +18,29 @@
     padding: 20px;
 }
 
+.socials {
+    display: flex;
+    flex-wrap: wrap;
+    width: 390px;
+    border-radius: 9px;
+    overflow: hidden;
+}
+
 .homeCont {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    flex-wrap: wrap;
+    /* gap: 10px; */
 
     width: max-content !important;
     height: fit-content !important;
+
+    overflow: hidden;
+}
+
+.hcr1 {
+    margin-right: 10px;
+    border-radius: 9px;
 }
 
 .tile {
@@ -41,18 +57,18 @@
     text-decoration: none;
     color: white !important;
 
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+    transition: .15s;
 }
 
 .tile-wide {
-    width: 270px;
+    width: 260px;
     /* background: linear-gradient(90deg, #008a17, #00a61b); */
     background: linear-gradient(90deg, #2672ec, #2e8def);
 }
 
 .tile-large {
-    width: 270px;
-    height: 270px;
+    width: 260px;
+    height: 260px;
 
     /* background: linear-gradient(90deg, #2672ec, #2e8def); */
     background-color: #222;
@@ -63,18 +79,24 @@
     font-size: 12px;
 
     position: absolute;
-    bottom: 10px;
-    left: 15px;
+    bottom: 6px;
+    left: 13px;
 }
 
-.tile:hover {
-    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.25);
+.socials .tile:hover {
+    transform: scale(1.05);
+    z-index: 1;
 }
 
 .tile i {
-    font-size: 65px;
+    font-size: 50px;
     width: 65px;
     height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .contactCard {
@@ -88,7 +110,7 @@
 
 .imgs {
     display: flex;
-    gap: 10px;
+    /* gap: 10px; */
 }
 
 .img {
@@ -101,6 +123,9 @@
 .img1 {
     background-image: url("https://pbs.twimg.com/profile_images/1570077444765278210/Yp59rWOV_400x400.jpg");
     color: black !important;
+
+    background-size: 90%;
+    background-color: white;
 }
 
 .img2 {
@@ -128,64 +153,45 @@
     background: linear-gradient(90deg, #5133ab, #643ebf)
 }
 
-.rc,
-.rc-ov {
-    width: 13em;
-    height: 13em;
+/* Tile specs */
 
-    border-radius: 50%;
-
-    overflow: hidden;
-
-    position: absolute;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.sbTwitter {
+    background-color: #1da1f2 !important;
 }
 
-.rc-ov p {
-    display: flex;
-    height: fit-content;
+.sbDiscord {
+    background-color: #5865f2 !important;
 }
 
-.rc {
-    filter: blur(10px);
+.sbDeviant {
+    background-color: #01d13c !important;
 }
 
-.rc::after {
-    content: "";
-    width: 100%;
-    aspect-ratio: 1/1;
-
-    background: linear-gradient(rgb(213, 145, 17), rgb(255, 0, 106), rgb(159, 17, 195));
-    animation-name: rotateLoop;
-    animation-duration: 5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+.sbReddit {
+    background-color: #fd4401 !important;
 }
 
-.rc-ov {
-    background-color: #222;
-    transform: scale(.9);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.sbDribbble {
+    background-color: #ea4c89 !important;
 }
 
-.rc-ov p {
-    text-align: center;
-    font-size: 1.2em;
-    width: 70%;
+.sbYouTube {
+    background-color: #ff0000 !important;
 }
 
-@keyframes rotateLoop {
-    from {
-        transform: rotate(0deg);
-    }
+.sbMedium {
+    background-color: #ffc017 !important;
+    color: black !important;
+}
 
-    to {
-        transform: rotate(360deg);
-    }
+.sbGitHub {
+    background-color: #9656b0 !important;
+}
+
+.sbTwitch {
+    background-color: #9147ff !important;
+}
+
+.sbMastodon {
+    background-color: #2a8bd2 !important;
 }

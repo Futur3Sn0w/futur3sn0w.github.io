@@ -14,8 +14,6 @@
     <link rel="stylesheet" href="subpages/home.css">
     <link rel="stylesheet" href="subpages/home_back.css">
     <link rel="stylesheet" href="subpages/webprojects.css">
-    <link rel="stylesheet" href="subpages/socials.css">
-    <link rel="stylesheet" href="subpages/updates.css">
     <link rel="stylesheet" href="splitPage.css">
 
     <script src="https://kit.fontawesome.com/a1fc6f0f3a.js" crossorigin="anonymous"></script>
@@ -23,6 +21,7 @@
 </head>
 
 <body>
+    <div class="hoverGlow hidden"></div>
     <div class="background">
         <!-- <div class="bg"></div> -->
         <!-- <div class="bg bg2"></div> -->
@@ -36,24 +35,39 @@
                         <div class="img img1 tile" data-tileName="Logo"></div>
                         <div class="img img2 tile" data-tileName="Portrait"></div>
                     </div>
-                    <div class="contactCard tile tile-wide" data-tileName="Me">
+                    <div class="contactCard tile tile-large" data-tileName="Me">
                         <div class="wm">Gavin (Adam) Hurd</div>
                         <div class="wm wm-sub">@Futur3Sn0w</div>
                     </div>
-                    <div class="welcomeText tile tile-wide" data-tileName="Welcome!">
-                        <i class="fa-solid fa-hand-peace"></i>
-                    </div>
                 </div>
-                <div class="homeCont hcr2">
-                    <a href="https://www.twitter.com/futur3sn0w" class="tile tile-wide" data-tileName="Twitter">
+                <div class="socials">
+                    <a href="https://www.twitter.com/futur3sn0w" class="tile sbTwitter" data-tileName="Twitter">
                         <i class="fa-brands fa-twitter"></i>
                     </a>
-                    <div class="tile tile-large" data-tileName="Updates">
-                        <div class="rc"></div>
-                        <div class="rc-ov">
-                            <i class="fa-solid fa-refresh"></i>
-                        </div>
-                    </div>
+                    <a href="https://www.deviantart.com/Futur3Sn0w" class="tile sbDeviant" data-tileName="DeviantArt">
+                        <i class="fa-brands fa-deviantart"></i>
+                    </a>
+                    <a href="https://www.discord.gg/t3zs5En6Fh" class="tile sbDiscord" data-tileName="Discord">
+                        <i class="fa-brands fa-discord"></i>
+                    </a>
+                    <a href="https://mastodon.social/@futur3sn0w" class="tile sbMastodon" data-tileName="Mastodon">
+                        <i class="fa-brands fa-mastodon"></i>
+                    </a>
+                    <a href="https://www.dribbble.com/Futur3Sn0w" class="tile sbDribbble" data-tileName="Dribbble">
+                        <i class="fa-brands fa-dribbble"></i>
+                    </a>
+                    <a href="https://www.reddit.com/u/Futur3Sn0w" class="tile sbReddit" data-tileName="Reddit">
+                        <i class="fa-brands fa-reddit"></i>
+                    </a>
+                    <a href="https://www.github.com/Futur3Sn0w" class="tile sbGitHub" data-tileName="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://futur3sn0w.medium.com" class="tile sbMedium" data-tileName="Medium">
+                        <i class="fa-brands fa-medium"></i>
+                    </a>
+                    <a href="https://www.twitch.tv/futur3sn0w" class="tile sbTwitch" data-tileName="Twitch">
+                        <i class="fa-brands fa-twitch"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -61,10 +75,10 @@
             <div class="pageBody splitPage">
                 <div class="split leftTop">
                     <div class="splitInfo">
-                        <i class="fa-solid fa-globe"></i>
-                        <div class="wm">Web Projects</div>
-                        <p class="info">Over the years, I've created many web-based projects; most of which are open
-                            source!
+                        <i class="fa-regular fa-folder-open"></i>
+                        <div class="wm">Projects</div>
+                        <p class="info">Over the years, I've worked in various (related) fields. Here's
+                            the work that I've done in that time!
                         </p>
                     </div>
                 </div>
@@ -174,57 +188,6 @@
 
             </div>
         </div>
-        <div id="page4" class="page4 page">
-            <div class="pageBody splitPage">
-                <div class="split leftTop">
-                    <div class="splitInfo">
-                        <i class="fa-solid fa-users"></i>
-                        <div class="wm">Social and Web Links</div>
-                        <p class="info">You can find me all over the internet. Click the links here to find me on your
-                            preferred site!
-                        </p>
-                    </div>
-                </div>
-                <div class="split rightBottom">
-                    <div class="socials">
-                        <a href="https://www.twitter.com/Futur3Sn0w" class="socialBtn sbTwitter" data-btnName="Twitter">
-                            <i class="fa-brands fa-twitter"></i>
-                        </a>
-                        <a href="https://www.deviantart.com/Futur3Sn0w" class="socialBtn sbDeviant"
-                            data-btnName="DeviantArt">
-                            <i class="fa-brands fa-deviantart"></i>
-                        </a>
-                        <a href="https://www.discord.gg/t3zs5En6Fh" class="socialBtn sbDiscord" data-btnName="Discord">
-                            <i class="fa-brands fa-discord"></i>
-                        </a>
-                        <a href="https://www.dribbble.com/Futur3Sn0w" class="socialBtn sbDribbble"
-                            data-btnName="Dribbble">
-                            <i class="fa-brands fa-dribbble"></i>
-                        </a>
-                        <a href="https://www.reddit.com/u/Futur3Sn0w" class="socialBtn sbReddit" data-btnName="Reddit">
-                            <i class="fa-brands fa-reddit"></i>
-                        </a>
-                        <a href="https://www.youtube.com/channel/UC98jW-uSef3Ql-y1mD6y2tQ" class="socialBtn sbYouTube"
-                            data-btnName="YouTube">
-                            <i class="fa-brands fa-youtube"></i>
-                        </a>
-                        <a href="https://www.github.com/Futur3Sn0w" class="socialBtn sbGitHub" data-btnName="GitHub">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                        <a href="https://futur3sn0w.medium.com" class="socialBtn sbMedium" data-btnName="Medium">
-                            <i class="fa-brands fa-medium"></i>
-                        </a>
-                        <a href="https://www.twitch.tv/futur3sn0w" class="socialBtn sbTwitch" data-btnName="Twitch">
-                            <i class="fa-brands fa-twitch"></i>
-                        </a>
-                        <a href="https://mastodon.social/@futur3sn0w" class="socialBtn sbMastodon"
-                            data-btnName="Mastodon">
-                            <i class="fa-brands fa-mastodon"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
     <div class="navBar">
@@ -238,15 +201,12 @@
                 <i id="pageIcon" class="fa-solid fa-house"></i>
             </div>
             <div class="sep"></div>
-            <div class="pb pb2" data-slickPageID="1" data-pageName="web">
-                <i id="pageIcon" class="fa-solid fa-globe"></i>
+            <div class="pb pb2" data-slickPageID="1" data-pageName="projects">
+                <i id="pageIcon" class="fa-regular fa-folder-open"></i>
             </div>
-            <div class="sep"></div>
+            <!-- <div class="sep"></div> -->
             <div class="pb pb3 hidden" data-slickPageID="2" data-pageName="music">
                 <i id="pageIcon" class="fa-solid fa-compact-disc"></i>
-            </div>
-            <div class="pb pb4" data-slickPageID="3" data-pageName="socials">
-                <i id="pageIcon" class="fa-solid fa-users"></i>
             </div>
         </div>
     </div>

@@ -89,11 +89,10 @@ body {
 
 .navBar {
     height: 50px;
-    width: calc(100vw - 10px);
+    width: 100vw;
 
     position: absolute;
-    left: 5px;
-    top: 5px;
+    top: 0;
     z-index: 15;
 
     display: flex;
@@ -103,22 +102,33 @@ body {
 
     overflow: hidden;
     /* padding: 10px; */
+    background-color: var(--page0);
+}
 
-    border-bottom: 1px solid var(--containerBord);
-    box-shadow: 0 13px 15px -10px rgba(0, 0, 0, 0.3);
+.navBar::after {
+    content: "";
 
+    position: absolute;
+    bottom: 0;
+
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(90deg, transparent, white, transparent);
+
+    opacity: 0;
+    transition: .2s;
+}
+
+.navBar:hover::after {
+    opacity: 1;
 }
 
 .navBar.portrait {
     top: unset !important;
     bottom: 0;
-    left: 0;
 
-    width: 100vw;
     border-radius: 0;
 
-    border-top: 1px solid var(--containerBord);
-    border-bottom: none;
     box-shadow: 0 -9px 10px -10px rgba(0, 0, 0, 0.3);
 }
 
@@ -142,9 +152,9 @@ body {
 
 .pageBtns .sep {
     width: 1px;
-    height: 90%;
+    height: 100%;
     margin: 0 5px;
-    background: linear-gradient(transparent, rgba(255, 255, 255, .5), transparent);
+    background: linear-gradient(transparent, rgba(255, 255, 255, .5));
 
     position: relative;
     z-index: 0;
@@ -228,7 +238,8 @@ body {
     height: 50%;
 
     position: absolute;
-    bottom: 0;
+    bottom: unset;
+    top: 0;
 
     transform: scale(.7);
     filter: blur(5px);
@@ -237,7 +248,13 @@ body {
     transition: .2s;
 }
 
-.pb:not(.pbs):hover::before {
+.navBar.portrait .pageBtns .pb::before {
+    bottom: 0;
+    top: unset;
+}
+
+.pb:not(.pbs):hover::before,
+.pb.pbs::before {
     opacity: 1;
     filter: blur(18px);
 }
@@ -332,4 +349,23 @@ body {
 
 .slick-active button {
     background-color: var(--elem-transp-text) !important;
+}
+
+.hoverGlow {
+    width: 100px !important;
+    height: 100px !important;
+
+    border-radius: 50%;
+    background-color: white;
+    filter: blur(50px);
+
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
+    transition: .2s;
 }
