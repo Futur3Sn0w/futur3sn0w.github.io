@@ -102,7 +102,6 @@ body {
 
     overflow: hidden;
     /* padding: 10px; */
-    background-color: var(--page0);
 }
 
 .navBar::after {
@@ -130,6 +129,7 @@ body {
     border-radius: 0;
 
     box-shadow: 0 -9px 10px -10px rgba(0, 0, 0, 0.3);
+    background-color: var(--page0);
 }
 
 .slick-dots,
