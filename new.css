@@ -34,6 +34,12 @@ input.linkToggle {
     border-radius: 50px;
     box-shadow: inset -20px 0 0 0 #ffffff;
     transition-duration: 200ms;
+
+    opacity: .2;
+}
+
+input.linkToggle:hover {
+    opacity: 1;
 }
 
 input.linkToggle:after {
