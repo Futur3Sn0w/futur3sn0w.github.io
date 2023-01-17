@@ -19,6 +19,45 @@ body {
     transition: background-color .3s;
 }
 
+input.linkToggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 30;
+
+    appearance: none;
+    outline: none;
+    width: 50px;
+    height: 30px;
+    background-color: #ffffff;
+    border: 1px solid #D9DADC;
+    border-radius: 50px;
+    box-shadow: inset -20px 0 0 0 #ffffff;
+    transition-duration: 200ms;
+}
+
+input.linkToggle:after {
+    content: "";
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 26px;
+    height: 26px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+input.linkToggle:checked {
+    border-color: #4ED164;
+    box-shadow: inset 20px 0 0 0 #4ED164;
+}
+
+input.linkToggle:checked:after {
+    left: 20px;
+    box-shadow: -2px 4px 3px rgba(0, 0, 0, 0.05);
+}
+
 .content {
     position: absolute;
     bottom: 0;

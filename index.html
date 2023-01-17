@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="subpages/home_back.css">
     <link rel="stylesheet" href="subpages/webprojects.css">
     <link rel="stylesheet" href="splitPage.css">
+    <link rel="stylesheet" href="background.css">
 
     <script src="https://kit.fontawesome.com/a1fc6f0f3a.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -23,24 +24,47 @@
 <body>
     <div class="hoverGlow hidden"></div>
     <div class="background">
+        <!-- <div class="bgShape shape1"></div> -->
+        <!-- <div class="bgShape shape2"></div> -->
+        <!-- <div class="bgShape shape3"></div> -->
+
         <!-- <div class="bg"></div> -->
         <!-- <div class="bg bg2"></div> -->
         <!-- <div class="bg bg3"></div> -->
+
+        <!-- <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul> -->
     </div>
+    <input type="checkbox" class="linkToggle" checked></div>
+
     <div class="content" id="content">
         <div id="page1" class="page1 page">
             <div class="tiles">
                 <div class="homeCont hcr1">
                     <div class="imgs">
-                        <div class="img img1 tile" data-tileName="Logo"></div>
-                        <div class="img img2 tile" data-tileName="Portrait"></div>
+                        <div class="img img1 tile tile-wide" data-tileName="Logo"></div>
                     </div>
-                    <div class="contactCard tile tile-large" data-tileName="Me">
+                    <div class="sep"></div>
+                    <div class="contactCard tile tile-wide" data-tileName="Me">
                         <div class="wm">Gavin (Adam) Hurd</div>
                         <div class="wm wm-sub">@Futur3Sn0w</div>
                     </div>
                 </div>
                 <div class="socials">
+                    <div class="sep seph"></div>
+                    <div class="sep seph sh2"></div>
+                    <div class="sep sepv"></div>
+                    <div class="sep sepv sv2"></div>
                     <a href="https://www.twitter.com/futur3sn0w" class="tile sbTwitter" data-tileName="Twitter">
                         <i class="fa-brands fa-twitter"></i>
                     </a>
@@ -50,7 +74,7 @@
                     <a href="https://www.discord.gg/t3zs5En6Fh" class="tile sbDiscord" data-tileName="Discord">
                         <i class="fa-brands fa-discord"></i>
                     </a>
-                    <a href="https://mastodon.social/@futur3sn0w" class="tile sbMastodon" data-tileName="Mastodon">
+                    <a href="https://vmst.io/@futur3sn0w" class="tile sbMastodon" data-tileName="Mastodon">
                         <i class="fa-brands fa-mastodon"></i>
                     </a>
                     <a href="https://www.dribbble.com/Futur3Sn0w" class="tile sbDribbble" data-tileName="Dribbble">
@@ -83,7 +107,7 @@
                     </div>
                 </div>
                 <div class="split rightBottom">
-                    <div class="projectList">
+                    <div class="projectList hidden">
                         <div class="plProject plp1">
                             <div class="projName">Flick - Fluent Icons</div>
                             <div class="projDesc">A web-based UI for viewing Microsoft's Fluent Icons for Microsoft 365

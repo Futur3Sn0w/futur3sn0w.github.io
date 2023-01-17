@@ -98,3 +98,19 @@ $('.pb').click(function (e) {
 // $('.socials').on('mouseout', function (e) {
 //     $('.hoverGlow').addClass('hidden');
 // })
+
+// Toggle links
+
+$('input.linkToggle').on('change', function () {
+    // alert('pp');
+    if (!$('input.linkToggle').is(':checked')) {
+        $('a').each(function () {
+            $(this).attr('data-href2', $(this).attr('href'));
+            $(this).attr('href', "#");
+        });
+    } else if ($('input.linkToggle').is(':checked')) {
+        $('a').each(function () {
+            $(this).attr('href', $(this).attr('data-href2'));
+        });
+    }
+})
