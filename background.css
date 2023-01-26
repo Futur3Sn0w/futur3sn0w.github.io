@@ -42,6 +42,7 @@
 
 .bgShape {
     position: absolute;
+    transition: .3s;
 }
 
 .bgShape.shape1 {
@@ -64,6 +65,10 @@
     animation-timing-function: linear;
 }
 
+.background.portrait .bgShape.shape1 {
+    opacity: 0;
+}
+
 .bgShape.shape2 {
     width: 700px;
     height: 600px;
@@ -80,6 +85,10 @@
     animation-duration: 15s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+}
+
+.background.portrait .bgShape.shape2 {
+    left: 0px !important;
 }
 
 .bgShape.shape3 {

@@ -64,6 +64,80 @@ input.linkToggle:checked:after {
     box-shadow: -2px 4px 3px rgba(0, 0, 0, 0.05);
 }
 
+.loader {
+    width: 100vw;
+    height: 100vh;
+
+    background: black;
+    position: absolute;
+    z-index: 100;
+
+    animation-name: hideLoader;
+    animation-duration: .5s;
+    animation-delay: 1.2s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+.hider {
+    width: 0;
+    aspect-ratio: 1/1;
+    background-color: var(--page0);
+
+    border-radius: 50%;
+
+    position: absolute;
+    bottom: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+
+    filter: blur(50px);
+
+    animation-name: hideHider;
+    animation-duration: 1s;
+    animation-delay: .5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes hideLoader {
+    0% {
+        opacity: 1;
+        display: flex;
+        z-index: 100;
+    }
+
+    99% {
+        opacity: 0;
+        display: flex;
+        z-index: 100;
+    }
+
+    100% {
+        opacity: 0;
+        display: none !important;
+        z-index: -5;
+    }
+}
+
+@keyframes hideHider {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+
+    50% {
+        width: 0;
+        opacity: 1;
+    }
+
+    100% {
+        width: 100%;
+        opacity: 0;
+    }
+}
+
 .content {
     position: absolute;
     top: 0;
@@ -130,11 +204,11 @@ input.linkToggle:checked:after {
 }
 
 .navBar {
-    height: 50px;
-    width: 100vw;
+    height: fit-content;
+    width: fit-content;
 
     position: absolute;
-    top: 0;
+    top: 5px;
     z-index: 15;
 
     display: flex;
@@ -142,36 +216,16 @@ input.linkToggle:checked:after {
     justify-content: center;
     gap: 3px;
 
+    border-radius: 12px;
+    /* backdrop-filter: blur(10px); */
+
     overflow: hidden;
     /* padding: 10px; */
 }
 
-.navBar::after {
-    content: "";
-
-    position: absolute;
-    bottom: 0;
-
-    height: 1px;
-    width: 100%;
-    background: linear-gradient(90deg, transparent, white, transparent);
-
-    opacity: 0;
-    transition: .2s;
-}
-
-.navBar:hover::after {
-    opacity: 1;
-}
-
 .navBar.portrait {
     top: unset !important;
-    bottom: 0;
-
-    border-radius: 0;
-
-    box-shadow: 0 -9px 10px -10px rgba(0, 0, 0, 0.3);
-    background-color: var(--page0);
+    bottom: 5px;
 }
 
 .slick-dots,
@@ -182,39 +236,31 @@ input.linkToggle:checked:after {
 
 .pageBtns {
     display: flex !important;
+    align-items: center;
+
     width: fit-content;
-    height: 100%;
+    height: 50px;
+
     margin-right: auto;
     margin-left: auto;
+    padding: 0 5px;
 
     /* gap: 1px; */
 
     position: relative;
-}
 
-.pageBtns .sep {
-    width: 1px;
-    height: 100%;
-    margin: 0 5px;
-    background: linear-gradient(transparent, rgba(255, 255, 255, .5));
-
-    position: relative;
-    z-index: 0;
-
-    opacity: 0;
-    transition: .2s;
-}
-
-.navBar:hover .pageBtns .sep {
-    opacity: 1;
+    background-color: var(--page0-dark);
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    /* mix-blend-mode: overlay; */
 }
 
 .pb {
     width: fit-content;
     padding: 0 10px;
-    height: 100%;
+    height: calc(100% - 10px);
 
     color: white;
+    border-radius: 0;
     /* border-radius: 15px 15px 0 0; */
     cursor: pointer;
 
@@ -224,18 +270,42 @@ input.linkToggle:checked:after {
     background-color: transparent !important;
 
     position: relative;
+    z-index: 2;
+    overflow: hidden;
 
     transition: width .5s, border-radius .3s;
 }
 
-.pb:not(.pbs) {
-    background-color: transparent !important;
+.pbIndic {
+    width: calc(50% - 5px);
+    height: calc(100% - 10px);
+
+    position: absolute;
+    z-index: 1;
+
+    border-radius: 8px;
+
+    top: 5px;
+    left: 5px;
+    right: 0px;
+
+    margin-left: 0;
+    margin-right: 5px;
+
+    transition: .3s;
+    background-color: var(--page0);
+}
+
+.pbIndic.right {
+    margin-left: calc(50% - 5px);
 }
 
 .pb::after {
     content: attr(data-pageName);
     font-weight: 700;
-    font-size: 35px;
+    font-size: 26px;
+
+    line-height: 10px;
 
     opacity: 0;
     width: 0;
@@ -255,50 +325,21 @@ input.linkToggle:checked:after {
     opacity: .75;
     transition: .2s;
     font-size: 20px;
-}
 
-.pb:not(.pbs):hover i {
-    opacity: 1;
-}
-
-.pb.pbs i {
     opacity: 0;
     width: 0 !important;
 }
 
-.pb.pbs::after {
+.pb.pbs::before {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.pb::after {
     opacity: 1;
     width: 120px;
     text-align: center;
     color: white;
-}
-
-.pb::before {
-    content: "";
-
-    width: 100%;
-    height: 50%;
-
-    position: absolute;
-    bottom: unset;
-    top: 0;
-
-    transform: scale(.7);
-    filter: blur(5px);
-    opacity: 0;
-    background-color: white;
-    transition: .2s;
-}
-
-.navBar.portrait .pageBtns .pb::before {
-    bottom: 0;
-    top: unset;
-}
-
-.pb:not(.pbs):hover::before,
-.pb.pbs::before {
-    opacity: 1;
-    filter: blur(18px);
 }
 
 .navBtn {

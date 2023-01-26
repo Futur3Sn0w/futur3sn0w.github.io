@@ -7,20 +7,27 @@
 }
 
 :root {
-    --page0: rgb(137, 41, 166);
-    --page0-dark: #41106f;
+    --page0: rgb(145, 23, 182);
+    --page0-dark: #3f2359;
     --page0-light: #c13dd0;
-    --page1: #1cca6a;
+
+    --page1: #1bb079;
+    --page1-dark: #188a2f;
+
     --page2: #f32753;
+
     --page3: #1da1f2;
+
     --page4: rgb(34, 34, 34);
     --page4-prev: rgb(199, 134, 36);
+
+    --pageBack: var(--page0);
 }
 
 @font-face {
     font-family: Circl;
     src: url(circ.otf);
-  }
+}
 
 @media (prefers-color-scheme: dark) {
     :root {

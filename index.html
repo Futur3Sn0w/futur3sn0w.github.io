@@ -22,6 +22,9 @@
 </head>
 
 <body>
+    <div class="loader">
+        <div class="hider"></div>
+    </div>
     <div class="hoverGlow hidden"></div>
     <div class="background">
         <div class="bgShape shape1"></div>
@@ -52,44 +55,38 @@
     <div class="content" id="content">
         <div id="page1" class="page1 page">
             <div class="tiles">
-                <div class="socials">
-                    <!-- <div class="sep seph"></div> -->
-                    <!-- <div class="sep seph sh2"></div> -->
-                    <!-- <div class="sep sepv"></div> -->
-                    <!-- <div class="sep sepv sv2"></div> -->
-                    <div class="img img1 tile tile-medium" data-tileName="Logo"></div>
-                    <div class="contactCard tile tile-wide" data-tileName="Me">
-                        <div class="wm">Gavin (Adam) Hurd</div>
-                        <div class="wm wm-sub">@Futur3Sn0w</div>
-                    </div>
-                    <a href="https://www.twitter.com/futur3sn0w" class="tile sbTwitter" data-tileName="Twitter">
-                        <i class="fa-brands fa-twitter"></i>
-                    </a>
-                    <a href="https://www.deviantart.com/Futur3Sn0w" class="tile sbDeviant" data-tileName="DeviantArt">
-                        <i class="fa-brands fa-deviantart"></i>
-                    </a>
-                    <a href="https://www.discord.gg/t3zs5En6Fh" class="tile sbDiscord" data-tileName="Discord">
-                        <i class="fa-brands fa-discord"></i>
-                    </a>
-                    <a href="https://vmst.io/@futur3sn0w" class="tile sbMastodon" data-tileName="Mastodon">
-                        <i class="fa-brands fa-mastodon"></i>
-                    </a>
-                    <a href="https://www.dribbble.com/Futur3Sn0w" class="tile sbDribbble" data-tileName="Dribbble">
-                        <i class="fa-brands fa-dribbble"></i>
-                    </a>
-                    <a href="https://www.reddit.com/u/Futur3Sn0w" class="tile sbReddit" data-tileName="Reddit">
-                        <i class="fa-brands fa-reddit"></i>
-                    </a>
-                    <a href="https://www.github.com/Futur3Sn0w" class="tile sbGitHub" data-tileName="GitHub">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
-                    <a href="https://futur3sn0w.medium.com" class="tile sbMedium" data-tileName="Medium">
-                        <i class="fa-brands fa-medium"></i>
-                    </a>
-                    <a href="https://www.twitch.tv/futur3sn0w" class="tile sbTwitch" data-tileName="Twitch">
-                        <i class="fa-brands fa-twitch"></i>
-                    </a>
+                <div class="img1 tile static tile-medium" data-tileName="Logo"></div>
+                <div class="contactInfo tile static tile-wide" data-tileName="Me">
+                    <div class="wm">Gavin (Adam) Hurd</div>
+                    <div class="wm wm-sub">@Futur3Sn0w</div>
                 </div>
+                <a href="https://www.twitter.com/futur3sn0w" class="tile sbTwitter" data-tileName="Twitter">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+                <a href="https://www.deviantart.com/Futur3Sn0w" class="tile sbDeviant" data-tileName="DeviantArt">
+                    <i class="fa-brands fa-deviantart"></i>
+                </a>
+                <a href="https://www.discord.gg/t3zs5En6Fh" class="tile sbDiscord" data-tileName="Discord">
+                    <i class="fa-brands fa-discord"></i>
+                </a>
+                <a href="https://vmst.io/@futur3sn0w" class="tile sbMastodon" data-tileName="Mastodon">
+                    <i class="fa-brands fa-mastodon"></i>
+                </a>
+                <a href="https://www.dribbble.com/Futur3Sn0w" class="tile sbDribbble" data-tileName="Dribbble">
+                    <i class="fa-brands fa-dribbble"></i>
+                </a>
+                <a href="https://www.reddit.com/u/Futur3Sn0w" class="tile sbReddit" data-tileName="Reddit">
+                    <i class="fa-brands fa-reddit"></i>
+                </a>
+                <a href="https://www.github.com/Futur3Sn0w" class="tile sbGitHub" data-tileName="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://futur3sn0w.medium.com" class="tile sbMedium" data-tileName="Medium">
+                    <i class="fa-brands fa-medium"></i>
+                </a>
+                <a href="https://www.twitch.tv/futur3sn0w" class="tile sbTwitch" data-tileName="Twitch">
+                    <i class="fa-brands fa-twitch"></i>
+                </a>
             </div>
         </div>
         <div id="page2" class="page2 page">
@@ -211,24 +208,23 @@
         </div>
     </div>
 
-    <div class="hidden navBar">
+    <div class="navBar">
         <div class="navBtn pagePill">
             <i id="pageIcon" class="fa-solid fa-house"></i>
         </div>
         <div class="directns"></div>
 
         <div class="pageBtns">
+            <div class="pbIndic"></div>
             <div class="pb pb1 pbs" data-slickPageID="0" data-pageName="home">
                 <i id="pageIcon" class="fa-solid fa-house"></i>
             </div>
-            <div class="sep"></div>
             <div class="pb pb2" data-slickPageID="1" data-pageName="projects">
                 <i id="pageIcon" class="fa-regular fa-folder-open"></i>
             </div>
-            <!-- <div class="sep"></div> -->
-            <div class="pb pb3 hidden" data-slickPageID="2" data-pageName="music">
+            <!-- <div class="pb pb3 hidden" data-slickPageID="2" data-pageName="music">
                 <i id="pageIcon" class="fa-solid fa-compact-disc"></i>
-            </div>
+            </div> -->
         </div>
     </div>
 
