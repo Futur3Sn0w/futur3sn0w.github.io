@@ -1,3 +1,43 @@
+/* PREREQ - DONT EDIT */
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+
+    /* display: none; */
+
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Label */
+
+.bgLbl {
+    font-size: 25.5vw;
+    font-weight: 700;
+    font-family: Circl;
+
+    color: black;
+    opacity: .5;
+    mix-blend-mode: overlay;
+
+    height: 25.5vw;
+    line-height: 22vw;
+
+    position: absolute;
+    bottom: -17%;
+    left: -9%;
+
+    transform: scale(.8);
+
+    overflow: hidden;
+}
+
+/* The below (preceded with comment) are variants of the animated background. */
+/* Uncomment the corresponding shapes in the index.html file, in matching order of below */
+
 /* Material You variant */
 
 .bgShape {
@@ -93,6 +133,39 @@
 
     100% {
         transform: rotate(0deg);
+    }
+}
+
+/* Curtains variant */
+
+.bg {
+    animation: slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, rgba(255, 255, 255, 0.5) 50%, rgba(0, 0, 0, 0.4) 50%);
+    bottom: 0;
+    left: -50%;
+    mix-blend-mode: multiply;
+    position: absolute;
+    right: -50%;
+    top: 0;
+    z-index: -1;
+}
+
+.bg2 {
+    animation-direction: alternate-reverse;
+    animation-duration: 5s;
+}
+
+.bg3 {
+    animation-duration: 6s;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(25%);
     }
 }
 

@@ -26,94 +26,18 @@
 }
 
 .socials {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto auto;
-    width: min-content;
+    display: flex;
+    width: 410px;
+    flex-wrap: wrap;
+    align-items: center;
     border-radius: 9px;
     /* overflow: hidden; */
-    gap: 1px;
+    gap: 10px;
 
-    height: min-content;
 
     position: relative;
 
     flex-shrink: 0;
-}
-
-.socials:hover .sep {
-    opacity: 1;
-}
-
-.socials .sep {
-    opacity: 0;
-
-    position: absolute;
-    transition: .2s;
-}
-
-.socials .seph {
-    width: 100%;
-    height: 1px;
-
-    top: 130px;
-
-    background: linear-gradient(90deg, transparent, white, transparent);
-}
-
-.socials .seph.sh2 {
-    top: unset;
-    bottom: 130px;
-}
-
-.socials .sepv {
-    width: 1px;
-    height: 100%;
-
-    left: 130px;
-
-    background: linear-gradient(transparent, white, transparent);
-}
-
-.socials .sepv.sv2 {
-    left: unset;
-    right: 130px;
-}
-
-.homeCont {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    flex-shrink: 0;
-    /* gap: 10px; */
-
-    width: max-content !important;
-    height: fit-content !important;
-
-    /* overflow: hidden; */
-}
-
-.hcr1 {
-    margin-right: 10px;
-    border-radius: 9px;
-}
-
-.hcr1 .sep {
-    width: 100%;
-    height: 1px;
-
-    background: linear-gradient(90deg, transparent, white, transparent);
-}
-
-.hcr1 .sep,
-.hcr1 .imgs .sep {
-    opacity: 0;
-    transition: .2s;
-}
-
-.hcr1:hover .sep,
-.hcr1:hover .imgs .sep {
-    opacity: 1;
 }
 
 .tile {
@@ -132,37 +56,8 @@
     transition: .15s;
 }
 
-.tile:active {
+.tile:active::before {
     transform: scale(.9);
-}
-
-/* .socials .tile::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-
-    position: absolute;
-    background-color: rgba(255, 255, 255, 1);
-    opacity: 0;
-    filter: blur(20px);
-    left: 0;
-    z-index: -1;
-    transition: opacity .3s, filter .4s;
-}
-
-.socials .tile:hover::before {
-    opacity: 1;
-} */
-
-.socials .tile:hover {
-    /* transform: scale(1.05); */
-    z-index: 1;
-    /* border-radius: 0px !important; */
-    color: black;
-}
-
-.socials .tile:hover::before {
-    border-radius: 0px;
 }
 
 .tile:after {
@@ -189,7 +84,7 @@
 
 
 .tile-wide {
-    width: 260px;
+    width: 270px;
     /* background: linear-gradient(90deg, #008a17, #00a61b); */
 }
 
@@ -205,6 +100,8 @@
     font-size: 50px;
     width: 65px;
     height: 65px;
+    
+    color: var(--page0-light);
 
     display: flex;
     align-items: center;
@@ -218,22 +115,6 @@
     color: white;
 }
 
-.contactCard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.contactCard:hover::before {
-    border-radius: 0 0 11px 11px !important;
-}
-
-.contactCard::before {
-    background: linear-gradient(90deg, #af0e36, #c82452) !important;
-    background-color: white;
-}
-
 .tile::before {
     content: "";
 
@@ -243,20 +124,45 @@
     position: absolute;
     z-index: -1;
 
-    background-color: white;
-    border-radius: 50%;
+    background-color: var(--page0-dark);
+    border-radius: 300px;
 
-    filter: blur(20px);
+    /* filter: blur(20px); */
     transition: .15s;
 }
 
 .tile:hover::before {
-    filter: blur(0);
+    filter: saturate(2);
+    z-index: -2;
+    border-radius: 16px;
 }
 
 .tile:hover:active::before {
-    filter: blur(20px);
+    filter: blur(10px);
     border-radius: 50%;
+}
+
+.tile:active i {
+    color: white;
+    filter: none;
+    opacity: 1;
+}
+
+.contactCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contactCard:hover::before {
+    border-radius: 16px !important;
+}
+
+.contactCard::before {
+    background: black !important;
+    background-color: white;
+    border-radius: 16px !important;
 }
 
 .imgs {
@@ -274,22 +180,11 @@
     background-image: url(../23logo.png);
     color: black !important;
 
-    background-size: 40%;
-    background-color: transparent;
+    background-size: 65%;
 }
 
-.img1:hover::before {
-    border-radius: 11px 11px 0 0;
-}
-
-.imgs .sep {
-    width: 1px;
-    height: 130px;
-
-    position: relative;
-    z-index: 10;
-
-    background: linear-gradient(transparent, white);
+.img1::before {
+    background-color: white !important;
 }
 
 .contactCard .wm {
@@ -354,42 +249,42 @@
     color: #2a8bd2 !important;
 } */
 
-.sbTwitter::before {
+.sbTwitter:hover::before {
     background-color: #1da1f2 !important;
 }
 
-.sbDiscord::before {
+.sbDiscord:hover::before {
     background-color: #5865f2 !important;
 }
 
-.sbDeviant::before {
+.sbDeviant:hover::before {
     background-color: #01d13c !important;
 }
 
-.sbReddit::before {
+.sbReddit:hover::before {
     background-color: #fd4401 !important;
 }
 
-.sbDribbble::before {
+.sbDribbble:hover::before {
     background-color: #ea4c89 !important;
 }
 
-.sbYouTube::before {
+.sbYouTube:hover::before {
     background-color: #ff0000 !important;
 }
 
-.sbMedium::before {
+.sbMedium:hover::before {
     background-color: #ffb217 !important;
 }
 
-.sbGitHub::before {
+.sbGitHub:hover::before {
     background-color: #9656b0 !important;
 }
 
-.sbTwitch::before {
+.sbTwitch:hover::before {
     background-color: #9147ff !important;
 }
 
-.sbMastodon::before {
+.sbMastodon:hover::before {
     background-color: #2a8bd2 !important;
 }

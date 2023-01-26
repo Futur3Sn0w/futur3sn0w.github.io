@@ -7,13 +7,20 @@
 }
 
 :root {
-    --page0: rgb(141, 32, 214);
+    --page0: rgb(137, 41, 166);
+    --page0-dark: #41106f;
+    --page0-light: #c13dd0;
     --page1: #1cca6a;
     --page2: #f32753;
     --page3: #1da1f2;
     --page4: rgb(34, 34, 34);
     --page4-prev: rgb(199, 134, 36);
 }
+
+@font-face {
+    font-family: Circl;
+    src: url(circ.otf);
+  }
 
 @media (prefers-color-scheme: dark) {
     :root {

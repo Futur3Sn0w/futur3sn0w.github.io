@@ -35,7 +35,7 @@ input.linkToggle {
     box-shadow: inset -20px 0 0 0 #ffffff;
     transition-duration: 200ms;
 
-    opacity: .2;
+    opacity: 0;
 }
 
 input.linkToggle:hover {
@@ -66,23 +66,20 @@ input.linkToggle:checked:after {
 
 .content {
     position: absolute;
-    bottom: 0;
-    right: 5px;
+    top: 0;
+    left: 0;
 
     width: 100vw;
     height: 100vh;
 
     margin: 0;
     padding: 0;
-    padding-top: 65px;
-    padding-bottom: 5px;
 
     overflow: hidden !important;
 }
 
 .content.portrait {
     padding-top: 0;
-    padding-bottom: 50px;
     right: 0;
 }
 

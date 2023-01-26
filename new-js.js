@@ -83,22 +83,6 @@ $('.pb').click(function (e) {
     $('.bap').css('background-color', $('.pbs').css('background-color'));
 })
 
-// Hover glow
-
-// $('.socials').on('mouseover', function (e) {
-//     $('.hoverGlow').removeClass('hidden');
-//     $(document).on('mousemove', function (e) {
-//         $('.hoverGlow').css({
-//             left: e.pageX,
-//             top: e.pageY
-//         })
-//     })
-// })
-
-// $('.socials').on('mouseout', function (e) {
-//     $('.hoverGlow').addClass('hidden');
-// })
-
 // Toggle links
 
 $('input.linkToggle').on('change', function () {
