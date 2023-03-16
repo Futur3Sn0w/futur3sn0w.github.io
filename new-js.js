@@ -37,6 +37,8 @@ function setSpecs() {
     var page = $('.content').slick('slickCurrentSlide');
     $('.pagePill').css('background-color', 'var(--page' + page + ")");
     $('body').css('background-color', "var(--page" + $('.content').slick('slickCurrentSlide') + ")");
+    $('.pbIndic').css('background-color', "var(--page" + $('.content').slick('slickCurrentSlide') + ")");
+    $('.pageBtns').css('background-color', "var(--page" + $('.content').slick('slickCurrentSlide') + "-dark)");
 
     if (page == 0) {
         $('#pageIcon').prop('class', "fa-solid fa-house");
@@ -86,9 +88,6 @@ $('.pb').click(function (e) {
         $('.pbs').removeClass('pbs')
         $(this).addClass('pbs');
         $('.pbIndic').toggleClass('right')
-        $('.pbIndic').css('background-color', "var(--page" + $('.content').slick('slickCurrentSlide') + ")");
-        $('.pageBtns').css('background-color', "var(--page" + $('.content').slick('slickCurrentSlide') + "-dark)");
-
     }
     // $('.bap').css('background-color', $('.pbs').css('background-color'));
 })
