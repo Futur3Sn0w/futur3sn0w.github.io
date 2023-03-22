@@ -12,6 +12,7 @@
     --page0-light: #c13dd0;
 
     --page1: #1bb079;
+    --page1-light: #2ec78f;
     --page1-dark: #188a2f;
 
     --page2: #f32753;
@@ -115,7 +116,7 @@
     justify-content: center;
     gap: 3px;
 
-    border-radius: 12px;
+    border-radius: 50px;
     /* backdrop-filter: blur(10px); */
 
     overflow: hidden;
@@ -124,7 +125,7 @@
 
 .navBar.portrait {
     top: unset !important;
-    bottom: 5px;
+    bottom: 60px;
 }
 
 .slick-dots,
@@ -182,7 +183,7 @@
     position: absolute;
     z-index: 1;
 
-    border-radius: 8px;
+    border-radius: 50px;
 
     top: 5px;
     left: 5px;

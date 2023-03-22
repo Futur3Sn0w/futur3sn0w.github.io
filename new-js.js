@@ -20,12 +20,14 @@ function portraitLandscape() {
         $('.content').addClass('portrait');
         $('.background').addClass('portrait');
         $('.splitPage').addClass('portrait');
+        $('.headsup').addClass('portrait');
     } else if (height < width) {
         // alert('landscape')
         $('.navBar').removeClass('portrait');
         $('.content').removeClass('portrait');
         $('.background').removeClass('portrait');
         $('.splitPage').removeClass('portrait');
+        $('.headsup').removeClass('portrait');
     }
 }
 
@@ -107,3 +109,10 @@ $('input.linkToggle').on('change', function () {
         });
     }
 })
+
+// Close headsup
+
+$('#hu-close').on('click', function () {
+    localStorage.setItem('headsup', '0');
+    $('.headsup').hide();
+});
