@@ -1,19 +1,20 @@
 .tiles2 {
     position: absolute;
-    top: 50%;
+    top: calc(50% + 75px);
     left: 50%;
     transform: translate(-50%, -50%);
 
     /* background-color: rgb(0, 0, 0); */
 
     display: flex;
+    flex-direction: column;
     height: fit-content;
+    max-height: 100vh;
     width: min-content;
-    flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     border-radius: 9px;
-    gap: 5px;
+    /* gap: 5px; */
     /* overflow: hidden; */
 
     flex-shrink: 0;
@@ -21,105 +22,153 @@
 
 .subTiles2 {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 325px;
-    height: 0;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    width: 500px;
+    height: 50%;
+    border-radius: 14px;
     gap: 5px;
-    overflow: hidden;
+    overflow: scroll;
+
+    /* padding: 40px; */
+    padding-top: 10px;
+    padding-bottom: 130px;
 }
 
-.tiles2::-webkit-scrollbar {
-    display: none;
-}
+.projectBox {
+    width: 330px;
+    height: 120px;
+    background-color: #A1D9BF;
+    border-radius: 14px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
 
-.tile2 {
-    position: relative;
-    height: 60px;
-    width: 155px;
     padding: 15px;
 
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
     overflow: hidden;
-
-    background-color: var(--page1-light);
-    border-radius: 14px;
-    border: 1px solid rgba(0, 0, 0, 0.15);
-    text-decoration: none;
-    color: white;
-
-    transition: .2s;
-}
-
-.tile2::after {
-    content: attr(data-tileName);
-    font-size: 14px;
-    font-weight: bold;
-
-    color: white;
-    opacity: 0;
+    flex-shrink: 0;
 
     position: relative;
-    z-index: 1;
-    /* top: 50%; */
-    /* transform: translateY(-50%); */
-    /* right: 20px; */
-
     overflow: hidden;
+    cursor: pointer;
 
-    width: 0;
-    text-align: center;
-    transition: .3s;
-    transition-delay: 0;
+    transition: .25s;
 }
 
-.tile2:hover::after {
-    opacity: 1;
-    width: 100px;
-    transition-delay: .15s;
+.projectBox::before {
+    content: "";
+    position: absolute;
+    z-index: 100;
+    left: 0;
+
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    /* height: 100%; */
+    border-radius: 13px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
-.tile2 i {
-    font-size: 30px;
-    width: 40px;
-    height: 40px;
-    /* margin-left: auto; */
+.projectBox::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
 
-    color: var(--page1-dark);
+    background: linear-gradient(270deg, transparent, #A1D9BF 50%);
+    transition: .4s;
+}
+
+.projectBox:hover::after {
+    width: 50%;
+    /* background-color: #A1D9BF; */
+    /* opacity: .5; */
+}
+
+.projectBox:hover {
+    width: 410px;
     /* background-color: white; */
-    /* border-radius: 50%; */
-    /* flex-shrink: 0; */
+    box-shadow: 0 6px 9px 0 rgba(0, 0, 0, 0.3);
+    /* transform: scale(1.1); */
+    /* margin: 7px 0; */
+}
 
+.projectBox .projTitle {
+    font-size: 18px;
+    font-weight: bold;
+    height: fit-content;
+    position: relative;
+    z-index: 4;
+}
+
+.projectBox .projDesc {
+    font-size: 12px;
+    font-weight: normal;
+    height: fit-content;
+    width: 170px;
+    position: relative;
+    z-index: 4;
+    padding-bottom: 10px;
+    /* background-color: purple; */
+}
+
+.projDesc::after {
+    content: attr(data-lastUpdate);
+    font-size: 13px;
+    font-weight: 500;
+    opacity: .5;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+}
+
+.projectBox .projImg {
+    /* width: 100px; */
+    height: 100%;
+
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    /* background-color: purple; */
+
+    /* transition: .25s; */
+}
+
+.subTiles2::-webkit-scrollbar {
+    display: none;
+}
+
+.headTiles {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    transition: .2s;
+    height: 100px;
+    flex-shrink: 0;
+    gap: 0;
+    border-radius: 14px;
+    overflow: hidden;
 }
 
-.tile2:hover i {
-    /* font-size: 60px; */
-    color: white;
-
-    transform: scale(1.2);
-}
-
-.contactInfo2 {
+.contactInfo {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
+    gap: 3px;
 
-    height: 100px;
-    width: 212px;
-    border-radius: 14px;
+    position: relative;
+    box-sizing: border-box;
+    padding-left: 15px;
+
+    height: 100%;
+    width: 232px;
     color: white;
     background: var(--page1-dark) !important;
 }
 
-.img2 {
+.img {
     background-image: url(../23logo.png);
     background-size: contain;
     background-repeat: no-repeat;
@@ -128,110 +177,34 @@
     background-color: white !important;
 
     width: 100px;
-    aspect-ratio: 1/1;
-    border-radius: 14px;
+    height: 100px;
+    /* aspect-ratio: 1/1; */
 
-    background-size: 65%;
+    background-size: 70%;
 }
 
-.contactInfo2 .wm2 {
+.contactInfo .wm {
     font-size: 20px;
     font-weight: bold;
     height: fit-content;
 }
 
-.contactInfo2 .wm2-sub {
-    font-size: 15px;
+.contactInfo .wm-sub {
+    font-size: 14px;
     font-weight: normal;
     opacity: .7;
     height: fit-content;
-    width: 180px;
-
-    margin: 0 auto;
+    width: 170px;
 }
 
-/* Tile specs */
+.contactInfo .wm-sub::after {
+    /* content: "Click to open"; */
+    font-size: 12px;
 
-/* .sbTwitter:hover i {
-    color: #1D9BF0 !important;
-}
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    transform: translateX(-50%);
 
-.sbDiscord:hover i {
-    color: #5865F2 !important;
-}
-*/
-
-.sbDeviant:hover i {
-    color: #01d13c !important;
-}
-
-/*
-.sbReddit:hover i {
-    color: #FF4501 !important;
-}
-
-.sbDribbble:hover i {
-    color: #EA4C89 !important;
-}
-
-.sbYouTube:hover i {
-    color: #ff0000 !important;
-}
-
-*/
-.sbMedium:hover i {
-    color: #ffffff !important;
-}
-
-.sbGitHub:hover i {
-    color: #9656b0 !important;
-}
-
-/*
-.sbTwitch:hover i {
-    color: #9146FF !important;
-}
-
-.sbMastodon:hover i {
-    color: #563ACC !important;
-} */
-
-.sbTwitter:hover {
-    background-color: #1D9BF0 !important;
-}
-
-.sbDiscord:hover {
-    background-color: #5865F2 !important;
-}
-
-.sbDeviant:hover {
-    background-color: #2a2a2a !important;
-}
-
-.sbReddit:hover {
-    background-color: #FF4501 !important;
-}
-
-.sbDribbble:hover {
-    background-color: #EA4C89 !important;
-}
-
-.sbYouTube:hover {
-    background-color: #ff0000 !important;
-}
-
-.sbMedium:hover {
-    background-color: #2a2a2a !important;
-}
-
-.sbGitHub:hover {
-    background-color: #2a2a2a !important;
-}
-
-.sbTwitch:hover {
-    background-color: #9146FF !important;
-}
-
-.sbMastodon:hover {
-    background-color: #563ACC !important;
+    width: fit-content;
 }

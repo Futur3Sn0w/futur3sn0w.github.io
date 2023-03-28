@@ -1,5 +1,6 @@
 window.onload = function () {
     portraitLandscape();
+    $('input.linkToggle').click();
 }
 
 $(window).resize(function () {
@@ -83,30 +84,47 @@ function slickStuff() {
 
 $('.pb').click(function (e) {
     // alert($('body').css('background-color'));
+    var page = $(this).attr('data-slickpageid');
     if ($(this).hasClass('pbs')) {
 
     } else {
         $('.content').slick('slickGoTo', $(this).attr('data-slickpageid'));
         $('.pbs').removeClass('pbs')
         $(this).addClass('pbs');
-        $('.pbIndic').toggleClass('right')
+        if (page == 0) {
+            $('.pbIndic').removeClass('right');
+            $('.pbIndic').removeClass('middle');
+        } else if (page == 1) {
+            $('.pbIndic').removeClass('right');
+            $('.pbIndic').addClass('middle');
+        } else if (page == 2) {
+            $('.pbIndic').addClass('right');
+            $('.pbIndic').removeClass('middle');
+        }
     }
     // $('.bap').css('background-color', $('.pbs').css('background-color'));
 })
 
 // Toggle links
 
-$('input.linkToggle').on('change', function () {
+$('.linkToggle').on('change', function () {
     // alert('pp');
     if (!$('input.linkToggle').is(':checked')) {
         $('a').each(function () {
             $(this).attr('data-href2', $(this).attr('href'));
             $(this).attr('href', "#");
         });
+        $('.projectBox').on('click', function () {
+
+        })
     } else if ($('input.linkToggle').is(':checked')) {
         $('a').each(function () {
             $(this).attr('href', $(this).attr('data-href2'));
         });
+        $('.projectBox').on('click', function () {
+            var name = $(this).attr('data-open');
+            window.open('https://futur3sn0w.me/' + name);
+        })
     }
 })
 
@@ -116,3 +134,10 @@ $('#hu-close').on('click', function () {
     localStorage.setItem('headsup', '0');
     $('.headsup').hide();
 });
+
+// ProjectBox action 
+
+// $('.projectBox').on('click', function () {
+//     var name = $(this).attr('data-open');
+//     window.open('https://futur3sn0w.me/' + name);
+// })
