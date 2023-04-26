@@ -42,6 +42,7 @@ function setSpecs() {
     $('body').css('background-color', "var(--page" + $('.content').slick('slickCurrentSlide') + ")");
     $('.pbIndic').css('background-color', "var(--page" + $('.content').slick('slickCurrentSlide') + ")");
     $('.pageBtns').css('background-color', "var(--page" + $('.content').slick('slickCurrentSlide') + "-dark)");
+    $('.headTiles').css('background-color', "var(--page" + $('.content').slick('slickCurrentSlide') + "-dark)");
 
     if (page == 0) {
         $('#pageIcon').prop('class', "fa-solid fa-house");

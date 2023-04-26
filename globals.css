@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+}
+
+.hidden {
+    display: none !important;
+}
+
+:root {
+    --page0: rgb(120, 22, 150);
+    --page0-dark: #381558;
+    --page0-light: #c13dd0;
+
+    --page1: #007ACC;
+    --page1-light: #8bb5d2;
+    --page1-dark: #26658f;
+
+    --page2: #f32753;
+    --page2-dark: #a01835;
+    --page2-light: #eb5575;
+
+    --page3: #1da1f2;
+
+    --page4: rgb(34, 34, 34);
+    --page4-prev: rgb(199, 134, 36);
+
+    --pageBack: var(--page0);
+}
+
+@font-face {
+    font-family: Circl;
+    src: url(circ.otf);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --rootBack: #222;
+        --containerBack: hsla(0, 0%, 0%, 0.3);
+        --containerBord: hsla(0, 0%, 100%, 0.1);
+
+        --transparent-container: rgba(0, 0, 0, .75);
+
+        --hero-back: #2929299d;
+
+        --elem: rgb(65, 65, 65);
+        --elem-sel: rgb(148, 148, 148);
+        --elem-text: white;
+
+        --elem-transp: rgba(160, 160, 160, 0.8);
+        --elem-transp-sel: rgba(65, 65, 65, 0.8);
+        --elem-transp-text: white;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --rootBack: #EEE;
+        --containerBack: hsla(0, 0%, 0%, 0.1);
+        --containerBord: hsla(0, 0%, 0%, 0.1);
+
+        --transparent-container: rgba(255, 255, 255, .75);
+
+        --hero-back: #ffffff8a;
+
+        --elem: rgb(185, 185, 185);
+        --elem-sel: rgb(49, 49, 49);
+        --elem-text: black;
+
+        --elem-transp: rgba(185, 185, 185, 0.5);
+        --elem-transp-sel: rgba(49, 49, 49, 0.8);
+        --elem-transp-text: #222;
+    }
+}

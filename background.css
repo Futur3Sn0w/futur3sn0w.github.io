@@ -19,7 +19,7 @@
 
     position: absolute;
     background: linear-gradient(transparent, black);
-    opacity: .75;
+    opacity: .4;
     mix-blend-mode: overlay;
 }
 
@@ -65,7 +65,7 @@
     background-repeat: no-repeat;
     mix-blend-mode: overlay;
     border-radius: 50%;
-    opacity: .25;
+    opacity: .15;
 
     top: -25%;
     left: -15%;
@@ -87,7 +87,7 @@
     background-color: white;
     mix-blend-mode: overlay;
     border-radius: 500px;
-    opacity: .5;
+    opacity: .4;
 
     bottom: -40%;
     left: 25%;
@@ -111,7 +111,7 @@
     background-size: 90%;
     background-repeat: no-repeat;
     mix-blend-mode: overlay;
-    opacity: .6;
+    opacity: .5;
 
     top: -30%;
     right: -20%;

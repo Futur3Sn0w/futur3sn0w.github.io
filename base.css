@@ -227,10 +227,9 @@ input.linkToggle:checked:after {
     position: absolute;
     z-index: 99;
     bottom: 1vw;
-    left: 50%;
-    transform: translateX(-50%);
-    width: max-content;
-    max-width: 98vw;
+    right: 10px;
+    width: 40px;
+    /* max-width: 98vw; */
     height: 40px;
 
     display: flex;
@@ -246,10 +245,17 @@ input.linkToggle:checked:after {
     box-sizing: border-box;
     padding-left: 10px;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 50px;
 
     background-color: inherit;
     color: white;
+
+    transition: .4s;
+}
+
+.headsup:hover {
+    width: 625px;
+    border-radius: 10px;
 }
 
 .headsup.portrait {
@@ -272,6 +278,19 @@ input.linkToggle:checked:after {
     background-color: rgba(0, 0, 0, 0.212);
 }
 
+.headsup p {
+    width: 630px !important;
+    flex-shrink: 0;
+    opacity: 0;
+
+    transition: .2s;
+}
+
+.headsup:hover p {
+    width: 100%;
+    opacity: 1;
+}
+
 .headsup a {
     text-decoration: none;
     color: var(--pageBack);
@@ -282,8 +301,9 @@ input.linkToggle:checked:after {
 }
 
 .headsup .close {
-    margin-left: auto;
-    margin-right: 6px;
+    /* margin-left: 0; */
+    /* margin-right: 0; */
+    flex-shrink: 0;
 
     background-color: rgba(255, 255, 255, 0.3);
     color: rgb(255, 255, 255);
@@ -291,14 +311,17 @@ input.linkToggle:checked:after {
 
     cursor: pointer;
 
-    width: 25px;
-    height: 25px;
+    width: 24px;
+    height: 24px;
 
     display: flex;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
 
-    /* padding-top: 2px; */
+    position: absolute;
+    right: 8px;
+
+    padding-top: 2px;
     font-size: 14px;
 }

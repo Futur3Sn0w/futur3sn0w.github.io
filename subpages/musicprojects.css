@@ -20,12 +20,6 @@
     flex-shrink: 0;
 }
 
-.headTiles2 {
-    display: flex;
-    height: min-content;
-    gap: 5px;
-}
-
 .subTiles3 {
     display: flex;
     flex-direction: column;
@@ -44,19 +38,19 @@
     display: none;
 }
 
-.page3 .tiles3 .headTiles .contactInfo {
+.page3 .headTiles .contactInfo {
     background: var(--page2-dark) !important;
 }
 
-.page3 .tiles3 .headTiles .contactInfo .wm-sub {
+.page3 .headTiles .contactInfo .wm-sub {
     padding-bottom: 8px;
 }
 
-
-.page3 .tiles3 .headTiles .contactInfo .wm-sub::after {
+.page3 .headTiles .contactInfo .wm-sub::after {
     content: "Coming soon...";
     font-weight: bold;
+    width: max-content;
     position: absolute;
-    left: 60px;
+    left: 220px !important;
     bottom: 8px;
 }
