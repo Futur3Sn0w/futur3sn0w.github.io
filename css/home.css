@@ -1,67 +1,57 @@
-.tiles {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    /* background-color: rgb(0, 0, 0); */
-
-    display: flex;
-    height: fit-content;
-    width: min-content;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    border-radius: 9px;
-    gap: 5px;
-    /* overflow: hidden; */
-
-    flex-shrink: 0;
-}
-
 .subTiles {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
-    width: 380px;
-    height: fit-content;
-    gap: 5px;
+    width: 0;
+    height: 100%;
+    gap: 7px;
+    padding: 5px;
+    padding-left: 0;
+    padding-top: 0;
+    box-sizing: border-box;
+
+    /* position: absolute; */
+    /* left: 0; */
+    /* top: 0; */
+    /* z-index: 1; */
+
+    /* background-color: var(--page0-dark); */
+    /* margin-left: 5px; */
+    transition: .2s;
+    transition-delay: 0;
 }
 
-.tiles::-webkit-scrollbar {
-    display: none;
+.subTiles.small:hover {
+    max-width: 160px !important;
+    width: 160px !important;
 }
 
 .tile {
     position: relative;
-    height: 70px;
-    width: 185px;
-    padding: 15px;
+    height: 45px;
+    width: 60px;
+    margin-left: -2px;
 
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    flex-shrink: 0;
 
-    background-color: var(--page0-light);
-    border-radius: 35px 14px 14px 35px;
-    border: 1px solid rgba(0, 0, 0, 0.15);
+    background-color: var(--elem-transp);
+    /* backdrop-filter: blur(10px); */
+    border-radius: 0 30px 30px 0;
     text-decoration: none;
     color: white;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.15) !important;
 
     transition: .2s;
 }
 
-.tile:nth-of-type(even) {
-    border-radius: 14px 35px 35px 14px;
-}
-
-.tile:hover {
-    border-radius: 14px;
-}
-
-.tile:active>* {
-    transform: scale(.9) !important;
+.tile:active {
+    border-radius: 16px;
+    transform: scale(.95) !important;
 }
 
 .tile::after {
@@ -72,6 +62,7 @@
     color: white;
     opacity: 0;
 
+    box-sizing: border-box;
     position: relative;
     z-index: 1;
     /* top: 50%; */
@@ -81,44 +72,51 @@
     overflow: hidden;
 
     width: 0;
-    text-align: center;
+    /* text-align: center; */
     transition: .3s;
-    transition-delay: 0;
+    transition-delay: 0s;
+}
+
+.tile:hover {
+    width: 160px;
 }
 
 .tile:hover::after {
     opacity: 1;
-    width: 130px;
-    transition-delay: .15s;
+    width: 70%;
+    transition-delay: .25s;
+    margin-left: 5px;
 }
 
 .tile i {
-    font-size: 30px;
+    font-size: 17px;
     width: 40px;
-    height: 40px;
+    height: 100%;
     /* margin-left: auto; */
 
-    color: var(--page0-dark);
+    color: var(--elem-transp-text);
     /* background-color: white; */
     /* border-radius: 50%; */
     /* flex-shrink: 0; */
+    box-sizing: border-box;
 
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     transition: .2s;
+    transition-delay: 0s;
 }
 
 .tile:hover i {
     /* font-size: 60px; */
     color: white;
+    width: 22px;
 
-    transform: scale(1.2);
-}
-
-.page1 .headTiles .contactInfo {
-    background: var(--page0-dark) !important;
+    font-size: 26px;
+    padding-right: 5px;
+    margin-left: 10px !important;
+    transition-delay: .25s;
 }
 
 /* Tile specs */
@@ -132,7 +130,7 @@
 }
 */
 
-.sbDeviant:hover i {
+.subTiles:hover .sbDeviant i {
     color: #01d13c !important;
 }
 
@@ -150,11 +148,11 @@
 }
 
 */
-.sbMedium:hover i {
+.subTiles:hover .sbMedium i {
     color: #ffffff !important;
 }
 
-.sbGitHub:hover i {
+.subTiles:hover .sbGitHub i {
     color: #9656b0 !important;
 }
 
@@ -167,42 +165,46 @@
     color: #563ACC !important;
 } */
 
-.sbTwitter:hover {
+.subTiles:hover .sbTwitter {
     background-color: #1D9BF0 !important;
 }
 
-.sbDiscord:hover {
+.subTiles:hover .sbDiscord {
     background-color: #5865F2 !important;
 }
 
-.sbDeviant:hover {
+.subTiles:hover .sbDeviant {
     background-color: #2a2a2a !important;
 }
 
-.sbReddit:hover {
+.subTiles:hover .sbReddit {
     background-color: #FF4501 !important;
 }
 
-.sbDribbble:hover {
+.subTiles:hover .sbDribbble {
     background-color: #EA4C89 !important;
 }
 
-.sbYouTube:hover {
+.subTiles:hover .sbYouTube {
     background-color: #ff0000 !important;
 }
 
-.sbMedium:hover {
+.subTiles:hover .sbMedium {
     background-color: #2a2a2a !important;
 }
 
-.sbGitHub:hover {
+.subTiles:hover .sbGitHub {
     background-color: #2a2a2a !important;
 }
 
-.sbTwitch:hover {
+.subTiles:hover .sbTwitch {
     background-color: #9146FF !important;
 }
 
-.sbMastodon:hover {
+.subTiles:hover .sbMastodon {
     background-color: #563ACC !important;
+}
+
+.subTiles:hover .sbBluesky {
+    background-color: #2F84F6 !important;
 }

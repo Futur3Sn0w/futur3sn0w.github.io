@@ -1,15 +1,10 @@
 window.onload = function () {
     portraitLandscape();
-    $('input.linkToggle').click();
+    // $('input.linkToggle').click();
 }
 
 $(window).resize(function () {
     portraitLandscape();
-})
-
-$(document).ready(function () {
-    slickStuff();
-    setSpecs();
 })
 
 function portraitLandscape() {
@@ -32,80 +27,6 @@ function portraitLandscape() {
     }
 }
 
-$('.content').on('afterChange', function (event, slick, currentSlide, nextSlide) {
-    setSpecs();
-});
-
-function setSpecs() {
-    var page = $('.content').slick('slickCurrentSlide');
-    $('.pagePill').css('background-color', 'var(--page' + page + ")");
-    $('body').css('background-color', "var(--page" + $('.content').slick('slickCurrentSlide') + ")");
-    $('.pbIndic').css('background-color', "var(--page" + $('.content').slick('slickCurrentSlide') + ")");
-    $('.pageBtns').css('background-color', "var(--page" + $('.content').slick('slickCurrentSlide') + "-dark)");
-    $('.headTiles').css('background-color', "var(--page" + $('.content').slick('slickCurrentSlide') + "-dark)");
-
-    if (page == 0) {
-        $('#pageIcon').prop('class', "fa-solid fa-house");
-        $('.bg').show();
-    } else if (page == 1) {
-        $('#pageIcon').prop('class', "fa-solid fa-globe");
-        $('.bg').show();
-    } else if (page == 2) {
-        $('#pageIcon').prop('class', "fa-solid fa-compact-disc");
-        $('.bg').show();
-    } else if (page == 3) {
-        $('#pageIcon').prop('class', "fa-solid fa-users");
-        $('.bg').show();
-    } else if (page == 4) {
-        $('#pageIcon').prop('class', "fa-solid fa-download");
-        $('.bg').hide();
-    }
-}
-
-// Slicc
-
-function slickStuff() {
-    $('.content').slick({
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 5,
-        // dots: true,
-        arrows: false,
-        // swipeToSlide: true,
-        speed: 400,
-        cssEase: 'ease',
-        fade: true,
-        autoplaySpeed: 6000
-    });
-    // $('.slick-dots').appendTo('.navBar');
-    // $('.slick-arrow').appendTo('.directns').addClass('navBtn').text('');
-    // $('.slick-next').prepend('<i class="fa-solid fa-chevron-right"></i>');
-    // $('.slick-prev').prepend('<i class="fa-solid fa-chevron-left"></i>');
-}
-
-$('.pb').click(function (e) {
-    // alert($('body').css('background-color'));
-    var page = $(this).attr('data-slickpageid');
-    if ($(this).hasClass('pbs')) {
-
-    } else {
-        $('.content').slick('slickGoTo', $(this).attr('data-slickpageid'));
-        $('.pbs').removeClass('pbs')
-        $(this).addClass('pbs');
-        if (page == 0) {
-            $('.pbIndic').removeClass('right');
-            $('.pbIndic').removeClass('middle');
-        } else if (page == 1) {
-            $('.pbIndic').removeClass('right');
-            $('.pbIndic').addClass('middle');
-        } else if (page == 2) {
-            $('.pbIndic').addClass('right');
-            $('.pbIndic').removeClass('middle');
-        }
-    }
-    // $('.bap').css('background-color', $('.pbs').css('background-color'));
-})
-
 // Toggle links
 
 $('.linkToggle').on('change', function () {
@@ -123,8 +44,8 @@ $('.linkToggle').on('change', function () {
             $(this).attr('href', $(this).attr('data-href2'));
         });
         $('.projectBox').on('click', function () {
-            var name = $(this).attr('data-open');
-            window.open('https://futur3sn0w.me/' + name);
+            // var name = $(this).attr('data-open');
+            // window.open('https://futur3sn0w.me/' + name);
         })
     }
 })
@@ -138,7 +59,50 @@ $('#hu-close').on('click', function () {
 
 // ProjectBox action 
 
-// $('.projectBox').on('click', function () {
-//     var name = $(this).attr('data-open');
-//     window.open('https://futur3sn0w.me/' + name);
-// })
+$('.projectBox').on('click', function () {
+    $('.navBar').addClass('stretch');
+    $('.projectBox').removeClass('selected');
+    $(this).addClass('selected');
+    $('.projectHighlight').addClass('visible');
+    $('.subTiles').addClass('small');
+    $('.projects-header').addClass('hide')
+    $('.project-open').attr('data-open', $(this).attr('data-open'));
+    $('.project-code').attr('data-open', $(this).attr('data-open'));
+    $('.projectHighlight .projTitle').text($(this).children('.projTitle').text());
+    $('.projectHighlight .projDesc').text($(this).children('.projDesc').text());
+    $('.projectHighlight .projTitle').attr('data-lastUpdate', $(this).children('.projDesc').attr('data-lastUpdate'));
+    $('.projectHighlight .projImg').attr('src', $(this).children('.projImg').attr('src'));
+})
+
+$(document).on('click', function (e) {
+    var element = $(".projectBox");
+    var element2 = $(".projectBox *");
+    var element3 = $(".projectHighlight");
+    var element4 = $(".projectHighlight *");
+    if (!element.is(e.target) && !element2.is(e.target) && !element3.is(e.target) && !element4.is(e.target)) {
+        $('.projectHighlight .close').click();
+    }
+})
+
+$('.projectHighlight .close').on('click', function () {
+    $('.navBar').removeClass('stretch');
+    $('.projectHighlight').removeClass('visible');
+    $('.projectBox').removeClass('selected')
+    $('.subTiles').removeClass('small');
+    $('.projects-header').removeClass('hide')
+})
+
+$('.project-open').on('click', function () {
+    var name = $(this).attr('data-open');
+    window.open('https://futur3sn0w.me/' + name);
+})
+
+$('.project-code').on('click', function () {
+    var name = $(this).attr('data-open');
+    window.open('https://github.com/futur3sn0w/' + name);
+})
+
+setInterval(() => {
+    $('.ph-slide.slide1').toggleClass('hide');
+    $('.ph-slide.slide2').toggleClass('hide');
+}, 5000);

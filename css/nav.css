@@ -1,0 +1,179 @@
+.pb1 {
+    border-color: var(--page0);
+    background-color: var(--page0);
+    color: var(--page0);
+}
+
+.pb2 {
+    border-color: var(--page1);
+    background-color: var(--page1);
+    color: var(--page1);
+}
+
+.pb3 {
+    border-color: var(--page2);
+    background-color: var(--page2);
+    color: var(--page2);
+}
+
+.pb4 {
+    border-color: var(--page3);
+    background-color: var(--page3);
+    color: var(--page3);
+}
+
+.pb5 {
+    border-color: var(--page4-prev);
+    background-color: var(--page4-prev);
+    color: var(--page4-prev);
+}
+
+/* Nav */
+
+
+.navBar {
+    height: 50px;
+    width: 224px;
+
+    position: absolute;
+    top: 5px;
+    right: 0px;
+    z-index: 15;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+
+    background-color: var(--elem-transp);
+    color: var(--elem-text);
+    border-radius: 100px 0 0 100px;
+    /* padding-right: 10px; */
+    box-shadow: 0 7px 15px rgba(0, 0, 0, .1);
+    transition: .5s;
+
+    overflow: hidden;
+    /* padding: 10px; */
+}
+
+.navBar.stretch {
+    width: calc(100% - 5px);
+    backdrop-filter: blur(20px);
+    background-color: var(--transparent-container);
+}
+
+.headTiles {
+    display: flex;
+    height: fit-content;
+    width: fit-content;
+    flex-shrink: 0;
+    gap: 0;
+    /* overflow: hidden; */
+
+    position: absolute;
+    right: -5px;
+    width: 100%;
+    /* top: 55px; */
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+}
+
+.contactInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2px;
+
+    position: relative;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: 15px;
+
+    /* background: var(--page1-dark) !important; */
+}
+
+.navBar.stretch .headTiles .img {
+    margin-left: -5px;
+    height: 50px;
+    width: 50px;
+}
+
+.headTiles .img {
+    background-image: url(../imgs/23logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    height: 40px;
+    width: 40px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    border-radius: 50%;
+
+    background-size: 100%;
+
+    position: relative;
+    transition: .3s;
+}
+
+.contactInfo .wm {
+    font-size: 18px;
+    font-weight: bold;
+    height: fit-content;
+    transition: .2s;
+}
+
+.navBar.stretch .contactInfo .wm-sub {
+    margin-left: 72px;
+}
+
+.contactInfo .wm-sub {
+    font-size: 14px;
+    font-weight: normal;
+    opacity: .7;
+}
+
+.contactInfo .wm-sub::after {
+    /* content: "Click to open"; */
+    font-size: 12px;
+
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: fit-content;
+}
+
+.nht {
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    font-weight: bold;
+    transition: .2s;
+}
+
+.nht::after {
+    content: attr(subtext);
+    font-size: 14px;
+    font-weight: 300;
+    opacity: .6;
+}
+
+.navBar.stretch .nht {
+    opacity: 1;
+}
+
+.mc {
+    align-items: center;
+}
+
+.lc {
+    position: absolute;
+    left: 53px;
+    font-weight: 200;
+    font-size: 15px;
+    padding-bottom: 2px;
+}

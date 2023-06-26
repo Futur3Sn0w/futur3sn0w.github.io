@@ -7,16 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Futur3Sn0w | Web Portfolio</title>
 
-    <link rel="stylesheet" href="base.css">
-    <link rel="stylesheet" href="globals.css">
-    <link rel="stylesheet" href="nav.css">
-    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
-
-    <link rel="stylesheet" href="subpages/home.css">
-    <!-- <link rel="stylesheet" href="subpages/home_back.css"> -->
-    <link rel="stylesheet" href="subpages/webprojects.css">
-    <link rel="stylesheet" href="subpages/musicprojects.css">
-    <link rel="stylesheet" href="background.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/globals.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/webprojects.css">
 
     <link href="favicon-light.png" rel="icon" media="(prefers-color-scheme: dark)" />
     <link href="favicon-dark.png" rel="icon" media="(prefers-color-scheme: light)" />
@@ -29,173 +24,197 @@
     <div class="loader">
         <div class="hider"></div>
     </div>
-    <div class="hoverGlow hidden"></div>
     <div class="background">
-        <div class="bgShape shape1"></div>
-        <div class="bgShape shape2"></div>
-        <div class="bgShape shape3"></div>
-
-        <!-- <div class="bgLbl" id="bgLbl">home</div> -->
-
-        <!-- <div class="bg"></div> -->
-        <!-- <div class="bg bg2"></div> -->
-        <!-- <div class="bg bg3"></div> -->
-
-        <!-- <ul class="circles">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul> -->
+        <div id="bg-wrap">
+            <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                    <radialGradient id="Gradient1" cx="50%" cy="50%" fx="0.441602%" fy="50%" r=".5">
+                        <animate attributeName="fx" dur="34s" values="0%;3%;0%" repeatCount="indefinite"></animate>
+                        <stop offset="0%" stop-color="rgba(255, 0, 255, 1)"></stop>
+                        <stop offset="100%" stop-color="rgba(255, 0, 255, 0)"></stop>
+                    </radialGradient>
+                    <radialGradient id="Gradient2" cx="50%" cy="50%" fx="2.68147%" fy="50%" r=".5">
+                        <animate attributeName="fx" dur="23.5s" values="0%;3%;0%" repeatCount="indefinite"></animate>
+                        <stop offset="0%" stop-color="rgba(255, 255, 0, 1)"></stop>
+                        <stop offset="100%" stop-color="rgba(255, 255, 0, 0)"></stop>
+                    </radialGradient>
+                    <radialGradient id="Gradient3" cx="50%" cy="50%" fx="0.836536%" fy="50%" r=".5">
+                        <animate attributeName="fx" dur="21.5s" values="0%;3%;0%" repeatCount="indefinite"></animate>
+                        <stop offset="0%" stop-color="rgba(0, 155, 255, 1)"></stop>
+                        <stop offset="100%" stop-color="rgba(0, 155, 255, 0)"></stop>
+                    </radialGradient>
+                    <radialGradient id="Gradient4" cx="50%" cy="50%" fx="4.56417%" fy="50%" r=".5">
+                        <animate attributeName="fx" dur="23s" values="0%;5%;0%" repeatCount="indefinite"></animate>
+                        <stop offset="0%" stop-color="rgba(0, 255, 0, 1)"></stop>
+                        <stop offset="100%" stop-color="rgba(0, 255, 0, 0)"></stop>
+                    </radialGradient>
+                    <radialGradient id="Gradient5" cx="50%" cy="50%" fx="2.65405%" fy="50%" r=".5">
+                        <animate attributeName="fx" dur="24.5s" values="0%;5%;0%" repeatCount="indefinite"></animate>
+                        <stop offset="0%" stop-color="rgba(0,0,255, 1)"></stop>
+                        <stop offset="100%" stop-color="rgba(0,0,255, 0)"></stop>
+                    </radialGradient>
+                    <radialGradient id="Gradient6" cx="50%" cy="50%" fx="0.981338%" fy="50%" r=".5">
+                        <animate attributeName="fx" dur="25.5s" values="0%;5%;0%" repeatCount="indefinite"></animate>
+                        <stop offset="0%" stop-color="rgba(255,0,0, 1)"></stop>
+                        <stop offset="100%" stop-color="rgba(255,0,0, 0)"></stop>
+                    </radialGradient>
+                </defs>
+                <!-- <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient4)">
+                    <animate attributeName="x" dur="20s" values="25%;0%;25%" repeatCount="indefinite" />
+                    <animate attributeName="y" dur="21s" values="0%;25%;0%" repeatCount="indefinite" />
+                    <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="17s"
+                        repeatCount="indefinite" />
+                </rect>
+                <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient5)">
+                    <animate attributeName="x" dur="23s" values="0%;-25%;0%" repeatCount="indefinite" />
+                    <animate attributeName="y" dur="24s" values="25%;-25%;25%" repeatCount="indefinite" />
+                    <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="18s"
+                        repeatCount="indefinite" />
+                </rect>
+                <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient6)">
+                    <animate attributeName="x" dur="25s" values="-25%;0%;-25%" repeatCount="indefinite" />
+                    <animate attributeName="y" dur="26s" values="0%;-25%;0%" repeatCount="indefinite" />
+                    <animateTransform attributeName="transform" type="rotate" from="360 50 50" to="0 50 50" dur="19s"
+                        repeatCount="indefinite" />
+                </rect> -->
+                <rect x="13.744%" y="1.18473%" width="100%" height="100%" fill="url(#Gradient1)"
+                    transform="rotate(334.41 50 50)">
+                    <animate attributeName="x" dur="20s" values="25%;0%;25%" repeatCount="indefinite"></animate>
+                    <animate attributeName="y" dur="21s" values="0%;25%;0%" repeatCount="indefinite"></animate>
+                    <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="7s"
+                        repeatCount="indefinite"></animateTransform>
+                </rect>
+                <rect x="-2.17916%" y="35.4267%" width="100%" height="100%" fill="url(#Gradient2)"
+                    transform="rotate(255.072 50 50)">
+                    <animate attributeName="x" dur="23s" values="-25%;0%;-25%" repeatCount="indefinite"></animate>
+                    <animate attributeName="y" dur="24s" values="0%;50%;0%" repeatCount="indefinite"></animate>
+                    <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="12s"
+                        repeatCount="indefinite"></animateTransform>
+                </rect>
+                <rect x="9.00483%" y="14.5733%" width="100%" height="100%" fill="url(#Gradient3)"
+                    transform="rotate(139.903 50 50)">
+                    <animate attributeName="x" dur="25s" values="0%;25%;0%" repeatCount="indefinite"></animate>
+                    <animate attributeName="y" dur="12s" values="0%;25%;0%" repeatCount="indefinite"></animate>
+                    <animateTransform attributeName="transform" type="rotate" from="360 50 50" to="0 50 50" dur="9s"
+                        repeatCount="indefinite"></animateTransform>
+                </rect>
+            </svg>
+        </div>
     </div>
     <input type="checkbox" id="linkToggle" class="linkToggle">
 
     <div class="content" id="content">
-        <div id="page1" class="page1 page">
-            <div class="headTiles">
-                <div class="img"></div>
-                <div class="contactInfo">
-                    <div class="wm">Gavin (Adam) Hurd</div>
-                    <div class="wm wm-sub">@Futur3Sn0w</div>
-                </div>
+        <div class="subTiles">
+            <a href="https://www.twitter.com/futur3sn0w" class="tile sbTwitter" data-tileName="Twitter">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="https://www.deviantart.com/Futur3Sn0w" class="tile sbDeviant darkCap" data-tileName="DeviantArt">
+                <i class="fa-brands fa-deviantart"></i>
+            </a>
+            <a href="https://www.discord.gg/t3zs5En6Fh" class="tile sbDiscord" data-tileName="Discord">
+                <i class="fa-brands fa-discord"></i>
+            </a>
+            <a href="https://vmst.io/@futur3sn0w" class="tile sbMastodon darkCap" data-tileName="Mastodon">
+                <i class="fa-brands fa-mastodon"></i>
+            </a>
+            <a href="https://www.dribbble.com/Futur3Sn0w" class="tile sbDribbble" data-tileName="Dribbble">
+                <i class="fa-brands fa-dribbble"></i>
+            </a>
+            <a href="https://www.reddit.com/u/Futur3Sn0w" class="tile sbReddit darkCap" data-tileName="Reddit">
+                <i class="fa-brands fa-reddit"></i>
+            </a>
+            <a href="https://www.github.com/Futur3Sn0w" class="tile sbGitHub darkCap" data-tileName="GitHub">
+                <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://bsky.app/profile/futur3sn0w.bsky.social" class="tile sbBluesky" data-tileName="Bluesky">
+                <i class="fa-solid fa-cloud"></i>
+            </a>
+            <a href="https://futur3sn0w.medium.com" class="tile sbMedium darkCap" data-tileName="Medium">
+                <i class="fa-brands fa-medium"></i>
+            </a>
+            <a href="https://www.twitch.tv/futur3sn0w" class="tile sbTwitch" data-tileName="Twitch">
+                <i class="fa-brands fa-twitch"></i>
+            </a>
+            <a href="https://www.youtube.com/channel/UC98jW-uSef3Ql-y1mD6y2tQ" class="tile sbYouTube"
+                data-tileName="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+        </div>
+        <div class="subTiles2">
+            <div class="projects-header">
+                <div class="ph-slide slide1"">hey there 👋</div>
+                <div class=" ph-slide slide2 hide" subtext="Click a project for more info">My Projects</div>
             </div>
-            <div class="tiles">
-                <div class="subTiles">
-                    <a href="https://www.twitter.com/futur3sn0w" class="tile sbTwitter" data-tileName="Twitter">
-                        <i class="fa-brands fa-twitter"></i>
-                    </a>
-                    <a href="https://www.deviantart.com/Futur3Sn0w" class="tile sbDeviant darkCap"
-                        data-tileName="DeviantArt">
-                        <i class="fa-brands fa-deviantart"></i>
-                    </a>
-                    <a href="https://www.discord.gg/t3zs5En6Fh" class="tile sbDiscord" data-tileName="Discord">
-                        <i class="fa-brands fa-discord"></i>
-                    </a>
-                    <a href="https://vmst.io/@futur3sn0w" class="tile sbMastodon darkCap" data-tileName="Mastodon">
-                        <i class="fa-brands fa-mastodon"></i>
-                    </a>
-                    <a href="https://www.dribbble.com/Futur3Sn0w" class="tile sbDribbble" data-tileName="Dribbble">
-                        <i class="fa-brands fa-dribbble"></i>
-                    </a>
-                    <a href="https://www.reddit.com/u/Futur3Sn0w" class="tile sbReddit darkCap" data-tileName="Reddit">
-                        <i class="fa-brands fa-reddit"></i>
-                    </a>
-                    <a href="https://www.github.com/Futur3Sn0w" class="tile sbGitHub darkCap" data-tileName="GitHub">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
-                    <a href="https://futur3sn0w.medium.com" class="tile sbMedium darkCap" data-tileName="Medium">
-                        <i class="fa-brands fa-medium"></i>
-                    </a>
-                    <a href="https://www.twitch.tv/futur3sn0w" class="tile sbTwitch" data-tileName="Twitch">
-                        <i class="fa-brands fa-twitch"></i>
-                    </a>
-                    <a href="https://www.youtube.com/channel/UC98jW-uSef3Ql-y1mD6y2tQ" class="tile sbYouTube"
-                        data-tileName="YouTube">
-                        <i class="fa-brands fa-youtube"></i>
-                    </a>
+            <div class="projectBox clickable" id="plusui" data-open="plusUI">
+                <div class="projTitle">PlusUI</div>
+                <div class="projDesc" data-lastUpdate="March 2023">The digital dashboard for your large-screen devices.
+                    PlusUI is your one-stop-shop for any information you want to view at a glance, as well as
+                    shortcuts you want quick access to. Browsers can use PlusUI as a 'new-tab' page replacement for
+                    richer data, custom backgrounds, and more.</div>
+                <img src="imgs/projImgs/img1_plusui.jpeg" alt="" class="projImg">
+            </div>
+            <div class="projectBox clickable" id="10x" data-open="10x">
+                <div class="projTitle">Windows 10X</div>
+                <div class="projDesc" data-lastUpdate="May 2021">A faithful recreation of Microsoft's scrapped Windows
+                    10X OS using web technologies. Includes a bootscreen, OOBE, and full shell clones. (Unfinished, may
+                    be buggy!)
                 </div>
+                <img src="imgs/projImgs/img3_win10x.png" alt="" class="projImg">
+            </div>
+            <div class="projectBox clickable" id="pinboard" data-open="pinboard">
+                <div class="projTitle">Pinboard</div>
+                <div class="projDesc" data-lastUpdate="July 2022">A digital cork-board of sorts, with customizable pins,
+                    colors, shapes, and more. Created with Google's Material You (Material Design 3) design language.
+                    Change the background color and more from settings.
+                </div>
+                <img src="imgs/projImgs/img2_pinboard.png" alt="" class="projImg">
+            </div>
+            <div class="projectBox clickable" id="flick" data-open="flick">
+                <div class="projTitle">Flick</div>
+                <div class="projDesc" data-lastUpdate="October 2022">A hub for viewing Microsoft's Fluent-designed icons
+                    found in
+                    Windows 11, late Windows 10, and Windows 10X builds. Created with the Fluent-design and leaked
+                    Windows 12 UI design language(s).</div>
+                <img src="imgs/projImgs/img4_flick.png" alt="" class="projImg">
+            </div>
+            <div class="projectBox clickable" id="webfx" data-open="webFX">
+                <div class="projTitle">WebFX</div>
+                <div class="projDesc" data-lastUpdate="March 2023">A collection of experiments using various web
+                    technologies, created with Google's ChromeOS and Material You (Material Design 3) design languages.
+                    Click the name of a page (in the bottom-right) to view more information.</div>
+                <img src="imgs/projImgs/img5_webfx.png" alt="" class="projImg">
             </div>
         </div>
-        <div id="page2" class="page2 page">
-            <div class="headTiles">
-                <div class="img"></div>
-                <div class="contactInfo">
-                    <div class="wm">Web Dev</div>
-                    <div class="wm wm-sub">Projects I've developed or maintained over the years</div>
-                </div>
+        <div class="projectHighlight">
+            <div class="close">×</div>
+            <img src="imgs/projImgs/img1_plusui.jpeg" alt="" class="projImg">
+            <div class="projTitle">PlusUI</div>
+            <div class="projDesc" data-lastUpdate="March 2023">
+                Newtab replacement and dashboard for tablets & TVs; Your info at your fingertips!
             </div>
-            <div class="tiles2">
-                <div class="subTiles2">
-                    <div class="projectBox clickable" id="projectName" data-open="plusUI">
-                        <div class="projTitle">PlusUI</div>
-                        <div class="projDesc" data-lastUpdate="March 2023">Newtab replacement and dashboard for tablets
-                            & TVs; Your info at your
-                            fingertips!</div>
-                        <img src="projImgs/img1_plusui.jpeg" alt="" class="projImg">
-                    </div>
-                    <div class="projectBox clickable" id="projectName" data-open="windows10x">
-                        <div class="projTitle">Windows 10X</div>
-                        <div class="projDesc" data-lastUpdate="May 2021">A recreation of the scrapped Windows 10X OS
-                            with some
-                            Futur3Sn0w flare.
-                        </div>
-                        <img src="projImgs/img3_win10x.png" alt="" class="projImg">
-                    </div>
-                    <div class="projectBox clickable" id="projectName" data-open="pinboard">
-                        <div class="projTitle">Pinboard</div>
-                        <div class="projDesc" data-lastUpdate="July 2022">An experiment with colors and shapes on a
-                            Material
-                            You-themed dashboard.
-                        </div>
-                        <img src="projImgs/img2_pinboard.png" alt="" class="projImg">
-                    </div>
-                    <div class="projectBox clickable" id="projectName" data-open="flick">
-                        <div class="projTitle">Flick</div>
-                        <div class="projDesc" data-lastUpdate="October 2022">Icon viewer for Microsoft's Fluent Windows
-                            icons used
-                            in Windows 10X and
-                            11.</div>
-                        <img src="projImgs/img4_flick.png" alt="" class="projImg">
-                    </div>
-                    <div class="projectBox clickable" id="projectName" data-open="webfx">
-                        <div class="projTitle">WebFX</div>
-                        <div class="projDesc" data-lastUpdate="March 2023">A collection of web technologies demoed in a
-                            ChromeOS-styled UI.</div>
-                        <img src="projImgs/img5_webfx.png" alt="" class="projImg">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="page3" class="page3 page">
-            <div class="headTiles">
-                <div class="img"></div>
-                <div class="contactInfo">
-                    <div class="wm">Music</div>
-                    <div class="wm wm-sub">Songs and sets I've created/performed</div>
-                </div>
-            </div>
-            <div class="tiles3">
-                <div class="subTiles3">
-                </div>
+            <div class="actions">
+                <div class="project-code"><i class="fa-brands fa-github"></i></div>
+                <div class="project-open"><i class="fa-solid fa-up-right-from-square"></i></div>
             </div>
         </div>
     </div>
 
-
-
     <div class="navBar">
-        <div class="pageBtns">
-            <div class="pbIndic"></div>
-            <div class="pb pb1 pbs" data-slickPageID="0" data-pageName="home">
-                <i id="pageIcon" class="fa-solid fa-house"></i>
-            </div>
-            <div class="pb pb2" data-slickPageID="1" data-pageName="web">
-                <i id="pageIcon" class="fa-regular fa-folder-open"></i>
-            </div>
-            <div class="pb pb3" data-slickPageID="2" data-pageName="music">
-                <i id="pageIcon" class="fa-solid fa-compact-disc"></i>
+        <div class="nht lc">hey there 👋</div>
+        <div class="nht mc" subtext="Click a project for more info">My Projects</div>
+        <div class="headTiles">
+            <div class="img"></div>
+            <div class="contactInfo">
+                <div class="wm">Gavin (Adam) Hurd</div>
+                <div class="wm wm-sub">@Futur3Sn0w</div>
             </div>
         </div>
     </div>
 
     <div class="headsup">
-        <p>This site is under active development and may be buggy. Report bugs on <a
-                href="https://www.github.com/futur3sn0w/futur3sn0w.github.io">GitHub</a> or <a
-                href="https://www.twitter.com/Futur3Sn0w">Twitter</a>.</p>
-        <div class="close" id="hu-close">
-            <i class="fa-solid fa-close"></i>
-        </div>
+        <p>©️ 2023 Futur3Sn0w (Studio30)</p>
     </div>
 
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="slick/slick.min.js"></script>
     <script src="new-js.js"></script>
 </body>
 
