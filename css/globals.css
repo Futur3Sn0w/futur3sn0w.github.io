@@ -29,7 +29,6 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --back-glass-image: url(imgs/dark.png);
         --rootBack: #222;
         --containerBack: hsla(0, 0%, 0%, 0.3);
         --containerBord: hsla(0, 0%, 100%, 0.1);
@@ -37,6 +36,7 @@
         --transparent-container: rgba(0, 0, 0, .45);
 
         --hero-back: #2929299d;
+        --glow: rgba(255, 255, 255, .15);
 
         --elem: rgb(65, 65, 65);
         --elem-sel: rgb(148, 148, 148);
@@ -50,7 +50,6 @@
 
 @media (prefers-color-scheme: light) {
     :root {
-        --back-glass-image: url(imgs/light.png);
         --rootBack: #EEE;
         --containerBack: hsla(0, 0%, 0%, 0.1);
         --containerBord: hsla(0, 0%, 0%, 0.1);
@@ -58,6 +57,7 @@
         --transparent-container: rgba(255, 255, 255, .75);
 
         --hero-back: #ffffff8a;
+        --glow: rgba(255, 255, 255, .75);
 
         --elem: rgb(255, 255, 255);
         --elem-sel: rgb(49, 49, 49);

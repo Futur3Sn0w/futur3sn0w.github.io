@@ -26,7 +26,6 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    overflow: hidden;
 
     /* display: none; */
 
@@ -49,6 +48,8 @@ input.linkToggle {
     border-radius: 50px;
     box-shadow: inset -20px 0 0 0 #ffffff;
     transition-duration: 200ms;
+
+    display: none;
 
     opacity: 0;
 }
@@ -163,10 +164,20 @@ input.linkToggle:checked:after {
 
     display: flex;
 
+    flex-direction: column;
+
     margin: 0;
     padding: 0;
 
-    overflow: hidden !important;
+    /* padding-top: calc(100vh - 200px); */
+    padding-bottom: 20px;
+
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.content.aboutme {
+    overflow-y: hidden;
 }
 
 .content.portrait {
@@ -238,4 +249,102 @@ input.linkToggle:checked:after {
     background-color: rgba(255, 255, 255, 0.682);
     padding: 3px 5px;
     border-radius: 7px;
+}
+
+/* Background orbs */
+
+.orbs {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    transition: 1s;
+    /* transition-delay: .5s; */
+}
+
+.orbs.paused {
+    filter: blur(20px);
+    /* transition-delay: 0s; */
+}
+
+.orbs.paused .orb {
+    /* transform: rotate(334.41deg) translate(25%, 0%) scale(1) !important; */
+    animation-play-state: paused;
+}
+
+.orb {
+    position: absolute;
+    width: 100%;
+    border-radius: 100%;
+    aspect-ratio: 1/1 !important;
+    animation-iteration-count: infinite;
+    transition: 1s;
+}
+
+.orb:nth-child(1) {
+    background: radial-gradient(at left top, #E9457A, #00ffff00);
+    transform-origin: center center;
+    animation: orb-animation-1 25s infinite ease-in-out;
+    animation-delay: .5s;
+    transform: rotate(334.41deg) translate(25%, 0%);
+}
+
+.orb:nth-child(2) {
+    transform: rotate(255.072deg) translate(-25%, 0%);
+    background: radial-gradient(at left top, #ffffff00, #3D8AA6);
+    transform-origin: center center;
+    animation: orb-animation-2 27s infinite ease-in-out;
+    animation-delay: 1s;
+}
+
+.orb:nth-child(3) {
+    transform: rotate(139.903deg) translate(0%, 25%);
+    background: radial-gradient(at left top, #F3AC45, #0000ff00);
+    transform-origin: center center;
+    animation: orb-animation-3 30s infinite ease-in-out;
+    animation-delay: 1.5s;
+}
+
+@keyframes orb-animation-1 {
+    0% {
+        transform: rotate(334.41deg) translate(25%, 0%);
+    }
+
+    50% {
+        transform: rotate(-334.41deg) translate(0%, 25%);
+    }
+
+    100% {
+        transform: rotate(334.41deg) translate(25%, 0%);
+    }
+}
+
+@keyframes orb-animation-2 {
+    0% {
+        transform: rotate(255.072deg) translate(-25%, 0%);
+    }
+
+    50% {
+        transform: rotate(-255.072deg) translate(0%, 50%);
+    }
+
+    100% {
+        transform: rotate(255.072deg) translate(-25%, 0%);
+    }
+}
+
+@keyframes orb-animation-3 {
+    0% {
+        transform: rotate(139.903deg) translate(0%, 25%);
+    }
+
+    50% {
+        transform: rotate(-139.903deg) translate(25%, 0%);
+    }
+
+    100% {
+        transform: rotate(139.903deg) translate(0%, 25%);
+    }
 }

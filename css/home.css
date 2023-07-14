@@ -1,56 +1,93 @@
+body.portrait .content .projects-header .subTiles {
+    justify-content: flex-start;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
 .subTiles {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    width: 0;
-    height: 100%;
-    gap: 7px;
-    padding: 5px;
-    padding-left: 0;
-    padding-top: 0;
     box-sizing: border-box;
+    width: 100%;
+    overflow-x: scroll;
 
-    /* position: absolute; */
-    /* left: 0; */
-    /* top: 0; */
-    /* z-index: 1; */
+    position: absolute;
+    bottom: 0;
+    z-index: 100;
+    gap: 5px;
+    /* padding: 0 10px; */
+
 
     /* background-color: var(--page0-dark); */
     /* margin-left: 5px; */
-    transition: .2s;
-    transition-delay: 0;
+    transition: .4s;
+    margin-bottom: 10px;
 }
 
-.subTiles.small:hover {
-    max-width: 160px !important;
-    width: 160px !important;
+.projects-header.aboutme .subTiles,
+.subTiles.hide {
+    opacity: 0;
+    bottom: -10px;
+    pointer-events: none;
 }
 
 .tile {
     position: relative;
     height: 45px;
-    width: 60px;
-    margin-left: -2px;
+    width: 45px;
+    /* aspect-ratio: 59/26; */
+    flex-shrink: 0;
+    gap: 0;
 
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    flex-shrink: 0;
 
     background-color: var(--elem-transp);
     /* backdrop-filter: blur(10px); */
-    border-radius: 0 30px 30px 0;
+    border-radius: 30px;
     text-decoration: none;
     color: white;
     box-sizing: border-box;
-    border: 1px solid rgba(0, 0, 0, 0.15) !important;
+    /* padding-left: 27px; */
+    /* margin: 0 -3px; */
 
-    transition: .2s;
+    transition: .25s;
+}
+
+.tile::before {
+    content: "";
+    width: calc(100%);
+    height: calc(100%);
+    /* height: calc(100%); */
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    box-sizing: border-box;
+
+    background: linear-gradient(to bottom right, var(--glow), transparent);
+}
+
+.tile:hover::before {
+    border-radius: 14px;
+    opacity: .25;
+}
+
+.tile:hover {
+    width: 145px;
+    border-radius: 14px;
+    /* margin: 0 -10px; */
+    padding-left: 0;
+    gap: 3px;
 }
 
 .tile:active {
-    border-radius: 16px;
+    border-radius: 30px !important;
     transform: scale(.95) !important;
 }
 
@@ -64,35 +101,28 @@
 
     box-sizing: border-box;
     position: relative;
-    z-index: 1;
+    z-index: 2;
     /* top: 50%; */
     /* transform: translateY(-50%); */
     /* right: 20px; */
 
-    overflow: hidden;
-
     width: 0;
     /* text-align: center; */
-    transition: .3s;
-    transition-delay: 0s;
-}
-
-.tile:hover {
-    width: 160px;
+    transition: .4s;
+    transition-delay: 0;
+    /* transition-timing-function: ease-in-out; */
 }
 
 .tile:hover::after {
     opacity: 1;
-    width: 70%;
-    transition-delay: .25s;
-    margin-left: 5px;
+    width: 100%;
+    transition-delay: .15s;
 }
 
 .tile i {
     font-size: 17px;
     width: 40px;
-    height: 100%;
-    /* margin-left: auto; */
+    height: calc(100% - 4px);
 
     color: var(--elem-transp-text);
     /* background-color: white; */
@@ -100,12 +130,14 @@
     /* flex-shrink: 0; */
     box-sizing: border-box;
 
+    position: relative;
+    z-index: 10;
+
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     transition: .2s;
-    transition-delay: 0s;
 }
 
 .tile:hover i {
@@ -114,9 +146,8 @@
     width: 22px;
 
     font-size: 26px;
-    padding-right: 5px;
-    margin-left: 10px !important;
-    transition-delay: .25s;
+    padding-right: 15px;
+    margin-left: 20px !important;
 }
 
 /* Tile specs */
@@ -130,7 +161,7 @@
 }
 */
 
-.subTiles:hover .sbDeviant i {
+.sbDeviant:hover i {
     color: #01d13c !important;
 }
 
@@ -148,11 +179,11 @@
 }
 
 */
-.subTiles:hover .sbMedium i {
+.sbMedium:hover i {
     color: #ffffff !important;
 }
 
-.subTiles:hover .sbGitHub i {
+.sbGitHub:hover i {
     color: #9656b0 !important;
 }
 
@@ -165,46 +196,50 @@
     color: #563ACC !important;
 } */
 
-.subTiles:hover .sbTwitter {
+.sbTwitter:hover {
     background-color: #1D9BF0 !important;
 }
 
-.subTiles:hover .sbDiscord {
+.sbDiscord:hover {
     background-color: #5865F2 !important;
 }
 
-.subTiles:hover .sbDeviant {
+.sbDeviant:hover {
     background-color: #2a2a2a !important;
 }
 
-.subTiles:hover .sbReddit {
+.sbReddit:hover {
     background-color: #FF4501 !important;
 }
 
-.subTiles:hover .sbDribbble {
+.sbDribbble:hover {
     background-color: #EA4C89 !important;
 }
 
-.subTiles:hover .sbYouTube {
+.sbYouTube:hover {
     background-color: #ff0000 !important;
 }
 
-.subTiles:hover .sbMedium {
+.sbMedium:hover {
     background-color: #2a2a2a !important;
 }
 
-.subTiles:hover .sbGitHub {
+.sbGitHub:hover {
     background-color: #2a2a2a !important;
 }
 
-.subTiles:hover .sbTwitch {
+.sbTwitch:hover {
     background-color: #9146FF !important;
 }
 
-.subTiles:hover .sbMastodon {
+.sbMastodon:hover {
     background-color: #563ACC !important;
 }
 
-.subTiles:hover .sbBluesky {
+.sbBluesky:hover {
     background-color: #2F84F6 !important;
+}
+
+.sbThreads:hover {
+    background-color: #2a2a2a !important;
 }
