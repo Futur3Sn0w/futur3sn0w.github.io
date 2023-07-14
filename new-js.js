@@ -85,7 +85,7 @@ $('.projectBox').on('click', function () {
     $('.project-code').attr('data-open', $(this).attr('data-open'));
     $('.projectHighlight .projTitle').text($(this).children('.projTitle').text());
     $('.projectHighlight .projDesc').text($(this).children('.projDesc').text());
-    $('.projectHighlight .projType').text($(this).parent().children('.pbIndex').text());
+    $('.projectHighlight .projType').text($(this).parent().children('.pbIndex').text().replace(' Show all', ''));
     $('.projectHighlight .projTitle').attr('data-lastUpdate', $(this).children('.projDesc').attr('data-lastUpdate'));
     $('.projectHighlight .projImg').attr('src', $(this).children('.projImg').attr('src'));
 })
