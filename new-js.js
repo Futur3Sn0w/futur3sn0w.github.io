@@ -9,11 +9,18 @@ window.onload = function () {
     //     $('.mtImg').toggleClass('v')
     // }, 5000);
 
-    $('.metoken').tilt({
+    // $('.metoken').tilt({
+    //     glare: true,
+    //     maxGlare: .5,
+    //     maxTilt: 8
+    // })
+
+    VanillaTilt.init(document.querySelector(".aboutinfo"), {
+        max: 10,
+        speed: 200,
         glare: true,
-        maxGlare: .5,
-        maxTilt: 8
-    })
+        "max-glare": .35
+    });
 }
 
 $(window).resize(function () {

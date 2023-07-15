@@ -26,6 +26,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: -200;
 
     /* display: none; */
 
@@ -158,6 +159,7 @@ input.linkToggle:checked:after {
     position: absolute;
     bottom: 0;
     left: 0;
+    z-index: 10;
 
     width: 100vw;
     height: 100vh;

@@ -3,16 +3,18 @@
     width: 500px !important;
 
     position: absolute;
-    z-index: 2;
+    z-index: -19;
     top: -50%;
     left: calc(50% - 250px);
 
+    pointer-events: none;
+
     border-radius: 30px;
     transition: .5s;
-    transition-timing-function: cubic-bezier(1, 0, .45, .73);
+    /* transition-timing-function: cubic-bezier(1, 0, .45, .73); */
     background-color: var(--elem-transp);
     color: var(--elem-text);
-    transform-style: preserve-3d;
+    /* transform-style: preserve-3d; */
 
     opacity: 0;
     /* pointer-events: none; */
@@ -21,27 +23,44 @@
     flex-direction: column;
     align-items: center;
     gap: 5px;
-    overflow: hidden;
+    /* overflow: hidden; */
+    transform-style: preserve-3d;
+    transform: none;
+}
+
+.aboutinfo:hover {
+    transition: 0 !important;
+    transform: perspective(1000px);
 }
 
 .aboutinfo.aboutme {
     opacity: 1;
     top: calc(50% - 300px);
+    pointer-events: all;
+}
+
+.aboutinfo:hover::before {
+    transform: translateZ(-50px);
 }
 
 .aboutinfo::before {
     content: "";
-    width: 504px;
-    height: 604px;
+    width: 500px;
+    height: 600px;
+    border-radius: inherit;
 
     position: absolute;
-    z-index: -5;
+    /* z-index: -40 !important; */
+    transform: translateZ(-1px);
     /* background-color: purple; */
 
     background-image: url(../imgs/confetti.svg);
-    background-size: cover;
+    background-size: 590px;
     background-position: center;
     background-repeat: no-repeat;
+    /* background-color: purple; */
+    filter: saturate(2);
+    /* transform: none; */
 
     transition: .5s;
 }
@@ -52,7 +71,7 @@
     align-items: center;
     z-index: -1;
     position: relative;
-    backdrop-filter: blur(10px);
+    /* backdrop-filter: blur(10px); */
     padding: 20px 50px;
     border-radius: 10px;
     margin: -20px 0;
@@ -83,6 +102,10 @@
     opacity: .5;
 }
 
+.aboutinfo:hover p.chunk {
+    transform: translateZ(20px);
+}
+
 .aboutinfo p.chunk {
     margin: 0;
     /* padding: 0; */
@@ -103,6 +126,8 @@
     border-radius: 15px;
     margin-top: auto;
     margin-bottom: 25px;
+    transform: translateZ(0);
+    transition: .25s;
 }
 
 .aboutinfo .metoken {
@@ -122,7 +147,8 @@
     box-sizing: border-box;
 
     /* cursor: pointer; */
-    transform-style: preserve-3d;
+    /* transform-style: preserve-3d; */
+    transform: translateZ(40px);
 }
 
 .aboutinfo .metoken .mtImg {
