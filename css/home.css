@@ -19,7 +19,6 @@ body.portrait .content .projects-header .subTiles {
     gap: 5px;
     /* padding: 0 10px; */
 
-
     /* background-color: var(--page0-dark); */
     /* margin-left: 5px; */
     transition: .4s;
@@ -36,26 +35,36 @@ body.portrait .content .projects-header .subTiles {
 .tile {
     position: relative;
     height: 45px;
-    width: 45px;
-    /* aspect-ratio: 59/26; */
+    width: fit-content;
+    min-width: 45px;
+    max-width: 45px;
     flex-shrink: 0;
-    gap: 0;
+    /* gap: 5px; */
 
     display: flex;
     align-items: center;
-    justify-content: center;
     overflow: hidden;
 
     background-color: var(--elem-transp);
-    /* backdrop-filter: blur(10px); */
     border-radius: 30px;
     text-decoration: none;
     color: white;
     box-sizing: border-box;
-    /* padding-left: 27px; */
-    /* margin: 0 -3px; */
 
-    transition: .25s;
+    transition: .35s;
+}
+
+.tile:hover {
+    max-width: 250px;
+    border-radius: 14px;
+    padding: 0 13px 0 15px !important;
+    gap: 8px;
+    /* transition: .3s; */
+}
+
+.tile:active {
+    border-radius: 30px !important;
+    transform: scale(.95) !important;
 }
 
 .tile::before {
@@ -67,87 +76,51 @@ body.portrait .content .projects-header .subTiles {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 1;
-    box-sizing: border-box;
+    z-index: -1;
 
-    background: linear-gradient(to bottom right, var(--glow), transparent);
-}
-
-.tile:hover::before {
-    border-radius: 14px;
-    opacity: .25;
-}
-
-.tile:hover {
-    width: 145px;
-    border-radius: 14px;
-    /* margin: 0 -10px; */
-    padding-left: 0;
-    gap: 3px;
-}
-
-.tile:active {
-    border-radius: 30px !important;
-    transform: scale(.95) !important;
+    background: linear-gradient(to top, var(--glow), transparent);
 }
 
 .tile::after {
     content: attr(data-tileName);
     font-size: 16px;
     font-weight: bold;
+    flex-shrink: 0;
 
     color: white;
     opacity: 0;
 
-    box-sizing: border-box;
-    position: relative;
-    z-index: 2;
-    /* top: 50%; */
-    /* transform: translateY(-50%); */
-    /* right: 20px; */
-
-    width: 0;
-    /* text-align: center; */
-    transition: .4s;
-    transition-delay: 0;
-    /* transition-timing-function: ease-in-out; */
+    width: fit-content;
+    max-width: 0px;
+    transition: .3s;
+    transition-delay: 0s;
 }
 
 .tile:hover::after {
     opacity: 1;
-    width: 100%;
-    transition-delay: .15s;
+    max-width: 150px;
+    transition-delay: .3s;
 }
 
 .tile i {
-    font-size: 17px;
-    width: 40px;
-    height: calc(100% - 4px);
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
 
     color: var(--elem-transp-text);
-    /* background-color: white; */
-    /* border-radius: 50%; */
-    /* flex-shrink: 0; */
-    box-sizing: border-box;
-
-    position: relative;
-    z-index: 10;
 
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    transition: .2s;
+    transition: .3s;
 }
 
 .tile:hover i {
     /* font-size: 60px; */
     color: white;
-    width: 22px;
-
-    font-size: 26px;
-    padding-right: 15px;
-    margin-left: 20px !important;
+    /* width: 22px; */
+    transform: scale(1.5);
 }
 
 /* Tile specs */

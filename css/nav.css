@@ -1,6 +1,6 @@
 .navBar {
     height: 50px;
-    width: 170px;
+    width: 184px;
 
     position: absolute;
     top: 8px;
@@ -51,6 +51,18 @@
     opacity: 1;
 }
 
+#moreContext {
+    position: fixed;
+
+    right: 10px;
+    transition: .3s;
+    font-size: 12px;
+}
+
+.navBar.aboutme #moreContext {
+    right: -10px;
+}
+
 .headTiles {
     display: flex;
     height: fit-content;
@@ -61,7 +73,7 @@
     /* position: absolute; */
     /* right: -5px; */
     width: 100%;
-    gap: 5px;
+    gap: 3px;
     /* top: 55px; */
     /* left: 50%; */
     /* transform: translateX(-50%); */
@@ -121,16 +133,41 @@
     font-weight: normal;
     opacity: .7;
     width: max-content;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.contactInfo .wm-sub::before {
+    content: "@Futur3Sn0w";
+
+    opacity: 1;
+    filter: blur(0px);
+    transition: .25s;
+
+    width: fit-content;
+}
+
+.navBar:hover .headTiles .contactInfo .wm-sub::before {
+    opacity: 0;
+    filter: blur(10px);
 }
 
 .contactInfo .wm-sub::after {
-    /* content: "Click to open"; */
-    font-size: 12px;
+    content: "About me";
+    /* font-size: 12px; */
 
     position: absolute;
-    bottom: 3px;
-    left: 50%;
-    transform: translateX(-50%);
+    opacity: 0;
+    filter: blur(10px);
+
+    transition: .25s;
 
     width: fit-content;
+}
+
+.navBar:hover .headTiles .contactInfo .wm-sub::after {
+    opacity: 1;
+    filter: blur(0px);
 }

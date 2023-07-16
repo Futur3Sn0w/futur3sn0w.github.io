@@ -1,83 +1,28 @@
-.aboutinfo {
-    height: 600px !important;
-    width: 500px !important;
-
-    position: absolute;
-    z-index: -19;
-    top: -50%;
-    left: calc(50% - 250px);
-
-    pointer-events: none;
-
-    border-radius: 30px;
-    transition: .5s;
-    /* transition-timing-function: cubic-bezier(1, 0, .45, .73); */
-    background-color: var(--elem-transp);
-    color: var(--elem-text);
-    /* transform-style: preserve-3d; */
-
-    opacity: 0;
-    /* pointer-events: none; */
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-    /* overflow: hidden; */
-    transform-style: preserve-3d;
-    transform: none;
-}
-
-.aboutinfo:hover {
-    transition: 0 !important;
-    transform: perspective(1000px);
-}
-
-.aboutinfo.aboutme {
-    opacity: 1;
-    top: calc(50% - 300px);
-    pointer-events: all;
-}
-
-.aboutinfo:hover::before {
-    transform: translateZ(-50px);
-}
-
-.aboutinfo::before {
-    content: "";
-    width: 500px;
-    height: 600px;
-    border-radius: inherit;
-
-    position: absolute;
-    /* z-index: -40 !important; */
-    transform: translateZ(-1px);
-    /* background-color: purple; */
-
-    background-image: url(../imgs/confetti.svg);
-    background-size: 590px;
-    background-position: center;
-    background-repeat: no-repeat;
-    /* background-color: purple; */
-    filter: saturate(2);
-    /* transform: none; */
-
-    transition: .5s;
-}
-
-.aboutinfo .namecard {
+.namecard {
     display: flex;
     flex-direction: column;
     align-items: center;
     z-index: -1;
-    position: relative;
+    position: absolute;
+    top: 345px;
     /* backdrop-filter: blur(10px); */
     padding: 20px 50px;
     border-radius: 10px;
     margin: -20px 0;
+
+    opacity: 0;
+    filter: blur(10px);
+    pointer-events: none;
 }
 
-.aboutinfo .namecard .last::before {
+.projects-header.aboutme .namecard,
+.projects-header.aboutme p.chunk,
+.projects-header.aboutme .metoken {
+    filter: blur(0px);
+    opacity: 1;
+}
+
+.namecard .last::before {
     content: "gavin";
     font-weight: 200;
 
@@ -90,56 +35,56 @@
     /* transform: translateX(-50%); */
 }
 
-.aboutinfo .namecard .last {
+.namecard .last {
     font-size: 40px;
     font-weight: 600;
 }
 
-.aboutinfo .namecard .at {
+.namecard .at {
     font-weight: normal;
 
     font-size: 20px;
     opacity: .5;
 }
 
-.aboutinfo:hover p.chunk {
-    transform: translateZ(20px);
+.projects-header.aboutme:hover p.chunk {}
+
+.projects-header.aboutme:hover p.chunk,
+.projects-header.aboutme:hover .metoken {
+    transform: translateZ(40px);
 }
 
-.aboutinfo p.chunk {
-    margin: 0;
-    /* padding: 0; */
-
+p.chunk {
     font-size: 13.5px;
     font-weight: 400;
     width: 450px;
+    height: fit-content;
 
-    /* position: absolute; */
-    /* top: unset; */
-    /* left: 50%; */
-    /* bottom: 25px; */
-    /* transform: translateX(-50%); */
+    position: absolute;
+    left: calc(50% - 225px);
+    bottom: 15px;
 
     padding: 15px 20px;
     background-color: var(--transparent-container);
     backdrop-filter: blur(10px);
     border-radius: 15px;
-    margin-top: auto;
-    margin-bottom: 25px;
-    transform: translateZ(0);
-    transition: .25s;
+    transform: translateZ(0px);
+    transition: .3s;
+
+    opacity: 0;
+    filter: blur(10px);
+    pointer-events: none;
 }
 
-.aboutinfo .metoken {
+.metoken {
     width: 320px;
     height: 320px;
     overflow: hidden;
     border-radius: 50%;
     flex-shrink: 0;
 
-    position: relative;
-    /* z-index: 12; */
-    margin-top: 25px;
+    position: absolute;
+    top: 25px;
 
     display: flex;
     align-items: center;
@@ -148,10 +93,15 @@
 
     /* cursor: pointer; */
     /* transform-style: preserve-3d; */
-    transform: translateZ(40px);
+    transform: translateZ(0px);
+    transition: .3s;
+
+    opacity: 0;
+    filter: blur(10px);
+    pointer-events: none;
 }
 
-.aboutinfo .metoken .mtImg {
+.mtImg {
     width: calc(100% + 3px);
     height: calc(100% + 3px);
     object-fit: cover;
@@ -166,6 +116,6 @@
     background-color: purple;
 }
 
-.aboutinfo .metoken .mtImg.v {
+.mtImg.v {
     opacity: 1;
 }

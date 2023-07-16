@@ -5,22 +5,11 @@ window.onload = function () {
         $('.subTiles2').dragNscroll()
     });
 
-    // setInterval(() => {
-    //     $('.mtImg').toggleClass('v')
-    // }, 5000);
-
     // $('.metoken').tilt({
     //     glare: true,
     //     maxGlare: .5,
     //     maxTilt: 8
     // })
-
-    VanillaTilt.init(document.querySelector(".aboutinfo"), {
-        max: 10,
-        speed: 200,
-        glare: true,
-        "max-glare": .35
-    });
 }
 
 $(window).resize(function () {
@@ -119,7 +108,7 @@ $('.projectHighlight .close').on('click', function () {
     $('.projectHighlight').removeClass('visible');
     $('.projectBox').removeClass('selected')
     $('.subTiles').removeClass('small');
-    $('.projects-header').removeClass('hide')
+    $('.projects-header').addClass('transition').removeClass('hide').removeClass('transition')
 })
 
 $('.project-open').on('click', function () {
@@ -190,10 +179,21 @@ $('.subTiles2').on('mouseleave', function () {
 $('.navBar').on('click', function () {
     $('.content').scrollTop(0)
     $('.aboutinfo').toggleClass('aboutme');
-    $('.projects-header').toggleClass('aboutme');
+    $('.projects-header').addClass('transition').toggleClass('aboutme').removeClass('transition');
     $('.content').toggleClass('aboutme');
     $('.navBar').toggleClass('aboutme');
     $('.orbs').toggleClass('paused')
+
+    if ($('.content').hasClass('aboutme')) {
+        VanillaTilt.init(document.querySelector(".projects-header"), {
+            max: 10,
+            speed: 200,
+            glare: true,
+            "max-glare": .35
+        });
+    } else {
+        document.querySelector('.projects-header').vanillaTilt.destroy();
+    }
 
     // $('.subTiles').addClass('hide');
     // $('.navBar.aboutme').on('click', function () {
@@ -203,13 +203,12 @@ $('.navBar').on('click', function () {
 
 // If row has overscroll, enable showall btn
 
-// $(document).on('load', function () {
-//     if ($('.subTiles2').scrollWidth > $('.subTiles2').clientWidth) {
-//         $('.showallBtn').addClass('show')
-//     } else {
-//         $('.showallBtn').removeClass('show')
-//     }
-// })
+
+// if ($('.subTiles2').scrollWidth() > $('.subTiles2').clientWidth()) {
+$('.showallBtn').addClass('show')
+// } else {
+// $('.showallBtn').removeClass('show')
+// }
 
 $('.showallBtn').on('click', function () {
     if ($(this).parent().parent().hasClass('showall')) {
@@ -225,3 +224,4 @@ $('.showallBtn').on('click', function () {
         $(this).text('Show all')
     }
 })
+
