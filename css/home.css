@@ -25,6 +25,11 @@ body.portrait .content .projects-header .subTiles {
     margin-bottom: 10px;
 }
 
+.subTiles.dark .tile {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px) saturate(10);
+}
+
 .projects-header.aboutme .subTiles,
 .subTiles.hide {
     opacity: 0;

@@ -1,10 +1,10 @@
 .navBar {
     height: 50px;
-    width: 184px;
+    width: 180px;
 
     position: absolute;
-    top: 8px;
-    right: -10px;
+    top: 0;
+    right: 0;
     z-index: 15;
 
     display: flex;
@@ -14,26 +14,33 @@
     cursor: pointer;
 
     background-color: var(--elem-transp);
+    backdrop-filter: blur(10px);
     color: var(--elem-text);
-    border-radius: 100px 0 0 100px;
+    border-radius: 7px 30px 0 30px;
     /* padding-right: 10px; */
     box-shadow: 0 7px 15px rgba(0, 0, 0, .1);
     transition: .25s;
 
     /* overflow: hidden; */
-    padding: 10px;
-    padding-right: 20px;
-    padding-left: 5px;
+    padding: 0;
+    padding-left: 40px;
+    padding-right: 10px;
+    /* padding-right: 15px; */
 }
 
 .navBar:hover {
-    right: 0;
     background-color: var(--elem);
+    border-radius: 20px 30px 0 30px;
 }
 
 .navBar.aboutme {
     background-color: var(--elem);
     width: 120px;
+
+    right: calc(100% - 120px);
+    border-radius: 30px 0 30px 0;
+
+    font-size: 17px;
 }
 
 .navBar.aboutme .headTiles {
@@ -60,7 +67,7 @@
 }
 
 .navBar.aboutme #moreContext {
-    right: -10px;
+    opacity: 0;
 }
 
 .headTiles {
@@ -72,8 +79,6 @@
 
     /* position: absolute; */
     /* right: -5px; */
-    width: 100%;
-    gap: 3px;
     /* top: 55px; */
     /* left: 50%; */
     /* transform: translateX(-50%); */
@@ -86,18 +91,20 @@
     flex-direction: column;
     align-items: flex-end;
     justify-content: center;
-    gap: 2px;
+    gap: 0;
 
     position: relative;
     box-sizing: border-box;
-    margin-left: auto;
-    margin-right: 15px;
+    /* margin-left: auto; */
+    /* margin-right: 5px; */
 
     /* background: var(--page1-dark) !important; */
 }
 
 .navBar:hover .headTiles .img {
     transform: scale(1.2);
+    margin-right: 5px;
+    border-radius: 50px;
 }
 
 .headTiles .img {
@@ -105,25 +112,26 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    margin-left: -2px;
+    /* margin-left: -2px; */
 
-    height: 45px;
-    width: 45px;
+    height: 50px;
+    width: 50px;
     flex-shrink: 0;
     box-sizing: border-box;
-    border-radius: 50%;
+    border-radius: 7px 30px 30px 30px;
     /* margin-left: -15px; */
 
     background-size: 100%;
 
-    position: relative;
+    position: absolute;
+    left: 0;
+    top: 0;
     transition: .3s;
 }
 
 .contactInfo .wm {
     font-size: 18px;
     font-weight: bold;
-    height: fit-content;
     transition: .2s;
     width: max-content;
 }
