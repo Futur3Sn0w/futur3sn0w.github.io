@@ -3,16 +3,17 @@
     align-items: center;
     width: 100%;
     flex-wrap: nowrap;
-    height: 210px;
-    min-height: fit-content;
+    height: max-content;
+    max-height: 260px;
     flex-shrink: 0;
     gap: 18px;
     overflow-x: scroll;
-    overflow-y: hidden;
+    overflow-y: visible !important;
 
     position: relative;
 
-    margin: 0 auto;
+    margin: 0;
+    margin-right: auto;
 
     padding: 10px 0;
     box-sizing: border-box;
@@ -34,13 +35,14 @@
     justify-content: space-between;
     align-content: flex-start;
 
-    /* flex-wrap: wrap; */
-    height: fit-content;
-    /* padding: 10px 15px; */
-    /* justify-content: space-between; */
-    width: calc(100% - 20px);
+    max-height: 100%;
+    width: max-content;
+    max-width: calc(100% - 260px);
+    overflow: visible !important;
     padding: 15px;
     border-radius: 15px;
+
+    margin-left: 270px;
 
     background-color: var(--transparent-container);
 }
@@ -50,14 +52,39 @@
     flex: auto;
 }
 
-.subTiles2#webProjects {
-    margin-top: 70vh;
+.subTileRows {
+    margin-top: calc(70vh - 60px);
+    padding-bottom: 20px;
+    padding-top: 70px;
+
+    position: relative;
+    z-index: -1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    transition: .2s;
 }
 
-.content.aboutme .subTiles2 {
+.subTileRows::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    opacity: .9;
+    background: linear-gradient(transparent, var(--rootBack) 300px);
+}
+
+.content.aboutme .subTileRows {
     filter: blur(10px);
     opacity: 0;
     pointer-events: none;
+
+    margin-top: 80vh;
 }
 
 .projectBox#TEMP {
@@ -221,6 +248,15 @@
     background-color: var(--elem);
 }
 
+.subTiles2.showall .pbIndex {
+    position: absolute;
+    z-index: 100;
+    /* height: 100%; */
+
+    height: 160px;
+    left: -270px;
+}
+
 .pbIndex {
     /* pointer-events: none; */
     user-select: none;
@@ -228,9 +264,8 @@
     background-color: transparent;
     align-items: center;
     width: 220px !important;
-    height: fit-content !important;
     margin-left: 20px;
-    /* overflow: hidden; */
+    overflow: visible;
     height: fit-content;
     box-shadow: none !important;
     cursor: default;
@@ -252,8 +287,7 @@
     align-items: center;
     flex-shrink: 0;
 
-
-    transition: .25s;
+    /* transition: .25s; */
 }
 
 .pbIndex.hide {
@@ -263,12 +297,12 @@
 
 .pbIndex::after {
     content: "";
-    width: 100%;
-    height: 100%;
+    width: 240px;
+    height: 120px;
 
     border-radius: inherit;
-    background-color: var(--glow);
-    filter: blur(20px);
+    background: radial-gradient(var(--glow) 30%, transparent);
+    filter: blur(15px);
     position: absolute;
     z-index: -1;
 }
@@ -466,7 +500,7 @@
 
 .projectHighlight .projType {
     position: absolute;
-    top: 50px;
+    top: 65px;
     right: 10px;
     text-transform: lowercase;
 

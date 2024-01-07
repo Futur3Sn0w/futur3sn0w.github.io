@@ -47,8 +47,6 @@
     /* padding: 0 60px; */
     background-color: transparent;
     border-radius: 30px;
-    transform-style: preserve-3d;
-    transform: perspective(1000px);
 }
 
 .projects-header::before {
@@ -57,6 +55,7 @@
     height: 100%;
 
     position: absolute;
+    z-index: 0;
     top: 0;
     left: 0;
 
@@ -64,7 +63,6 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    transform: translateZ(-20px);
 
     border-radius: inherit;
 
@@ -121,9 +119,9 @@
 }
 
 .slider {
-    width: calc(100% - 2vw);
-    height: calc(100% - 4vh);
-    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
 
     display: flex;
     /* flex-wrap: wrap; */
@@ -137,6 +135,16 @@
 
 .slider.freeze {
     overflow: hidden;
+}
+
+.slider .ph-slide:not(.slide1) {
+    width: calc(100% - 24px);
+    height: calc(100% - 24px);
+    margin-top: 12px;
+}
+
+.slider .ph-slide:last-of-type {
+    margin-right: 12px;
 }
 
 .projects-header.shrink .slider .progress {
@@ -201,7 +209,7 @@
     flex-shrink: 0;
 
     background-color: var(--glow);
-    scroll-snap-align: start;
+    scroll-snap-align: center;
 
     display: flex;
     align-items: center;
@@ -311,19 +319,8 @@
     cursor: pointer;
 
     justify-content: flex-start;
+    backdrop-filter: blur(15px);
     z-index: 0;
-}
-
-.overflowSlide::after {
-    content: "";
-    width: 50%;
-    height: 100%;
-
-    position: absolute;
-    left: 0;
-    z-index: -1;
-
-    background: linear-gradient(to left, transparent, black);
 }
 
 .overflowSlide::before {
@@ -333,13 +330,12 @@
     position: absolute;
     z-index: -2;
 
-    background-image: url(../imgs/projImgs/img4_flick.png);
+    background-image: url(../imgs/24wall.png);
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
 
     border-radius: inherit;
-    filter: blur(3px);
     transition: .3s;
 }
 
@@ -355,10 +351,18 @@
 
     color: white;
 
-    margin-left: 35px;
+    background-color: var(--elem-transp);
+    box-shadow: 0 5px 10px #00000020;
+    backdrop-filter: blur(15px);
+    padding: 10px 15px;
+    border-radius: 15px;
+
+    margin-left: 15px;
+    margin-bottom: 15px;
+    margin-top: auto;
 
     transition: .4s;
-    transform-origin: center left;
+    transform-origin: bottom left;
 }
 
 .overflowSlide .info::after {
@@ -370,9 +374,8 @@
 
 .overflowSlide:hover::before {
     background-size: 110%;
-    filter: blur(6px);
 }
 
 .slide3::before {
-    background-image: url(../imgs/downloadables/img8_interpolwall.png);
+    background-image: url(../imgs/conceptImgs/img1_feedbackcard.png);
 }

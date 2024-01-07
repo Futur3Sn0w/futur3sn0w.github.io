@@ -40,7 +40,7 @@
         <div class="projects-header">
             <div class="metoken">
                 <img src="imgs/" alt="" class="mtImg">
-                <img src="imgs/23logo.png" alt="" class="mtImg v">
+                <img src="imgs/logo.png" alt="" class="mtImg v">
             </div>
             <div class="namecard">
                 <div class="last">hurd</div>
@@ -120,11 +120,11 @@
                         </a>
                     </div>
                 </div>
-                <div class="ph-slide overflowSlide slide2" onclick="$('.projectBox#flick').click()">
-                    <div class="info" subtext="Recently updated">Flick - The Fluent Icon Viewer</div>
+                <div class="ph-slide overflowSlide slide2" onclick="">
+                    <div class="info" subtext="My Q1 2024 branding refresh">Hello, 2024!</div>
                 </div>
-                <div class="ph-slide overflowSlide slide3" onclick="$('.projectBox#interpolwall').click()">
-                    <div class="info" subtext="Featured Project">Interpol - Wallpaper</div>
+                <div class="ph-slide overflowSlide slide3" onclick="$('.projectBox#feedbackcard').click()">
+                    <div class="info" subtext="Featured Project">Feedback Card - Concept</div>
                 </div>
             </div>
         </div>
@@ -141,289 +141,327 @@
                 </div>
             </div>
         </div>
-        <div class="subTiles2" id="webProjects">
-            <div class="pbIndex">
-                <div class="projTitle" subTitle="Web development projects">On the Web</div>
-                <div class="showallBtn">Show all</div>
-            </div>
-            <div class="projectBox" id="plusui" data-open="plusUI">
-                <img src="imgs/projCovers/img1_plusui.png" alt="" class="projImg">
-                <div class="projTitle">PlusUI</div>
-                <div class="projDesc" data-lastUpdate="March 2023">The digital dashboard for your large-screen devices.
-                    PlusUI is your one-stop-shop for any information you want to view at a glance, as well as
-                    shortcuts you want quick access to. Browsers can use PlusUI as a 'new-tab' page replacement for
-                    richer data, custom backgrounds, and more.</div>
-            </div>
-            <div class="projectBox" id="waitaminute" data-open="waitaMinute">
-                <img src="imgs/projCovers/img7_waitamin.png" alt="" class="projImg">
-                <div class="projTitle">waitaMinute</div>
-                <div class="projDesc" data-lastUpdate="Feb 2022">The various "installing your apps" screens from
-                    the Windows OOBE, compiled and recreated using web technologies. Mainly for demo and educational
-                    use.
+        <div class="subTileRows">
+            <!-- HEY LOOK RIGHT HERE REAL QUICK -->
+            <!-- adding the 'ru' class to a project in this row will pin it to the first slot, marking it as 'recently updated' -->
+            <div class="subTiles2" id="webProjects">
+                <div class="pbIndex">
+                    <div class="projTitle" subTitle="Web development projects">On the Web</div>
+                    <div class="showallBtn">Show all</div>
+                </div>
+                <div class="projectBox" id="plusui" data-open="plusUI">
+                    <img src="imgs/projCovers/img1_plusui.png" alt="" class="projImg">
+                    <div class="projTitle">PlusUI</div>
+                    <div class="projDesc" data-lastUpdate="March 2023">The digital dashboard for your large-screen
+                        devices.
+                        PlusUI is your one-stop-shop for any information you want to view at a glance, as well as
+                        shortcuts you want quick access to. Browsers can use PlusUI as a 'new-tab' page replacement for
+                        richer data, custom backgrounds, and more.</div>
+                </div>
+                <div class="projectBox" id="waitaminute" data-open="waitaMinute">
+                    <img src="imgs/projCovers/img7_waitamin.png" alt="" class="projImg">
+                    <div class="projTitle">waitaMinute</div>
+                    <div class="projDesc" data-lastUpdate="Feb 2022">The various "installing your apps" screens from
+                        the Windows OOBE, compiled and recreated using web technologies. Mainly for demo and educational
+                        use.
+                    </div>
+                </div>
+                <div class="projectBox" id="newtab11" data-open="newtab11">
+                    <img src="imgs/projCovers/img8_newtab11.png" alt="" class="projImg">
+                    <div class="projTitle">NewTab11</div>
+                    <div class="projDesc" data-lastUpdate="Sept. 2021">A replacement new-tab page for your web browser,
+                        designed after the new Windows Store in Windows 11.
+                    </div>
+                </div>
+                <div class="projectBox" id="10x" data-open="Windows10x">
+                    <img src="imgs/projCovers/img3_win10x.png" alt="" class="projImg">
+                    <div class="projTitle">Windows 10X</div>
+                    <div class="projDesc" data-lastUpdate="May 2021">A faithful recreation of Microsoft's scrapped
+                        Windows
+                        10X OS using web technologies. Includes a bootscreen, OOBE, and full shell clones. (Unfinished,
+                        may
+                        be buggy!)
+                    </div>
+                </div>
+                <div class="projectBox" id="pinboard" data-open="pinboard">
+                    <img src="imgs/projCovers/img2_pinboard.png" alt="" class="projImg">
+                    <div class="projTitle">Pinboard</div>
+                    <div class="projDesc" data-lastUpdate="July 2022">A digital cork-board of sorts, with customizable
+                        pins,
+                        colors, shapes, and more. Created with Google's Material You (Material Design 3) design
+                        language.
+                        Change the background color and more from settings.
+                    </div>
+                </div>
+                <div class="projectBox" id="flick" data-open="flick">
+                    <img src="imgs/projCovers/img4_flick.png" alt="" class="projImg">
+                    <div class="projTitle">Flick</div>
+                    <div class="projDesc" data-lastUpdate="July 2023">A hub for viewing Microsoft's Fluent-designed
+                        icons
+                        found in
+                        Windows 11, late Windows 10, and Windows 10X builds. Created with the Fluent-design and leaked
+                        Windows 12 UI design language(s).</div>
+                </div>
+                <div class="projectBox" id="webfx" data-open="webFX">
+                    <img src="imgs/projCovers/img5_webfx.png" alt="" class="projImg">
+                    <div class="projTitle">WebFX</div>
+                    <div class="projDesc" data-lastUpdate="March 2023">A collection of experiments using various web
+                        technologies, created with Google's ChromeOS and Material You (Material Design 3) design
+                        languages.
+                        Click the name of a page (in the bottom-right) to view more information.</div>
                 </div>
             </div>
-            <div class="projectBox" id="newtab11" data-open="newtab11">
-                <img src="imgs/projCovers/img8_newtab11.png" alt="" class="projImg">
-                <div class="projTitle">NewTab11</div>
-                <div class="projDesc" data-lastUpdate="Sept. 2021">A replacement new-tab page for your web browser,
-                    designed after the new Windows Store in Windows 11.
+            <div class="subTiles2" id="conceptProjects">
+                <div class="pbIndex">
+                    <div class="projTitle" subTitle="Design concepts and mockups">Concepts</div>
+                    <div class="showallBtn">Show all</div>
+                </div>
+                <div class="projectBox" id="ipod">
+                    <img src="imgs/conceptImgs/img8_ipod.png" alt="" class="projImg">
+                    <div class="projTitle">iPod - Scroll, Touch, Click!</div>
+                    <div class="projDesc" data-lastUpdate="Dec. 2022">Just a small mockup I made of the different
+                        hardware
+                        interfaces included throughout the lifespan of Apple's iPod (Classic) series.
+                    </div>
+                </div>
+                <div class="projectBox" id="feedbackcard">
+                    <img src="imgs/conceptImgs/img1_feedbackcard.png" alt="" class="projImg">
+                    <div class="projTitle">Feedback Card</div>
+                    <div class="projDesc" data-lastUpdate="Jun. 2022">A conceptual design for a physical product's
+                        feedback
+                        card insert, included [in the box] with the purchase of a physical item, to encourage the
+                        customer to give feedback on the product.
+                    </div>
+                </div>
+                <div class="projectBox" id="win11cm">
+                    <img src="imgs/conceptImgs/img2-1_win11cm.png" alt="" class="projImg">
+                    <div class="projTitle">Windows 11 Context Menu</div>
+                    <div class="projDesc" data-lastUpdate="May 2022">My second take on a Fluent-designed modern context
+                        menu
+                        for Windows 10 or 11 (Windows 11 in this case). Simplified menu options mixed with uniform sizes
+                        make for a familiar take on the classic menu.
+                    </div>
+                </div>
+                <div class="projectBox" id="figmamavericks">
+                    <img src="imgs/conceptImgs/img3_figmamavericks.png" alt="" class="projImg">
+                    <div class="projTitle">Figma - OS X Mavericks</div>
+                    <div class="projDesc" data-lastUpdate="May 2022">Created as a personal experiment, this icon was an
+                        idea
+                        to envision what the Figma app's icon could look like with a skeuomorphic touch. It's not like
+                        anything I've done before, but I quite like it!
+                    </div>
+                </div>
+                <div class="projectBox" id="androidnc">
+                    <img src="imgs/conceptImgs/img7_androidnc.png" alt="" class="projImg">
+                    <div class="projTitle">Android Notification Tray</div>
+                    <div class="projDesc" data-lastUpdate="Jan. 2022">I wanted to create a modern alternative to
+                        Android's
+                        notification center as shown in Android 12+. The idea was to add more vivid colors in order for
+                        the
+                        added background blur to be more visible. Featuring light and dark modes!
+                    </div>
+                </div>
+                <div class="projectBox" id="fluentcm">
+                    <img src="imgs/conceptImgs/img4_fluentcm.jpeg" alt="" class="projImg">
+                    <div class="projTitle">Fluent Context Menu</div>
+                    <div class="projDesc" data-lastUpdate="Jul. 2020">My first take on a Fluent-designed modern context
+                        menu
+                        for Windows. I took the desktop context menu from Windows 10, and envisioned it with the acrylic
+                        material as the backdrop, and modern Fluent icons to replace the standard glyphs.
+                    </div>
+                </div>
+                <div class="projectBox" id="fluentedge">
+                    <img src="imgs/conceptImgs/img5_fluentedge.png" alt="" class="projImg">
+                    <div class="projTitle">MS Edge - Vertical Tabs</div>
+                    <div class="projDesc" data-lastUpdate="Jul. 2020">The new Chromium-based Microsoft Edge is/was set
+                        to
+                        get a vertical tabs option in the (near?) future.
+                        I decided to mock-up a modern, Fluent version of the browser in the collapsed-tabbed view.
+                        The tab indicator (blue bars on the left side) shows that there's multiple tabs open for a
+                        single
+                        site, aka, tab grouping!
+                    </div>
+                </div>
+                <div class="projectBox" id="bigsurcenter">
+                    <img src="imgs/conceptImgs/img10_bigsurcenter.png" alt="" class="projImg">
+                    <div class="projTitle">Big Sur Control Center</div>
+                    <div class="projDesc" data-lastUpdate="Jul. 2020">What if macOS 11 Big Sur's control center made
+                        it's
+                        way to iOS? This concept takes cues from macOS, iOS 10, and the AirPods popup UI to envision a
+                        redesigned iOS control center.
+                    </div>
+                </div>
+                <div class="projectBox" id="winsmarthome"
+                    data-open="https://twitter.com/Futur3Sn0w/status/1284254575059509250?s=20">
+                    <img src="imgs/conceptImgs/img11_winsmarthome.jpeg" alt="" class="projImg">
+                    <div class="projTitle">Windows Smart Display</div>
+                    <div class="projDesc" data-lastUpdate="Jul. 2020">An experiment to envision what a
+                        Microsoft-designed
+                        smart-home display/hub could look like. Includes login options, media playback controls,
+                        weather,
+                        and more!
+                    </div>
+                </div>
+                <div class="projectBox" id="10xbsod">
+                    <img src="imgs/conceptImgs/img6_10xbsod.png" alt="" class="projImg">
+                    <div class="projTitle">Windows - Fluent BSOD</div>
+                    <div class="projDesc" data-lastUpdate="Apr. 2020">The current BSOD has been kinda lackluster (and a
+                        bit
+                        unprofessional, becoming a meme in the tech community) since Windows 8.
+                        I think a cleanup, and a more modern look would suffice for sure!
+                    </div>
+                </div>
+                <div class="projectBox" id="microsoftsignup">
+                    <img src="imgs/conceptImgs/img9_microsoftsignup.png" alt="" class="projImg">
+                    <div class="projTitle">Microsoft - Registration</div>
+                    <div class="projDesc" data-lastUpdate="Apr. 2020">Part of the design-a-day challenge, I created a
+                        registration page for a Microsoft account, taking design cues from the Windows 10X and 11 OOBE.
+                    </div>
+                </div>
+                <div class="projectBox" id="fluentntp">
+                    <img src="imgs/conceptImgs/img12_fluentntp.jpeg" alt="" class="projImg">
+                    <div class="projTitle">Edge - Fluent NTP</div>
+                    <div class="projDesc" data-lastUpdate="Mar. 2020">After creating previous Fluent-design concepts, I
+                        thought I'd redesign Microsoft Edge's new-tab page to both match the browser UI better, and have
+                        more Fluent elements.
+                    </div>
                 </div>
             </div>
-            <div class="projectBox" id="10x" data-open="Windows10x">
-                <img src="imgs/projCovers/img3_win10x.png" alt="" class="projImg">
-                <div class="projTitle">Windows 10X</div>
-                <div class="projDesc" data-lastUpdate="May 2021">A faithful recreation of Microsoft's scrapped Windows
-                    10X OS using web technologies. Includes a bootscreen, OOBE, and full shell clones. (Unfinished, may
-                    be buggy!)
+            <div class="subTiles2" id="downloadables">
+                <div class="pbIndex">
+                    <div class="projTitle" subTitle="Wallpapers, icons, apps, and more">Downloadables</div>
+                    <div class="showallBtn">Show all</div>
+                </div>
+                <div class="projectBox" id="TEMP" data-open="https://">
+                    <img src="imgs/" alt="" class="projImg">
+                    <div class="projTitle">TITLE</div>
+                    <div class="projDesc" data-lastUpdate="MONTH. YEAR">BODY
+                    </div>
+                </div>
+                <div class="projectBox" id="hero11"
+                    data-open="https://www.deviantart.com/futur3sn0w/art/Hero11-5K-Windows-11-Logo-Wallpapers-890101198">
+                    <img src="imgs/downloadables/img1_hero11.png" alt="" class="projImg">
+                    <div class="projTitle">Hero11 - Wallpapers</div>
+                    <div class="projDesc" data-lastUpdate="Aug. 2021">Wallpaper set that sports the Windows 11 Start
+                        Button
+                        up front. It mimics the frosted glass and pseudo-3D effect found by using a slight inner glow,
+                        and
+                        upper border. There are 15 wallpapers in the pack, using images from Unsplash, the Windows 11
+                        Bloom
+                        wallpapers, and an extra Xbox+Forza controller set, which uses AI upscaled images of the
+                        Forza 5 Xbox Controller promo.
+                    </div>
+                </div>
+                <div class="projectBox" id="longhorn7"
+                    data-open="https://www.deviantart.com/futur3sn0w/art/Longhorn7-Turn-Windows-7-into-Microsoft-Longhorn-860614634">
+                    <img src="imgs/downloadables/img3_longhorn7.jpeg" alt="" class="projImg">
+                    <div class="projTitle">Longhorn7 - Custom Pack</div>
+                    <div class="projDesc" data-lastUpdate="Nov. 2020">A collection of tools and resources to turn your
+                        Windows 7 desktop into Microsoft Longhorn! Longhorn7 compiles the best resources from creators
+                        here
+                        on DeviantArt to make your Windows 7 setup look like Microsoft's forgotten OS!
+                    </div>
+                </div>
+                <div class="projectBox" id="modern7"
+                    data-open="https://www.deviantart.com/futur3sn0w/art/Modern7-854972066">
+                    <img src="imgs/downloadables/img4_modern7.png" alt="" class="projImg">
+                    <div class="projTitle">Modern7 - Start Orbs</div>
+                    <div class="projDesc" data-lastUpdate="Sept. 2020">This is Modern7. A modern refresh of the Windows
+                        7
+                        Start orb, with a hint of Fluent-design thrown in.
+                    </div>
+                </div>
+                <div class="projectBox" id="chromeicons"
+                    data-open="https://www.deviantart.com/futur3sn0w/art/Google-Chrome-Redesigned-Icons-849387969">
+                    <img src="imgs/downloadables/img5_chromeicons.png" alt="" class="projImg">
+                    <div class="projTitle">Chrome Icons - Redesign</div>
+                    <div class="projDesc" data-lastUpdate="Jul. 2020">A fun mini-project I started to envision a new
+                        take on
+                        Google Chrome's iconography. Includes icons for Canary, Dev, Beta, as well as Chromium(s), and
+                        the
+                        Chrome Store(s).
+                    </div>
+                </div>
+                <div class="projectBox" id="interpolwall"
+                    data-open="https://www.deviantart.com/futur3sn0w/art/Wallpaper-Interpol-847255414">
+                    <img src="imgs/downloadables/img8_interpolwall.png" alt="" class="projImg">
+                    <div class="projTitle">"Interpol" - Wallpaper</div>
+                    <div class="projDesc" data-lastUpdate="Jun. 2020">
+                        Today, I made a new wallpaper titled Interpol. It uses Apple's San Francisco font's glyphs on
+                        top of
+                        a vibrant, dual-radial-gradient background.
+                        I plan on making more fun wallpapers in the future, so let me know how you like this one!
+                    </div>
+                </div>
+                <div class="projectBox" id="modernbuttons"
+                    data-open="https://www.deviantart.com/futur3sn0w/art/ModernButtons-XP-Styled-Buttons-for-StartIsBack-837044545">
+                    <img src="imgs/downloadables/img7_modernbuttons.png" alt="" class="projImg">
+                    <div class="projTitle">ModernButtons - Start Orb</div>
+                    <div class="projDesc" data-lastUpdate="Apr. 2020">Inspired by an incredible concept by my good
+                        friend
+                        @zeealeid, here are some simplistic and modern start buttons for your Windows setup!
+                        Version 2.0 includes a fix for sizing on large taskbars, introduces small taskbar support, and
+                        adds
+                        a new 'Glow' variant!
+                    </div>
+                </div>
+                <div class="projectBox" id="10xwalls"
+                    data-open="https://www.deviantart.com/futur3sn0w/art/Windows-10X-Logo-Wallpapers-835050838">
+                    <img src="imgs/downloadables/img6_10xlogowalls.jpeg" alt="" class="projImg">
+                    <div class="projTitle">Windows 10X - Wallpapers</div>
+                    <div class="projDesc" data-lastUpdate="Mar. 2020">If you like Windows 10X as much as I do, then
+                        you'll
+                        definitely enjoy these wallpapers!
+                        They feature the wallpaper from Windows 10X with the logo on top, in 4 colors (courtesy of
+                        @niivu!)
+                        They're all 4000x3000 resolution, which means they'll scale perfectly on many displays.
+                    </div>
+                </div>
+                <div class="projectBox" id="tiltip"
+                    data-open="https://www.deviantart.com/futur3sn0w/art/Tilt-Modern-stock-esque-icon-pack-for-macOS-793841943">
+                    <img src="imgs/downloadables/img2_tiltip.jpeg" alt="" class="projImg">
+                    <div class="projTitle">Tilt - Icon Pack</div>
+                    <div class="projDesc" data-lastUpdate="Apr. 2019">Say hello to Tilt! The modern and minimal icon
+                        pack
+                        for
+                        macOS with a stock feel. Created with the help of CamieeHFX, inspired by @Octaviotti.
+                    </div>
                 </div>
             </div>
-            <div class="projectBox" id="pinboard" data-open="pinboard">
-                <img src="imgs/projCovers/img2_pinboard.png" alt="" class="projImg">
-                <div class="projTitle">Pinboard</div>
-                <div class="projDesc" data-lastUpdate="July 2022">A digital cork-board of sorts, with customizable pins,
-                    colors, shapes, and more. Created with Google's Material You (Material Design 3) design language.
-                    Change the background color and more from settings.
+            <div class="subTiles2" id="musicProjects">
+                <div class="pbIndex">
+                    <div class="projTitle" subTitle="Songs and mixes">Music Production</div>
+                    <!-- <div class="showallBtn">Show all</div> -->
                 </div>
-            </div>
-            <div class="projectBox ru" id="flick" data-open="flick">
-                <img src="imgs/projCovers/img4_flick.png" alt="" class="projImg">
-                <div class="projTitle">Flick</div>
-                <div class="projDesc" data-lastUpdate="July 2023">A hub for viewing Microsoft's Fluent-designed icons
-                    found in
-                    Windows 11, late Windows 10, and Windows 10X builds. Created with the Fluent-design and leaked
-                    Windows 12 UI design language(s).</div>
-            </div>
-            <div class="projectBox" id="webfx" data-open="webFX">
-                <img src="imgs/projCovers/img5_webfx.png" alt="" class="projImg">
-                <div class="projTitle">WebFX</div>
-                <div class="projDesc" data-lastUpdate="March 2023">A collection of experiments using various web
-                    technologies, created with Google's ChromeOS and Material You (Material Design 3) design languages.
-                    Click the name of a page (in the bottom-right) to view more information.</div>
-            </div>
-        </div>
-        <div class="subTiles2" id="conceptProjects">
-            <div class="pbIndex">
-                <div class="projTitle" subTitle="Design concepts and mockups">Concepts</div>
-                <div class="showallBtn">Show all</div>
-            </div>
-            <div class="projectBox" id="ipod">
-                <img src="imgs/conceptImgs/img8_ipod.png" alt="" class="projImg">
-                <div class="projTitle">iPod - Scroll, Touch, Click!</div>
-                <div class="projDesc" data-lastUpdate="Dec. 2022">Just a small mockup I made of the different hardware
-                    interfaces included throughout the lifespan of Apple's iPod (Classic) series.
+                <div class="projectBox" id="betogether"
+                    data-open="https://soundcloud.com/futur3sn0w/be-together-session-mix">
+                    <img src="imgs/musicImgs/img1_betogether.jpg" alt="" class="projImg">
+                    <div class="projTitle">Be Together</div>
+                    <div class="projDesc" data-lastUpdate="Jun. 2020">Dedicated to my best friend (and sidekick) Ari 😊
+                    </div>
                 </div>
-            </div>
-            <div class="projectBox" id="feedbackcard">
-                <img src="imgs/conceptImgs/img1_feedbackcard.png" alt="" class="projImg">
-                <div class="projTitle">Feedback Card</div>
-                <div class="projDesc" data-lastUpdate="Jun. 2022">A conceptual design for a physical product's feedback
-                    card insert, included [in the box] with the purchase of a physical item, to encourage the
-                    customer to give feedback on the product.
+                <div class="projectBox" id="ambienceep"
+                    data-open="https://www.youtube.com/playlist?list=OLAK5uy_mUPnf6khcLu6wmF9EmzSD2h7FpRpOpkXQ">
+                    <img src="imgs/musicImgs/img2_ambienceep.jpeg" alt="" class="projImg">
+                    <div class="projTitle">Ambience EP</div>
+                    <div class="projDesc" data-lastUpdate="Sept. 2019">My debut, 4 track EP including "Night Drive",
+                        "After
+                        Party", and "Aurorian Storm".
+                    </div>
                 </div>
-            </div>
-            <div class="projectBox" id="win11cm">
-                <img src="imgs/conceptImgs/img2-1_win11cm.png" alt="" class="projImg">
-                <div class="projTitle">Windows 11 Context Menu</div>
-                <div class="projDesc" data-lastUpdate="May 2022">My second take on a Fluent-designed modern context menu
-                    for Windows 10 or 11 (Windows 11 in this case). Simplified menu options mixed with uniform sizes
-                    make for a familiar take on the classic menu.
-                </div>
-            </div>
-            <div class="projectBox" id="figmamavericks">
-                <img src="imgs/conceptImgs/img3_figmamavericks.png" alt="" class="projImg">
-                <div class="projTitle">Figma - OS X Mavericks</div>
-                <div class="projDesc" data-lastUpdate="May 2022">Created as a personal experiment, this icon was an idea
-                    to envision what the Figma app's icon could look like with a skeuomorphic touch. It's not like
-                    anything I've done before, but I quite like it!
-                </div>
-            </div>
-            <div class="projectBox" id="androidnc">
-                <img src="imgs/conceptImgs/img7_androidnc.png" alt="" class="projImg">
-                <div class="projTitle">Android Notification Tray</div>
-                <div class="projDesc" data-lastUpdate="Jan. 2022">I wanted to create a modern alternative to Android's
-                    notification center as shown in Android 12+. The idea was to add more vivid colors in order for the
-                    added background blur to be more visible. Featuring light and dark modes!
-                </div>
-            </div>
-            <div class="projectBox" id="fluentcm">
-                <img src="imgs/conceptImgs/img4_fluentcm.jpeg" alt="" class="projImg">
-                <div class="projTitle">Fluent Context Menu</div>
-                <div class="projDesc" data-lastUpdate="Jul. 2020">My first take on a Fluent-designed modern context menu
-                    for Windows. I took the desktop context menu from Windows 10, and envisioned it with the acrylic
-                    material as the backdrop, and modern Fluent icons to replace the standard glyphs.
-                </div>
-            </div>
-            <div class="projectBox" id="fluentedge">
-                <img src="imgs/conceptImgs/img5_fluentedge.png" alt="" class="projImg">
-                <div class="projTitle">MS Edge - Vertical Tabs</div>
-                <div class="projDesc" data-lastUpdate="Jul. 2020">The new Chromium-based Microsoft Edge is/was set to
-                    get a vertical tabs option in the (near?) future.
-                    I decided to mock-up a modern, Fluent version of the browser in the collapsed-tabbed view.
-                    The tab indicator (blue bars on the left side) shows that there's multiple tabs open for a single
-                    site, aka, tab grouping!
-                </div>
-            </div>
-            <div class="projectBox" id="bigsurcenter">
-                <img src="imgs/conceptImgs/img10_bigsurcenter.png" alt="" class="projImg">
-                <div class="projTitle">Big Sur Control Center</div>
-                <div class="projDesc" data-lastUpdate="Jul. 2020">What if macOS 11 Big Sur's control center made it's
-                    way to iOS? This concept takes cues from macOS, iOS 10, and the AirPods popup UI to envision a
-                    redesigned iOS control center.
-                </div>
-            </div>
-            <div class="projectBox" id="winsmarthome"
-                data-open="https://twitter.com/Futur3Sn0w/status/1284254575059509250?s=20">
-                <img src="imgs/conceptImgs/img11_winsmarthome.jpeg" alt="" class="projImg">
-                <div class="projTitle">Windows Smart Display</div>
-                <div class="projDesc" data-lastUpdate="Jul. 2020">An experiment to envision what a Microsoft-designed
-                    smart-home display/hub could look like. Includes login options, media playback controls, weather,
-                    and more!
-                </div>
-            </div>
-            <div class="projectBox" id="10xbsod">
-                <img src="imgs/conceptImgs/img6_10xbsod.png" alt="" class="projImg">
-                <div class="projTitle">Windows - Fluent BSOD</div>
-                <div class="projDesc" data-lastUpdate="Apr. 2020">The current BSOD has been kinda lackluster (and a bit
-                    unprofessional, becoming a meme in the tech community) since Windows 8.
-                    I think a cleanup, and a more modern look would suffice for sure!
-                </div>
-            </div>
-            <div class="projectBox" id="microsoftsignup">
-                <img src="imgs/conceptImgs/img9_microsoftsignup.png" alt="" class="projImg">
-                <div class="projTitle">Microsoft - Registration</div>
-                <div class="projDesc" data-lastUpdate="Apr. 2020">Part of the design-a-day challenge, I created a
-                    registration page for a Microsoft account, taking design cues from the Windows 10X and 11 OOBE.
-                </div>
-            </div>
-            <div class="projectBox" id="fluentntp">
-                <img src="imgs/conceptImgs/img12_fluentntp.jpeg" alt="" class="projImg">
-                <div class="projTitle">Edge - Fluent NTP</div>
-                <div class="projDesc" data-lastUpdate="Mar. 2020">After creating previous Fluent-design concepts, I
-                    thought I'd redesign Microsoft Edge's new-tab page to both match the browser UI better, and have
-                    more Fluent elements.
-                </div>
-            </div>
-        </div>
-        <div class="subTiles2" id="downloadables">
-            <div class="pbIndex">
-                <div class="projTitle" subTitle="Wallpapers, icons, apps, and more">Downloadables</div>
-                <div class="showallBtn">Show all</div>
-            </div>
-            <div class="projectBox" id="TEMP" data-open="https://">
-                <img src="imgs/" alt="" class="projImg">
-                <div class="projTitle">TITLE</div>
-                <div class="projDesc" data-lastUpdate="MONTH. YEAR">BODY
-                </div>
-            </div>
-            <div class="projectBox" id="hero11"
-                data-open="https://www.deviantart.com/futur3sn0w/art/Hero11-5K-Windows-11-Logo-Wallpapers-890101198">
-                <img src="imgs/downloadables/img1_hero11.png" alt="" class="projImg">
-                <div class="projTitle">Hero11 - Wallpapers</div>
-                <div class="projDesc" data-lastUpdate="Aug. 2021">Wallpaper set that sports the Windows 11 Start Button
-                    up front. It mimics the frosted glass and pseudo-3D effect found by using a slight inner glow, and
-                    upper border. There are 15 wallpapers in the pack, using images from Unsplash, the Windows 11 Bloom
-                    wallpapers, and an extra Xbox+Forza controller set, which uses AI upscaled images of the
-                    Forza 5 Xbox Controller promo.
-                </div>
-            </div>
-            <div class="projectBox" id="longhorn7"
-                data-open="https://www.deviantart.com/futur3sn0w/art/Longhorn7-Turn-Windows-7-into-Microsoft-Longhorn-860614634">
-                <img src="imgs/downloadables/img3_longhorn7.jpeg" alt="" class="projImg">
-                <div class="projTitle">Longhorn7 - Custom Pack</div>
-                <div class="projDesc" data-lastUpdate="Nov. 2020">A collection of tools and resources to turn your
-                    Windows 7 desktop into Microsoft Longhorn! Longhorn7 compiles the best resources from creators here
-                    on DeviantArt to make your Windows 7 setup look like Microsoft's forgotten OS!
-                </div>
-            </div>
-            <div class="projectBox" id="modern7"
-                data-open="https://www.deviantart.com/futur3sn0w/art/Modern7-854972066">
-                <img src="imgs/downloadables/img4_modern7.png" alt="" class="projImg">
-                <div class="projTitle">Modern7 - Start Orbs</div>
-                <div class="projDesc" data-lastUpdate="Sept. 2020">This is Modern7. A modern refresh of the Windows 7
-                    Start orb, with a hint of Fluent-design thrown in.
-                </div>
-            </div>
-            <div class="projectBox" id="chromeicons"
-                data-open="https://www.deviantart.com/futur3sn0w/art/Google-Chrome-Redesigned-Icons-849387969">
-                <img src="imgs/downloadables/img5_chromeicons.png" alt="" class="projImg">
-                <div class="projTitle">Chrome Icons - Redesign</div>
-                <div class="projDesc" data-lastUpdate="Jul. 2020">A fun mini-project I started to envision a new take on
-                    Google Chrome's iconography. Includes icons for Canary, Dev, Beta, as well as Chromium(s), and the
-                    Chrome Store(s).
-                </div>
-            </div>
-            <div class="projectBox" id="interpolwall"
-                data-open="https://www.deviantart.com/futur3sn0w/art/Wallpaper-Interpol-847255414">
-                <img src="imgs/downloadables/img8_interpolwall.png" alt="" class="projImg">
-                <div class="projTitle">"Interpol" - Wallpaper</div>
-                <div class="projDesc" data-lastUpdate="Jun. 2020">
-                    Today, I made a new wallpaper titled Interpol. It uses Apple's San Francisco font's glyphs on top of
-                    a vibrant, dual-radial-gradient background.
-                    I plan on making more fun wallpapers in the future, so let me know how you like this one!
-                </div>
-            </div>
-            <div class="projectBox" id="modernbuttons"
-                data-open="https://www.deviantart.com/futur3sn0w/art/ModernButtons-XP-Styled-Buttons-for-StartIsBack-837044545">
-                <img src="imgs/downloadables/img7_modernbuttons.png" alt="" class="projImg">
-                <div class="projTitle">ModernButtons - Start Orb</div>
-                <div class="projDesc" data-lastUpdate="Apr. 2020">Inspired by an incredible concept by my good friend
-                    @zeealeid, here are some simplistic and modern start buttons for your Windows setup!
-                    Version 2.0 includes a fix for sizing on large taskbars, introduces small taskbar support, and adds
-                    a new 'Glow' variant!
-                </div>
-            </div>
-            <div class="projectBox" id="10xwalls"
-                data-open="https://www.deviantart.com/futur3sn0w/art/Windows-10X-Logo-Wallpapers-835050838">
-                <img src="imgs/downloadables/img6_10xlogowalls.jpeg" alt="" class="projImg">
-                <div class="projTitle">Windows 10X - Wallpapers</div>
-                <div class="projDesc" data-lastUpdate="Mar. 2020">If you like Windows 10X as much as I do, then you'll
-                    definitely enjoy these wallpapers!
-                    They feature the wallpaper from Windows 10X with the logo on top, in 4 colors (courtesy of @niivu!)
-                    They're all 4000x3000 resolution, which means they'll scale perfectly on many displays.
-                </div>
-            </div>
-            <div class="projectBox" id="tiltip"
-                data-open="https://www.deviantart.com/futur3sn0w/art/Tilt-Modern-stock-esque-icon-pack-for-macOS-793841943">
-                <img src="imgs/downloadables/img2_tiltip.jpeg" alt="" class="projImg">
-                <div class="projTitle">Tilt - Icon Pack</div>
-                <div class="projDesc" data-lastUpdate="Apr. 2019">Say hello to Tilt! The modern and minimal icon pack
-                    for
-                    macOS with a stock feel. Created with the help of CamieeHFX, inspired by @Octaviotti.
-                </div>
-            </div>
-        </div>
-        <div class="subTiles2" id="musicProjects">
-            <div class="pbIndex">
-                <div class="projTitle" subTitle="Songs and mixes">Music Production</div>
-                <!-- <div class="showallBtn">Show all</div> -->
-            </div>
-            <div class="projectBox" id="betogether"
-                data-open="https://soundcloud.com/futur3sn0w/be-together-session-mix">
-                <img src="imgs/musicImgs/img1_betogether.jpg" alt="" class="projImg">
-                <div class="projTitle">Be Together</div>
-                <div class="projDesc" data-lastUpdate="Jun. 2020">Dedicated to my best friend (and sidekick) Ari 😊
-                </div>
-            </div>
-            <div class="projectBox" id="ambienceep"
-                data-open="https://www.youtube.com/playlist?list=OLAK5uy_mUPnf6khcLu6wmF9EmzSD2h7FpRpOpkXQ">
-                <img src="imgs/musicImgs/img2_ambienceep.jpeg" alt="" class="projImg">
-                <div class="projTitle">Ambience EP</div>
-                <div class="projDesc" data-lastUpdate="Sept. 2019">My debut, 4 track EP including "Night Drive", "After
-                    Party", and "Aurorian Storm".
-                </div>
-            </div>
-            <div class="projectBox" id="onemorething" data-open="https://soundcloud.com/futur3sn0w/one-more-thing">
-                <img src="imgs/musicImgs/img3_onemorething.jpeg" alt="" class="projImg">
-                <div class="projTitle">One More Thing</div>
-                <div class="projDesc" data-lastUpdate="Sept. 2019">Created as a tribute to the late Steve Jobs, an
-                    incredible visionary and innovator.
+                <div class="projectBox" id="onemorething" data-open="https://soundcloud.com/futur3sn0w/one-more-thing">
+                    <img src="imgs/musicImgs/img3_onemorething.jpeg" alt="" class="projImg">
+                    <div class="projTitle">One More Thing</div>
+                    <div class="projDesc" data-lastUpdate="Sept. 2019">Created as a tribute to the late Steve Jobs, an
+                        incredible visionary and innovator.
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="headsup">
-        <p>©️ 2023 Futur3Sn0w (Studio30)</p>
+        <p>©️ 2024 Futur3Sn0w</p>
     </div>
 
     <script src="new-js.js"></script>
