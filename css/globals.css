@@ -1,9 +1,22 @@
 * {
+    user-select: none;
     box-sizing: border-box;
+
+    transition-timing-function: ease;
+}
+
+*::-webkit-scrollbar,
+::-webkit-scrollbar {
+    width: 0;
+    display: none;
 }
 
 .hidden {
     display: none !important;
+}
+
+.ss {
+    scroll-behavior: smooth !important;
 }
 
 :root {
@@ -25,23 +38,28 @@
     --page4-prev: rgb(199, 134, 36);
 
     --pageBack: var(--page0);
+
+    /* misc */
+
+    --radius: 24px;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
         --rootBack: #222;
+        --rootBack-clear: #222222aa;
         --containerBack: hsla(0, 0%, 0%, 0.3);
         --containerBord: hsla(0, 0%, 100%, 0.1);
 
         --transparent-container: rgba(0, 0, 0, .45);
 
-        --glow: rgba(255, 255, 255, .15);
+        --glow: rgba(255, 255, 255, .33);
 
         --elem: rgb(65, 65, 65);
         --elem-sel: rgb(148, 148, 148);
         --elem-text: white;
 
-        --elem-transp: rgba(28, 28, 28, 0.8);
+        --elem-transp: #222222cc;
         --elem-transp-sel: rgba(65, 65, 65, 0.8);
         --elem-transp-text: white;
     }
@@ -50,6 +68,7 @@
 @media (prefers-color-scheme: light) {
     :root {
         --rootBack: #EEE;
+        --rootBack-clear: #EEEEEEdd;
         --containerBack: hsla(0, 0%, 0%, 0.1);
         --containerBord: hsla(0, 0%, 0%, 0.1);
 
@@ -65,4 +84,112 @@
         --elem-transp-sel: rgba(255, 255, 255, 0.8);
         --elem-transp-text: #222;
     }
+}
+
+/* Tile specs */
+
+/* .sbTwitter:hover i {
+    color: #1D9BF0 !important;
+}
+
+.sbDiscord:hover i {
+    color: #5865F2 !important;
+}
+*/
+
+.sbDeviant:hover i {
+    color: #01d13c !important;
+    opacity: 1;
+}
+
+/*
+.sbReddit:hover i {
+    color: #FF4501 !important;
+}
+
+.sbDribbble:hover i {
+    color: #EA4C89 !important;
+}
+
+.sbYouTube:hover i {
+    color: #ff0000 !important;
+}
+
+*/
+.sbMedium:hover i {
+    color: #ffffff !important;
+}
+
+.sbGitHub:hover i {
+    color: #9656b0 !important;
+    opacity: 1;
+}
+
+/*
+.sbTwitch:hover i {
+    color: #9146FF !important;
+}
+
+.sbMastodon:hover i {
+    color: #563ACC !important;
+} */
+
+.sbTwitter {
+    width: 70px;
+}
+
+.sbTwitter::after {
+    width: 100%;
+}
+
+.sbTwitter:hover {
+    background-color: #1f1f1f !important;
+}
+
+.sbTwitter:hover::after {
+    content: '(Not X)';
+}
+
+.sbDiscord:hover {
+    background-color: #5865F2 !important;
+}
+
+.sbDeviant:hover {
+    background-color: #2a2a2a !important;
+}
+
+.sbReddit:hover {
+    background-color: #FF4501 !important;
+}
+
+.sbDribbble:hover {
+    background-color: #EA4C89 !important;
+}
+
+.sbYouTube:hover {
+    background-color: #ff0000 !important;
+}
+
+.sbMedium:hover {
+    background-color: #2a2a2a !important;
+}
+
+.sbGitHub:hover {
+    background-color: #2a2a2a !important;
+}
+
+.sbTwitch:hover {
+    background-color: #9146FF !important;
+}
+
+.sbMastodon:hover {
+    background-color: #563ACC !important;
+}
+
+.sbBluesky:hover {
+    background-color: #2F84F6 !important;
+}
+
+.sbThreads:hover {
+    background-color: #2a2a2a !important;
 }

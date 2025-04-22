@@ -1,17 +1,162 @@
 window.onload = function () {
     portraitLandscape();
-    $('.slider').dragNscroll()
-    $('.subTiles2').dragNscroll()
 
-    // $('.metoken').tilt({
-    //     glare: true,
-    //     maxGlare: .5,
-    //     maxTilt: 8
-    // })
+    $.getJSON('projects.json', function (data) {
+        function createProjectBox(project, projectType) {
+            return $('<div class="projectBox"></div>')
+                .attr('id', project.id)
+                .attr('data-open', project.dataOpen || '')
+                .attr('data-type', projectType) // Add project type as a data attribute
+                .append(
+                    $('<div class="projImg"></div>')
+                        .append($('<img>').attr('src', `imgs/${project.imageSrc}`).attr('alt', project.title)),
+                    $('<div class="projTitle"></div>').text(project.title),
+                    $('<div class="projDesc"></div>').text(project.description).attr('data-lastUpdate', project.lastUpdate || '')
+                )
+                .on('click', function () {
+                    $('.projectBox').removeClass('selected');
+                    $(this).addClass('selected')
+                    createProjectView(project, projectType);  // Pass projectType to the function
+                });
+        }
 
-    floatLinks();
-    // autoSlider();
-    $('.slide1').scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+        function createProjectView(project, projectType) {
+            // Check if projView already exists
+            var projView = $('.projVisor');
+
+            // Clear existing projElem items in the projView
+            $('.projVisor').addClass('temphide');
+            setTimeout(() => {
+                $('.projElem').remove();
+
+                // Create actions for the project, conditional on projectType
+                var actionsDiv = $('<div class="actions projElem"></div>');
+
+                // If projectType is not 'Bounce', add the source button
+                if (projectType !== 'Bounce') {
+                    actionsDiv.append(
+                        $('<div class="projAction project-code" data-label="Source"></div>')
+                            .append($('<i class="fa-brands fa-github"></i>'))
+                            .on('click', function () {
+                                window.open('https://github.com/futur3sn0w/' + project.dataOpen);
+                            })
+                    );
+                }
+
+                // Create the open/play button with different icon for 'Bounce'
+                var openButtonIconClass = projectType === 'Bounce' ? 'fa-solid fa-play' : 'fa-solid fa-up-right-from-square';
+                var openButtonLabel = projectType === 'Bounce' ? 'Play' : 'Open';
+
+                var openButton = $('<div class="projAction project-open"></div>')
+                    .append($('<i>').addClass(openButtonIconClass))  // Use correct icon class
+                    .on('click', function () {
+                        if (project.dataOpen.startsWith('http')) {
+                            window.open(project.dataOpen);
+                        } else {
+                            window.open('https://futur3sn0w.github.io/' + project.dataOpen);
+                        }
+                    })
+                    .attr('data-label', openButtonLabel);  // Set the button text
+
+                actionsDiv.append(openButton);
+
+                // Modify imageSrc if projectType is 'Cloud'
+                var imageSrc = project.imageSrc;
+                if (projectType === 'Cloud') {
+                    imageSrc = imageSrc.replace('projCovers', 'projImgs');
+                }
+
+                var tileIcn = $(`<div class="backIcn"></div>`);
+                tileIcn.addClass($('.sectionBtn.selected i').attr('class'))
+                // Add new content to the projView
+                projView.append(
+                    $('<img>', {
+                        src: `imgs/${imageSrc}`,  // Use the modified imageSrc
+                        alt: project.title,
+                        class: 'projImg projElem'
+                    }),
+                    $('<div class="projInfo projElem"></div>').append(
+                        $('<div class="projTitle projElem"></div>').text(project.title).attr('data-lastUpdate', project.lastUpdate || ''),
+                        $('<div class="projDesc projElem"></div>').text(project.description),
+                        $('<div class="projIndex pbIndex"></div>').html($('.pbIndex').html()),
+                        actionsDiv, // Add the actions div with either "Source" and "Open", or just "Play"
+                        tileIcn
+                    )
+                );
+
+                // Make sure the projView is shown
+                $('.projects-header').addClass('hide');
+                setTimeout(() => {
+                    $('.projVisor').removeClass('temphide');
+                }, 50);
+            }, 150);
+        }
+
+        function displaySection(index) {
+            $('.subTileRows').addClass('temphide');
+            setTimeout(() => {
+
+                var section = data[index];
+                var tileRow = $('<div class="tileRow"></div>').attr('id', section.id);
+                var pbIndex = $('<div class="pbIndex"></div>')
+                    .append($('<div class="projTitle"></div>')
+                        .attr('subTitle', section.subtitle)
+                        .attr('title', section.name)
+                        .append(`<div class='sep'></div>`));
+
+                // tileRow.append(tileIcn);
+
+                $('.subTileRows').children('.pbIndex').remove();
+                $('.subTileRows').append(pbIndex);
+
+                $.each(section.projects, function (i, project) {
+                    if (project.id && project.title && project.description) {
+                        tileRow.append(createProjectBox(project, section.name)); // Pass the section name as the project type
+                    }
+                });
+
+                $('.subTileRows').children('.tileRow').remove();
+                $('.subTileRows').append(tileRow);
+                setTimeout(() => {
+                    $('.subTileRows').removeClass('temphide')
+                }, 50);
+            }, 200);
+        }
+
+        $.each(data, function (index, section) {
+            var sectionDivBtn = $('<div class="sectionBtn"></div>')
+                .attr('data-btnTitle', section.name)  // Add the 'data-btnTitle' attribute with the section name
+                .append(
+                    $('<i></i>') // Create the 'i' element
+                        .addClass('fa-solid') // Add 'fa-solid' class
+                        .addClass(section.iconClass) // Add the class from the 'iconClass' field in JSON
+                );
+
+            sectionDivBtn.on('click', function () {
+                $('.sectionBtn').removeClass('selected');
+
+                $(this).addClass('selected');
+                displaySection(index);
+
+                if ($('.projElem').length > 0) {
+                    $('.projVisor').addClass('temphide');
+                    setTimeout(() => {
+                        $('.projElem').remove();
+                        setTimeout(() => {
+                            $('.projVisor').removeClass('temphide');
+                        }, 50);
+                    }, 150);
+                }
+            });
+
+            $('.sectionController').append(sectionDivBtn);
+        });
+
+
+        $('.sectionBtn').first().click();  // Set the first button as selected by default
+    }).fail(function () {
+        console.error("Error loading projects.json");
+    });
 
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
         $('.subTiles').addClass('dark');
@@ -34,57 +179,6 @@ function portraitLandscape() {
     }
 }
 
-function autoSlider() {
-    var slider = $(".slider");
-    var sliderChildren = slider.children();
-    var si = 0;
-    var refreshInMs = 7000;
-    var scrollY = $('.content').scrollTop();
-    var intervalId = setInterval(function () {
-        if (!slider.is(":hover") && !$('.projects-header').hasClass('shrink') && scrollY <= 0) {
-            sliderChildren[si].scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
-            si++;
-            if (si >= sliderChildren.length) {
-                si = 0;
-            }
-        }
-    }, refreshInMs);
-
-
-    slider.hover(function () {
-        clearInterval(intervalId);
-    }, function () {
-        intervalId = setInterval(function () {
-            if (!slider.is(":hover") && !$('.projects-header').hasClass('shrink') && scrollY <= 0) {
-                sliderChildren[si].scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
-                si++;
-                if (si >= sliderChildren.length) {
-                    si = 0;
-                }
-            }
-        }, refreshInMs);
-    });
-}
-
-$('.slider').scroll(function () {
-    // var scrollPercentage = 100 * $(this).scrollLeft() / ($(this).children().width() - $(this).width());
-    function getHorizontalScrollPercent() {
-        var h = document.getElementById('slider'),
-            b = document.body,
-            st = 'scrollLeft',
-            sw = 'scrollWidth';
-        return (h[st] || b[st]) / ((h[sw] || b[sw]) - h.clientWidth) * 100;
-    }
-    $('.bar').width(Math.round(getHorizontalScrollPercent()) + "%");
-
-    var scrollX = $('.slider').scrollLeft();
-    if (scrollX > 0) {
-        $('.progress').addClass('scroll')
-    } else {
-        $('.progress').removeClass('scroll')
-    }
-});
-
 // Dark mode stuff
 
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
@@ -98,212 +192,36 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', eve
     }
 });
 
-// Float 'recent updates' to top of row
-
-function floatLinks() {
-    $('.projectBox.ru').prependTo('#webProjects');
-    $('#webProjects .pbIndex').prependTo('#webProjects');
-}
-
-// Toggle links
-
-$('.linkToggle').on('change', function () {
-    // alert('pp');
-    if (!$('input.linkToggle').is(':checked')) {
-        $('a').each(function () {
-            $(this).attr('data-href2', $(this).attr('href'));
-            $(this).attr('href', "#");
-        });
-        $('.projectBox').on('click', function () {
-
-        })
-    } else if ($('input.linkToggle').is(':checked')) {
-        $('a').each(function () {
-            $(this).attr('href', $(this).attr('data-href2'));
-        });
-        $('.projectBox').on('click', function () {
-            // var name = $(this).attr('data-open');
-            // window.open('https://futur3sn0w.me/' + name);
-        })
-    }
-})
-
-// ProjectBox action 
-
-$('.projectBox').on('click', function () {
-    $('.projectBox').removeClass('selected');
-    $(this).addClass('selected');
-    $('.projectHighlight').addClass('visible');
-    $('.projects-header').addClass('transition').addClass('hide').removeClass('transition')
-
-    if ($(this).parent().attr('id') !== 'webProjects') {
-        $('.project-code').hide();
-    } else {
-        $('.project-code').show();
-    }
-
-    if ($(this).parent().attr('id') == 'musicProjects') {
-        $('.project-open i').removeClass('fa-up-right-from-square').addClass('fa-play')
-    } else {
-        $('.project-open i').addClass('fa-up-right-from-square').removeClass('fa-play')
-    }
-
-    if ($(this).attr('data-open') == undefined) {
-        $('.project-open').hide();
-    } else {
-        $('.project-open').show();
-    }
-
-    $('.project-open').attr('data-open', $(this).attr('data-open'));
-    $('.project-code').attr('data-open', $(this).attr('data-open'));
-    $('.projectHighlight .projTitle').text($(this).children('.projTitle').text());
-    $('.projectHighlight .projDesc').text($(this).children('.projDesc').text());
-    $('.projectHighlight .projType').text($(this).parent().children('.pbIndex').text().replace(' Show all', '').replace(' Collapse', ''));
-    $('.projectHighlight .projTitle').attr('data-lastUpdate', $(this).children('.projDesc').attr('data-lastUpdate'));
-    $('.projectHighlight .projImg').attr('src', $(this).children('.projImg').attr('src').replace('/projCovers/', '/projImgs/'));
-})
-
-// $(document).on('click', function (e) {
-//     var element = $(".projectBox");
-//     var element2 = $(".projectBox *");
-//     var element3 = $(".projectHighlight");
-//     var element4 = $(".projectHighlight *");
-
-//     if (!element.is(e.target) && !element2.is(e.target) && !element3.is(e.target) && !element4.is(e.target)) {
-//         $('.projectHighlight .close').click();
-//         if ($('.projectBox').hasClass('selected')) {
-
-//         } else {
-//             setTimeout(() => {
-//                 $('.subTiles2').addClass('ss').scrollLeft(0).removeClass('ss');
-//             }, 1000);
-//         }
-//     }
-// })
-
-$('.projectHighlight .close').on('click', function () {
-    $('.projectHighlight').removeClass('visible');
-    $('.projectBox').removeClass('selected')
-    $('.subTiles').removeClass('small');
-    $('.projects-header').addClass('transition').removeClass('hide').removeClass('transition')
-})
-
-$('.project-open').on('click', function () {
-    var name = $(this).attr('data-open');
-    if (name.startsWith('http')) {
-        // alert('yes')
-        window.open(name);
-    } else {
-        // alert('no')
-        window.open('https://futur3sn0w.me/' + name);
-    }
-})
-
-$('.project-code').on('click', function () {
-    var name = $(this).attr('data-open');
-    window.open('https://github.com/futur3sn0w/' + name);
-})
-
 $('.content').on('scroll', function () {
-    $('.projects-header').addClass('transition');
+    var scrollY = $('.content').scrollTop()
 
-    var $header = $('.projects-header');
-    var scrollY = $('.content').scrollTop();
-    var perc = (50 / 100) * $('body').height();
-    $header.height(perc - scrollY)
-    if (scrollY > 100) {
-        $('.orbs').addClass('paused')
-        $header.addClass('shrink');
-        $('.projectHighlight').addClass('shrink');
-        $('.ph-slide').attr('subtext', "Click a project for more info")
-    } else {
-        $('.orbs').removeClass('paused')
-        $header.removeClass('shrink');
-        $('.projectHighlight').removeClass('shrink');
-        $('.ph-slide').attr('subtext', "Scroll to view my work")
-    }
-
-    if (scrollY > 0) {
+    if (scrollY > 200) {
         $('.subTiles').addClass('hide');
-        $('.slider').addClass('ss').scrollLeft(0).removeClass('ss').addClass('freeze')
+        $('.bga').css('animation-play-state', 'paused');
+
+        $('.projects-header').addClass('showProject');
     } else {
         $('.subTiles').removeClass('hide');
-        $('.slider').removeClass('freeze')
-    }
-});
+        $('.bga').css('animation-play-state', 'running');
 
-$('.subTiles2').on('scroll', function () {
-    // var $header = $('.projects-header');
-    var scrollLeft = this.scrollLeft;
-    var scrollX = this.scrollLeft / (this.scrollWidth - this.clientWidth);
-    var percentX = scrollX * -1 + 1;
-    $(this).children('.pbIndex').css('opacity', percentX)
-    if (scrollLeft > 170) {
-        $(this).children('.pbIndex').addClass('hide');
-    } else {
-        $(this).children('.pbIndex').removeClass('hide');
-    }
-});
 
-$('.subTiles2').on('mouseleave', function () {
-    if (!$('.projectBox').hasClass('selected')) {
+        $('.projVisor').addClass('temphide');
         setTimeout(() => {
-            $(this).addClass('ss').scrollLeft(0).removeClass('ss');
-        }, 1000);
+            $('.projElem').remove();
+            $('.projectBox').removeClass('selected');
+            $('.projects-header').removeClass('showProject');
+            setTimeout(() => {
+                $('.projVisor').removeClass('temphide');
+            }, 50);
+        }, 150);
     }
-})
+});
 
 // Aboutme
 
 $('.navBar').on('click', function () {
     $('.content').scrollTop(0)
-    $('.aboutinfo').toggleClass('aboutme');
-    $('.projects-header').addClass('transition').toggleClass('aboutme').removeClass('transition');
+    $('.projects-header').toggleClass('aboutme');
     $('.content').toggleClass('aboutme');
     $('.navBar').toggleClass('aboutme');
-    $('.orbs').toggleClass('paused')
-
-    if ($('.projects-header').hasClass('hide')) {
-        $('.projectHighlight .close').click();
-    }
-
-    if ($('.content').hasClass('aboutme')) {
-        VanillaTilt.init(document.querySelector(".projects-header"), {
-            max: 10,
-            speed: 200,
-            glare: true,
-            "max-glare": .35
-        });
-    } else {
-        document.querySelector('.projects-header').vanillaTilt.destroy();
-    }
-
-    // $('.subTiles').addClass('hide');
-    // $('.navBar.aboutme').on('click', function () {
-    //     $('.subTiles').removeClass('hide');
-    // })
-})
-
-// If row has overscroll, enable showall btn
-
-
-// if ($('.subTiles2').scrollWidth() > $('.subTiles2').clientWidth()) {
-$('.showallBtn').addClass('show')
-// } else {
-// $('.showallBtn').removeClass('show')
-// }
-
-$('.showallBtn').on('click', function () {
-    if ($(this).parent().parent().hasClass('showall')) {
-        $(this).parent().parent().toggleClass('showall')
-    } else {
-        $('.showall').removeClass('showall')
-        $(this).parent().parent().toggleClass('showall')
-    }
-
-    if ($(this).text() == 'Show all') {
-        $(this).text('Collapse')
-    } else {
-        $(this).text('Show all')
-    }
 })

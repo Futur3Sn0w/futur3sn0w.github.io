@@ -1,0 +1,274 @@
+[
+    {
+        "id": "webProjects",
+        "name": "Cloud",
+        "subtitle": "My flagship web projects",
+        "iconClass": "fa-cloud",
+        "projects": [
+            {
+                "id": "plusui",
+                "title": "PlusUI",
+                "lastUpdate": "March 2024",
+                "dataOpen": "plusUI",
+                "imageSrc": "projCovers/img1_plusui.png",
+                "description": "The digital dashboard for your large-screen devices. PlusUI is your one-stop-shop for any information you want to view at a glance, as well as shortcuts you want quick access to. Browsers can use PlusUI as a 'new-tab' page replacement for richer data, custom backgrounds, and more."
+            },
+            {
+                "id": "waitaminute",
+                "title": "waitaMinute",
+                "lastUpdate": "Feb 2022",
+                "dataOpen": "waitaMinute",
+                "imageSrc": "projCovers/img7_waitamin.png",
+                "description": "The various 'installing your apps' screens from the Windows OOBE, compiled and recreated using web technologies. Mainly for demo and educational use."
+            },
+            {
+                "id": "newtab11",
+                "title": "NewTab11",
+                "lastUpdate": "Sept. 2021",
+                "dataOpen": "newtab11",
+                "imageSrc": "projCovers/img8_newtab11.png",
+                "description": "A replacement new-tab page for your web browser, designed after the new Windows Store in Windows 11."
+            },
+            {
+                "id": "10x",
+                "title": "Windows 10X",
+                "lastUpdate": "May 2021",
+                "dataOpen": "Windows10x",
+                "imageSrc": "projCovers/img3_win10x.png",
+                "description": "A faithful recreation of Microsoft's scrapped Windows 10X OS using web technologies. Includes a bootscreen, OOBE, and full shell clones. (Unfinished, may be buggy!)"
+            },
+            {
+                "id": "pinboard",
+                "title": "Pinboard",
+                "lastUpdate": "July 2022",
+                "dataOpen": "pinboard",
+                "imageSrc": "projCovers/img2_pinboard.png",
+                "description": "A digital cork-board of sorts, with customizable pins, colors, shapes, and more. Created with Google's Material You (Material Design 3) design language. Change the background color and more from settings."
+            },
+            {
+                "id": "flick",
+                "title": "Flick",
+                "lastUpdate": "July 2023",
+                "dataOpen": "flick",
+                "imageSrc": "projCovers/img4_flick.png",
+                "description": "A hub for viewing Microsoft's Fluent-designed icons found in Windows 11, late Windows 10, and Windows 10X builds. Created with the Fluent-design and leaked Windows 12 UI design language(s)."
+            },
+            {
+                "id": "webfx",
+                "title": "WebFX",
+                "lastUpdate": "March 2023",
+                "dataOpen": "webFX",
+                "imageSrc": "projCovers/img5_webfx.png",
+                "description": "A collection of experiments using various web technologies, created with Google's ChromeOS and Material You (Material Design 3) design languages. Click the name of a page (in the bottom-right) to view more information."
+            }
+        ]
+    },
+    {
+        "id": "conceptProjects",
+        "name": "Create",
+        "subtitle": "Design concepts and mockups",
+        "iconClass": "fa-paintbrush",
+        "projects": [
+            {
+                "id": "ipod",
+                "title": "iPod - Scroll, Touch, Click!",
+                "lastUpdate": "Dec. 2022",
+                "dataOpen": null,
+                "imageSrc": "conceptImgs/img8_ipod.png",
+                "description": "Just a small mockup I made of the different hardware interfaces included throughout the lifespan of Apple's iPod (Classic) series."
+            },
+            {
+                "id": "feedbackcard",
+                "title": "Feedback Card",
+                "lastUpdate": "Jun. 2022",
+                "dataOpen": null,
+                "imageSrc": "conceptImgs/img1_feedbackcard.png",
+                "description": "A conceptual design for a physical product's feedback card insert, included [in the box] with the purchase of a physical item, to encourage the customer to give feedback on the product."
+            },
+            {
+                "id": "win11cm",
+                "title": "Windows 11 Context Menu",
+                "lastUpdate": "May 2022",
+                "dataOpen": null,
+                "imageSrc": "conceptImgs/img2-1_win11cm.png",
+                "description": "My second take on a Fluent-designed modern context menu for Windows 10 or 11 (Windows 11 in this case). Simplified menu options mixed with uniform sizes make for a familiar take on the classic menu."
+            },
+            {
+                "id": "figmamavericks",
+                "title": "Figma - OS X Mavericks",
+                "lastUpdate": "May 2022",
+                "dataOpen": null,
+                "imageSrc": "conceptImgs/img3_figmamavericks.png",
+                "description": "Created as a personal experiment, this icon was an idea to envision what the Figma app's icon could look like with a skeuomorphic touch. It's not like anything I've done before, but I quite like it!"
+            },
+            {
+                "id": "androidnc",
+                "title": "Android Notification Tray",
+                "lastUpdate": "Jan. 2022",
+                "dataOpen": null,
+                "imageSrc": "conceptImgs/img7_androidnc.png",
+                "description": "I wanted to create a modern alternative to Android's notification center as shown in Android 12+. The idea was to add more vivid colors in order for the added background blur to be more visible. Featuring light and dark modes!"
+            },
+            {
+                "id": "fluentcm",
+                "title": "Fluent Context Menu",
+                "lastUpdate": "Jul. 2020",
+                "dataOpen": null,
+                "imageSrc": "conceptImgs/img4_fluentcm.jpeg",
+                "description": "My first take on a Fluent-designed modern context menu for Windows. I took the desktop context menu from Windows 10, and envisioned it with the acrylic material as the backdrop, and modern Fluent icons to replace the standard glyphs."
+            },
+            {
+                "id": "fluentedge",
+                "title": "MS Edge - Vertical Tabs",
+                "lastUpdate": "Jul. 2020",
+                "dataOpen": null,
+                "imageSrc": "conceptImgs/img5_fluentedge.png",
+                "description": "The new Chromium-based Microsoft Edge is/was set to get a vertical tabs option in the (near?) future. I decided to mock-up a modern, Fluent version of the browser in the collapsed-tabbed view. The tab indicator (blue bars on the left side) shows that there's multiple tabs open for a single site, aka, tab grouping!"
+            },
+            {
+                "id": "bigsurcenter",
+                "title": "Big Sur Control Center",
+                "lastUpdate": "Jul. 2020",
+                "dataOpen": null,
+                "imageSrc": "conceptImgs/img10_bigsurcenter.png",
+                "description": "What if macOS 11 Big Sur's control center made its way to iOS? This concept takes cues from macOS, iOS 10, and the AirPods popup UI to envision a redesigned iOS control center."
+            },
+            {
+                "id": "winsmarthome",
+                "title": "Windows Smart Display",
+                "lastUpdate": "Jul. 2020",
+                "dataOpen": "https://twitter.com/Futur3Sn0w/status/1284254575059509250?s=20",
+                "imageSrc": "conceptImgs/img11_winsmarthome.jpeg",
+                "description": "An experiment to envision what a Microsoft-designed smart-home display/hub could look like. Includes login options, media playback controls, weather, and more!"
+            },
+            {
+                "id": "10xbsod",
+                "title": "Windows - Fluent BSOD",
+                "lastUpdate": "Apr. 2020",
+                "dataOpen": null,
+                "imageSrc": "conceptImgs/img6_10xbsod.png",
+                "description": "The current BSOD has been kinda lackluster (and a bit unprofessional, becoming a meme in the tech community) since Windows 8. I think a cleanup, and a more modern look would suffice for sure!"
+            },
+            {
+                "id": "microsoftsignup",
+                "title": "Microsoft - Registration",
+                "lastUpdate": "Apr. 2020",
+                "dataOpen": null,
+                "imageSrc": "conceptImgs/img9_microsoftsignup.png",
+                "description": "Part of the design-a-day challenge, I created a registration page for a Microsoft account, taking design cues from the Windows 10X and 11 OOBE."
+            },
+            {
+                "id": "fluentntp",
+                "title": "Edge - Fluent NTP",
+                "lastUpdate": "Mar. 2020",
+                "dataOpen": null,
+                "imageSrc": "conceptImgs/img12_fluentntp.jpeg",
+                "description": "After creating previous Fluent-design concepts, I thought I'd redesign Microsoft Edge's new-tab page to both match the browser UI better, and have more Fluent elements."
+            }
+        ]
+    },
+    {
+        "id": "downloadables",
+        "name": "Download",
+        "subtitle": "Wallpapers, icons, apps, and more",
+        "iconClass": "fa-download",
+        "projects": [
+            {
+                "id": "hero11",
+                "title": "Hero11 - Wallpapers",
+                "lastUpdate": "Aug. 2021",
+                "dataOpen": "https://www.deviantart.com/futur3sn0w/art/Hero11-5K-Windows-11-Logo-Wallpapers-890101198",
+                "imageSrc": "downloadables/img1_hero11.png",
+                "description": "Wallpaper set that sports the Windows 11 Start Button up front. It mimics the frosted glass and pseudo-3D effect found by using a slight inner glow, and upper border. There are 15 wallpapers in the pack, using images from Unsplash, the Windows 11 Bloom wallpapers, and an extra Xbox+Forza controller set, which uses AI upscaled images of the Forza 5 Xbox Controller promo."
+            },
+            {
+                "id": "longhorn7",
+                "title": "Longhorn7 - Custom Pack",
+                "lastUpdate": "Nov. 2020",
+                "dataOpen": "https://www.deviantart.com/futur3sn0w/art/Longhorn7-Turn-Windows-7-into-Microsoft-Longhorn-860614634",
+                "imageSrc": "downloadables/img3_longhorn7.jpeg",
+                "description": "A collection of tools and resources to turn your Windows 7 desktop into Microsoft Longhorn! Longhorn7 compiles the best resources from creators here on DeviantArt to make your Windows 7 setup look like Microsoft's forgotten OS!"
+            },
+            {
+                "id": "modern7",
+                "title": "Modern7 - Start Orbs",
+                "lastUpdate": "Sept. 2020",
+                "dataOpen": "https://www.deviantart.com/futur3sn0w/art/Modern7-854972066",
+                "imageSrc": "downloadables/img4_modern7.png",
+                "description": "This is Modern7. A modern refresh of the Windows 7 Start orb, with a hint of Fluent-design thrown in."
+            },
+            {
+                "id": "chromeicons",
+                "title": "Chrome Icons - Redesign",
+                "lastUpdate": "Jul. 2020",
+                "dataOpen": "https://www.deviantart.com/futur3sn0w/art/Google-Chrome-Redesigned-Icons-849387969",
+                "imageSrc": "downloadables/img5_chromeicons.png",
+                "description": "A fun mini-project I started to envision a new take on Google Chrome's iconography. Includes icons for Canary, Dev, Beta, as well as Chromium(s), and the Chrome Store(s)."
+            },
+            {
+                "id": "interpolwall",
+                "title": "\"Interpol\" - Wallpaper",
+                "lastUpdate": "Jun. 2020",
+                "dataOpen": "https://www.deviantart.com/futur3sn0w/art/Wallpaper-Interpol-847255414",
+                "imageSrc": "downloadables/img8_interpolwall.png",
+                "description": "Today, I made a new wallpaper titled Interpol. It uses an edited version of the standard Windows 11 wallpaper, featuring a large Interpol logo in the center."
+            },
+            {
+                "id": "modernbuttons",
+                "title": "ModernButtons - Start Orb",
+                "lastUpdate": "Apr. 2020",
+                "dataOpen": "https://www.deviantart.com/futur3sn0w/art/ModernButtons-XP-Styled-Buttons-for-StartIsBack-837044545",
+                "imageSrc": "downloadables/img7_modernbuttons.png",
+                "description": "Inspired by an incredible concept by my good friend @zeealeid, here are some simplistic and modern start buttons for your Windows setup! Version 2.0 includes a fix for sizing on large taskbars, introduces small taskbar support, and adds a new 'Glow' variant!"
+            },
+            {
+                "id": "10xwalls",
+                "title": "Windows 10X - Wallpapers",
+                "lastUpdate": "Mar. 2020",
+                "dataOpen": "https://www.deviantart.com/futur3sn0w/art/Windows-10X-Logo-Wallpapers-835050838",
+                "imageSrc": "downloadables/img6_10xlogowalls.jpeg",
+                "description": "If you like Windows 10X as much as I do, then you'll definitely enjoy these wallpapers! They feature the wallpaper from Windows 10X with the logo on top, in 4 colors (courtesy of @niivu!). They're all 4000x3000 resolution, which means they'll scale perfectly on many displays."
+            },
+            {
+                "id": "tiltip",
+                "title": "Tilt - Icon Pack",
+                "lastUpdate": "Apr. 2019",
+                "dataOpen": "https://www.deviantart.com/futur3sn0w/art/Tilt-Modern-stock-esque-icon-pack-for-macOS-793841943",
+                "imageSrc": "downloadables/img2_tiltip.jpeg",
+                "description": "Say hello to Tilt! The modern and minimal icon pack for macOS with a stock feel. Created with the help of CamieeHFX, inspired by @Octaviotti."
+            }
+        ]
+    },
+    {
+        "id": "musicProjects",
+        "name": "Bounce",
+        "subtitle": "Songs and mixes",
+        "iconClass": "fa-play",
+        "projects": [
+            {
+                "id": "betogether",
+                "title": "Be Together",
+                "lastUpdate": "Jun. 2020",
+                "dataOpen": "https://soundcloud.com/futur3sn0w/be-together-session-mix",
+                "imageSrc": "musicImgs/img1_betogether.jpg",
+                "description": "Dedicated to my best friend (and sidekick) Ari 😊"
+            },
+            {
+                "id": "ambienceep",
+                "title": "Ambience EP",
+                "lastUpdate": "Sept. 2019",
+                "dataOpen": "https://www.youtube.com/playlist?list=OLAK5uy_mUPnf6khcLu6wmF9EmzSD2h7FpRpOpkXQ",
+                "imageSrc": "musicImgs/img2_ambienceep.jpeg",
+                "description": "My debut, 4 track EP including 'Night Drive', 'After Party', and 'Aurorian Storm'."
+            },
+            {
+                "id": "onemorething",
+                "title": "One More Thing",
+                "lastUpdate": "Sept. 2019",
+                "dataOpen": "https://soundcloud.com/futur3sn0w/one-more-thing",
+                "imageSrc": "musicImgs/img3_onemorething.jpeg",
+                "description": "Created as a tribute to the late Steve Jobs, an incredible visionary and innovator."
+            }
+        ]
+    }
+]
