@@ -3,3 +3,5 @@
 *.DS_Store
 ._CNAME
 ._index.html
+._css.css
+._globals.css
