@@ -1,6 +1,6 @@
 const NUMBER_OF_SNOWFLAKES = 50;
 const MAX_SNOWFLAKE_SIZE = 5;
-const MAX_SNOWFLAKE_SPEED = 1;
+const MAX_SNOWFLAKE_SPEED = .5;
 const SNOWFLAKE_COLOUR = '#bbb';
 const snowflakes = [];
 
@@ -20,7 +20,7 @@ const createSnowflake = () => ({
     y: Math.random() * canvas.height * -1,
     radius: Math.floor(Math.random() * MAX_SNOWFLAKE_SIZE) + 1,
     color: SNOWFLAKE_COLOUR,
-    speed: Math.random() * MAX_SNOWFLAKE_SPEED + 1,
+    speed: Math.random() * MAX_SNOWFLAKE_SPEED + .5,
     sway: Math.random() - 0.5 // next
 });
 
