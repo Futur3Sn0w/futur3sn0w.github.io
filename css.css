@@ -77,7 +77,7 @@ body {
         transition: .2s;
         transition-delay: 1s;
 
-        animation: gradientRotate-body 10s linear infinite;
+        animation: gradientRotate-body 60s linear infinite;
     }
 }
 
@@ -98,7 +98,7 @@ body {
             var(--root-back-b) 50%);
     background-clip: text;
     color: transparent;
-    animation: gradientRotate-body 10s linear infinite;
+    animation: gradientRotate-body 60s linear infinite;
     will-change: transform;
 
     opacity: 0;
@@ -114,7 +114,7 @@ body {
     transition-delay: 1.5s;
 
     font-size: 130px;
-    animation: gradientRotate-text 10s linear infinite;
+    animation: gradientRotate-text 60s linear infinite;
     font-weight: 900;
     will-change: transform;
 }
@@ -181,7 +181,7 @@ body {
             height: 100%;
 
             opacity: 0;
-            transition: .15s;
+            transition: .2s;
 
             border-radius: 1000px;
 
@@ -246,7 +246,7 @@ body {
         }
 
         &::after {
-            opacity: .75;
+            opacity: .15;
         }
     }
 
@@ -258,9 +258,9 @@ body {
         position: absolute;
         z-index: 0;
 
-        opacity: .5;
-        transition: .15s;
-        background: linear-gradient(to bottom, transparent, #00000022);
+        opacity: .05;
+        transition: .2s;
+        background: linear-gradient(to bottom, transparent, var(--root-text));
     }
 
     &::before {
@@ -282,7 +282,7 @@ body {
         position: relative;
         z-index: 10;
 
-        transition: font-weight .2s;
+        transition: .2s;
 
         color: var(--root-text);
 
