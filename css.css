@@ -15,6 +15,14 @@ body {
     align-items: center;
     justify-content: center;
 
+    & canvas {
+        mask-image: linear-gradient(to bottom, black, transparent);
+
+        position: relative;
+        z-index: 1000;
+        pointer-events: none;
+    }
+
     &::before {
         content: '';
         width: 100vw;
@@ -103,6 +111,7 @@ body {
     height: 100px;
 
     position: relative;
+    top: -175px;
 
     display: flex;
     align-items: center;
@@ -171,7 +180,8 @@ body {
     flex-direction: column;
     gap: 5px;
 
-    margin-top: 250px;
+    position: relative;
+    top: 175px;
 
     opacity: 0;
     transition: .4s;
