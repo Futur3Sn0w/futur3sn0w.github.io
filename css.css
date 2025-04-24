@@ -150,7 +150,6 @@ body {
 
     position: absolute;
     z-index: 10000;
-    user-select: all !important;
 
     font-size: 130px;
     font-weight: 900;
