@@ -7,30 +7,65 @@
     <title>GTH.zip - UNDER CONSTRUCTION</title>
     <link rel="stylesheet" href="css.css">
     <link rel="stylesheet" href="globals.css">
+    <script src="jquery/jquery-3.7.1.js"></script>
 </head>
 
-<body>
-    <div class="meImg"></div>
+<body class="">
+    <div class="container">
+        <div class="meImg"></div>
 
-    <p class="subhead">under construction</p>
-    <p class="head">GTH.zip</p>
+        <p class="subhead">under construction</p>
+        <p class="head">GTH.zip</p>
 
-    <div class="outLinks">
-        <a href="/futur3sn0w" class="outlink visit-fs">
-            <p>Futur3Sn0w Home</p>
-        </a>
+        <div class="outLinks">
+            <a href="/futur3sn0w" class="outlink visit-fs">
+                <p>Futur3Sn0w Home</p>
+            </a>
 
-        <a href="/music" class="outlink my-music">
-            <p>My Music (Beta)</p>
-        </a>
+            <!-- <a href="/photos" class="outlink my-photos">
+                <p>My Photos (Beta)</p>
+            </a> -->
+
+            <a href="/music" class="outlink my-music">
+                <p>My Music (Beta)</p>
+            </a>
+        </div>
     </div>
 
     <script src="snow.js"></script>
 
     <script>
-        document.body.onload = function () {
-            document.body.classList.add('loaded')
-        }
+        $(function () {
+            const isLocal =
+                location.hostname === "localhost" ||
+                location.hostname === "127.0.0.1" ||
+                location.hostname === "::1" ||
+                /^[0-9.]+$/.test(location.hostname); // IP like 192.168.x.x
+
+            if (isLocal) {
+                console.log("🛠 Running locally (development mode)");
+
+                $('a').on('click', function (e) {
+                    e.preventDefault();
+                    let href = $(this).attr('href');
+                    window.open('https://gth.zip' + href);
+                })
+                // You can run local-only code here
+            } else {
+                console.log("🌐 Running publicly (live site)");
+                console.log('Hey, thanks for visiting! ❤️')
+                console.log('With love from Gavin (Futur3Sn0w)')
+            }
+        });
+
+        $(window).on('load', function () {
+            $('body').addClass('loaded');
+
+            $('a').each(function () {
+                const href = $(this).attr('href');
+                $(this).attr('title', 'https://gth.zip' + href);
+            });
+        })
     </script>
 </body>
 
