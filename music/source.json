@@ -1,0 +1,111 @@
+{
+    "id": "musicProjects",
+    "name": "Bounce",
+    "subtitle": "Songs and mixes",
+    "iconClass": "fa-play",
+    "tracks": [
+        {
+            "id": "harmonicbounce",
+            "format": "jpeg",
+            "title": "Harmonic Bounce - Single",
+            "subtitle": "",
+            "lastUpdate": "April 2023",
+            "dataOpen": "",
+            "description": "In my exploration into MIDI, I compiled and reworked the outro bass track from Animusic's 'Harmonic Voltage' into a fun, house inspired track."
+        },
+        {
+            "id": "betogether",
+            "format": "jpg",
+            "title": "Be Together",
+            "subtitle": "",
+            "lastUpdate": "June 2020",
+            "dataOpen": "https://soundcloud.com/futur3sn0w/be-together-session-mix",
+            "description": "Dedicated to Ari 😊"
+        },
+        {
+            "id": "ambienceep",
+            "format": "jpeg",
+            "title": "Ambience EP",
+            "subtitle": "",
+            "lastUpdate": "September 2019",
+            "dataOpen": "https://www.youtube.com/playlist?list=OLAK5uy_mUPnf6khcLu6wmF9EmzSD2h7FpRpOpkXQ",
+            "description": "My debut, 4 track EP including 'Night Drive', 'After Party', and 'Aurorian Storm'."
+        },
+        {
+            "id": "onemorething",
+            "format": "jpeg",
+            "title": "One More Thing",
+            "subtitle": "",
+            "lastUpdate": "September 2019",
+            "dataOpen": "https://soundcloud.com/futur3sn0w/one-more-thing",
+            "description": "Created as a tribute to the late Steve Jobs, an incredible visionary and innovator."
+        }
+    ],
+    "mixes": [
+        {
+            "id": "housefeel",
+            "format": "jpeg",
+            "title": "HOUSE ARREST × FEEL IT (Mashup)",
+            "subtitle": "Sofi Tukker × Kaskade",
+            "lastUpdate": "April 2025",
+            "dataOpen": "",
+            "description": "A mashup of Sofi Tukker's 'House Arrest' feat. Gorgon City, and Kaskade's 'Feel It'."
+        },
+        {
+            "id": "goodfeelinglevels",
+            "format": "jpeg",
+            "title": "LEVELS × GOOD FEELING (Mashup)",
+            "subtitle": "Avicii × Flo Rida",
+            "lastUpdate": "January 2025",
+            "dataOpen": "",
+            "description": "A mashup of Avicii's 'Levels', and Flo Rida's 'Good Feeling'."
+        },
+        {
+            "id": "pinktry",
+            "format": "png",
+            "title": "TRY (Ambient Mix)",
+            "subtitle": "P!nk",
+            "lastUpdate": "November 2023",
+            "dataOpen": "",
+            "description": "An exploration into stems - This is an ambient mix of P!nk's track 'Try'. It was so much fun using aura and synth sounds combined with the etherial guitar to create a powerful soundscape!"
+        }
+    ],
+    "sets": [
+        {
+            "id": "snowhouse",
+            "format": "jpeg",
+            "title": "The Sn0wHous3 Mix",
+            "subtitle": "",
+            "lastUpdate": "June 2020",
+            "dataOpen": "",
+            "description": "My debut DJ set, where I first experimented with the simplest of transitions between songs."
+        },
+        {
+            "id": "blizzardmix",
+            "format": "jpeg",
+            "title": "The Blizzard Mix",
+            "subtitle": "",
+            "lastUpdate": "December 2023",
+            "dataOpen": "",
+            "description": "A chill-house mix inspired by HANA and Durante."
+        },
+        {
+            "id": "bedtimemix",
+            "format": "jpeg",
+            "title": "The Bedtime Mix",
+            "subtitle": "",
+            "lastUpdate": "November 2024",
+            "dataOpen": "",
+            "description": "A mix dedicated to nighttime listening, something calm and progressive to relax to before drifting off for the night."
+        },
+        {
+            "id": "liftoffmix",
+            "format": "jpeg",
+            "title": "The Liftoff Mix",
+            "subtitle": "",
+            "lastUpdate": "February 2025",
+            "dataOpen": "",
+            "description": "A deep-house inspired mix with a focus on songs that have unique sounds for the house space."
+        }
+    ]
+}
