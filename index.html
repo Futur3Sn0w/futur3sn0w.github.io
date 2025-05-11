@@ -5,68 +5,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GTH.zip - UNDER CONSTRUCTION</title>
-    <link rel="stylesheet" href="css.css">
-    <link rel="stylesheet" href="globals.css">
-    <script src="jquery/jquery-3.7.1.js"></script>
+    <link rel="stylesheet" href="css/css.css">
+    <link rel="stylesheet" href="css/globals.css">
+    <link rel="stylesheet" href="css/music.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/socials.css">
+    <link rel="stylesheet" href="css/fs.css">
+    <script src="external/jquery-3.7.1.js"></script>
+
+    <script src="external/a1fc6f0f3a.js"></script>
+    <script src="external/gsap.min.js"></script>
+    <script src="external/barba.js"></script>
+    <script src="scripts/js.js"></script>
+
+    <link href="img/favicon-light.png" rel="icon" media="(prefers-color-scheme: dark)" />
+    <link href="img/favicon-dark.png" rel="icon" media="(prefers-color-scheme: light)" />
 </head>
 
-<body class="">
-    <div class="container">
-        <div class="meImg"></div>
+<body data-barba="wrapper" class="">
+    <header class="gthHeader">
+        <button class="button back-btn" title="Back"><i class="fas fa-chevron-left"></i></button>
+        <a class="home button gthNav" title="Home" href="/"><i class="fa-solid fa-home"></i></a>
+        <p class="subhead">home</p>
+    </header>
 
-        <p class="subhead">under construction</p>
+    <main class="container" data-barba="container" data-barba-namespace="home">
         <p class="head">GTH.zip</p>
 
+        <div class="subTiles" id="socialList"></div>
+
         <div class="outLinks">
-            <a href="/futur3sn0w" class="outlink visit-fs">
-                <p>Futur3Sn0w Home</p>
+            <a href="/futur3sn0w" class="outlink gthNav visit-fs" title="My Brand">
+                <img src="img/logo_square.png" alt="" draggable="false">
+                <p>Futur3Sn0w</p>
             </a>
 
-            <!-- <a href="/photos" class="outlink my-photos">
-                <p>My Photos (Beta)</p>
-            </a> -->
+            <a href="/photos" class="outlink gthNav disabled wide my-photos" title="My Photos">
+                <img src="" alt="" draggable="false">
+                <p>My Photos (Coming Soon)</p>
+            </a>
 
-            <a href="/music" class="outlink my-music">
+            <a href="/music" class="outlink gthNav wide my-music" title="My Music">
+                <i class="fa-solid fa-headphones"></i>
+                <img src="" alt="" draggable="false">
+                <div class="infoLabels">
+                    <p class="type"></p>
+                    <p class="title"></p>
+                    <p class="date"></p>
+                </div>
                 <p>My Music (Beta)</p>
             </a>
+
+            <a href="/about" class="outlink gthNav about-me" title="About Me">
+                <img src="img/me.jpg" alt="" draggable="false">
+                <p>About Me</p>
+            </a>
         </div>
-    </div>
+    </main>
 
-    <script src="snow.js"></script>
-
-    <script>
-        $(function () {
-            const isLocal =
-                location.hostname === "localhost" ||
-                location.hostname === "127.0.0.1" ||
-                location.hostname === "::1" ||
-                /^[0-9.]+$/.test(location.hostname); // IP like 192.168.x.x
-
-            if (isLocal) {
-                console.log("🛠 Running locally (development mode)");
-
-                $('a').on('click', function (e) {
-                    e.preventDefault();
-                    let href = $(this).attr('href');
-                    window.open('https://gth.zip' + href);
-                })
-                // You can run local-only code here
-            } else {
-                console.log("🌐 Running publicly (live site)");
-                console.log('Hey, thanks for visiting! ❤️')
-                console.log('With love from Gavin (Futur3Sn0w)')
-            }
-        });
-
-        $(window).on('load', function () {
-            $('body').addClass('loaded');
-
-            $('a').each(function () {
-                const href = $(this).attr('href');
-                $(this).attr('title', 'https://gth.zip' + href);
-            });
-        })
-    </script>
+    <script src="scripts/snow.js"></script>
 </body>
 
 </html>

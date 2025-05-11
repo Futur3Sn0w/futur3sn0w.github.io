@@ -1,8 +1,12 @@
 @media (prefers-color-scheme: light) {
     :root {
         --root-back: #eee;
+        --root-back-contrast: #fff;
         --root-back-b: #ccc;
         --root-back-alpha: #ffffff77;
+        --root-border: #0000001a;
+
+        --btn-highlight: #2593e1;
 
         --root-text: black;
         --root-text-invert: white;
@@ -12,8 +16,12 @@
 @media (prefers-color-scheme: dark) {
     :root {
         --root-back: #222;
+        --root-back-contrast: #333;
         --root-back-b: #444;
         --root-back-alpha: #ffffff11;
+        --root-border: #ffffff1a;
+
+        --btn-highlight: #49acee;
 
         --root-text: white;
         --root-text-invert: black;
@@ -33,9 +41,14 @@
 p {
     margin: 0;
     padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 a {
     appearance: none;
     text-decoration: none;
+}
+
+img {
+    pointer-events: none !important;
 }
