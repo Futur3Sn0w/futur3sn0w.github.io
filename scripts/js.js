@@ -25,13 +25,13 @@ let musicRotationInterval;
 
 $(window).on('load', function () {
 
-    // If the user loaded a direct subpage, ensure the appropriate script is loaded manually
-    const path = window.location.pathname;
-    if (path.includes('/music')) {
-        $.getScript('/scripts/music.js');
-    } else if (path.includes('/futur3sn0w')) {
-        $.getScript('/scripts/fs.js');
-    }
+    // // If the user loaded a direct subpage, ensure the appropriate script is loaded manually
+    // const path = window.location.pathname;
+    // if (path.includes('/music')) {
+    //     $.getScript('/scripts/music.js');
+    // } else if (path.includes('/futur3sn0w')) {
+    //     $.getScript('/scripts/fs.js');
+    // }
 
     barba.init({
         debug: true,
@@ -73,10 +73,10 @@ $(window).on('load', function () {
 
         if (namespace === "music") {
             // reinitialize music page scripts
-            $.getScript('/scripts/music.js');
+            // $.getScript('/scripts/music.js');
         }
         else if (namespace === 'futur3sn0w') {
-            $.getScript('/scripts/fs.js');
+            // $.getScript('/scripts/fs.js');
         }
         else if (namespace === 'home') {
             rotateMusicPreview();
