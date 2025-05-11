@@ -135,6 +135,10 @@ function renderEntries(entries) {
         }).appendTo(prodInfo);
 
         entryList.append(div);
+
+        setTimeout(() => {
+            div.addClass('show');
+        }, 50 * entryList.find('.music-entry').length);
     });
 
     setTimeout(() => {

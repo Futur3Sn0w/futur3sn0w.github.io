@@ -277,10 +277,16 @@ main[data-barba-namespace="music"] {
 
                 background-color: transparent;
 
-                transition: .2s;
+                transition: .4s;
 
                 position: relative;
                 z-index: 10;
+
+                &:not(.show) {
+                    opacity: 0;
+                    transform: scale(1.1);
+                    filter: blur(10px);
+                }
 
                 &:hover {
                     & .albArt::after {
