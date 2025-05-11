@@ -30,6 +30,13 @@
         <p class="desc">Try again, or use the home button above.</p>
     </main>
 
+    <script>
+        $('.gthNav.home').on('click', () => {
+            if ($('body').has('main[data-barba-namespace="home"]')) {
+                window.location.reload();
+            }
+        })
+    </script>
 </body>
 
 </html>
