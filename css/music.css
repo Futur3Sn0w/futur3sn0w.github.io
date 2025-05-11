@@ -50,12 +50,11 @@ main[data-barba-namespace="music"] {
         background-color: var(--root-back-alpha);
 
         &.viewer {
-            height: fit-content;
-            width: 500px;
+            height: 500px;
+            width: fit-content;
 
             border-radius: 20px;
 
-            flex-direction: column;
             align-items: center;
             justify-content: center;
 
@@ -113,12 +112,12 @@ main[data-barba-namespace="music"] {
             }
 
             & .musicInfo {
-                width: 100%;
+                width: 500px;
                 height: 100%;
                 margin-bottom: auto;
 
-                padding: 10px;
-                padding-bottom: 50px;
+                padding: 15px 20px;
+                padding-left: 0;
 
                 display: flex;
                 flex-direction: column;
@@ -128,13 +127,10 @@ main[data-barba-namespace="music"] {
                 transition: .2s;
 
                 & .title {
-                    font-size: 36px;
-                    text-align: center;
+                    font-size: 34px;
 
                     display: flex;
                     flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
 
                     color: var(--dominant-text, var(--root-text));
 
@@ -149,7 +145,6 @@ main[data-barba-namespace="music"] {
                     font-size: 17px;
 
                     color: var(--dominant-text, var(--root-text));
-                    padding: 15px;
                     border-radius: 15px;
 
                     display: flex;
@@ -203,10 +198,10 @@ main[data-barba-namespace="music"] {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                width: 100%;
+                height: 100%;
                 aspect-ratio: 1/1;
 
-                padding: 40px;
+                padding: 30px;
 
                 & .displayImg {
                     box-shadow: 0 10px 20px #00000015;
@@ -218,9 +213,9 @@ main[data-barba-namespace="music"] {
 
                     border-radius: 15px;
 
-                    height: auto;
-                    width: 100%;
-                    max-width: 500px;
+                    width: auto;
+                    height: 100%;
+                    max-height: 500px;
                 }
             }
 
@@ -549,6 +544,49 @@ main[data-barba-namespace="music"] {
             width: 100% !important;
             height: 100% !important;
             border-radius: 0 !important;
+            flex-direction: column !important;
+        }
+
+        & .displayImgContainer {
+            width: 100% !important;
+            height: unset !important;
+
+            padding: 40px !important;
+        }
+
+        & .musicInfo {
+            width: 100% !important;
+            height: 100% !important;
+            padding-bottom: 50px !important;
+            align-items: center !important;
+
+            text-align: center !important;
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) and (min-width: 701px) {
+    main[data-barba-namespace="music"] {
+        & .viewer {
+            flex-direction: column !important;
+            width: 500px !important;
+            height: fit-content !important;
+
+            & .displayImgContainer {
+                width: 100% !important;
+                height: unset !important;
+
+                padding: 40px !important;
+            }
+
+            & .musicInfo {
+                width: 100% !important;
+                height: 100% !important;
+                padding-bottom: 50px !important;
+                align-items: center !important;
+
+                text-align: center !important;
+            }
         }
     }
 }
