@@ -247,7 +247,6 @@ main[data-barba-namespace="music"] {
         }
 
         &.navigator {
-            padding: 0px;
             gap: 5px;
             flex-direction: column;
             align-items: center;
