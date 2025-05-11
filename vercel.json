@@ -7,6 +7,38 @@
         {
             "source": "/modulab",
             "destination": "https://futur3sn0w.github.io/modulab"
+        },
+        {
+            "source": "/youie",
+            "destination": "https://futur3sn0w.github.io/youie"
+        },
+        {
+            "source": "/web31",
+            "destination": "https://futur3sn0w.github.io/web31"
+        },
+        {
+            "source": "/webFX",
+            "destination": "https://futur3sn0w.github.io/webFX"
+        },
+        {
+            "source": "/plusUI",
+            "destination": "https://futur3sn0w.github.io/plusUI"
+        },
+        {
+            "source": "/Windows10x",
+            "destination": "https://futur3sn0w.github.io/Windows10x"
+        },
+        {
+            "source": "/pinboard",
+            "destination": "https://futur3sn0w.github.io/pinboard"
+        },
+        {
+            "source": "/waitAMinute",
+            "destination": "https://futur3sn0w.github.io/waitAMinute"
+        },
+        {
+            "source": "/newtab11",
+            "destination": "https://futur3sn0w.github.io/newtab11"
         }
     ]
 }
