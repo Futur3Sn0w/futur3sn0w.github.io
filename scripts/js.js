@@ -73,10 +73,10 @@ $(window).on('load', function () {
 
         if (namespace === "music") {
             // reinitialize music page scripts
-            // $.getScript('/scripts/music.js');
+            $.getScript('/scripts/music.js');
         }
         else if (namespace === 'futur3sn0w') {
-            // $.getScript('/scripts/fs.js');
+            $.getScript('/scripts/fs.js');
         }
         else if (namespace === 'home') {
             rotateMusicPreview();
