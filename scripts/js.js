@@ -100,6 +100,10 @@ $(window).on('load', function () {
     $('.gthNav').on('click', function () {
         $('.subhead').text($(this).attr('title'));
     })
+
+    $('.outlink').on('click', function () {
+        $('.subhead').text($(this).attr('title'));
+    })
 })
 
 
