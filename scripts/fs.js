@@ -7,7 +7,7 @@ $.getJSON('../futur3sn0w/projects.json', function (data) {
             .attr('data-type', projectType) // Add project type as a data attribute
             .append(
                 $('<div class="projImg"></div>')
-                    .append($('<img>').attr('src', `imgs/${project.imageSrc}`).attr('alt', project.title)),
+                    .append($('<img>').attr('src', `../futur3sn0w/imgs/${project.imageSrc}`).attr('alt', project.title)),
                 $('<div class="projTitle"></div>').text(project.title),
                 $('<div class="projDesc"></div>').text(project.description).attr('data-lastUpdate', project.lastUpdate || '')
             )
@@ -71,7 +71,7 @@ $.getJSON('../futur3sn0w/projects.json', function (data) {
                         $(this).toggleClass('largeView');
                     })
                     .append($('<img>')
-                        .attr('src', `imgs/${imageSrc}`)
+                        .attr('src', `../futur3sn0w/imgs/${imageSrc}`)
                         .attr('alt', project.title)),
                 $('<div class="projInfo projElem"></div>').append(
                     $('<div class="projTitle projElem"></div>').text(project.title).attr('data-lastUpdate', project.lastUpdate || ''),
