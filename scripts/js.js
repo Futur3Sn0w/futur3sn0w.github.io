@@ -25,6 +25,12 @@ let musicRotationInterval;
 
 $(window).on('load', function () {
 
+    // Handle hash-based redirects (e.g. /#music -> /music)
+    const hashPath = window.location.hash.slice(1);
+    if (hashPath && !window.location.pathname.includes(hashPath)) {
+        history.replaceState(null, '', '/' + hashPath);
+    }
+
     barba.init({
         debug: true,
         transitions: [{
