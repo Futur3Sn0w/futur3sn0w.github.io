@@ -222,7 +222,7 @@ function renderTree() {
     }, 200);
 }
 
-$.getJSON('source.json', function (data) {
+$.getJSON('../music/source.json', function (data) {
     musicData = data;
     renderTree();
 });

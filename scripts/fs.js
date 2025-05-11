@@ -1,4 +1,4 @@
-$.getJSON('projects.json', function (data) {
+$.getJSON('../futur3sn0w/projects.json', function (data) {
     $('.back-btn').addClass('hide');
     function createProjectBox(project, projectType) {
         return $('<div class="projectBox"></div>')
