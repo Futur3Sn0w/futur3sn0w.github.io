@@ -25,13 +25,10 @@ let musicRotationInterval;
 
 $(window).on('load', function () {
 
-    // // If the user loaded a direct subpage, ensure the appropriate script is loaded manually
-    // const path = window.location.pathname;
-    // if (path.includes('/music')) {
-    //     $.getScript('/scripts/music.js');
-    // } else if (path.includes('/futur3sn0w')) {
-    //     $.getScript('/scripts/fs.js');
-    // }
+    $('.tabToggle .button').on('click', function () {
+        $('.tabToggle .button').not(this).removeClass('selected');
+        $(this).addClass('selected');
+    })
 
     barba.init({
         transitions: [{

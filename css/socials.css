@@ -4,15 +4,11 @@
     width: 450px;
     justify-content: center;
 
-    position: relative;
+    position: absolute;
     z-index: 100;
     gap: 5px;
 
-    margin: -20px 0;
-
     opacity: 0;
-    filter: blur(10px);
-    transition-delay: 0;
     transition: .4s;
 
     &.hide {

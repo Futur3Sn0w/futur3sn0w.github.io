@@ -20,7 +20,13 @@ body {
     & canvas {
         mask-image: linear-gradient(to bottom, var(--root-back), transparent);
 
-        position: relative;
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        width: 100vw;
+        height: 100vh;
+
         z-index: 1000;
         pointer-events: none;
 
@@ -59,8 +65,7 @@ body {
             transition-delay: .75s;
         }
 
-        .outLinks,
-        .subTiles {
+        .homePages {
             opacity: 1;
             filter: blur(0);
             transition-delay: 1.25s;
@@ -252,7 +257,7 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 50px;
+    gap: 20px;
 
     overflow: hidden;
 
@@ -278,6 +283,70 @@ header {
         will-change: transform;
     }
 
+    & .tabToggle {
+        display: flex;
+        gap: 5px;
+
+        background-color: var(--root-back-alpha);
+        border-radius: 100px;
+        padding: 5px;
+
+        & .button {
+            border-radius: 100px;
+
+            &.selected {
+                background-color: var(--btn-highlight);
+
+                p {
+                    color: white !important;
+                }
+            }
+        }
+    }
+
+    &:has(.socialsTabBtn.selected) {
+        .subTiles {
+            opacity: 1;
+            pointer-events: all;
+            transform: translateX(0);
+        }
+
+        .outLinks {
+            opacity: 0;
+            pointer-events: none;
+            transform: translateX(-50px);
+        }
+    }
+
+    &:has(.sitesTabBtn.selected) {
+        .outLinks {
+            opacity: 1;
+            pointer-events: all;
+            transform: translateX(0);
+        }
+
+        .subTiles {
+            opacity: 0;
+            pointer-events: none;
+            transform: translateX(50px);
+        }
+    }
+
+    & .homePages {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        overflow: hidden;
+
+        padding-bottom: 40px;
+
+        opacity: 0;
+        filter: blur(10px);
+        transition-delay: 0;
+        transition: .4s;
+    }
+
     & .outLinks {
         display: grid;
         grid-template-rows: auto auto;
@@ -287,9 +356,7 @@ header {
         position: relative;
         z-index: 1100;
 
-        opacity: 0;
-        filter: blur(10px);
-        transition-delay: 0;
+        opacity: 1;
         transition: .4s;
 
         & .outlink {

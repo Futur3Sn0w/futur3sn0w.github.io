@@ -1,0 +1,12 @@
+{
+    "rewrites": [
+        {
+            "source": "/flick",
+            "destination": "https://futur3sn0w.github.io/flick"
+        },
+        {
+            "source": "/modulab",
+            "destination": "https://futur3sn0w.github.io/modulab"
+        }
+    ]
+}
