@@ -2,14 +2,35 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GTH.zip - My Music</title>
+    <link rel="stylesheet" href="/css/css.css" />
+    <link rel="stylesheet" href="/css/globals.css" />
+    <link rel="stylesheet" href="/css/music.css" />
+    <link rel="stylesheet" href="/css/about.css" />
+    <link rel="stylesheet" href="/css/socials.css" />
+    <link rel="stylesheet" href="/css/fs.css" />
+
+    <script src="/external/jquery-3.7.1.js"></script>
+    <script src="/external/gsap.min.js"></script>
+    <script src="/external/barba.js"></script>
+    <script src="/scripts/js.js"></script>
 </head>
 
-<main data-barba="container" data-barba-namespace="music">
-    <div class="right navigator half"></div>
-    <div class="left viewer half"></div>
-</main>
+<body data-barba="wrapper">
+    <header class="gthHeader">
+        <button class="button back-btn" title="Back"><i class="fas fa-chevron-left"></i></button>
+        <a class="home button gthNav" title="Home" href="/"><i class="fa-solid fa-home"></i></a>
+        <p class="subhead">My Music</p>
+    </header>
+
+    <main data-barba="container" data-barba-namespace="music">
+        <div class="right navigator half"></div>
+        <div class="left viewer half"></div>
+    </main>
+
+    <script src="/scripts/snow.js"></script>
+</body>
 
 </html>
