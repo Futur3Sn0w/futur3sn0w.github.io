@@ -1,0 +1,17 @@
+[
+    {
+        "folder": "music",
+        "title": "My Music",
+        "namespace": "music"
+    },
+    {
+        "folder": "futur3sn0w",
+        "title": "My Brand",
+        "namespace": "futur3sn0w"
+    },
+    {
+        "folder": "about",
+        "title": "About Me",
+        "namespace": "about"
+    }
+]

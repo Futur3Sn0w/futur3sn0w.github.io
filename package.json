@@ -1,0 +1,24 @@
+{
+    "name": "gthzip",
+    "version": "1.0.0",
+    "description": "Personal site for GTH.zip",
+    "scripts": {
+        "build": "node scripts/generate.js",
+        "start": "npm run build && live-server --entry-file=index.html --port=3000"
+    },
+    "devDependencies": {
+        "live-server": "^1.2.2"
+    },
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Futur3Sn0w/futur3sn0w.github.io.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Futur3Sn0w/futur3sn0w.github.io/issues"
+    },
+    "homepage": "https://github.com/Futur3Sn0w/futur3sn0w.github.io#readme"
+}

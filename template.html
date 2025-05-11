@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Brand</title>
+    <title>{TITLE}</title>
     <link rel="stylesheet" href="/css/css.css" />
     <link rel="stylesheet" href="/css/globals.css" />
     <link rel="stylesheet" href="/css/music.css" />
@@ -23,31 +23,11 @@
     <header class="gthHeader">
         <button class="button back-btn" title="Back"><i class="fas fa-chevron-left"></i></button>
         <a class="home button gthNav" title="Home" href="/"><i class="fa-solid fa-home"></i></a>
-        <p class="subhead">My Brand</p>
+        <p class="subhead">{TITLE}</p>
     </header>
 
-    <main data-barba="container" data-barba-namespace="futur3sn0w">
-        <div class="content" id="content">
-
-    <div class="projects-header">
-        <div class="greeting">
-            <div>
-                <p>hey! i'm futur3sn0w</p>
-                <div class="hw">👋</div>
-            </div>
-        </div>
-
-        <div class="projVisor"></div>
-    </div>
-    <div class="subTileRows">
-        <div class="sectionController"></div>
-
-    </div>
-</div>
-
-<div class="headsup">
-    <p>©️ 2025 Futur3Sn0w</p>
-</div>
+    <main data-barba="container" data-barba-namespace="{NAMESPACE}">
+        {CONTENT}
     </main>
 
     <script src="/scripts/snow.js"></script>

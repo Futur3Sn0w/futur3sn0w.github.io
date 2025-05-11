@@ -34,7 +34,6 @@ $(window).on('load', function () {
     // }
 
     barba.init({
-        debug: true,
         transitions: [{
             name: 'crossfade',
             async leave(data) {

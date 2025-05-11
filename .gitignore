@@ -8,3 +8,15 @@
 ._.gitignore
 img/._logo_orb.png
 img/._me.jpg
+
+# Node dependencies
+node_modules/
+
+# Vercel build artifacts (optional, but safe)
+.vercel/
+
+# Logs and system files
+npm-debug.log*
+.DS_Store
+about/index.html
+futur3sn0w/index.html
