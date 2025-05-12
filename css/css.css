@@ -276,7 +276,7 @@ header {
         align-items: flex-end;
         justify-content: center;
         flex-shrink: 0;
-        height: 25vh;
+        height: 20vh;
 
         transition: .4s;
 
@@ -323,43 +323,46 @@ header {
     &:has(.socialsTabBtn.selected) {
         .subTiles {
             opacity: 1;
+
             pointer-events: all;
-            transform: translateX(0);
+            /* transform: translateX(0); */
         }
 
         .outLinks {
             opacity: 0;
+            margin-left: -606px;
+
             pointer-events: none;
-            transform: translateX(-50px);
+            /* transform: translateX(-50px); */
         }
     }
 
     &:has(.sitesTabBtn.selected) {
         .outLinks {
             opacity: 1;
+
             pointer-events: all;
-            transform: translateX(0);
+            /* transform: translateX(0); */
         }
 
         .subTiles {
             opacity: 0;
+
             pointer-events: none;
-            transform: translateX(50px);
+            /* transform: translateX(50px); */
         }
     }
 
     & .homePages {
         display: flex;
-        flex-direction: column;
         align-items: center;
+        justify-content: flex-start;
 
         overflow: hidden;
-        height: 100%;
-        width: 50%;
+        height: fit-content;
+        max-height: 100%;
+        width: 606px;
         min-width: 300px;
-
-        padding: 40px 50px;
-        padding-top: 20px;
 
         opacity: 0;
         filter: blur(10px);
@@ -373,11 +376,18 @@ header {
         justify-content: center;
         flex-wrap: wrap;
         gap: 45px 10px;
+
+        width: 606px;
+        height: fit-content;
         max-height: 100%;
         padding-bottom: 45px;
+        margin-bottom: auto;
+
         overflow-y: scroll;
 
-        position: absolute;
+        flex-shrink: 0;
+
+        position: relative;
         z-index: 1100;
 
         opacity: 1;
