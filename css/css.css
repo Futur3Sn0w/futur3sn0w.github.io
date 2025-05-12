@@ -272,9 +272,14 @@ header {
         background-clip: text;
         -webkit-background-clip: text;
 
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        flex-shrink: 0;
+        height: 25vh;
+
         transition: .4s;
 
-        margin-top: -90px;
         position: relative;
         z-index: 1000;
 
@@ -293,6 +298,17 @@ header {
 
         & .button {
             border-radius: 100px;
+
+            &:not(:hover):not(.selected) {
+                background-color: transparent;
+
+                box-shadow: none;
+
+                &::before,
+                &::after {
+                    opacity: 0;
+                }
+            }
 
             &.selected {
                 background-color: var(--btn-highlight);
@@ -338,8 +354,12 @@ header {
         align-items: center;
 
         overflow: hidden;
+        height: 100%;
+        width: 50%;
+        min-width: 300px;
 
-        padding-bottom: 40px;
+        padding: 40px 50px;
+        padding-top: 20px;
 
         opacity: 0;
         filter: blur(10px);
@@ -348,12 +368,16 @@ header {
     }
 
     & .outLinks {
-        display: grid;
-        grid-template-rows: auto auto;
-        grid-template-columns: auto auto;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-wrap: wrap;
         gap: 45px 10px;
+        max-height: 100%;
+        padding-bottom: 45px;
+        overflow-y: scroll;
 
-        position: relative;
+        position: absolute;
         z-index: 1100;
 
         opacity: 1;
@@ -392,9 +416,9 @@ header {
                 width: 310px;
             }
 
-            &:nth-of-type(2) {
+            /* &:nth-of-type(2) {
                 margin-left: -160px;
-            }
+            } */
 
             &:hover {
                 box-shadow: 0 10px 15px #00000033;
@@ -678,5 +702,16 @@ button {
         opacity: 0;
         filter: blur(10px);
         background-position: -100% 0;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .outlink {
+        width: 310px !important;
+
+        img {
+            object-fit: cover !important;
+            object-position: center !important;
+        }
     }
 }

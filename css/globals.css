@@ -10,6 +10,8 @@
 
         --root-text: black;
         --root-text-invert: white;
+
+        --font-smoothing: subpixel-antialiased;
     }
 }
 
@@ -25,6 +27,8 @@
 
         --root-text: white;
         --root-text-invert: black;
+
+        --font-smoothing: antialiased;
     }
 }
 
@@ -36,6 +40,8 @@
     color: var(--root-text);
 
     user-select: none;
+
+    -webkit-font-smoothing: var(--font-smoothing);
 }
 
 p {
