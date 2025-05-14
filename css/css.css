@@ -62,19 +62,32 @@ body {
         .container {
             opacity: 1;
             filter: blur(0);
-            transition-delay: .75s;
+            transition-delay: .25s;
         }
 
-        .homePages {
+        .head {
             opacity: 1;
             filter: blur(0);
-            transition-delay: 1.25s;
+            transition-delay: .5s;
+        }
+
+        .homePages,
+        .tab-buttons {
+            opacity: 1;
+            filter: blur(0);
+            transition-delay: 1.5s;
         }
 
         &::before {
             opacity: 0;
 
             transition-delay: 0;
+        }
+    }
+
+    &:not(:has(.tab-buttons)) {
+        .homePages {
+            opacity: 0;
         }
     }
 
@@ -278,6 +291,9 @@ header {
         flex-shrink: 0;
         height: 20vh;
 
+        opacity: 0;
+        filter: blur(10px);
+        transition-delay: 0;
         transition: .4s;
 
         position: relative;
@@ -288,39 +304,161 @@ header {
         will-change: transform;
     }
 
-    & .tabToggle {
+    & .tab-buttons {
         display: flex;
         gap: 5px;
+        flex-shrink: 0;
 
-        background-color: var(--root-back-alpha);
-        border-radius: 100px;
+        background-color: var(--root-back-contrast);
+        /* box-shadow: 0 10px 20px #00000015; */
+        --radius: 22px;
+        border-radius: 22px 22px 0 0;
+
+        width: fit-content;
+        height: 50px;
         padding: 5px;
 
-        & .button {
-            border-radius: 100px;
+        position: sticky;
+        top: 10px;
+        margin: 0 auto;
+        z-index: 100;
 
-            &:not(:hover):not(.selected) {
-                background-color: transparent;
+        opacity: 0;
+        filter: blur(10px);
+        transition-delay: 0;
+        transition: .4s;
 
+        &::before,
+        &::after {
+            content: '';
+
+            width: var(--radius);
+            height: 44px;
+
+            position: absolute;
+            bottom: 0;
+
+            transition: .25s;
+        }
+
+        &::before {
+            left: calc((var(--radius) - 1px) * -1);
+            border-radius: 0 0 var(--radius) 0;
+
+            box-shadow: 3px 9px 0 1px var(--root-back-contrast);
+        }
+
+        &::after {
+            right: calc((var(--radius) - 1px) * -1);
+
+            border-radius: 0 0 0 var(--radius);
+            box-shadow: -3px 9px 0 1px var(--root-back-contrast);
+        }
+
+        &:not(:hover) .pill-highlight {
+            opacity: 0;
+            width: 0px;
+            transform: translateX(50px);
+        }
+
+        & .pill-highlight {
+            position: absolute;
+            top: 5px;
+            left: 0;
+            width: 100px;
+            height: 40px;
+            background-color: var(--root-back-b);
+            border-radius: 50px;
+            opacity: 1;
+            pointer-events: none;
+            transition: .4s;
+            z-index: 1;
+        }
+
+        & .tab-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+
+            background-color: transparent;
+
+            width: 100px;
+            height: 100%;
+
+            border-radius: 25px;
+            font-size: 20px;
+            font-weight: bold;
+
+            padding: 5px 10px;
+
+            position: relative;
+            overflow: hidden;
+            z-index: 2;
+
+            transition: .2s;
+
+            &:hover,
+            &.selected {
+                p {
+                    font-weight: bold;
+                }
+            }
+
+            & p {
+                transition: .2s;
+                position: relative;
+                z-index: 10;
+                font-weight: normal;
+
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            &::before {
+                content: '';
+
+                width: 100%;
+                height: 100%;
+
+                background: linear-gradient(to bottom, #3FC6FF, #4291C5);
+                border: none !important;
+
+                position: absolute;
+                left: 0;
+                z-index: 0;
+
+                transition: .15s;
+                opacity: 0;
+            }
+
+            &:not(.selected) {
                 box-shadow: none;
 
-                &::before,
                 &::after {
                     opacity: 0;
                 }
             }
 
             &.selected {
-                background-color: var(--btn-highlight);
+                background-color: var(--root-back);
+                border-radius: 18px;
 
-                p {
+                &::after,
+                & p {
                     color: white !important;
+                }
+
+                &::before {
+                    opacity: 1;
+                    box-shadow: inset 0 5px 15px #00000011;
                 }
             }
         }
     }
 
-    &:has(.socialsTabBtn.selected) {
+    &:has(.tab-btn[for="socials"].selected) {
         .subTiles {
             opacity: 1;
 
@@ -330,14 +468,14 @@ header {
 
         .outLinks {
             opacity: 0;
-            margin-left: -606px;
+            margin-left: -100%;
 
             pointer-events: none;
             /* transform: translateX(-50px); */
         }
     }
 
-    &:has(.sitesTabBtn.selected) {
+    &:has(.tab-btn[for="sites"].selected) {
         .outLinks {
             opacity: 1;
 
@@ -361,8 +499,14 @@ header {
         overflow: hidden;
         height: fit-content;
         max-height: 100%;
-        width: 606px;
+        width: 556px;
         min-width: 300px;
+
+        margin-top: -20px;
+        padding-top: 20px;
+
+        background-color: var(--root-back-contrast);
+        border-radius: 26px;
 
         opacity: 0;
         filter: blur(10px);
@@ -377,11 +521,11 @@ header {
         flex-wrap: wrap;
         gap: 45px 10px;
 
-        width: 606px;
+        width: 100%;
         height: fit-content;
         max-height: 100%;
-        padding-bottom: 45px;
-        margin-bottom: auto;
+        padding-top: 20px;
+        padding-bottom: 55px;
 
         overflow-y: scroll;
 

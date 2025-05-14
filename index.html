@@ -4,13 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GTH.zip</title>
+    <title>GTH.zip - Home</title>
     <link rel="stylesheet" href="css/css.css">
     <link rel="stylesheet" href="css/globals.css">
     <link rel="stylesheet" href="css/music.css">
     <link rel="stylesheet" href="css/about.css">
     <link rel="stylesheet" href="css/socials.css">
     <link rel="stylesheet" href="css/fs.css">
+
+    <script type="module">
+        import { renderSquircle } from 'https://cdn.jsdelivr.net/npm/corner-smoothing@0.1.5/dist/esm/index.js';
+        window.renderSquircle = renderSquircle;
+    </script>
+
     <script src="external/jquery-3.7.1.js"></script>
 
     <script src="external/a1fc6f0f3a.js"></script>
@@ -32,15 +38,7 @@
     <main class="container" data-barba="container" data-barba-namespace="home">
         <p class="head">GTH.zip</p>
 
-        <div class="tabToggle">
-            <div class="button sitesTabBtn selected" title="My Webpages">
-                <p>sites</p>
-            </div>
-            <div class="button socialsTabBtn" title="Social Media">
-                <p>socials</p>
-            </div>
-        </div>
-
+        <div class="tab-buttons"></div>
         <div class="homePages">
             <div class="outLinks page">
                 <a href="/futur3sn0w" class="outlink gthNav visit-fs" title="My Brand">

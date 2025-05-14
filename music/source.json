@@ -3,7 +3,7 @@
     "name": "Bounce",
     "subtitle": "Songs and mixes",
     "iconClass": "fa-play",
-    "tracks": [
+    "personal": [
         {
             "id": "harmonicbounce",
             "format": "jpeg",
@@ -20,6 +20,7 @@
             "subtitle": "",
             "lastUpdate": "June 2020",
             "dataOpen": "https://soundcloud.com/futur3sn0w/be-together-session-mix",
+            "embed": "<iframe width=\"100%\" height=\"100%\" scrolling=\"no\" frameborder=\"no\" allow=\"autoplay\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/839989837&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true\"></iframe><div style=\"font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;\"><a href=\"https://soundcloud.com/futur3sn0w\" title=\"Futur3Sn0w\" target=\"_blank\" style=\"color: #cccccc; text-decoration: none;\">Futur3Sn0w</a> · <a href=\"https://soundcloud.com/futur3sn0w/be-together-session-mix\" title=\"Be Together (Session Mix)\" target=\"_blank\" style=\"color: #cccccc; text-decoration: none;\">Be Together (Session Mix)</a></div>",
             "description": "Dedicated to Ari 😊"
         },
         {
@@ -29,7 +30,29 @@
             "subtitle": "",
             "lastUpdate": "September 2019",
             "dataOpen": "https://www.youtube.com/playlist?list=OLAK5uy_mUPnf6khcLu6wmF9EmzSD2h7FpRpOpkXQ",
-            "description": "My debut, 4 track EP including 'Night Drive', 'After Party', and 'Aurorian Storm'."
+            "description": "My debut, 4 track EP including 'Night Drive', 'After Party', and 'Aurorian Storm'.",
+            "tracks": [
+                {
+                    "title": "After Party",
+                    "dataOpen": "",
+                    "embed": "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/1HiVrJaHc_0?si=ryOSRwbNRUNcdyZs\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+                },
+                {
+                    "title": "Aurorian Storm",
+                    "dataOpen": "",
+                    "embed": "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/DkMdG94Y7Ew?si=BMJKUP_HmqXU1KuX\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+                },
+                {
+                    "title": "Night Drive (Demo)",
+                    "dataOpen": "",
+                    "embed": "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/pz9ky2BSTSU?si=QIYq78EyhaLU2uYN\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+                },
+                {
+                    "title": "Night Drive",
+                    "dataOpen": "",
+                    "embed": "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/u30tAsmTvOA?si=NfXKZ_iRPo8GIHwX\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+                }
+            ]
         },
         {
             "id": "onemorething",
@@ -38,6 +61,7 @@
             "subtitle": "",
             "lastUpdate": "September 2019",
             "dataOpen": "https://soundcloud.com/futur3sn0w/one-more-thing",
+            "embed": "<iframe width=\"100%\" height=\"100%\" scrolling=\"no\" frameborder=\"no\" allow=\"autoplay\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/677726958&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true\"></iframe><div style=\"font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;\"><a href=\"https://soundcloud.com/futur3sn0w\" title=\"Futur3Sn0w\" target=\"_blank\" style=\"color: #cccccc; text-decoration: none;\">Futur3Sn0w</a> · <a href=\"https://soundcloud.com/futur3sn0w/one-more-thing\" title=\"One More Thing - An Homage to Steve Jobs\" target=\"_blank\" style=\"color: #cccccc; text-decoration: none;\">One More Thing - An Homage to Steve Jobs</a></div>",
             "description": "Created as a tribute to the late Steve Jobs, an incredible visionary and innovator."
         }
     ],

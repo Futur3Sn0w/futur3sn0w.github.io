@@ -7,7 +7,7 @@
         "start": "npm run build && live-server --entry-file=index.html --port=3000"
     },
     "devDependencies": {
-        "live-server": "^1.2.2"
+        "live-server": "^1.2.0"
     },
     "main": "index.js",
     "repository": {
@@ -20,5 +20,9 @@
     "bugs": {
         "url": "https://github.com/Futur3Sn0w/futur3sn0w.github.io/issues"
     },
-    "homepage": "https://github.com/Futur3Sn0w/futur3sn0w.github.io#readme"
+    "homepage": "https://github.com/Futur3Sn0w/futur3sn0w.github.io#readme",
+    "dependencies": {
+        "corner-smoothing": "^0.1.5",
+        "figma-squircle": "^1.1.0"
+    }
 }

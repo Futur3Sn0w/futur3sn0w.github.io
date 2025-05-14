@@ -1,19 +1,23 @@
 .subTiles {
     display: flex !important;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: space-evenly;
 
-    width: 606px;
+    width: 556px;
     height: max-content;
     max-height: 100%;
     overflow-y: scroll;
+    margin-bottom: auto;
+    flex-shrink: 0;
 
-    padding: 0 100px;
+    box-sizing: border-box;
+    padding: 40px;
 
     position: relative;
     flex-shrink: 0;
     z-index: 100;
-    gap: 5px;
+    gap: 45px 25px;
 
     opacity: 0;
     transition: .4s;
@@ -26,18 +30,18 @@
 
     .tile {
         position: relative;
-        height: 40px;
-        width: 100%;
+        height: 60px;
+        width: 60px;
         flex-shrink: 0;
         gap: 8px;
-        padding: 5px 10px !important;
+        padding: 5px 15px !important;
 
         display: flex;
         align-items: center;
-        overflow: hidden;
+        justify-content: center;
 
         background-color: var(--elem-transp);
-        border-radius: 60px;
+        border-radius: 17px;
         text-decoration: none;
         color: white;
         box-sizing: border-box;
@@ -45,18 +49,14 @@
         transition: .35s;
 
         &:hover {
-            border-radius: 10px;
+            display: flex;
 
             &::after {
-                color: white;
+                opacity: .5;
             }
 
-            i {
-                /* font-size: 60px; */
-                /* width: 22px; */
-                opacity: .6;
-                color: white;
-                transform: scale(1.25);
+            &>p {
+                font-weight: bold;
             }
         }
 
@@ -65,30 +65,72 @@
             transform: scale(.95) !important;
         }
 
-        &::after {
-            content: attr(data-tileName);
-            font-size: 14px;
-            font-weight: 600;
-            flex-shrink: 0;
+        &::before {
+            content: '';
 
-            position: relative;
+            position: absolute;
+            z-index: 5;
+
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+
+            mix-blend-mode: overlay;
+            background: linear-gradient(to bottom, transparent, black);
+            opacity: .4;
+        }
+
+        &::after {
+            content: '';
+
+            position: absolute;
+            z-index: 5;
+
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+
+            transition: .2s;
+            mix-blend-mode: screen;
+            background: radial-gradient(circle farthest-corner at center -20px, white, transparent);
+            opacity: .25;
+        }
+
+        &>p {
+            font-size: 13px;
+
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            transition: .2s;
+
+            position: absolute;
+            bottom: -20px;
             z-index: 2;
 
             color: var(--root-text);
+
+            &::after {
+                color: transparent;
+                position: absolute;
+                transition: .2s;
+            }
         }
 
         i {
-            font-size: 40px;
-            width: min-content;
-            height: fit-content;
+            font-size: 32px;
 
-            color: var(--root-text);
-            opacity: .25;
+            &::before {
+                color: white;
+            }
 
-            z-index: 0;
-            position: absolute;
-            bottom: -30%;
-            left: 0;
+            z-index: 10;
+            position: relative;
+            /* bottom: -27%; */
+            /* right: 0; */
 
             transition: .3s;
         }
@@ -147,58 +189,66 @@
     width: 70px;
 }
 
-.sbTwitter::after {
-    width: 100%;
-}
-
-.sbTwitter:hover {
+.sbTwitter {
     background-color: #1f1f1f !important;
 }
 
-.sbTwitter:hover::after {
-    content: '(Not X)';
+.sbTwitter:hover {
+    p {
+        color: transparent;
+
+        &::after {
+            content: '(Not X)';
+            color: var(--root-text);
+        }
+    }
 }
 
-.sbDiscord:hover {
+.sbDiscord {
     background-color: #5865F2 !important;
 }
 
-.sbDeviant:hover {
+.sbDeviant {
     background-color: #2a2a2a !important;
+
+    & i::before {
+        color: #01E49A !important;
+        filter: none !important;
+    }
 }
 
-.sbReddit:hover {
+.sbReddit {
     background-color: #FF4501 !important;
 }
 
-.sbDribbble:hover {
+.sbDribbble {
     background-color: #EA4C89 !important;
 }
 
-.sbYouTube:hover {
+.sbYouTube {
     background-color: #ff0000 !important;
 }
 
-.sbMedium:hover {
+.sbMedium {
     background-color: #2a2a2a !important;
 }
 
-.sbGitHub:hover {
+.sbGitHub {
     background-color: #2a2a2a !important;
 }
 
-.sbTwitch:hover {
+.sbTwitch {
     background-color: #9146FF !important;
 }
 
-.sbMastodon:hover {
+.sbMastodon {
     background-color: #563ACC !important;
 }
 
-.sbBluesky:hover {
+.sbBluesky {
     background-color: #2F84F6 !important;
 }
 
-.sbThreads:hover {
+.sbThreads {
     background-color: #2a2a2a !important;
 }

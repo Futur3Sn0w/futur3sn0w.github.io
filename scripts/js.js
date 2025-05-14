@@ -1,3 +1,5 @@
+// import { renderSquircle } from 'corner-smoothing';
+
 $(function () {
     const isLocal =
         location.hostname === "localhost" ||
@@ -24,11 +26,7 @@ $(function () {
 let musicRotationInterval;
 
 $(window).on('load', function () {
-
-    $('.tabToggle .button').on('click', function () {
-        $('.tabToggle .button').not(this).removeClass('selected');
-        $(this).addClass('selected');
-    })
+    loadTabs();
 
     barba.init({
         transitions: [{
@@ -69,38 +67,94 @@ $(window).on('load', function () {
 
         if (namespace === "music") {
             // reinitialize music page scripts
+            $('.gthHeader .subHead').text('my music');
             $.getScript('/scripts/music.js');
         }
         else if (namespace === 'futur3sn0w') {
+            $('.gthHeader .subHead').text('my brand');
             $.getScript('/scripts/fs.js');
         }
+        else if (namespace === 'about') {
+            $('.gthHeader .subHead').text('about me');
+        }
         else if (namespace === 'home') {
+            $('.gthHeader .subHead').text('home');
             rotateMusicPreview();
-
-            $.getJSON('../futur3sn0w/socials.json', function (data) {
-                data.forEach(function (item) {
-                    const $a = $('<a>', {
-                        href: item.href,
-                        class: item.class,
-                        'data-tileName': item.tileName,
-                        html: $('<i>', { class: item.icon })
-                    });
-                    $('#socialList').append($a);
-                });
-            });
+            loadSocials();
+            loadTabs();
         }
     });
 
     $('body').addClass('loaded');
 
-    $('.gthNav').on('click', function () {
+    $(document).on('click', '.gthNav', function () {
         $('.subhead').text($(this).attr('title'));
     })
 
-    $('.outlink').on('click', function () {
+    $(document).on('click', '.outlink', function () {
         $('.subhead').text($(this).attr('title'));
     })
 })
+
+function loadSocials() {
+    $.getJSON('../futur3sn0w/socials.json', function (data) {
+        data.forEach(function (item) {
+            const $a = $('<a>', {
+                href: item.href,
+                class: "tile " + item.class,
+                'data-tileName': item.tileName,
+                html: $('<i>', { class: item.icon })
+            }).append($('<p>').text(item.tileName));
+            $('#socialList').append($a);
+            renderSquircle({
+                element: $a[0],
+                cornerRadius: 17,
+                cornerSmoothing: 1,
+                preserveSmoothing: true
+            });
+        });
+    });
+}
+
+function loadTabs() {
+    if ($('.tab-btn').length === 0) {
+        const tabs = ['sites', 'socials'];
+        const tabButtons = $('.tab-buttons');
+        const pill = $('<div>', { class: 'pill-highlight' }).appendTo(tabButtons);
+        tabs.forEach(tab => {
+            let thisButton = $('<button></button>', {
+                html: `<p>${tab}</p>`,
+                class: 'tab-btn button',
+                for: tab,
+                click: () => {
+                    $('.tab-btn').not(thisButton).removeClass('selected');
+                    thisButton.addClass('selected');
+
+                    const selected = tabButtons.find('.tab-btn.selected');
+                    const offset = selected.position();
+                    pill.css({
+                        left: offset.left
+                    });
+                },
+                mouseover: () => {
+                    const hovered = tabButtons.find('.tab-btn:hover');
+                    const offsetH = hovered.position();
+                    pill.css({
+                        left: offsetH.left
+                    });
+                },
+                mouseout: () => {
+                    const selected = tabButtons.find('.tab-btn.selected');
+                    const offsetH = selected.position();
+                    pill.css({
+                        left: offsetH.left
+                    });
+                }
+            }).appendTo(tabButtons);
+        });
+        $('.tab-btn').first().addClass('selected');
+    }
+}
 
 
 // Rotating preview for main page music image

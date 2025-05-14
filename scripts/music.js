@@ -46,8 +46,9 @@ function renderEntries(entries) {
                     text: entry.lastUpdate,
                     class: "date"
                 })).appendTo(musicInfo);
-                $('<div>').addClass('displayImgContainer').append($('<img>', { class: 'albImg displayImg' })).appendTo(leftContainer);
-                $('<img>', { class: 'albImg backImg' }).appendTo(leftContainer);
+                let displayImgContainer = $('<div>').addClass('displayImgContainer');
+                let displayImg = $('<img>', { class: 'albImg displayImg' }).appendTo(displayImgContainer);
+                let backImg = $('<img>', { class: 'albImg backImg' }).appendTo(leftContainer);
 
                 $('<i>', {
                     class: 'fas fa-close closeBtn',
@@ -56,7 +57,8 @@ function renderEntries(entries) {
                     }
                 }).appendTo(leftContainer);
                 if (imageUrl) {
-                    $('.albImg').attr('src', imageUrl);
+                    displayImg.attr('src', imageUrl);
+                    backImg.attr('src', imageUrl);
 
                     // Load the image and get dominant color
                     const img = new Image();
@@ -90,6 +92,34 @@ function renderEntries(entries) {
                         $('.left.half').css('--dominant-text', contrastText);
                     };
                 }
+                if (entry.embed) {
+                    $('<div>', {
+                        class: 'embedWrapper',
+                        html: entry.embed
+                    }).appendTo(displayImgContainer);
+                }
+
+                if (entry.tracks && Array.isArray(entry.tracks)) {
+                    const trackList = $('<ol>', { class: 'track-list' });
+                    entry.tracks.forEach((track, i) => {
+                        const li = $('<li>', {
+                            class: track.embed ? 'clickable' : 'disabled',
+                            click: function () {
+                                trackList.find('li').removeClass('selected');
+                                displayImgContainer.find('.embedWrapper').remove();
+                                if (!track.embed) return;
+                                li.addClass('selected');
+                                $('<div>', {
+                                    class: 'embedWrapper',
+                                    html: track.embed
+                                }).appendTo(displayImgContainer);
+                            }
+                        }).append($(`<p>${track.title}</p>`));
+                        trackList.append(li);
+                    });
+                    musicInfo.append(trackList);
+                }
+
                 if (entry.dataOpen) {
                     $('<button></button>', {
                         click: function () {
@@ -100,6 +130,7 @@ function renderEntries(entries) {
                     }).appendTo(musicInfo);
                 }
 
+                displayImgContainer.appendTo(leftContainer)
                 musicInfo.appendTo(leftContainer);
                 leftContainer.removeClass('tempHide')
             }, 200);
@@ -151,7 +182,7 @@ function renderTree() {
 
     setTimeout(() => {
         if ($('.filter-buttons').length === 0) {
-            const filters = ['all', 'tracks', 'mixes', 'sets'];
+            const filters = ['all', 'personal', 'mixes', 'sets'];
             const filterWrapper = $('<div>').addClass('filter-buttons').appendTo(container);
             const pill = $('<div>', { class: 'pill-highlight' }).appendTo(filterWrapper);
             filters.forEach(filter => {
@@ -200,7 +231,7 @@ function renderTree() {
         let allEntries = [];
         if (musicData) {
             if (currentPath.length === 0 || currentPath[0] === 'all') {
-                allEntries = [...(musicData.tracks || []), ...(musicData.mixes || []), ...(musicData.sets || [])];
+                allEntries = [...(musicData.personal || []), ...(musicData.mixes || []), ...(musicData.sets || [])];
             } else {
                 allEntries = [...(musicData[currentPath[0]] || [])];
             }
