@@ -1,11 +1,24 @@
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    touch-action: none;
+    -ms-touch-action: none;
+}
+
 body {
     margin: 0;
     padding: 0;
 
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
 
+    position: relative;
     overflow: hidden;
+    touch-action: none;
+    -ms-touch-action: none;
 
     background-color: var(--root-back);
     color: var(--root-text);
@@ -24,8 +37,8 @@ body {
         top: 0;
         left: 0;
 
-        width: 100vw;
-        height: 100vh;
+        width: 100%;
+        height: 100%;
 
         z-index: 1000;
         pointer-events: none;
@@ -264,6 +277,7 @@ header {
     height: calc(100% - 90px);
 
     position: fixed;
+    overflow: hidden;
     bottom: 0;
 
     transition: .4s !important;
