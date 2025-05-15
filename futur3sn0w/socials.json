@@ -1,60 +1,60 @@
 [
     {
-        "icon": "fa-brands fa-twitter",
+        "icon": "fab fa-twitter",
         "class": "sbTwitter",
         "tileName": "Twitter",
         "href": "https://www.twitter.com/futur3sn0w"
     },
     {
-        "icon": "fa-brands fa-deviantart",
+        "icon": "fab fa-deviantart",
         "class": "sbDeviant",
         "tileName": "DeviantArt",
         "href": "https://www.deviantart.com/Futur3Sn0w"
     },
     {
-        "icon": "fa-brands fa-mastodon",
+        "icon": "fab fa-mastodon",
         "class": "sbMastodon",
         "tileName": "Mastodon",
         "href": "https://vmst.io/@futur3sn0w"
     },
     {
-        "icon": "fa-brands fa-dribbble",
+        "icon": "fab fa-dribbble",
         "class": "sbDribbble",
         "tileName": "Dribbble",
         "href": "https://www.dribbble.com/Futur3Sn0w"
     },
     {
-        "icon": "fa-brands fa-reddit",
+        "icon": "fab fa-reddit",
         "class": "sbReddit",
         "tileName": "Reddit",
         "href": "https://www.reddit.com/u/Futur3Sn0w"
     },
     {
-        "icon": "fa-solid fa-cloud",
+        "icon": "fab fa-bluesky",
         "class": "sbBluesky",
         "tileName": "Bluesky",
         "href": "https://bsky.app/profile/futur3sn0w.bsky.social"
     },
     {
-        "icon": "fa-brands fa-medium",
+        "icon": "fab fa-medium",
         "class": "sbMedium",
         "tileName": "Medium",
         "href": "https://futur3sn0w.medium.com"
     },
     {
-        "icon": "fa-brands fa-twitch",
+        "icon": "fab fa-twitch",
         "class": "sbTwitch",
         "tileName": "Twitch",
         "href": "https://www.twitch.tv/futur3sn0w"
     },
     {
-        "icon": "fa-brands fa-youtube",
+        "icon": "fab fa-youtube",
         "class": "sbYouTube",
         "tileName": "YouTube",
         "href": "https://www.youtube.com/channel/UC98jW-uSef3Ql-y1mD6y2tQ"
     },
     {
-        "icon": "fa-brands fa-threads",
+        "icon": "fab fa-threads",
         "class": "sbThreads",
         "tileName": "Threads",
         "href": "https://www.threads.net/@futur3sn0w"

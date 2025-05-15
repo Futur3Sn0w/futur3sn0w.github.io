@@ -20,9 +20,5 @@
     "bugs": {
         "url": "https://github.com/Futur3Sn0w/futur3sn0w.github.io/issues"
     },
-    "homepage": "https://github.com/Futur3Sn0w/futur3sn0w.github.io#readme",
-    "dependencies": {
-        "corner-smoothing": "^0.1.5",
-        "figma-squircle": "^1.1.0"
-    }
+    "homepage": "https://github.com/Futur3Sn0w/futur3sn0w.github.io#readme"
 }

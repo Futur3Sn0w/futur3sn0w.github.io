@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: space-evenly;
 
-    width: 556px;
+    width: 100%;
     height: max-content;
     max-height: 100%;
     overflow-y: scroll;
@@ -52,7 +52,11 @@
             display: flex;
 
             &::after {
-                opacity: .5;
+                opacity: .75;
+            }
+
+            &>i {
+                font-size: 36px;
             }
 
             &>p {
@@ -77,7 +81,7 @@
 
             mix-blend-mode: overlay;
             background: linear-gradient(to bottom, transparent, black);
-            opacity: .4;
+            opacity: .45;
         }
 
         &::after {
@@ -92,8 +96,9 @@
 
             transition: .2s;
             mix-blend-mode: screen;
-            background: radial-gradient(circle farthest-corner at center -20px, white, transparent);
-            opacity: .25;
+            background: radial-gradient(circle farthest-corner at center -10px, white, transparent);
+            background-size: 110%;
+            opacity: .33;
         }
 
         &>p {

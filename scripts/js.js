@@ -28,34 +28,108 @@ let musicRotationInterval;
 $(window).on('load', function () {
     loadTabs();
 
-    barba.init({
-        transitions: [{
-            name: 'crossfade',
-            async leave(data) {
-                // Start fading out the old container
-                await gsap.to(data.current.container, {
+    $(document).on('click', '.outlink', function (e) {
+        e.preventDefault();
+        $('.subhead').text($(this).attr('title'));
+        const $tile = $(this);
+
+        // Clone the tile
+        const $clone = $tile.clone().appendTo('body');
+        $tile.css('opacity', 0);
+        const rect = $tile[0].getBoundingClientRect();
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const scrollLeft = window.scrollX || document.documentElement.scrollLeft;
+
+        $clone.css({
+            position: 'absolute',
+            top: rect.top + scrollTop,
+            left: rect.left + scrollLeft,
+            width: rect.width,
+            height: rect.height,
+            overflow: "hidden",
+            margin: 0,
+            zIndex: 10000,
+            transformOrigin: 'center center',
+            perspective: '1000px',
+            borderColor: "none",
+            "pointer-events": "none"
+        });
+
+        // Animate the clone
+        gsap.to($clone, {
+            duration: 1,
+            rotationY: 360,
+            width: window.innerWidth,
+            height: window.innerHeight,
+            top: 0,
+            left: 0,
+            ease: 'power4.inOut',
+            onStart: () => {
+                // Animate internal element(s)
+                gsap.to($clone.find('p'), {
                     opacity: 0,
                     duration: 0.5,
-                    ease: "power1.out"
-                });
-            },
-            enter(data) {
-                // Instantly set new container opacity to 0
-                gsap.set(data.next.container, {
-                    opacity: 0
+                    ease: 'power1.out'
                 });
 
-                // Then fade it in
-                return gsap.to(data.next.container, {
-                    opacity: 1,
+                gsap.to($clone.find('img'), {
+                    opacity: 0,
+                    filter: "blur(40px)",
                     duration: 0.5,
-                    ease: "power1.out"
+                    ease: 'power1.out'
+                });
+
+                gsap.to($clone.find('i'), {
+                    opacity: 1,
+                    fontSize: "100px",
+                    color: "var(--root-text)",
+                    paddingBottom: 0,
+                    paddingLeft: 0,
+                    duration: 0.75,
+                    ease: 'none'
                 });
             },
-            once(data) {
-                // This is for the first page load
-                gsap.set(data.next.container, {
-                    opacity: 1
+            onComplete: () => {
+                setTimeout(() => {
+                    gsap.to($clone, {
+                        duration: 0.5,
+                        opacity: 0,
+                        onComplete: () => {
+                            $('[data-barba="container"]').addClass('loaded');
+                            setTimeout(() => {
+                                $clone.remove();
+                            }, 500);
+                        }
+                    });
+                }, 1000);
+            }
+        });
+    });
+
+    // Fade-out animation for clicking .gthNav.home before navigation
+    $(document).on('click', '.gthNav.home', function (e) {
+        e.preventDefault();
+        const href = $(this).attr('href');
+
+        $('[data-barba="container"]').removeClass('loaded');
+
+        setTimeout(() => {
+            window.location.href = href;
+        }, 500);
+    });
+
+    barba.init({
+        transitions: [{
+            name: 'app-launch',
+            leave(data) {
+                // Prevent default leave animation
+                return Promise.resolve();
+            },
+            enter(data) {
+                // Immediately fade in new container
+                return gsap.fromTo(data.next.container, { opacity: 0 }, {
+                    opacity: 1,
+                    duration: 0.5
                 });
             }
         }]
@@ -83,15 +157,17 @@ $(window).on('load', function () {
             loadSocials();
             loadTabs();
         }
+
+        setTimeout(() => {
+            if (!$('[data-barba="container"]').hasClass('loaded')) {
+                $('[data-barba="container"]').addClass('loaded');
+            }
+        }, 1000);
     });
 
     $('body').addClass('loaded');
 
     $(document).on('click', '.gthNav', function () {
-        $('.subhead').text($(this).attr('title'));
-    })
-
-    $(document).on('click', '.outlink', function () {
         $('.subhead').text($(this).attr('title'));
     })
 })
@@ -106,12 +182,6 @@ function loadSocials() {
                 html: $('<i>', { class: item.icon })
             }).append($('<p>').text(item.tileName));
             $('#socialList').append($a);
-            renderSquircle({
-                element: $a[0],
-                cornerRadius: 17,
-                cornerSmoothing: 1,
-                preserveSmoothing: true
-            });
         });
     });
 }

@@ -587,7 +587,7 @@ main[data-barba-namespace="music"] {
                     position: absolute;
                     top: 5px;
                     left: 0;
-                    width: 100px;
+                    width: 110px;
                     height: 40px;
                     background-color: var(--root-back-b);
                     border-radius: 50px;
@@ -605,7 +605,7 @@ main[data-barba-namespace="music"] {
 
                     background-color: transparent;
 
-                    width: 100px;
+                    width: 110px;
                     height: 100%;
 
                     border-radius: 100px;
