@@ -39,10 +39,6 @@
         {
             "source": "/newtab11",
             "destination": "https://futur3sn0w.github.io/newtab11"
-        },
-        {
-            "source": "/roundr",
-            "destination": "https://roundr-kappa.vercel.app"
         }
     ]
 }
