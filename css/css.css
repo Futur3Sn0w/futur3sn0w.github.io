@@ -702,7 +702,7 @@ header {
 
     &.visit-fs {
         &>i {
-            color: white;
+            color: black;
         }
     }
 
