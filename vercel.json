@@ -39,6 +39,10 @@
         {
             "source": "/newtab11",
             "destination": "https://futur3sn0w.github.io/newtab11"
+        },
+        {
+            "source": "/weather",
+            "destination": "https://futur3sn0w.github.io/WeatherPane"
         }
     ]
 }
