@@ -49,17 +49,20 @@ body {
 
     &.loaded {
 
-        .head {
-            opacity: 1;
-            filter: blur(0);
-            transition-delay: .2s;
-        }
+        /* Don't apply CSS transitions to home page elements - they're animated by JavaScript */
+        &:not(:has(main[data-barba-namespace="home"])) {
+            .head {
+                opacity: 1;
+                filter: blur(0);
+                transition-delay: .2s;
+            }
 
-        .homePages,
-        .tab-buttons {
-            opacity: 1;
-            filter: blur(0);
-            transition-delay: .6s;
+            .homePages,
+            .tab-buttons {
+                opacity: 1;
+                filter: blur(0);
+                transition-delay: .6s;
+            }
         }
 
         &::before {
@@ -208,6 +211,12 @@ header {
         }
     }
 
+    @media (prefers-color-scheme: dark) {
+        .home:hover i {
+            color: #111 !important;
+        }
+    }
+
     .back-btn {
         width: 50px;
         height: 50px;
@@ -296,6 +305,7 @@ header {
         flex-shrink: 0;
         height: 20vh;
 
+        /* Start hidden - JavaScript will animate in */
         opacity: 0;
         filter: blur(10px);
         transition-delay: 0;
@@ -330,12 +340,13 @@ header {
         margin: 0 auto;
         z-index: 100;
 
+        /* Start hidden - JavaScript will animate in */
         opacity: 0;
         filter: blur(10px);
         transition-delay: 0;
         transition: .4s;
 
-        &:not(:has(.tab-btn:hover)) .pill-highlight {
+        &:not(:has(.tab-btn:hover)):not(:has(.tab-btn.selected)) .pill-highlight {
             opacity: 0;
             width: 0px;
             transform: translateX(50px);
@@ -486,6 +497,7 @@ header {
 
         margin-top: -60px;
 
+        /* Start hidden - JavaScript will animate in */
         opacity: 0;
         transition-delay: 0;
         transition: .4s;
@@ -896,6 +908,72 @@ header {
     border-radius: 50px;
 
     /* Label stays fixed - no transform needed as it's a sibling to the tile */
+}
+
+.portal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 12000;
+    display: none;
+    pointer-events: none;
+    opacity: 0;
+    overflow: hidden;
+    background:
+        radial-gradient(140% 140% at 12% 10%, rgba(255, 255, 255, 0.08), transparent 60%),
+        radial-gradient(120% 120% at 88% 18%, rgba(255, 255, 255, 0.06), transparent 60%);
+}
+
+.portal-blobs {
+    position: absolute;
+    inset: -15%;
+    filter: blur(35px);
+    mix-blend-mode: screen;
+}
+
+.portal-blob {
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0) 55%),
+        var(--blob-color, #7af0ff);
+    opacity: 0.6;
+}
+
+.portal-blob:nth-child(1) {
+    top: 20%;
+    left: 15%;
+}
+
+.portal-blob:nth-child(2) {
+    top: 42%;
+    right: 18%;
+}
+
+.portal-blob:nth-child(3) {
+    bottom: 18%;
+    left: 36%;
+}
+
+.portal-sparkles {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.sparkle {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, #fff, rgba(255, 255, 255, 0) 60%);
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+    opacity: 0;
+}
+
+body.portal-active-home .homePages,
+body.portal-active-home .tab-buttons,
+body.portal-active-home .head {
+    pointer-events: none !important;
 }
 
 main[data-barba-namespace="404"] {

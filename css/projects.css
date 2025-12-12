@@ -422,7 +422,7 @@ main[data-barba-namespace="projects"] {
     border: 1px solid var(--root-border);
     border-radius: 15px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: background-color 0.3s, box-shadow 0.3s;
     gap: 20px;
     min-height: 120px;
     height: auto;
@@ -434,23 +434,45 @@ main[data-barba-namespace="projects"] {
 .projects-container[data-view-mode="tile"] .app-card::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 5px;
+    z-index: 5;
+    width: 100%;
     height: 100%;
-    background-color: var(--app-color, var(--btn-highlight));
+    left: 0;
+    top: 0;
+    border-radius: inherit;
+    mix-blend-mode: overlay;
+    background: linear-gradient(to bottom, transparent, black);
     opacity: 0;
-    transition: 0.3s;
+    transition: opacity 0.3s;
 }
 
 .projects-container[data-view-mode="tile"] .app-card:hover::before {
-    opacity: 1;
+    opacity: 0.45;
+}
+
+.projects-container[data-view-mode="tile"] .app-card::after {
+    content: '';
+    width: calc(100% * 1.5);
+    height: calc(100% * 1.5);
+    position: absolute;
+    z-index: 5;
+    opacity: 0;
+    transition: opacity .2s, transform .15s ease-out;
+    border-radius: inherit;
+    mix-blend-mode: screen;
+    background: radial-gradient(circle farthest-corner at center top, white, transparent 80%);
+
+    /* Parallax effect - moves 5x the magnetic movement */
+    transform: translate(calc(var(--mag-x) * 5), calc(var(--mag-y) * 5));
+}
+
+.projects-container[data-view-mode="tile"] .app-card:hover::after {
+    opacity: 0.5;
 }
 
 .projects-container[data-view-mode="tile"] .app-card:hover {
-    background-color: var(--root-back);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-    transform: translateX(5px);
+    background-color: var(--app-color, var(--root-back-contrast));
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .projects-container[data-view-mode="tile"] .app-icon {
@@ -460,6 +482,17 @@ main[data-barba-namespace="projects"] {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    z-index: 10;
+    color: var(--root-text);
+    transition: color 0.3s;
+
+    /* Parallax effect - moves 0.4x the magnetic movement */
+    transform: translate(calc(var(--mag-x) * 0.4), calc(var(--mag-y) * 0.4));
+}
+
+.projects-container[data-view-mode="tile"] .app-card:hover .app-icon {
+    color: white;
 }
 
 .projects-container[data-view-mode="tile"] .app-info {
@@ -470,24 +503,41 @@ main[data-barba-namespace="projects"] {
     overflow: hidden;
     min-width: 0;
     justify-content: center;
+    position: relative;
+    z-index: 10;
+
+    /* Parallax effect - moves 0.75x the magnetic movement */
+    transform: translate(calc(var(--mag-x) * 0.75), calc(var(--mag-y) * 0.75));
 }
 
 .projects-container[data-view-mode="tile"] .app-name {
     font-size: 18px;
     font-weight: 600;
     margin: 0;
+    color: var(--root-text);
+    transition: color 0.3s;
+}
+
+.projects-container[data-view-mode="tile"] .app-card:hover .app-name {
+    color: white;
 }
 
 .projects-container[data-view-mode="tile"] .app-description {
     font-size: 13px;
-    opacity: 0.7;
+    opacity: 0.9;
     margin: 0;
+    color: var(--root-text);
+    transition: color 0.3s;
     display: none;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+}
+
+.projects-container[data-view-mode="tile"] .app-card:hover .app-description {
+    color: white;
 }
 
 .projects-container[data-view-mode="tile"].show-details .app-description {
@@ -503,7 +553,13 @@ main[data-barba-namespace="projects"] {
     display: flex;
     gap: 10px;
     font-size: 11px;
-    opacity: 0.5;
+    opacity: 0.7;
+    color: var(--root-text);
+    transition: color 0.3s;
+}
+
+.projects-container[data-view-mode="tile"] .app-card:hover .app-meta {
+    color: white;
 }
 
 /* No Results */

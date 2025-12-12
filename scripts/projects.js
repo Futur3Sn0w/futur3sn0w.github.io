@@ -1,9 +1,24 @@
 // Projects Page JavaScript
+// Guard against reloading this file via Barba; re-init instead of redeclaring globals
+if (window.__projectsModuleLoaded) {
+    $(function () {
+        if (typeof loadApps === 'function') {
+            allApps = [];
+            currentViewMode = 'icon';
+            showDetails = false;
+            searchQuery = '';
+            loadApps();
+            loadUserPreferences();
+        }
+    });
+} else {
+    window.__projectsModuleLoaded = true;
+}
 
-let allApps = [];
-let currentViewMode = 'icon';
-let showDetails = false;
-let searchQuery = '';
+var allApps = window.allApps || [];
+var currentViewMode = window.currentViewMode || 'icon';
+var showDetails = window.showDetails || false;
+var searchQuery = window.searchQuery || '';
 
 // Initialize the projects page
 $(function () {
@@ -16,6 +31,7 @@ $(function () {
 function loadApps() {
     $.getJSON('/projects/apps.json', function (data) {
         allApps = data.apps || [];
+        window.allApps = allApps;
         renderApps();
     }).fail(function () {
         console.error('Failed to load apps.json');
@@ -57,9 +73,13 @@ function renderApps() {
     // Add click handlers
     attachCardClickHandlers();
 
-    // Initialize magnetic effect for icon view (desktop only)
-    if (currentViewMode === 'icon' && !isTouchDevice()) {
-        initProjectsMagneticEffect();
+    // Initialize magnetic effect (desktop only)
+    if (!isTouchDevice()) {
+        if (currentViewMode === 'icon') {
+            initProjectsMagneticEffect();
+        } else if (currentViewMode === 'tile' || currentViewMode === 'list') {
+            initTileListMagneticEffect();
+        }
     }
 }
 
@@ -70,6 +90,8 @@ function createAppCard(app) {
         href: app.url,
         'data-app-id': app.id,
         'data-color': app.color,
+        'data-barba-prevent': 'all', // avoid Barba transitions on app icons
+        'data-disable-portal': 'true', // avoid portal animation on app icons
         title: app.name,
         style: `--app-color: ${app.color}`
     });
@@ -145,6 +167,7 @@ function initializeEventListeners() {
     // Search input
     $('.search-input').on('input', function () {
         searchQuery = $(this).val();
+        window.searchQuery = searchQuery;
         renderApps();
     });
 
@@ -165,6 +188,7 @@ function setViewMode(mode) {
     if (currentViewMode === mode) return; // Don't transition if already in this mode
 
     currentViewMode = mode;
+    window.currentViewMode = mode;
 
     // Update button states
     $('.view-mode-btn').removeClass('active');
@@ -201,6 +225,7 @@ function setViewMode(mode) {
 // Toggle details visibility
 function toggleDetails() {
     showDetails = !showDetails;
+    window.showDetails = showDetails;
 
     // Fade out, change details, then fade in
     const $grid = $('#appsGrid');
@@ -350,6 +375,39 @@ function initProjectsMagneticEffect() {
             // Reset position when mouse leaves
             wrapper.style.setProperty('--mag-x', '0px');
             wrapper.style.setProperty('--mag-y', '0px');
+        });
+    });
+}
+
+// Magnetic hover effect for tile and list views
+function initTileListMagneticEffect() {
+    const cards = document.querySelectorAll('.app-card');
+
+    cards.forEach(card => {
+        const strength = 12; // How much elements move (in pixels)
+
+        card.addEventListener('mousemove', function (e) {
+            const rect = card.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+
+            // Calculate relative position from center
+            const relX = e.clientX - centerX;
+            const relY = e.clientY - centerY;
+
+            // Calculate movement (proportional to distance from center)
+            const moveX = (relX / rect.width) * strength;
+            const moveY = (relY / rect.height) * strength;
+
+            // Apply transform to card
+            card.style.setProperty('--mag-x', `${moveX}px`);
+            card.style.setProperty('--mag-y', `${moveY}px`);
+        });
+
+        card.addEventListener('mouseleave', function () {
+            // Reset position when mouse leaves
+            card.style.setProperty('--mag-x', '0px');
+            card.style.setProperty('--mag-y', '0px');
         });
     });
 }

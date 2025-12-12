@@ -43,8 +43,8 @@
 
     .tile {
         position: relative;
-        height: calc(100% - 10px);
-        width: 100%;
+        height: 86px;
+        width: 140px;
         flex-shrink: 0;
         gap: 8px;
 
@@ -70,7 +70,7 @@
             }
 
             &>i {
-                transform: translate(calc(var(--mag-x) * 0.2), calc(var(--mag-y) * 0.2)) scale(1.2);
+                font-size: 43.2px;
             }
         }
 
@@ -124,6 +124,8 @@
             position: relative;
             /* bottom: -27%; */
             /* right: 0; */
+
+            transition: font-size .3s;
 
             /* Parallax effect - moves 0.2x the magnetic movement (subtle tvOS style) */
             transform: translate(calc(var(--mag-x) * 0.2), calc(var(--mag-y) * 0.2));

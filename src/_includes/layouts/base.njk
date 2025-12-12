@@ -4,30 +4,40 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GTH.zip - {TITLE}</title>
+    {% set pageTitle = title or "Home" %}
+    {% set siteName = siteName or "GTH.zip" %}
+    <title>{{ siteName }}{% if pageTitle %} - {{ pageTitle }}{% endif %}</title>
     <link rel="stylesheet" href="/css/css.css" />
     <link rel="stylesheet" href="/css/globals.css" />
     <link rel="stylesheet" href="/css/music.css" />
     <link rel="stylesheet" href="/css/about.css" />
     <link rel="stylesheet" href="/css/socials.css" />
     <link rel="stylesheet" href="/css/fs.css" />
+    {% if extraStyles %}
+    {% for style in extraStyles %}
+    <link rel="stylesheet" href="{{ style }}" />
+    {% endfor %}
+    {% endif %}
 
     <script src="/external/jquery-3.7.1.js"></script>
     <script src="/external/gsap.min.js"></script>
     <script src="/external/barba.js"></script>
     <script src="/external/a1fc6f0f3a.js"></script>
     <script src="/scripts/js.js"></script>
+
+    <link href="/img/favicon-light.png" rel="icon" media="(prefers-color-scheme: dark)" />
+    <link href="/img/favicon-dark.png" rel="icon" media="(prefers-color-scheme: light)" />
 </head>
 
-<body data-barba="wrapper">
+<body data-barba="wrapper" class="{{ bodyClass }}">
     <header class="gthHeader">
         <button class="button back-btn" title="Back"><i class="fas fa-chevron-left"></i></button>
         <a class="home button gthNav" title="Home" href="/"><i class="fa-solid fa-home"></i></a>
-        <p class="subhead">{TITLE}</p>
+        <p class="subhead">{{ subhead or pageTitle }}</p>
     </header>
 
-    <main data-barba="container" data-barba-namespace="{NAMESPACE}">
-        {CONTENT}
+    <main class="{{ mainClass }}" data-barba="container" data-barba-namespace="{{ namespace }}">
+        {{ content | safe }}
     </main>
 
     <script src="/scripts/snow.js"></script>

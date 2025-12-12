@@ -1,0 +1,19 @@
+---
+layout: layouts/base.njk
+title: Not Found
+namespace: "404"
+subhead: 404 - Not Found
+mainClass: container
+permalink: /404.html
+---
+
+<p class="head">404</p>
+<p class="desc">Try again, or use the home button above.</p>
+
+<script>
+    $('.gthNav.home').on('click', () => {
+        if ($('body').has('main[data-barba-namespace="home"]')) {
+            window.location.reload();
+        }
+    });
+</script>
