@@ -109,6 +109,16 @@
       "category": "Web Apps",
       "lastUpdate": "TBD",
       "color": "#03A9F4"
+    },
+    {
+      "id": "idirectory",
+      "name": "iDirectory",
+      "description": "My take on a single place to find Apple devices, information and specifications on them.",
+      "icon": "fa-brands fa-apple",
+      "url": "/idirectory",
+      "category": "Web Apps",
+      "lastUpdate": "December 2024",
+      "color": "#0066CC"
     }
   ],
   "categories": [
