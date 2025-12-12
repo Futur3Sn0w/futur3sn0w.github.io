@@ -43,6 +43,10 @@
         {
             "source": "/weather",
             "destination": "https://futur3sn0w.github.io/WeatherPane"
+        },
+        {
+            "source": "/idirectory",
+            "destination": "https://futur3sn0w.github.io/iDirectory"
         }
     ]
 }
