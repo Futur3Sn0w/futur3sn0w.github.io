@@ -3,8 +3,10 @@
         --root-back: #eee;
         --root-back-contrast: #fff;
         --root-back-b: #ccc;
-        --root-back-alpha: #ffffff77;
+        --root-back-alpha: #ffffffbd;
         --root-border: #0000001a;
+
+        --main-container-back: #ffffff77;
 
         --btn-highlight: #2593e1;
 
@@ -17,11 +19,13 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --root-back: #222;
+        --root-back: #111;
         --root-back-contrast: #333;
-        --root-back-b: #444;
-        --root-back-alpha: #ffffff11;
+        --root-back-b: #222;
+        --root-back-alpha: #41414169;
         --root-border: #ffffff1a;
+
+        --main-container-back: #22222277;
 
         --btn-highlight: #49acee;
 
@@ -57,4 +61,193 @@ a {
 
 img {
     pointer-events: none !important;
+}
+
+/* Lava Orb Animations */
+@keyframes float1 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    25% {
+        transform: translate(250px, -180px) scale(1.15);
+    }
+
+    50% {
+        transform: translate(-200px, 280px) scale(0.85);
+    }
+
+    75% {
+        transform: translate(220px, 120px) scale(1.08);
+    }
+}
+
+@keyframes float2 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    25% {
+        transform: translate(-280px, 220px) scale(0.9);
+    }
+
+    50% {
+        transform: translate(320px, -160px) scale(1.12);
+    }
+
+    75% {
+        transform: translate(-240px, -200px) scale(1.05);
+    }
+}
+
+@keyframes float3 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(-350px, -280px) scale(1.18);
+    }
+
+    66% {
+        transform: translate(260px, 340px) scale(0.82);
+    }
+}
+
+@keyframes float4 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    30% {
+        transform: translate(270px, -260px) scale(1.1);
+    }
+
+    60% {
+        transform: translate(-310px, 230px) scale(0.88);
+    }
+}
+
+@keyframes float5 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    20% {
+        transform: translate(-220px, -300px) scale(1.14);
+    }
+
+    40% {
+        transform: translate(290px, 150px) scale(0.86);
+    }
+
+    60% {
+        transform: translate(-180px, 260px) scale(1.08);
+    }
+
+    80% {
+        transform: translate(240px, -190px) scale(0.94);
+    }
+}
+
+@keyframes float6 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    25% {
+        transform: translate(260px, 250px) scale(1.12);
+    }
+
+    50% {
+        transform: translate(-300px, -180px) scale(0.88);
+    }
+
+    75% {
+        transform: translate(200px, -230px) scale(1.06);
+    }
+}
+
+@keyframes morph1 {
+
+    0%,
+    100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+
+    50% {
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+}
+
+@keyframes morph2 {
+
+    0%,
+    100% {
+        border-radius: 40% 60% 50% 50% / 55% 45% 55% 45%;
+    }
+
+    50% {
+        border-radius: 55% 45% 45% 55% / 40% 60% 40% 60%;
+    }
+}
+
+@keyframes morph3 {
+
+    0%,
+    100% {
+        border-radius: 50% 50% 60% 40% / 45% 55% 45% 55%;
+    }
+
+    50% {
+        border-radius: 45% 55% 40% 60% / 60% 40% 60% 40%;
+    }
+}
+
+@keyframes morph4 {
+
+    0%,
+    100% {
+        border-radius: 65% 35% 55% 45% / 50% 50% 50% 50%;
+    }
+
+    50% {
+        border-radius: 35% 65% 45% 55% / 55% 45% 55% 45%;
+    }
+}
+
+@keyframes morph5 {
+
+    0%,
+    100% {
+        border-radius: 55% 45% 40% 60% / 60% 40% 60% 40%;
+    }
+
+    50% {
+        border-radius: 40% 60% 65% 35% / 45% 55% 35% 65%;
+    }
+}
+
+@keyframes morph6 {
+
+    0%,
+    100% {
+        border-radius: 48% 52% 58% 42% / 50% 50% 50% 50%;
+    }
+
+    50% {
+        border-radius: 58% 42% 42% 58% / 48% 52% 48% 52%;
+    }
 }

@@ -22,6 +22,10 @@ function renderEntries(entries) {
         var imageUrl = `../img/albart/${entry.id}.${entry.format}`;
         var imageFound = !!entry.format;
 
+        var wrapper = $('<div></div>', {
+            class: 'music-entry-wrapper'
+        });
+
         var div = $('<div></div>', {
             class: 'music-entry',
             'data-description': entry.description
@@ -165,7 +169,8 @@ function renderEntries(entries) {
             text: entry.description
         }).appendTo(prodInfo);
 
-        entryList.append(div);
+        wrapper.append(div);
+        entryList.append(wrapper);
 
         setTimeout(() => {
             div.addClass('show');
@@ -174,7 +179,56 @@ function renderEntries(entries) {
 
     setTimeout(() => {
         container.removeClass('tempHide')
+
+        // Initialize magnetic effect for album art (desktop only)
+        if (!isTouchDevice()) {
+            initMusicMagneticEffect();
+        }
     }, 200);
+}
+
+// Detect if device has touch capability
+function isTouchDevice() {
+    return (('ontouchstart' in window) ||
+        (navigator.maxTouchPoints > 0) ||
+        (navigator.msMaxTouchPoints > 0));
+}
+
+// Magnetic hover effect for album art
+function initMusicMagneticEffect() {
+    const wrappers = document.querySelectorAll('.music-entry-wrapper');
+
+    wrappers.forEach(wrapper => {
+        const strength = 8; // Slightly less movement for list items
+        const albumArt = wrapper.querySelector('.albArt');
+
+        if (!albumArt) return;
+
+        // Listen on the album art itself, not the wrapper
+        albumArt.addEventListener('mousemove', function (e) {
+            const rect = albumArt.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+
+            // Calculate relative position from center
+            const relX = e.clientX - centerX;
+            const relY = e.clientY - centerY;
+
+            // Calculate movement (proportional to distance from center)
+            const moveX = (relX / rect.width) * strength;
+            const moveY = (relY / rect.height) * strength;
+
+            // Apply transform to wrapper
+            wrapper.style.setProperty('--mag-x', `${moveX}px`);
+            wrapper.style.setProperty('--mag-y', `${moveY}px`);
+        });
+
+        albumArt.addEventListener('mouseleave', function () {
+            // Reset position when mouse leaves the album art
+            wrapper.style.setProperty('--mag-x', '0px');
+            wrapper.style.setProperty('--mag-y', '0px');
+        });
+    });
 }
 
 function renderTree() {

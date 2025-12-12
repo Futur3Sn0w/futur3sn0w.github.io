@@ -1,14 +1,13 @@
 $.getJSON('../futur3sn0w/projects.json', function (data) {
     $('.back-btn').addClass('hide');
     function createProjectBox(project, projectType) {
-        return $('<div class="projectBox"></div>')
+        const $box = $('<div class="projectBox"></div>')
             .attr('id', project.id)
             .attr('data-open', project.dataOpen || '')
             .attr('data-type', projectType) // Add project type as a data attribute
             .append(
                 $('<div class="projImg"></div>')
                     .append($('<img>').attr('src', `../futur3sn0w/imgs/${project.imageSrc}`).attr('alt', project.title)),
-                $('<div class="projTitle"></div>').text(project.title),
                 $('<div class="projDesc"></div>').text(project.description).attr('data-lastUpdate', project.lastUpdate || '')
             )
             .on('click', function () {
@@ -19,6 +18,14 @@ $.getJSON('../futur3sn0w/projects.json', function (data) {
                 $('.projects-header').addClass('showProject');
                 $('.back-btn').removeClass('hide');
             });
+
+        const $title = $('<div class="projTitle"></div>').text(project.title);
+
+        // Wrap box and title in a wrapper for magnetic effect
+        const $wrapper = $('<div class="projectBox-wrapper"></div>')
+            .append($box, $title);
+
+        return $wrapper;
     }
 
     function createProjectView(project, projectType) {
@@ -105,9 +112,10 @@ $.getJSON('../futur3sn0w/projects.json', function (data) {
 
             $.each(section.projects, function (i, project) {
                 if (project.id && project.title && project.description) {
-                    const box = createProjectBox(project, section.name);
+                    const wrapper = createProjectBox(project, section.name);
+                    const box = wrapper.find('.projectBox');
                     box.addClass('stagger-hidden');
-                    tileRow.append(box);
+                    tileRow.append(wrapper);
 
                     // Stagger show animation
                     setTimeout(() => {
@@ -120,8 +128,56 @@ $.getJSON('../futur3sn0w/projects.json', function (data) {
             $('.subTileRows').append(tileRow);
             setTimeout(() => {
                 $('.subTileRows').removeClass('temphide')
+
+                // Initialize magnetic effect for project boxes (desktop only)
+                if (!isTouchDevice()) {
+                    initFSMagneticEffect();
+                }
             }, 50);
         }, 200);
+    }
+
+    // Detect if device has touch capability
+    function isTouchDevice() {
+        return (('ontouchstart' in window) ||
+            (navigator.maxTouchPoints > 0) ||
+            (navigator.msMaxTouchPoints > 0));
+    }
+
+    // Magnetic hover effect for project boxes
+    function initFSMagneticEffect() {
+        const wrappers = document.querySelectorAll('.projectBox-wrapper');
+
+        wrappers.forEach(wrapper => {
+            const strength = 10; // Magnetic movement strength
+            const box = wrapper.querySelector('.projectBox');
+
+            if (!box) return;
+
+            box.addEventListener('mousemove', function (e) {
+                const rect = box.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+
+                // Calculate relative position from center
+                const relX = e.clientX - centerX;
+                const relY = e.clientY - centerY;
+
+                // Calculate movement (proportional to distance from center)
+                const moveX = (relX / rect.width) * strength;
+                const moveY = (relY / rect.height) * strength;
+
+                // Apply transform to wrapper
+                wrapper.style.setProperty('--mag-x', `${moveX}px`);
+                wrapper.style.setProperty('--mag-y', `${moveY}px`);
+            });
+
+            box.addEventListener('mouseleave', function () {
+                // Reset position when mouse leaves
+                wrapper.style.setProperty('--mag-x', '0px');
+                wrapper.style.setProperty('--mag-y', '0px');
+            });
+        });
     }
 
     $.each(data, function (index, section) {

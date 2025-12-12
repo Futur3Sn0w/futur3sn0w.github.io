@@ -1,0 +1,36 @@
+<div class="projects-page">
+    <div class="projects-header">
+        <div class="search-container">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" class="search-input" placeholder="Search apps..." />
+        </div>
+
+        <div class="view-options">
+            <button class="view-option-btn" data-option="show-details" title="Toggle Details">
+                <i class="fa-solid fa-circle-info"></i>
+            </button>
+            <div class="view-mode-selector">
+                <button class="view-mode-btn active" data-view="icon" title="Icon View">
+                    <i class="fa-solid fa-grid-2"></i>
+                </button>
+                <button class="view-mode-btn" data-view="list" title="List View">
+                    <i class="fa-solid fa-list"></i>
+                </button>
+                <button class="view-mode-btn" data-view="tile" title="Tile View">
+                    <i class="fa-solid fa-table-cells-large"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="projects-container" data-view-mode="icon">
+        <div class="apps-grid" id="appsGrid">
+            <!-- Apps will be dynamically loaded here -->
+        </div>
+
+        <div class="no-results" style="display: none;">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <p>No apps found</p>
+        </div>
+    </div>
+</div>

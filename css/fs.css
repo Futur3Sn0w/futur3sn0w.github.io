@@ -538,6 +538,41 @@ main[data-barba-namespace="futur3sn0w"] {
         transition: .2s;
     }
 
+    .projectBox-wrapper {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-shrink: 0;
+
+        /* Magnetic effect variables */
+        --mag-x: 0px;
+        --mag-y: 0px;
+
+        .projTitle {
+            position: absolute;
+            bottom: -35px;
+            z-index: 9;
+
+            font-size: 13.5px;
+            pointer-events: none;
+
+            transition: .2s;
+
+            color: var(--root-text);
+
+            background-color: var(--root-back-alpha);
+            padding: 3px 7px;
+            border-radius: 50px;
+
+            /* Label stays fixed - no transform needed as it's outside the box */
+        }
+
+        &:hover .projTitle {
+            font-weight: bold;
+        }
+    }
+
     .projectBox {
         width: 280px;
         height: 150px;
@@ -552,14 +587,17 @@ main[data-barba-namespace="futur3sn0w"] {
         align-items: center;
         flex-shrink: 0;
 
-        /* overflow: hidden; */
+        overflow: hidden;
         box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.15);
 
         position: relative;
         cursor: pointer;
         z-index: 1;
 
-        transition: .25s;
+        transition: background-color .25s, box-shadow .25s, transform .15s ease-out;
+
+        /* Apply magnetic effect to box */
+        transform: translate(var(--mag-x), var(--mag-y));
 
         &.selected {
             background-color: var(--elem);
@@ -577,15 +615,15 @@ main[data-barba-namespace="futur3sn0w"] {
 
         &.stagger-hidden {
             opacity: 0;
-            transform: scale(1.1);
+            transform: translate(var(--mag-x), var(--mag-y)) scale(1.1);
             filter: blur(7px);
         }
 
         &.stagger-visible {
             opacity: 1;
-            transform: scale(1);
+            transform: translate(var(--mag-x), var(--mag-y)) scale(1);
             filter: blur(0);
-            transition: 0.75s ease;
+            transition: opacity 0.75s ease, filter 0.75s ease, transform .15s ease-out;
         }
 
         &:not(.selected):hover .projImg {
@@ -593,24 +631,9 @@ main[data-barba-namespace="futur3sn0w"] {
                 opacity: .75;
             }
         }
+    }
 
-        .projTitle {
-            font-size: 14px;
-            font-weight: bold;
-            transition: .2s;
-
-            z-index: 10;
-            position: absolute;
-            bottom: -30px;
-            /* left: 0px; */
-
-            text-align: center;
-
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-            background-color: var(--elem-transp);
-            border-radius: 8px;
-            padding: 3px 7px;
-        }
+    .projectBox {
 
         .projDesc {
             display: none;
@@ -662,20 +685,25 @@ main[data-barba-namespace="futur3sn0w"] {
 
             &::before {
                 content: '';
-                width: 100%;
-                height: 100%;
+                width: calc(100% * 1.5);
+                height: calc(100% * 1.5);
 
                 position: absolute;
                 z-index: 1000;
                 top: 50%;
                 left: 50%;
-                transform: translate(-50%, -50%);
 
                 opacity: 0;
-                transition: .2s;
+                transition: opacity .2s, transform .15s ease-out;
 
                 border-radius: inherit;
-                background: radial-gradient(circle farthest-corner at center top, white, transparent);
+                background: radial-gradient(circle farthest-corner at center top, white, transparent 80%);
+
+                /* Parallax effect - moves 5x the magnetic movement, centered */
+                transform: translate(
+                    calc(-50% + var(--mag-x) * 5),
+                    calc(-50% + var(--mag-y) * 5)
+                );
             }
 
             img {

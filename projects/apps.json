@@ -1,0 +1,143 @@
+{
+  "apps": [
+    {
+      "id": "plusUI",
+      "name": "PlusUI",
+      "description": "The digital dashboard for your large-screen devices. Your one-stop-shop for any information you want to view at a glance.",
+      "icon": "fa-solid fa-plus",
+      "url": "/plusUI",
+      "category": "Web Apps",
+      "lastUpdate": "March 2024",
+      "color": "#4CAF50"
+    },
+    {
+      "id": "flick",
+      "name": "Flick",
+      "description": "A hub for viewing Microsoft's Fluent-designed icons found in Windows 11, late Windows 10, and Windows 10X builds.",
+      "icon": "fa-solid fa-images",
+      "url": "/flick",
+      "category": "Web Apps",
+      "lastUpdate": "July 2023",
+      "color": "#2196F3"
+    },
+    {
+      "id": "webFX",
+      "name": "WebFX",
+      "description": "A collection of experiments using various web technologies, created with Google's ChromeOS and Material You design languages.",
+      "icon": "fa-solid fa-flask",
+      "url": "/webFX",
+      "category": "Web Apps",
+      "lastUpdate": "March 2023",
+      "color": "#FF9800"
+    },
+    {
+      "id": "pinboard",
+      "name": "Pinboard",
+      "description": "A digital cork-board with customizable pins, colors, shapes, and more. Created with Material Design 3.",
+      "icon": "fa-solid fa-thumbtack",
+      "url": "/pinboard",
+      "category": "Web Apps",
+      "lastUpdate": "July 2022",
+      "color": "#E91E63"
+    },
+    {
+      "id": "waitAMinute",
+      "name": "WaitAMinute",
+      "description": "The various 'installing your apps' screens from the Windows OOBE, compiled and recreated using web technologies.",
+      "icon": "fa-solid fa-hourglass-half",
+      "url": "/waitAMinute",
+      "category": "Web Apps",
+      "lastUpdate": "February 2022",
+      "color": "#9C27B0"
+    },
+    {
+      "id": "newtab11",
+      "name": "NewTab11",
+      "description": "A replacement new-tab page for your web browser, designed after the new Windows Store in Windows 11.",
+      "icon": "fa-solid fa-window-maximize",
+      "url": "/newtab11",
+      "category": "Web Apps",
+      "lastUpdate": "September 2021",
+      "color": "#00BCD4"
+    },
+    {
+      "id": "Windows10x",
+      "name": "Windows 10X",
+      "description": "A faithful recreation of Microsoft's scrapped Windows 10X OS using web technologies. Includes bootscreen, OOBE, and full shell clones.",
+      "icon": "fa-brands fa-windows",
+      "url": "/Windows10x",
+      "category": "Web Apps",
+      "lastUpdate": "May 2021",
+      "color": "#0078D4"
+    },
+    {
+      "id": "modulab",
+      "name": "Modulab",
+      "description": "Modular web components and design system experiments.",
+      "icon": "fa-solid fa-cube",
+      "url": "/modulab",
+      "category": "Web Apps",
+      "lastUpdate": "TBD",
+      "color": "#607D8B"
+    },
+    {
+      "id": "youie",
+      "name": "Youie",
+      "description": "Interactive UI experiments and demonstrations.",
+      "icon": "fa-solid fa-wand-magic-sparkles",
+      "url": "/youie",
+      "category": "Web Apps",
+      "lastUpdate": "TBD",
+      "color": "#FF5722"
+    },
+    {
+      "id": "web31",
+      "name": "Web3.1",
+      "description": "Web 3.0 and modern web technology experiments.",
+      "icon": "fa-solid fa-globe",
+      "url": "/web31",
+      "category": "Web Apps",
+      "lastUpdate": "TBD",
+      "color": "#3F51B5"
+    },
+    {
+      "id": "weather",
+      "name": "WeatherPane",
+      "description": "Beautiful weather visualization and forecasting.",
+      "icon": "fa-solid fa-cloud-sun",
+      "url": "/weather",
+      "category": "Web Apps",
+      "lastUpdate": "TBD",
+      "color": "#03A9F4"
+    }
+  ],
+  "categories": [
+    {
+      "id": "all",
+      "name": "All Apps",
+      "icon": "fa-solid fa-grid"
+    },
+    {
+      "id": "webapps",
+      "name": "Web Apps",
+      "icon": "fa-solid fa-window-restore"
+    }
+  ],
+  "viewModes": [
+    {
+      "id": "icon",
+      "name": "Icon View",
+      "icon": "fa-solid fa-grid-2"
+    },
+    {
+      "id": "list",
+      "name": "List View",
+      "icon": "fa-solid fa-list"
+    },
+    {
+      "id": "tile",
+      "name": "Tile View",
+      "icon": "fa-solid fa-table-cells-large"
+    }
+  ]
+}

@@ -10,11 +10,11 @@
     flex-shrink: 0;
 
     box-sizing: border-box;
-    padding: 30px;
+    padding: 80px 30px 35px 30px;
 
     position: relative;
     z-index: 100;
-    gap: 25px 25px;
+    gap: 35px 25px;
 
     opacity: 0;
     transition: .4s;
@@ -23,6 +23,22 @@
         opacity: 0;
         bottom: -10px;
         pointer-events: none;
+    }
+
+    .tile-wrapper {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-shrink: 0;
+
+        /* Magnetic effect variables */
+        --mag-x: 0px;
+        --mag-y: 0px;
+
+        &:hover .tile-label {
+            font-weight: bold;
+        }
     }
 
     .tile {
@@ -41,26 +57,26 @@
         text-decoration: none;
         color: white;
         box-sizing: border-box;
+        overflow: hidden;
 
-        transition: .35s;
+        transition: background-color .35s, border-radius .35s, transform .15s ease-out;
+
+        /* Apply magnetic effect to tile */
+        transform: translate(var(--mag-x), var(--mag-y));
 
         &:hover {
             &::after {
-                opacity: .75;
+                opacity: .5;
             }
 
             &>i {
                 transform: scale(1.2);
             }
-
-            &>p {
-                font-weight: bold;
-            }
         }
 
         &:active {
             border-radius: 30px !important;
-            transform: scale(.95) !important;
+            transform: translate(var(--mag-x), var(--mag-y)) scale(.95) !important;
         }
 
         &::before {
@@ -84,39 +100,17 @@
             position: absolute;
             z-index: 5;
 
-            width: 100%;
-            height: 100%;
+            width: calc(100% * 1.5);
+            height: calc(100% * 1.5);
             border-radius: inherit;
 
-            transition: .2s;
+            transition: opacity .2s, transform .15s ease-out;
             mix-blend-mode: screen;
-            background: radial-gradient(circle farthest-corner at center -10px, white, transparent);
-            background-size: 110%;
+            background: radial-gradient(circle farthest-corner at center top, white, transparent 80%);
             opacity: .33;
-        }
 
-        &>p {
-            font-size: 13.5px;
-
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-
-            transition: .2s;
-
-            position: absolute;
-            bottom: -25px;
-            z-index: 2;
-
-            color: var(--root-text);
-
-            &::after {
-                color: transparent;
-                position: absolute;
-                transition: .2s;
-            }
+            /* Parallax effect - moves 5x the magnetic movement */
+            transform: translate(calc(var(--mag-x) * 5), calc(var(--mag-y) * 5));
         }
 
         i {
@@ -133,6 +127,25 @@
 
             transition: .3s;
         }
+    }
+
+    .tile-label {
+        position: absolute;
+        bottom: -23px;
+        z-index: 9;
+
+        font-size: 13.5px;
+        pointer-events: none;
+
+        transition: .2s;
+
+        color: var(--root-text);
+
+        background-color: var(--root-back-alpha);
+        padding: 3px 7px;
+        border-radius: 50px;
+
+        /* Label stays fixed - no transform needed as it's outside the tile */
     }
 }
 
@@ -192,13 +205,16 @@
     background-color: #1f1f1f !important;
 }
 
-.sbTwitter:hover {
-    p {
+.tile-wrapper:has(.sbTwitter):hover {
+    .tile-label {
         color: transparent;
 
         &::after {
             content: '(Not X)';
             color: var(--root-text);
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
         }
     }
 }

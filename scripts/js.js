@@ -24,18 +24,33 @@ $(function () {
 });
 
 let musicRotationInterval;
+let projectsRotationInterval;
 
 $(window).on('load', function () {
     loadTabs();
+
+    // Initialize magnetic effect on tiles (desktop only)
+    if (!isTouchDevice()) {
+        initMagneticEffect();
+    }
 
     $(document).on('click', '.outlink', function (e) {
         e.preventDefault();
         $('.subhead').text($(this).attr('title'));
         const $tile = $(this);
+        const $wrapper = $tile.closest('.outlink-wrapper');
 
         // Clone the tile
         const $clone = $tile.clone().appendTo('body');
         $tile.css('opacity', 0);
+
+        // Reset magnetic effect on wrapper during transition
+        if ($wrapper.length) {
+            $wrapper.css({
+                '--mag-x': '0px',
+                '--mag-y': '0px'
+            });
+        }
         const rect = $tile[0].getBoundingClientRect();
         const scrollTop = window.scrollY || document.documentElement.scrollTop;
         const scrollLeft = window.scrollX || document.documentElement.scrollLeft;
@@ -151,9 +166,14 @@ $(window).on('load', function () {
         else if (namespace === 'about') {
             $('.gthHeader .subHead').text('about me');
         }
+        else if (namespace === 'projects') {
+            $('.gthHeader .subHead').text('my projects');
+            $.getScript('/scripts/projects.js');
+        }
         else if (namespace === 'home') {
             $('.gthHeader .subHead').text('home');
             rotateMusicPreview();
+            rotateProjectsPreview();
             loadSocials();
             loadTabs();
         }
@@ -165,7 +185,11 @@ $(window).on('load', function () {
         }, 1000);
     });
 
-    $('body').addClass('loaded');
+    // Delay adding 'loaded' class to allow orbs to fade in first
+    // Wait for last orb to finish: 50ms initial + 800ms stagger + 1000ms animation = ~1850ms
+    setTimeout(() => {
+        $('body').addClass('loaded');
+    }, 1700);
 
     $(document).on('click', '.gthNav', function () {
         $('.subhead').text($(this).attr('title'));
@@ -180,9 +204,24 @@ function loadSocials() {
                 class: "tile " + item.class,
                 'data-tileName': item.tileName,
                 html: $('<i>', { class: item.icon })
-            }).append($('<p>').text(item.tileName));
-            $('#socialList').append($a);
+            });
+
+            const $label = $('<p>', {
+                class: 'tile-label',
+                text: item.tileName
+            });
+
+            // Wrap tile and label in a wrapper for magnetic effect
+            const $wrapper = $('<div>', { class: 'tile-wrapper' })
+                .append($a, $label);
+
+            $('#socialList').append($wrapper);
         });
+
+        // Initialize magnetic effect for social tiles (desktop only)
+        if (!isTouchDevice()) {
+            initSocialTilesMagneticEffect();
+        }
     });
 }
 
@@ -248,7 +287,7 @@ function rotateMusicPreview() {
             } else if ((data.sets || []).some(e => e.id === entry.id)) {
                 type = 'sets';
             }
-            $('.infoLabels .type').text(type);
+            $('.my-music .infoLabels .type').text(type);
 
             const imageUrl = `../img/albart/${entry.id}.${entry.format}`;
             $musicImg.addClass('tempHide');
@@ -287,9 +326,9 @@ function rotateMusicPreview() {
                     };
                 }
 
-                // $('.infoLabels .type').text(entry.title);
-                $('.infoLabels .title').text(entry.title);
-                $('.infoLabels .date').text(entry.lastUpdate);
+                // $('.my-music .infoLabels .type').text(entry.title);
+                $('.my-music .infoLabels .title').text(entry.title);
+                $('.my-music .infoLabels .date').text(entry.lastUpdate);
                 $musicImg.removeClass('tempHide');
             }, 200);
 
@@ -298,5 +337,118 @@ function rotateMusicPreview() {
 
         updateImage();
         musicRotationInterval = setInterval(updateImage, 10000);
+    });
+}
+
+// Rotating preview for main page projects tile
+function rotateProjectsPreview() {
+    if (projectsRotationInterval) clearInterval(projectsRotationInterval);
+
+    $.getJSON('projects/apps.json', function (data) {
+        const apps = data.apps || [];
+        if (apps.length === 0) return;
+
+        let currentIndex = 0;
+        const $projectIcon = $('.my-projects .project-icon-large');
+
+        function updateProject() {
+            const project = apps[currentIndex];
+
+            $projectIcon.addClass('tempHide');
+
+            setTimeout(() => {
+                // Update icon (preserve project-icon-large class)
+                $projectIcon.attr('class', 'project-icon-large ' + project.icon);
+
+                // Update info labels
+                $('.my-projects .infoLabels .type').text(project.category);
+                $('.my-projects .infoLabels .title').text(project.name);
+                $('.my-projects .infoLabels .date').text(project.lastUpdate);
+
+                $projectIcon.removeClass('tempHide');
+            }, 200);
+
+            currentIndex = (currentIndex + 1) % apps.length;
+        }
+
+        updateProject();
+        projectsRotationInterval = setInterval(updateProject, 10000);
+    });
+}
+
+// Detect if device has touch capability
+function isTouchDevice() {
+    return (('ontouchstart' in window) ||
+        (navigator.maxTouchPoints > 0) ||
+        (navigator.msMaxTouchPoints > 0));
+}
+
+// Magnetic hover effect for tiles
+function initMagneticEffect() {
+    const wrappers = document.querySelectorAll('.outlink-wrapper');
+
+    wrappers.forEach(wrapper => {
+        const strength = 12; // How much the tile moves (in pixels)
+        const tile = wrapper.querySelector('.outlink:not(.app-card)');
+
+        wrapper.addEventListener('mousemove', function (e) {
+            const rect = tile.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+
+            // Calculate relative position from center
+            const relX = e.clientX - centerX;
+            const relY = e.clientY - centerY;
+
+            // Calculate movement (proportional to distance from center)
+            const moveX = (relX / rect.width) * strength;
+            const moveY = (relY / rect.height) * strength;
+
+            // Apply transform to wrapper
+            wrapper.style.setProperty('--mag-x', `${moveX}px`);
+            wrapper.style.setProperty('--mag-y', `${moveY}px`);
+        });
+
+        wrapper.addEventListener('mouseleave', function () {
+            // Reset position when mouse leaves
+            wrapper.style.setProperty('--mag-x', '0px');
+            wrapper.style.setProperty('--mag-y', '0px');
+        });
+    });
+}
+
+// Magnetic hover effect for social tiles
+function initSocialTilesMagneticEffect() {
+    const wrappers = document.querySelectorAll('.tile-wrapper');
+
+    wrappers.forEach(wrapper => {
+        const strength = 12; // How much the tile moves (in pixels)
+        const tile = wrapper.querySelector('.tile');
+
+        if (!tile) return;
+
+        wrapper.addEventListener('mousemove', function (e) {
+            const rect = tile.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+
+            // Calculate relative position from center
+            const relX = e.clientX - centerX;
+            const relY = e.clientY - centerY;
+
+            // Calculate movement (proportional to distance from center)
+            const moveX = (relX / rect.width) * strength;
+            const moveY = (relY / rect.height) * strength;
+
+            // Apply transform to wrapper
+            wrapper.style.setProperty('--mag-x', `${moveX}px`);
+            wrapper.style.setProperty('--mag-y', `${moveY}px`);
+        });
+
+        wrapper.addEventListener('mouseleave', function () {
+            // Reset position when mouse leaves
+            wrapper.style.setProperty('--mag-x', '0px');
+            wrapper.style.setProperty('--mag-y', '0px');
+        });
     });
 }
