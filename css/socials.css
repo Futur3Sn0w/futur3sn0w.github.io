@@ -70,7 +70,7 @@
             }
 
             &>i {
-                transform: scale(1.2);
+                transform: translate(calc(var(--mag-x) * 0.2), calc(var(--mag-y) * 0.2)) scale(1.2);
             }
         }
 
@@ -125,7 +125,8 @@
             /* bottom: -27%; */
             /* right: 0; */
 
-            transition: .3s;
+            /* Parallax effect - moves 0.2x the magnetic movement (subtle tvOS style) */
+            transform: translate(calc(var(--mag-x) * 0.2), calc(var(--mag-y) * 0.2));
         }
     }
 

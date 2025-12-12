@@ -136,80 +136,8 @@ function createAppCard(app) {
 
 // Attach click handlers to app cards
 function attachCardClickHandlers() {
-    $('.app-card').off('click').on('click', function (e) {
-        e.preventDefault();
-        $('.subhead').text($(this).attr('title'));
-        const $card = $(this);
-        const $wrapper = $card.closest('.app-card-wrapper');
-
-        // Reset magnetic effect on wrapper during transition
-        if ($wrapper.length) {
-            $wrapper.css({
-                '--mag-x': '0px',
-                '--mag-y': '0px'
-            });
-        }
-
-        // Clone and animate (matching existing site behavior)
-        const $clone = $card.clone().appendTo('body');
-        $card.css('opacity', 0);
-
-        const rect = $card[0].getBoundingClientRect();
-        const scrollTop = window.scrollY || document.documentElement.scrollTop;
-        const scrollLeft = window.scrollX || document.documentElement.scrollLeft;
-
-        $clone.css({
-            position: 'absolute',
-            top: rect.top + scrollTop,
-            left: rect.left + scrollLeft,
-            width: rect.width,
-            height: rect.height,
-            overflow: "hidden",
-            margin: 0,
-            zIndex: 10000,
-            transformOrigin: 'center center',
-            perspective: '1000px',
-            borderColor: "none",
-            "pointer-events": "none"
-        });
-
-        // Animate the clone
-        gsap.to($clone, {
-            duration: 1,
-            rotationY: 360,
-            width: window.innerWidth,
-            height: window.innerHeight,
-            top: 0,
-            left: 0,
-            ease: 'power4.inOut',
-            onStart: () => {
-                gsap.to($clone.find('.app-name, .app-description, .app-info'), {
-                    opacity: 0,
-                    duration: 0.5,
-                    ease: 'power1.out'
-                });
-
-                gsap.to($clone.find('.app-icon'), {
-                    opacity: 1,
-                    fontSize: "100px",
-                    color: "var(--root-text)",
-                    duration: 0.75,
-                    ease: 'none'
-                });
-            },
-            onComplete: () => {
-                setTimeout(() => {
-                    gsap.to($clone, {
-                        duration: 0.5,
-                        opacity: 0,
-                        onComplete: () => {
-                            window.location.href = $card.attr('href');
-                        }
-                    });
-                }, 1000);
-            }
-        });
-    });
+    // Cards now use regular link navigation - no custom transition needed
+    // The href attribute on the <a> tag will handle navigation automatically
 }
 
 // Initialize event listeners

@@ -94,7 +94,14 @@ $(window).on('load', function () {
                     ease: 'power1.out'
                 });
 
-                gsap.to($clone.find('i'), {
+                // Hide project-specific elements
+                gsap.to($clone.find('.project-icon-container, .infoLabels'), {
+                    opacity: 0,
+                    duration: 0.5,
+                    ease: 'power1.out'
+                });
+
+                gsap.to($clone.find('> i'), {
                     opacity: 1,
                     fontSize: "100px",
                     color: "var(--root-text)",
@@ -359,6 +366,9 @@ function rotateProjectsPreview() {
             setTimeout(() => {
                 // Update icon (preserve project-icon-large class)
                 $projectIcon.attr('class', 'project-icon-large ' + project.icon);
+
+                // Update container background color
+                $('.my-projects .project-icon-container').css('background-color', project.color);
 
                 // Update info labels
                 $('.my-projects .infoLabels .type').text(project.category);

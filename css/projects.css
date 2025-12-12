@@ -203,7 +203,7 @@ main[data-barba-namespace="projects"] {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: var(--root-back-contrast);
+    background-color: var(--app-color, var(--root-back-contrast));
     border: 1px solid var(--root-border);
     border-radius: 20px;
     cursor: pointer;
@@ -216,16 +216,33 @@ main[data-barba-namespace="projects"] {
     transform: translate(var(--mag-x), var(--mag-y));
 }
 
+.projects-container[data-view-mode="icon"] .app-card::before {
+    content: '';
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    mix-blend-mode: overlay;
+    background: linear-gradient(to bottom, transparent, black);
+    opacity: 0.45;
+}
+
 .projects-container[data-view-mode="icon"] .app-card:hover {
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
 }
 
 .projects-container[data-view-mode="icon"] .app-card:hover .app-icon {
-    transform: scale(1.1);
+    font-size: 72px;
+}
+
+.projects-container[data-view-mode="icon"] .app-card:active {
+    border-radius: 30px !important;
+    transform: translate(var(--mag-x), var(--mag-y)) scale(0.95) !important;
 }
 
 .projects-container[data-view-mode="icon"] .app-card:hover::after {
-    opacity: 0.66;
+    opacity: 0.5;
 }
 
 .projects-container[data-view-mode="icon"] .app-card::after {
@@ -234,7 +251,7 @@ main[data-barba-namespace="projects"] {
     height: calc(100% * 1.5);
     position: absolute;
     z-index: 5;
-    opacity: 0;
+    opacity: 0.33;
     transition: opacity .2s, transform .15s ease-out;
     border-radius: 19px;
     mix-blend-mode: screen;
@@ -246,9 +263,13 @@ main[data-barba-namespace="projects"] {
 
 .projects-container[data-view-mode="icon"] .app-icon {
     font-size: 60px;
-    transition: 0.3s;
+    transition: font-size 0.3s;
     position: relative;
     z-index: 10;
+    color: white;
+
+    /* Parallax effect - moves 2.5x the magnetic movement (half of highlight's 5x) */
+    transform: translate(calc(var(--mag-x) * 0.4), calc(var(--mag-y) * 0.4));
 }
 
 .projects-container[data-view-mode="icon"] .app-name {
@@ -267,8 +288,6 @@ main[data-barba-namespace="projects"] {
     overflow: hidden;
     text-overflow: ellipsis;
     pointer-events: none;
-
-    /* Label stays fixed - no transform needed as it's outside the card */
 }
 
 .projects-container[data-view-mode="icon"] .app-card-wrapper:hover .app-name {
@@ -563,6 +582,13 @@ main[data-barba-namespace="projects"] {
 
     .projects-container[data-view-mode="icon"] .app-icon {
         font-size: 45px;
+        color: white;
+        transition: font-size 0.3s;
+        transform: translate(calc(var(--mag-x) * 2.5), calc(var(--mag-y) * 2.5));
+    }
+
+    .projects-container[data-view-mode="icon"] .app-card:hover .app-icon {
+        font-size: 54px;
     }
 
     .projects-container[data-view-mode="tile"] .app-card {
