@@ -1119,3 +1119,9 @@ button {
         }
     }
 }
+
+@media (prefers-color-scheme: dark) {
+    .lava-orb {
+        opacity: 0.08 !important;
+    }
+}
