@@ -95,7 +95,6 @@ body {
             .home {
                 opacity: 1;
                 pointer-events: all;
-                margin-left: 20px;
             }
         }
     }
@@ -137,12 +136,11 @@ header {
     z-index: 100000000000;
     transition: .2s;
 
-    border-radius: 0 0 15px 15px;
-    overflow: hidden;
-
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+
+    padding: 0 20px;
 
     &::after {
         content: '';
@@ -154,8 +152,9 @@ header {
         transition: .2s;
         opacity: 0;
 
-        background-color: var(--root-back-alpha);
-        backdrop-filter: blur(5px);
+        backdrop-filter: blur(20px);
+        mask-image: linear-gradient(to bottom, black, transparent);
+        -webkit-mask-image: linear-gradient(to bottom, black, transparent);
 
         width: 100%;
         height: 100%;
@@ -181,6 +180,9 @@ header {
         letter-spacing: 17px;
 
         position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
 
         display: flex;
         align-items: center;
@@ -196,46 +198,22 @@ header {
     }
 
     .home {
-        margin-right: auto;
-        margin-left: -15px;
-
-        width: 45px;
         height: 45px;
 
         opacity: 0;
         pointer-events: none;
-
-        &:hover {
-            background-color: rgb(195, 226, 241);
-            border-radius: 30px !important;
-        }
-    }
-
-    @media (prefers-color-scheme: dark) {
-        .home:hover i {
-            color: #111 !important;
-        }
     }
 
     .back-btn {
-        width: 50px;
-        height: 50px;
+        width: 45px;
+        height: 45px;
         border-radius: 100px;
         min-width: unset;
 
-        margin-left: 15px;
-        margin-right: -15px;
+        margin-right: 15px;
 
         opacity: 1;
         pointer-events: all;
-
-        &:hover {
-            background-color: var(--btn-highlight);
-
-            & i {
-                color: white;
-            }
-        }
 
         & i {
             position: relative;
@@ -256,17 +234,27 @@ header {
     }
 }
 
+[data-barba='container'],
+[data-barba='container']>.content {
+    padding-top: 90px !important;
+}
+
 [data-barba='container'] {
     display: flex;
 
     width: 100%;
-    height: calc(100% - 90px);
+    height: 100%;
+    box-sizing: border-box;
 
     position: fixed;
-    overflow: hidden;
+    overflow: visible;
     bottom: 0;
 
     transition: .4s !important;
+
+    & .content {
+        padding-top: 90px !important;
+    }
 
     &:not(.loaded) {
         filter: blur(20px);
@@ -317,6 +305,19 @@ button {
     outline: none;
 }
 
+.button-wrapper,
+.tab-btn-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    /* Magnetic effect variables */
+    --mag-x: 0px;
+    --mag-y: 0px;
+}
+
 /* button, */
 .button {
     appearance: none;
@@ -326,16 +327,15 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 5px 10px #00000015;
+    box-shadow: 0 5px 18px #00000015;
     background-color: var(--root-back);
-    overflow: hidden;
 
     min-width: 90px;
     min-height: 35px;
     font-size: 14px;
     flex-shrink: 0;
 
-    border-radius: 12px;
+    border-radius: 100px;
     color: var(--root-text);
 
     transition: .3s ease;
@@ -346,46 +346,36 @@ button {
     position: relative;
     z-index: 20;
 
+    /* Apply subtle magnetic effect */
+    transform: translate(var(--mag-x), var(--mag-y));
+
     &:hover {
         box-shadow: 0 10px 15px #00000033;
         /* background-color: rgb(207, 241, 195); */
-        border-radius: 100px;
 
         font-weight: 600;
         opacity: 1;
         color: black !important;
-
-        &::after {
-            opacity: .15;
-        }
-    }
-
-    &::after {
-        content: '';
-        width: 100%;
-        height: 100%;
-
-        position: absolute;
-        z-index: 0;
-
-        opacity: .05;
-        transition: .2s;
-        background: linear-gradient(to bottom, transparent, var(--root-text));
     }
 
     &::before {
         content: '';
-        width: 100%;
-        height: 100%;
-
         position: absolute;
-        z-index: 0;
+        z-index: -10;
+        inset: -1px;
+        border-radius: 28px;
+        background: linear-gradient(to bottom right, var(--root-border), transparent, var(--root-border));
+        transition: .4s;
+    }
 
-        opacity: .1;
-
-        box-sizing: border-box;
-        border: 1px solid var(--root-text);
-        border-radius: inherit;
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: -9;
+        inset: 0;
+        border-radius: 28px;
+        background-color: var(--tabbar-back);
+        transition: .4s;
     }
 }
 
@@ -415,6 +405,6 @@ button {
 
 @media (prefers-color-scheme: dark) {
     .lava-orb {
-        opacity: 0.08 !important;
+        opacity: 0.1 !important;
     }
 }

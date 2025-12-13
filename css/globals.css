@@ -1,12 +1,18 @@
 @media (prefers-color-scheme: light) {
     :root {
-        --root-back: #eee;
-        --root-back-contrast: #fff;
+        --root-back: #fff;
+        --root-back-contrast: #eee;
         --root-back-b: #ccc;
         --root-back-alpha: #ffffffbd;
         --root-border: #0000001a;
 
-        --main-container-back: #ffffff77;
+        --tabbar-back: #fffffe;
+        --tabbar-btn-select: #EDEDEC;
+        --tabbar-btn-select-text: #027FF6;
+        --tabbar-btn-highlight: #EAEAEA;
+
+        --main-container-back: #ffffffe9;
+        --main-container-filter: brightness(1) saturate(10) blur(10px);
 
         --btn-highlight: #2593e1;
 
@@ -19,13 +25,19 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --root-back: #111;
+        --root-back: #000;
         --root-back-contrast: #333;
         --root-back-b: #222;
         --root-back-alpha: #41414169;
-        --root-border: #ffffff1a;
+        --root-border: #ffffff2f;
 
-        --main-container-back: #22222277;
+        --tabbar-back: #181818;
+        --tabbar-btn-select: #3A3A3A;
+        --tabbar-btn-select-text: #1DAEFF;
+        --tabbar-btn-highlight: #2B2B2B;
+
+        --main-container-back: #1C1C1Cdd;
+        --main-container-filter: brightness(1.2) saturate(6) blur(10px);
 
         --btn-highlight: #49acee;
 

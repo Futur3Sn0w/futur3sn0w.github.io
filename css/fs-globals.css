@@ -76,7 +76,7 @@
 
         --glow: rgba(255, 255, 255, .75);
 
-        --elem: rgb(255, 255, 255);
+        --elem: #eee;
         --elem-sel: rgb(49, 49, 49);
         --elem-text: black;
 

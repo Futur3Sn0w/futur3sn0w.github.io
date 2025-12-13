@@ -11,12 +11,6 @@ main[data-barba-namespace="futur3sn0w"] {
 
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
-    /* background-image: var(--back-glass-image); */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: background-color .3s;
-
     &:has(.projects-header:not(.showProject)) {
         .projVisor {
             .projImg {
@@ -129,6 +123,12 @@ main[data-barba-namespace="futur3sn0w"] {
             padding: 3px 5px;
             border-radius: 7px;
         }
+    }
+
+    .projImg,
+    .projInfo,
+    .subTileRows {
+        box-shadow: 0 10px 35px #00000018;
     }
 
     /* header */
@@ -267,7 +267,7 @@ main[data-barba-namespace="futur3sn0w"] {
             margin-top: auto;
             padding: 10px;
 
-            background-color: var(--elem);
+            background-color: var(--main-container-back);
             color: var(--root-text);
             border-radius: 26px;
 
@@ -363,7 +363,7 @@ main[data-barba-namespace="futur3sn0w"] {
                     transition: .2s;
 
                     font-size: 260px;
-                    color: var(--elem);
+                    color: var(--root-back-contrast);
 
                     display: flex;
                     align-items: flex-start;
@@ -442,7 +442,7 @@ main[data-barba-namespace="futur3sn0w"] {
 
             cursor: zoom-in;
             border-radius: 26px;
-            background-color: var(--elem);
+            background-color: var(--main-container-back);
 
             position: absolute;
             top: 0;
@@ -485,7 +485,7 @@ main[data-barba-namespace="futur3sn0w"] {
 
     .subTileRows {
         box-sizing: border-box;
-        background-color: var(--elem);
+        background-color: var(--main-container-back);
         border-radius: 26px;
         overflow: hidden;
 
@@ -700,10 +700,8 @@ main[data-barba-namespace="futur3sn0w"] {
                 background: radial-gradient(circle farthest-corner at center top, white, transparent 80%);
 
                 /* Parallax effect - moves 5x the magnetic movement, centered */
-                transform: translate(
-                    calc(-50% + var(--mag-x) * 5),
-                    calc(-50% + var(--mag-y) * 5)
-                );
+                transform: translate(calc(-50% + var(--mag-x) * 5),
+                        calc(-50% + var(--mag-y) * 5));
             }
 
             img {
@@ -754,7 +752,8 @@ main[data-barba-namespace="futur3sn0w"] {
 
             position: absolute;
 
-            background-color: var(--elem);
+            background-color: var(--main-container-back);
+            backdrop-filter: blur(5px);
             /* background-color: orange; */
 
             mask-image: linear-gradient(to bottom, black 90px, transparent);
@@ -828,22 +827,8 @@ main[data-barba-namespace="futur3sn0w"] {
             flex-shrink: unset;
             width: 100%;
 
-            &.selected {
-                border-radius: 100px;
-                box-shadow:
-                    0 3px 6px #00000022,
-                    inset 0 0 0 1px var(--glow);
-
-                i {
-                    opacity: 1;
-                }
-            }
-
+            &.selected,
             &:hover {
-                box-shadow:
-                    0 3px 6px #00000022,
-                    inset 0 0 0 1px var(--glow);
-
                 i {
                     opacity: 1;
                 }
@@ -860,8 +845,6 @@ main[data-barba-namespace="futur3sn0w"] {
 
                 &:hover,
                 &.selected {
-                    background-color: skyblue;
-
                     i {
                         color: hsl(197, 87%, 40%);
                     }
@@ -872,8 +855,6 @@ main[data-barba-namespace="futur3sn0w"] {
 
                 &:hover,
                 &.selected {
-                    background-color: rgb(235, 233, 135);
-
                     i {
                         color: hsl(59, 87%, 40%);
                     }
@@ -884,8 +865,6 @@ main[data-barba-namespace="futur3sn0w"] {
 
                 &:hover,
                 &.selected {
-                    background-color: rgb(163, 235, 135);
-
                     i {
                         color: hsl(103, 87%, 40%);
                     }
@@ -893,8 +872,6 @@ main[data-barba-namespace="futur3sn0w"] {
             }
         }
     }
-
-    /* aboutme */
 
     @keyframes borderFlash {
         from {

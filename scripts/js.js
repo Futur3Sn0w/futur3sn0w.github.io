@@ -30,11 +30,11 @@ let socialsRequest = null;
 
 // Set initial hidden/blur state for home elements to prep entrance animation
 function setHomeInitialState() {
-    const $homePages = $('.homePages');
+    const $homePagesContainer = $('.homePages-container');
     const $homeTiles = $('.homePages .outlink-wrapper');
     const $tabs = $('.tab-buttons');
     const $wordmark = $('.head');
-    gsap.set([$homePages, $homeTiles, $tabs, $wordmark], {
+    gsap.set([$homePagesContainer, $homeTiles, $tabs, $wordmark], {
         opacity: 0,
         y: 10,
         scale: 0.97,
@@ -54,6 +54,7 @@ function initHomePage() {
     return Promise.all([loadTabs(), loadSocials()]).then(() => {
         if (!isTouchDevice()) {
             initMagneticEffect();
+            initTabButtonsMagneticEffect();
         }
 
         // Set initial state IMMEDIATELY after tabs and content are loaded (no delay)
@@ -71,6 +72,7 @@ function initHomePage() {
                 ]).then(() => {
                     if (!isTouchDevice()) {
                         initMagneticEffect();
+                        initTabButtonsMagneticEffect();
                     }
                 });
             }
@@ -94,6 +96,7 @@ $(window).on('load', function () {
         loadTabs().then(() => {
             if (!isTouchDevice()) {
                 initMagneticEffect();
+                initTabButtonsMagneticEffect();
             }
             $container.addClass('loaded');
         });
@@ -117,7 +120,7 @@ $(window).on('load', function () {
         const $overlay = getPortalOverlay();
         const $sparkleLayer = $overlay.find('.portal-sparkles');
         const isHome = $('main[data-barba-namespace="home"]').length > 0;
-        const $homeChrome = isHome ? $('.homePages, .tab-buttons, .head') : $();
+        const $homeChrome = isHome ? $('.homePages-container, .tab-buttons, .head') : $();
         if (isHome) {
             $('body').addClass('portal-active-home');
             gsap.killTweensOf($homeChrome);
@@ -398,6 +401,9 @@ function loadTabs() {
         const tabs = ['sites', 'socials'];
         const pill = $('<div>', { class: 'pill-highlight' }).appendTo(tabButtons);
         tabs.forEach(tab => {
+            // Create a wrapper for magnetic effect
+            const wrapper = $('<div>', { class: 'tab-btn-wrapper' });
+
             let thisButton = $('<button></button>', {
                 html: `<p>${tab}</p>`,
                 class: 'tab-btn button',
@@ -407,7 +413,7 @@ function loadTabs() {
                     thisButton.addClass('selected');
 
                     const selected = tabButtons.find('.tab-btn.selected');
-                    const offset = selected.position();
+                    const offset = selected.parent().position();
                     pill.css({
                         left: offset.left,
                         width: selected.outerWidth()
@@ -415,7 +421,7 @@ function loadTabs() {
                 },
                 mouseover: () => {
                     const hovered = tabButtons.find('.tab-btn:hover');
-                    const offsetH = hovered.position();
+                    const offsetH = hovered.parent().position();
                     pill.css({
                         left: offsetH.left,
                         width: hovered.outerWidth()
@@ -423,20 +429,22 @@ function loadTabs() {
                 },
                 mouseout: () => {
                     const selected = tabButtons.find('.tab-btn.selected');
-                    const offsetH = selected.position();
+                    const offsetH = selected.parent().position();
                     pill.css({
                         left: offsetH.left,
                         width: selected.outerWidth()
                     });
                 }
-            }).appendTo(tabButtons);
+            });
+
+            wrapper.append(thisButton).appendTo(tabButtons);
         });
         const firstBtn = $('.tab-btn').first();
         firstBtn.addClass('selected');
         requestAnimationFrame(() => {
             const initial = tabButtons.find('.tab-btn.selected');
             if (initial.length) {
-                pill.css({ left: initial.position().left, width: initial.outerWidth() });
+                pill.css({ left: initial.parent().position().left, width: initial.outerWidth() });
             }
             resolve();
         });
@@ -698,15 +706,62 @@ function initSocialTilesMagneticEffect() {
     });
 }
 
+// Magnetic hover effect for all buttons (subtle and universal)
+function initTabButtonsMagneticEffect() {
+    const buttons = document.querySelectorAll('.button');
+
+    buttons.forEach(button => {
+        const strength = 6; // Subtle movement (half of regular tiles)
+
+        // Check if button is already wrapped
+        let wrapper = button.parentElement;
+        if (!wrapper.classList.contains('button-wrapper') && !wrapper.classList.contains('tab-btn-wrapper')) {
+            // Create wrapper if it doesn't exist
+            wrapper = document.createElement('div');
+            wrapper.className = 'button-wrapper';
+            button.parentNode.insertBefore(wrapper, button);
+            wrapper.appendChild(button);
+        }
+
+        // Initialize CSS variables
+        wrapper.style.setProperty('--mag-x', '0px');
+        wrapper.style.setProperty('--mag-y', '0px');
+
+        wrapper.addEventListener('mousemove', function (e) {
+            const rect = button.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+
+            // Calculate relative position from center
+            const relX = e.clientX - centerX;
+            const relY = e.clientY - centerY;
+
+            // Calculate movement (proportional to distance from center)
+            const moveX = (relX / rect.width) * strength;
+            const moveY = (relY / rect.height) * strength;
+
+            // Apply transform to wrapper
+            wrapper.style.setProperty('--mag-x', `${moveX}px`);
+            wrapper.style.setProperty('--mag-y', `${moveY}px`);
+        });
+
+        wrapper.addEventListener('mouseleave', function () {
+            // Reset position when mouse leaves
+            wrapper.style.setProperty('--mag-x', '0px');
+            wrapper.style.setProperty('--mag-y', '0px');
+        });
+    });
+}
+
 // Home re-entry animation to avoid static re-render
 function animateHomeEnter() {
-    const $homePages = $('.homePages');
+    const $homePagesContainer = $('.homePages-container');
     const $homeTiles = $('.homePages .outlink-wrapper');
     const $tabs = $('.tab-buttons');
     const $wordmark = $('.head');
 
-    gsap.killTweensOf([$homePages, $homeTiles, $tabs, $wordmark]);
-    gsap.set([$homePages, $homeTiles, $tabs, $wordmark], { willChange: 'opacity, transform, filter' });
+    gsap.killTweensOf([$homePagesContainer, $homeTiles, $tabs, $wordmark]);
+    gsap.set([$homePagesContainer, $homeTiles, $tabs, $wordmark], { willChange: 'opacity, transform, filter' });
 
     requestAnimationFrame(() => {
         const tl = gsap.timeline();
@@ -726,7 +781,7 @@ function animateHomeEnter() {
             duration: 0.25,
             ease: 'power2.out'
         }, '-=0.12');
-        tl.fromTo($homePages, { opacity: 0, y: 0, scale: 1, filter: 'blur(6px)' }, {
+        tl.fromTo($homePagesContainer, { opacity: 0, y: 0, scale: 1, filter: 'blur(6px)' }, {
             opacity: 1,
             y: 0,
             scale: 1,
@@ -742,6 +797,6 @@ function animateHomeEnter() {
             duration: 0.35,
             ease: 'power2.out',
             stagger: 0.04
-        }, '-=0.1').set([$homePages, $homeTiles, $tabs, $wordmark], { clearProps: 'willChange,transform' });
+        }, '-=0.1').set([$homePagesContainer, $homeTiles, $tabs, $wordmark], { clearProps: 'willChange,transform' });
     });
 }
