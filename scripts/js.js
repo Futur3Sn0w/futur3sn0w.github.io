@@ -714,7 +714,7 @@ function animateHomeEnter() {
             opacity: 1,
             y: 0,
             scale: 1,
-            filter: 'blur(0px)',
+            filter: 'drop-shadow(-5px -5px 10px var(--root-back-alpha)) drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.2)) blur(0px) saturate(1.1) brightness(1.05)',
             duration: 0.3,
             ease: 'power2.out'
         });

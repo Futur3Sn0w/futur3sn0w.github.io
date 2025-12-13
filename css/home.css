@@ -1,0 +1,716 @@
+.container[data-barba-namespace="home"] {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    overflow: hidden;
+
+    & .head {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        flex-shrink: 0;
+        height: 20vh;
+
+        /* Start hidden - JavaScript will animate in */
+        opacity: 0;
+        transition-delay: 0;
+        transition: .4s;
+
+        position: relative;
+        z-index: 1000;
+
+        will-change: transform;
+
+        /* SVG-specific styles */
+        max-width: 500px;
+        width: auto;
+        max-height: 300px;
+        object-fit: contain;
+
+        /* Apply drop shadows to SVG and initial blur for animation */
+        filter:
+            drop-shadow(-5px -5px 10px var(--root-back-alpha)) drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.2)) blur(10px) saturate(1.1) brightness(1.05);
+
+        /* SVG path color - default to light mode */
+        & path {
+            fill: #222;
+            transition: fill .3s;
+        }
+    }
+
+    & .tab-buttons {
+        display: flex;
+        gap: 5px;
+        flex-shrink: 0;
+
+        background-color: var(--root-back-alpha);
+        backdrop-filter: saturate(6);
+        border: 1px solid var(--root-border);
+        box-shadow: 0 10px 20px #00000015;
+        border-radius: 28px;
+
+        width: fit-content;
+        height: 50px;
+        padding: 5px;
+        flex-shrink: 0;
+
+        position: relative;
+        top: 23px;
+        margin: 0 auto;
+        z-index: 100;
+
+        /* Start hidden - JavaScript will animate in */
+        opacity: 0;
+        filter: blur(10px);
+        transition-delay: 0;
+        transition: .4s;
+
+        &:not(:has(.tab-btn:hover)):not(:has(.tab-btn.selected)) .pill-highlight {
+            opacity: 0;
+            width: 0px;
+            transform: translateX(50px);
+        }
+
+        & .pill-highlight {
+            position: absolute;
+            top: 5px;
+            left: 0;
+            width: 100px;
+            height: 38px;
+            flex-shrink: 0;
+            background-color: var(--root-back-b);
+            border-radius: 50px;
+            opacity: 1;
+            pointer-events: none;
+            transition: .4s;
+            z-index: 1;
+        }
+
+        & .tab-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            flex-shrink: 0;
+
+            background-color: transparent;
+
+            width: 100px;
+            height: 38px;
+            box-sizing: border-box;
+
+            border-radius: 25px;
+            font-size: 20px;
+            font-weight: bold;
+
+            padding: 5px 10px;
+
+            position: relative;
+            overflow: hidden;
+            z-index: 2;
+
+            transition: .2s;
+
+            &:hover,
+            &.selected {
+                p {
+                    font-weight: bold;
+                }
+            }
+
+            & p {
+                transition: .2s;
+                position: relative;
+                z-index: 10;
+                font-weight: normal;
+
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            &::before {
+                content: '';
+
+                width: 100%;
+                height: 100%;
+
+                background: linear-gradient(to bottom, #3FC6FF, #4291C5);
+                border: none !important;
+
+                position: absolute;
+                left: 0;
+                z-index: 0;
+
+                transition: .15s;
+                opacity: 0;
+            }
+
+            &:not(.selected) {
+                box-shadow: none;
+
+                &::after {
+                    opacity: 0;
+                }
+            }
+
+            &.selected {
+                background-color: var(--root-back);
+
+                &::after,
+                & p {
+                    color: white !important;
+                }
+
+                &::before {
+                    opacity: 1;
+                    box-shadow: inset 0 5px 15px #00000011;
+                }
+            }
+        }
+    }
+
+    &:has(.tab-btn[for="socials"].selected) {
+        .subTiles {
+            opacity: 1;
+
+            pointer-events: all;
+            /* transform: translateX(0); */
+        }
+
+        .outLinks {
+            opacity: 0;
+            margin-left: -100%;
+
+            pointer-events: none;
+            /* transform: translateX(-50px); */
+        }
+    }
+
+    &:has(.tab-btn[for="sites"].selected) {
+        .outLinks {
+            opacity: 1;
+
+            pointer-events: all;
+            /* transform: translateX(0); */
+        }
+
+        .subTiles {
+            opacity: 0;
+
+            pointer-events: none;
+            /* transform: translateX(50px); */
+        }
+    }
+
+    & .homePages {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        overflow: hidden;
+        height: fit-content;
+        max-height: 100%;
+        width: 546px;
+        min-width: 300px;
+
+        margin-top: -60px;
+
+        /* Start hidden - JavaScript will animate in */
+        opacity: 0;
+        transition-delay: 0;
+        transition: .4s;
+
+        /* background-color: var(--main-container-back); */
+        backdrop-filter: saturate(3) brightness(1.05) blur(20px);
+        border-radius: 26px;
+        box-shadow:
+            inset 0 0 0 1px var(--root-border),
+            0 15px 40px #00000033;
+    }
+
+    & .outLinks {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 45px 20px;
+
+        width: 100%;
+        height: fit-content;
+        max-height: 100%;
+        padding-top: 80px;
+        padding-bottom: 50px;
+
+        perspective: 1000px;
+
+        overflow-y: scroll;
+
+        flex-shrink: 0;
+
+        position: relative;
+        z-index: 1100;
+
+        opacity: 1;
+        transition: .4s;
+    }
+}
+
+.outlink-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+
+    /* Magnetic effect variables */
+    --mag-x: 0px;
+    --mag-y: 0px;
+
+    &.wide {
+        width: 310px;
+    }
+}
+
+.outlink:not(.app-card) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 10px #00000015;
+    background-color: var(--root-back-contrast);
+    overflow: hidden;
+
+    height: 150px;
+    width: 150px;
+    font-size: 17px;
+    flex-shrink: 0;
+
+    border: 1px solid var(--root-border);
+
+    border-radius: 20px;
+
+    transition: .3s, transform .15s ease-out;
+
+    user-select: none;
+    cursor: pointer;
+
+    position: relative;
+    z-index: 20;
+
+    /* Apply magnetic effect to tile */
+    transform: translate(var(--mag-x), var(--mag-y));
+
+    &.disabled {
+        opacity: .5;
+        pointer-events: none;
+    }
+
+    &.wide {
+        width: 310px;
+    }
+
+    /* &:nth-of-type(2) {
+        margin-left: -160px;
+    } */
+
+    &:hover {
+        box-shadow: 0 10px 15px #00000033;
+
+        &>p {
+            font-weight: bold;
+        }
+
+        &::after {
+            opacity: .66;
+        }
+    }
+
+    &::after {
+        content: '';
+        width: calc(100% * 1.5);
+        height: calc(100% * 1.5);
+
+        position: absolute;
+        z-index: 5;
+
+        opacity: 0.0;
+        transition: opacity .2s, transform .15s ease-out;
+        border-radius: 19px;
+        mix-blend-mode: screen;
+        background: radial-gradient(circle farthest-corner at center top, white, transparent 80%);
+
+        /* Parallax effect - moves 1.5x the magnetic movement */
+        transform: translate(calc(var(--mag-x) * 5), calc(var(--mag-y) * 5));
+    }
+
+    &>i {
+        position: absolute;
+        opacity: 1;
+        z-index: 5;
+
+        font-size: 17px;
+
+        transition: font-size .5s;
+
+        padding-bottom: 105px;
+        padding-left: 105px;
+
+        color: var(--root-text);
+
+        /* Parallax effect - moves 0.75x the magnetic movement */
+        transform: translate(calc(var(--mag-x) * 0.75), calc(var(--mag-y) * 0.75));
+    }
+
+    &.wide>i {
+        padding-left: 260px;
+    }
+
+    & img {
+        width: 110%;
+        height: 110%;
+        object-fit: cover;
+        object-position: center;
+
+        position: relative;
+        z-index: 4;
+
+        transition: opacity .25s;
+        appearance: none;
+        border-radius: 19px;
+
+        /* Parallax effect - moves 0.4x the magnetic movement */
+        transform: translate(calc(var(--mag-x) * 0.4), calc(var(--mag-y) * 0.4));
+
+        &.tempHide {
+            opacity: 0;
+        }
+
+        &[src=""] {
+            display: none;
+        }
+    }
+
+    &.about-me {
+        img {
+            object-position: center -15px;
+            object-fit: cover;
+            width: 130%;
+            height: 130%;
+
+            /* Reduced parallax to prevent edge reveal */
+            transform: translate(calc(var(--mag-x) * 0.2), calc(var(--mag-y) * 0.2));
+        }
+
+        &>i {
+            color: white;
+        }
+    }
+
+    &.visit-fs {
+        img {
+            width: 130%;
+            height: 130%;
+
+            /* Reduced parallax to prevent edge reveal */
+            transform: translate(calc(var(--mag-x) * 0.2), calc(var(--mag-y) * 0.2));
+        }
+
+        &>i {
+            color: black;
+        }
+    }
+
+    &.my-music {
+        padding: 10px;
+        gap: 10px;
+
+        &:hover {
+            &::before {
+                opacity: .25;
+            }
+        }
+
+        &:has(.tempHide) {
+            .infoLabels {
+                opacity: 0;
+            }
+        }
+
+        .infoLabels {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+
+            margin-top: auto;
+            margin-right: auto;
+            margin-bottom: 5px;
+
+            opacity: 1;
+
+            transition: opacity .2s;
+
+            /* Parallax effect - moves 0.75x the magnetic movement */
+            transform: translate(calc(var(--mag-x) * 0.75), calc(var(--mag-y) * 0.75));
+
+            & .type {
+                text-transform: uppercase;
+                font-weight: bold;
+                letter-spacing: 3px;
+                font-size: 10px;
+                opacity: .3;
+            }
+
+            & .title {
+                font-size: 17px;
+                font-weight: bold;
+            }
+
+            & .date {
+                font-size: 13px;
+                opacity: .4;
+            }
+        }
+
+        &::before {
+            content: '';
+            width: 100%;
+            height: 100%;
+            border-radius: 19px;
+
+            position: absolute;
+
+            transition: .2s;
+
+            background-color: var(--dominant-color);
+            opacity: .15;
+            filter: saturate(4);
+        }
+
+        img {
+            object-fit: cover;
+            border-radius: 10px;
+
+            width: 128px;
+            height: 128px;
+            aspect-ratio: 1 / 1;
+            flex-shrink: 0;
+            margin-right: 5px;
+
+            /* Parallax effect - moves 0.4x the magnetic movement */
+            transform: translate(calc(var(--mag-x) * 0.4), calc(var(--mag-y) * 0.4));
+        }
+    }
+
+    &.my-projects {
+        padding: 10px;
+        gap: 10px;
+
+        &:has(.tempHide) {
+
+            .project-icon-large,
+            .infoLabels {
+                opacity: 0;
+            }
+        }
+
+        .project-icon-container {
+            width: 128px;
+            height: 128px;
+            flex-shrink: 0;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+            margin-right: 5px;
+            background-color: #4CAF50;
+            transition: background-color .4s ease;
+
+            /* Parallax effect - moves 0.4x the magnetic movement */
+            transform: translate(calc(var(--mag-x) * 0.4), calc(var(--mag-y) * 0.4));
+
+            &::before {
+                content: '';
+                position: absolute;
+                z-index: 5;
+                width: 100%;
+                height: 100%;
+                border-radius: inherit;
+                mix-blend-mode: overlay;
+                background: linear-gradient(to bottom, transparent, black);
+                opacity: 0.45;
+            }
+
+            &::after {
+                content: '';
+                width: calc(100% * 1.5);
+                height: calc(100% * 1.5);
+                position: absolute;
+                z-index: 5;
+                opacity: 0.33;
+                transition: opacity .2s;
+                border-radius: inherit;
+                mix-blend-mode: screen;
+                background: radial-gradient(circle farthest-corner at center top, white, transparent 80%);
+            }
+        }
+
+        &:hover .project-icon-container::after {
+            opacity: 0.5;
+        }
+
+        .project-icon-large {
+            font-size: 80px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+            flex-shrink: 0;
+            transition: font-size .2s;
+            position: relative;
+            z-index: 10;
+            color: white;
+        }
+
+        .infoLabels {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+
+            margin-top: auto;
+            margin-right: auto;
+            margin-bottom: 5px;
+
+            opacity: 1;
+
+            transition: opacity .2s;
+
+            /* Parallax effect - moves 0.75x the magnetic movement */
+            transform: translate(calc(var(--mag-x) * 0.75), calc(var(--mag-y) * 0.75));
+
+            & .type {
+                text-transform: uppercase;
+                font-weight: bold;
+                letter-spacing: 3px;
+                font-size: 10px;
+                opacity: .3;
+            }
+
+            & .title {
+                font-size: 17px;
+                font-weight: bold;
+            }
+
+            & .date {
+                font-size: 13px;
+                opacity: .4;
+            }
+        }
+    }
+}
+
+.outlink-label {
+    position: absolute;
+    bottom: -35px;
+    z-index: 9;
+
+    font-size: 13.5px;
+    pointer-events: none;
+
+    transition: .2s;
+
+    color: var(--root-text);
+
+    background-color: var(--root-back-alpha);
+    padding: 3px 7px;
+    border-radius: 50px;
+
+    /* Label stays fixed - no transform needed as it's a sibling to the tile */
+}
+
+.portal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 12000;
+    display: none;
+    pointer-events: none;
+    opacity: 0;
+    overflow: hidden;
+    background:
+        radial-gradient(140% 140% at 12% 10%, rgba(255, 255, 255, 0.08), transparent 60%),
+        radial-gradient(120% 120% at 88% 18%, rgba(255, 255, 255, 0.06), transparent 60%);
+}
+
+.portal-blobs {
+    position: absolute;
+    inset: -15%;
+    filter: blur(35px);
+    mix-blend-mode: screen;
+}
+
+.portal-blob {
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0) 55%),
+        var(--blob-color, #7af0ff);
+    opacity: 0.6;
+}
+
+.portal-blob:nth-child(1) {
+    top: 20%;
+    left: 15%;
+}
+
+.portal-blob:nth-child(2) {
+    top: 42%;
+    right: 18%;
+}
+
+.portal-blob:nth-child(3) {
+    bottom: 18%;
+    left: 36%;
+}
+
+.portal-sparkles {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.sparkle {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, #fff, rgba(255, 255, 255, 0) 60%);
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+    opacity: 0;
+}
+
+body.portal-active-home .homePages,
+body.portal-active-home .tab-buttons,
+body.portal-active-home .head {
+    pointer-events: none !important;
+}
+
+@media screen and (max-width: 950px) {
+    .outlink:not(.app-card) {
+        width: 310px !important;
+
+        img {
+            object-fit: cover !important;
+            object-position: center !important;
+        }
+    }
+}
+
+/* Dark mode wordmark color */
+@media (prefers-color-scheme: dark) {
+    .container[data-barba-namespace="home"] .head path {
+        fill: #444;
+    }
+}

@@ -8,7 +8,6 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("projects");
     eleventyConfig.addPassthroughCopy("futur3sn0w");
     eleventyConfig.addPassthroughCopy("roundr");
-    eleventyConfig.addPassthroughCopy("vercel.json");
 
     // Re-run build when CSS/JS change
     eleventyConfig.addWatchTarget("css");
